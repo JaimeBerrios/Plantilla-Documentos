@@ -24,6 +24,15 @@
   --hero-c: #153e5c;
   --section-alt: #0f1721;
   --code-text: #d7fbe8;
+  --expo-in: linear(
+    0 0%, 0.0085 31.26%, 0.0167 40.94%,
+    0.0289 48.86%, 0.0471 55.92%,
+    0.0717 61.99%, 0.1038 67.32%,
+    0.1443 72.07%, 0.1989 76.7%,
+    0.2659 80.89%, 0.3465 84.71%,
+    0.4419 88.22%, 0.554 91.48%,
+    0.6835 94.51%, 0.8316 97.34%, 1 100%
+  );
   --expo-out: linear(
     0 0%, 0.1684 2.66%, 0.3165 5.49%, 0.446 8.52%,
     0.5581 11.78%, 0.6535 15.29%, 0.7341 19.11%,
@@ -65,28 +74,38 @@ body {
 }
 
 ::view-transition-group(root) {
-  animation-duration: 0.7s;
-  animation-timing-function: var(--expo-out);
+  animation-timing-function: var(--expo-in);
 }
 
 ::view-transition-new(root) {
-  animation-name: reveal-theme;
+  -webkit-mask: url("https://media.tenor.com/Jz0aSpk9VIQAAAAi/i-love-you-love.gif") center / 0 no-repeat;
+  mask: url("https://media.tenor.com/Jz0aSpk9VIQAAAAi/i-love-you-love.gif") center / 0 no-repeat;
+  animation: scale 1.5s;
   animation-fill-mode: both;
 }
 
 ::view-transition-old(root),
 .dark::view-transition-old(root) {
-  animation: none;
+  animation: scale 1.5s;
   animation-fill-mode: both;
-  z-index: -1;
 }
 
-@keyframes reveal-theme {
-  from {
-    clip-path: circle(0% at calc(100% - 5.5rem) 2rem);
+@keyframes scale {
+  0% {
+    -webkit-mask-size: 0;
+    mask-size: 0;
   }
-  to {
-    clip-path: circle(150% at calc(100% - 5.5rem) 2rem);
+  10% {
+    -webkit-mask-size: 50vmax;
+    mask-size: 50vmax;
+  }
+  90% {
+    -webkit-mask-size: 50vmax;
+    mask-size: 50vmax;
+  }
+  100% {
+    -webkit-mask-size: 2000vmax;
+    mask-size: 2000vmax;
   }
 }
 
