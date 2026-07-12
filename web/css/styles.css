@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Lerased Signature";
+  src: url("../../assets/fonts/lerased-casual-signature-2026-04-07-06-12-09-utc/Lerased%20Signature.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
   --ink: #0b1117;
   --panel: #111923;
@@ -415,10 +421,144 @@ body {
   line-height: 1.55;
 }
 
-footer {
-  color: #8f9cad;
+.site-footer {
+  position: relative;
+  color: var(--muted);
   border-top: 1px solid var(--line);
-  font-size: 0.85rem;
+  background:
+    radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--mint) 12%, transparent), transparent 30rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--panel) 58%, transparent), transparent 70%),
+    var(--ink);
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: min(72rem, calc(100% - 2rem));
+  height: 1px;
+  content: "";
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--mint) 64%, transparent), transparent);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.9fr) minmax(20rem, 1.1fr);
+  align-items: end;
+  gap: 2rem 3rem;
+  padding-top: 2.6rem;
+  padding-bottom: 1.2rem;
+}
+
+.footer-signature,
+.footer-connect,
+.footer-bottom {
+  min-width: 0;
+}
+
+.footer-signature {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-kicker {
+  color: var(--mint);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.signature-name {
+  width: fit-content;
+  font-family: "Lerased Signature", cursive;
+  color: var(--heading);
+  font-size: clamp(2.6rem, 5vw, 4.35rem);
+  line-height: 0.9;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.signature-name:hover {
+  color: var(--mint);
+}
+
+.footer-signature p {
+  max-width: 33rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.footer-connect {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: end;
+}
+
+.connect-label {
+  color: var(--heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(7.4rem, 1fr));
+  gap: 0.55rem;
+  width: min(100%, 27rem);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  min-height: 2.45rem;
+  padding: 0 0.85rem;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+.social-links i {
+  width: 1rem;
+  color: var(--mint);
+  text-align: center;
+}
+
+.social-links a:hover {
+  color: var(--heading);
+  border-color: color-mix(in srgb, var(--mint) 60%, transparent);
+  background: color-mix(in srgb, var(--mint) 10%, var(--panel));
+  transform: translateY(-1px);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--mint) 70%, transparent);
+  outline-offset: 3px;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  color: color-mix(in srgb, var(--muted) 82%, transparent);
+  font-size: 0.78rem;
 }
 
 @media (max-width: 991.98px) {
@@ -461,6 +601,32 @@ footer {
 
   .hero-stats div:last-child { grid-column: 1 / -1; }
   .display-6 { font-size: 2rem; }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.6rem;
+    padding-top: 2.1rem;
+  }
+
+  .footer-connect {
+    justify-items: start;
+  }
+
+  .social-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .signature-name {
+    font-size: 3rem;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 380px) {
+  .social-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
