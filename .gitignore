@@ -36,3 +36,7 @@ desktop.ini
 # El PDF final se conserva intencionalmente en el repositorio.
 !pdf/
 !pdf/*.pdf
+
+# Caché de Python
+__pycache__/
+*.pyc

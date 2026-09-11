@@ -1,30 +1,15 @@
 \documentclass[10pt, aspectratio=169]{beamer}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage[spanish,es-noshorthands]{babel}
 \usepackage{plantilla/unab_presentacion}
 
-% =========================================================
-% Datos editables de la presentación
-% Puedes usar tildes directamente: á, é, í, ó, ú, ñ.
-% Puedes usar iconos Font Awesome: \faUser, \faCloud, \faLightbulb, etc.
-% =========================================================
-\renewcommand{\TituloPresentacion}{TÍTULO DE LA\\PRESENTACIÓN}
-\renewcommand{\SubtituloPresentacion}{Asignatura \textperiodcentered\ Facultad o carrera}
-\renewcommand{\InstitucionPresentacion}{Nombre de la institución}
-\renewcommand{\FacultadPresentacion}{Nombre de la facultad}
-\renewcommand{\CatedraticoPresentacion}{Nombre del catedrático}
-\renewcommand{\GrupoPresentacion}{Grupo}
-\renewcommand{\LugarFechaPresentacion}{Lugar \textperiodcentered\ Fecha}
-\renewcommand{\IconosPortada}{\faChalkboardTeacher \hspace{0.5cm} \faLaptopCode \hspace{0.5cm} \faUsers}
-\renewcommand{\IntegrantesPresentacion}{%
-  \textcolor{unabblue}{\faUser} & Nombre & \texttt{Código} \\
-  \textcolor{unabblue}{\faUser} & Nombre & \texttt{Código} \\
-  \textcolor{unabblue}{\faUser} & Nombre & \texttt{Código} \\
-}
-
-\setdatosfooter{Tema}{Asignatura - Grupo}
+% Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
+\input{.build/datos.tex}
+\title{\TituloTrabajo}
+\author{\Grupo}
+\hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\Grupo}}
+\setdatosfooter{\TituloCorto}{\Asignatura}
 
 \begin{document}
 
@@ -36,7 +21,7 @@
 % =========================================================
 % Lámina 2: Reflexión
 % =========================================================
-\expositor{Nombre}
+\expositor{Equipo}
 \begin{frame}{\faLightbulb \ Reflexión Inicial}
   \begin{center}
     \vfill
@@ -44,8 +29,8 @@
       \includegraphics[width=0.75\linewidth, height=0.75\textheight, keepaspectratio]{assets/img/reflexion.png}
     }{%
       \begin{beamercolorbox}[rounded=true,wd=0.78\textwidth,sep=0.45cm,center]{block body}
-        \Large\textcolor{unabblue}{\faImage}\\[0.25cm]
-        \normalsize Coloca una imagen en \texttt{assets/img/reflexion.png} o sustituye este bloque por una pregunta de apertura.
+        \Large\textcolor{unabblue}{\faLightbulb}\\[0.25cm]
+        \large ¿Qué problema queremos resolver y por qué importa?
       \end{beamercolorbox}
     }
     \vfill
@@ -55,7 +40,7 @@
 % =========================================================
 % Lámina 3: Conceptos
 % =========================================================
-\expositor{Nombre}
+\expositor{Equipo}
 \begin{frame}{\faInfoCircle \ Conceptos Fundamentales}
   \begin{block}{Concepto principal}
     Escribe aquí la definición central del tema. Mantén una idea clara, breve y orientada a la exposición oral.
@@ -78,7 +63,7 @@
 % =========================================================
 % Lámina 4: Desarrollo
 % =========================================================
-\expositor{Nombre}
+\expositor{Equipo}
 \begin{frame}{\faMicrochip \ Desarrollo del Tema}
   \begin{block}{Idea operativa}
     Explica aquí cómo funciona el tema, qué componentes intervienen y por qué es importante.
@@ -107,7 +92,7 @@
 % =========================================================
 % Lámina 5: Casos de uso
 % =========================================================
-\expositor{Nombre}
+\expositor{Equipo}
 \begin{frame}{\faBriefcase \ Aplicaciones y Casos de Uso}
   \begin{block}{Dónde se aplica}
     \begin{itemize}
@@ -126,7 +111,7 @@
 % =========================================================
 % Lámina 6: Comparativa
 % =========================================================
-\expositor{Nombre}
+\expositor{Equipo}
 \begin{frame}{\faBalanceScale \ Análisis Comparativo}
   \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
@@ -161,7 +146,7 @@
 % =========================================================
 % Lámina 7: Conclusiones
 % =========================================================
-\expositor{Nombre}
+\expositor{Equipo}
 \begin{frame}{\faCheckCircle \ Conclusiones Estratégicas}
   \begin{block}{Idea final}
     Resume aquí el mensaje más importante de la exposición.
@@ -193,7 +178,7 @@
 % =========================================================
 % Lámina 8: Referencias
 % =========================================================
-\expositor{Grupo}
+\expositor{\Grupo}
 \begin{frame}{\faBook \ Referencias Bibliográficas}
   \begin{block}{Fuentes consultadas}
     \justifying

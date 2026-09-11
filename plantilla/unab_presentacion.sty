@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{unab_presentacion}[2026/07/11 Tema Beamer institucional con Font Awesome]
+\ProvidesPackage{plantilla/unab_presentacion}[2026/09/10 Tema Beamer institucional]
 
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
@@ -10,7 +10,7 @@
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \RequirePackage{colortbl}
-\RequirePackage{lmodern}
+\RequirePackage{fontspec}
 \RequirePackage{microtype}
 
 \definecolor{unabblue}{HTML}{173864}
@@ -25,6 +25,7 @@
 \setbeamercolor{palette secondary}{bg=unabblue!90, fg=white}
 \setbeamercolor{palette tertiary}{bg=unabblue!80, fg=white}
 \setbeamercolor{structure}{fg=unabblue}
+\setbeamercolor{example text}{fg=unabblue}
 \setbeamercolor{author in head/foot}{bg=unabblue, fg=white}
 \setbeamercolor{title in head/foot}{bg=unabblue, fg=white}
 \setbeamercolor{date in head/foot}{bg=unabblue, fg=white}
@@ -51,19 +52,9 @@
 
 \setbeamertemplate{blocks}[rounded][shadow=false]
 
-\newcommand{\TituloPresentacion}{TÍTULO DE LA PRESENTACIÓN}
-\newcommand{\SubtituloPresentacion}{Asignatura o contexto}
-\newcommand{\InstitucionPresentacion}{Nombre de la institución}
-\newcommand{\FacultadPresentacion}{Nombre de la facultad}
-\newcommand{\CatedraticoPresentacion}{Nombre del catedrático}
-\newcommand{\GrupoPresentacion}{Grupo}
 \newcommand{\TemaFooterPresentacion}{Tema}
 \newcommand{\CursoFooterPresentacion}{Asignatura}
-\newcommand{\LugarFechaPresentacion}{Lugar -- Fecha}
 \newcommand{\IconosPortada}{\faChalkboardTeacher \hspace{0.5cm} \faLaptopCode \hspace{0.5cm} \faUsers}
-\newcommand{\IntegrantesPresentacion}{%
-  \textcolor{unabblue}{\faUser} & Nombre & \texttt{Código} \\
-}
 
 \newcommand{\setdatosfooter}[2]{%
   \renewcommand{\TemaFooterPresentacion}{#1}%
@@ -88,37 +79,25 @@
   }%
 }
 
-\newcommand{\logoplaceholder}[1]{%
-  \begin{tikzpicture}
-    \node[
-      draw=linegray,
-      rounded corners=2pt,
-      minimum width=2.3cm,
-      minimum height=0.85cm,
-      text=unabblue,
-      font=\scriptsize\bfseries
-    ] {#1};
-  \end{tikzpicture}%
-}
-
 \newcommand{\portadainstitucional}{%
   {%
   \setbeamertemplate{footline}{}
   \begin{frame}[plain]
     \begin{tikzpicture}[remember picture,overlay]
       \node[anchor=north west,xshift=0.55cm,yshift=-0.35cm] at (current page.north west)
-      {\IfFileExists{assets/img/logo-unab.png}{\includegraphics[height=0.95cm]{assets/img/logo-unab.png}}{\logoplaceholder{LOGO}}};
+      {\includegraphics[width=4.4cm,height=1.05cm,keepaspectratio]{assets/img/logo-unab.png}};
       \node[anchor=north east,xshift=-0.55cm,yshift=-0.35cm] at (current page.north east)
-      {\IfFileExists{assets/img/logo-facultad.png}{\includegraphics[height=0.95cm]{assets/img/logo-facultad.png}}{\logoplaceholder{FACULTAD}}};
+      {\includegraphics[width=1.9cm,height=1.2cm,keepaspectratio]{assets/img/logo-facultad.png}};
+      \fill[unabblue] (current page.south west) rectangle ([yshift=0.12cm]current page.south east);
     \end{tikzpicture}
 
-    \vspace*{0.6cm}
+    \vspace*{1.05cm}
 
     \begin{center}
-      {\color{unabblue!40}\Large \IconosPortada} \\[0.2cm]
-      {\color{unabblue}\bfseries\fontsize{18pt}{20pt}\selectfont \TituloPresentacion \par}
+      {\color{unabblue!65}\small \IconosPortada} \\[0.18cm]
+      {\color{unabblue}\bfseries\fontsize{22pt}{25pt}\selectfont \TituloTrabajo \par}
       \vspace{0.15cm}
-      {\color{unabblue}\fontsize{10pt}{12pt}\selectfont \faChalkboard \ \SubtituloPresentacion \par}
+      {\color{unabblue}\fontsize{10pt}{12pt}\selectfont \SubtituloTrabajo \par}
       \vspace{0.1cm}
       {\color{unabblue}\rule{0.5\textwidth}{0.4pt}}
     \end{center}
@@ -128,13 +107,14 @@
     \begin{center}
     \begin{minipage}{0.9\textwidth}
     \begin{beamercolorbox}[rounded=true,wd=\textwidth,sep=0.2cm,left]{block body}
-      {\footnotesize\textcolor{unabblue}{\textbf{\faUserTie \ Catedrático:}} \CatedraticoPresentacion} \\[0.2cm]
-      {\footnotesize\textcolor{unabblue}{\textbf{\faUsers \ Equipo expositor:}} \GrupoPresentacion} \\
+      {\footnotesize\textcolor{unabblue}{\textbf{\faChalkboardTeacher \ Asignatura:}} \Asignatura} \\[0.12cm]
+      {\footnotesize\textcolor{unabblue}{\textbf{\faUserTie \ Docente:}} \Docente} \\[0.12cm]
+      {\footnotesize\textcolor{unabblue}{\textbf{\faUsers \ Equipo expositor:}} \Grupo} \\
       \vspace{0.1cm}
-      {\fontsize{7.5pt}{9.5pt}\selectfont
-      \begin{tabular}{@{}p{0.6cm}p{5.2cm}p{3cm}@{}}
-        \IntegrantesPresentacion
-      \end{tabular}}
+      {\fontsize{8pt}{10pt}\selectfont
+      \begin{tabularx}{\dimexpr\linewidth-0.4cm\relax}{@{}Xl@{}}
+        \Integrantes
+      \end{tabularx}}
     \end{beamercolorbox}
     \end{minipage}
     \end{center}
@@ -142,14 +122,14 @@
     \vspace{0.3cm}
 
     \begin{center}
-      {\scriptsize \textcolor{unabblue}{\faMapMarkerAlt} \LugarFechaPresentacion}
+      {\scriptsize \textcolor{unabblue}{\faIcon{map-marker-alt}} \LugarFecha}
     \end{center}
   \end{frame}
   }%
 }
 
 \newcommand{\cierreinstitucional}[1][Muchas gracias por su atención]{%
-  \expositor{\GrupoPresentacion}
+  \expositor{\Grupo}
   \begin{frame}[plain]
     \begin{center}
       \vspace{1.5cm}
@@ -159,7 +139,7 @@
       \vspace{0.3cm}
       {\color{unabblue}\large Espacio para dudas y preguntas \par}
       \vfill
-      {\scriptsize \textcolor{unabblue!60}{\FacultadPresentacion \textperiodcentered\ \InstitucionPresentacion}}
+      {\scriptsize \textcolor{unabblue!80}{\Facultad \textperiodcentered\ \Institucion}}
     \end{center}
   \end{frame}
 }
