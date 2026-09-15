@@ -14,7 +14,7 @@ Escribe texto normal, sin comandos LaTeX. No uses `|` dentro de una celda.
 - Asignatura: Nombre de la asignatura
 - Docente: Nombre del docente
 - Grupo: Grupo 01
-- Lugar y fecha: San Salvador, fecha de entrega
+- Lugar y fecha: San Miguel, fecha de entrega
 - Firma: Jaime Berrios
 
 ## Integrantes

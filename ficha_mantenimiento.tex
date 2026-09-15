@@ -1,0 +1,158 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fontspec}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage{geometry}
+\geometry{letterpaper, margin=1.5cm}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{wasysym} % Para usar círculos como opciones (o)
+
+% Color institucional UNAB para las cabeceras (o puedes usar un verde suave si prefieres)
+\definecolor{colorcabecera}{HTML}{173864} 
+\definecolor{colortextocabecera}{HTML}{FFFFFF}
+\definecolor{colorfondoseccion}{HTML}{E2EAF4} % Azul muy claro
+
+\newcommand{\casilla}{$\bigcirc$}
+\newcommand{\cabecera}[1]{\cellcolor{colorcabecera}\textcolor{colortextocabecera}{\textbf{#1}}}
+\newcommand{\subcabecera}[1]{\cellcolor{colorfondoseccion}\textbf{#1}}
+
+\begin{document}
+
+\pagestyle{empty}
+
+% ENCABEZADO: Logo y Título
+\noindent
+\begin{minipage}{0.25\textwidth}
+    % Se asume que la imagen está en la carpeta assets/img
+    \includegraphics[width=0.9\linewidth]{assets/img/logo-unab.png}
+\end{minipage}
+\begin{minipage}{0.7\textwidth}
+    \centering
+    {\Large \textbf{UNIVERSIDAD DR. ANDRÉS BELLO}}\\[0.2cm]
+    {\large \textbf{Ficha técnica de control de soporte técnico informático}}
+\end{minipage}
+\vspace{0.5cm}
+
+% DATOS DEL SERVICIO
+\noindent
+\begin{tabularx}{\textwidth}{|X|p{4cm}|p{4cm}|}
+\hline
+\multirow{2}{*}{\textbf{Observaciones:}} & \textbf{Estado de visita:} & Servicio Completo \casilla \quad Pendiente \casilla \\
+\cline{2-3}
+& \textbf{Fecha:} \_\_\_ / \_\_\_ / \_\_\_ & \textbf{Próx. visita:} \_\_\_ / \_\_\_ / \_\_\_ \\
+\hline
+\end{tabularx}
+
+\vspace{-1pt}
+\noindent
+\begin{tabularx}{\textwidth}{|X|p{6cm}|}
+\hline
+\multicolumn{1}{|c|}{\subcabecera{Datos Del Cliente}} & \multicolumn{1}{c|}{\subcabecera{TIPO DE SERVICIO}} \\
+\hline
+\textbf{Nombre:} & Mantenimiento: \casilla \quad Diagnóstico: \casilla \\
+\textbf{Área:} & Actualización: \casilla \quad Reparación: \casilla \\
+\textbf{Dirección:} & \\
+\hline
+\end{tabularx}
+\vspace{0.3cm}
+
+% ESPECIFICACIONES TÉCNICAS
+\noindent
+\begin{tabularx}{\textwidth}{|X X p{5cm}|}
+\hline
+\multicolumn{3}{|c|}{\cabecera{ESPECIFICACIONES TÉCNICAS DEL EQUIPO}} \\
+\hline
+\textbf{Presentación:} \dotfill & \textbf{Marca/Modelo:} \dotfill & \multirow{2}{*}{\textbf{Código de equipo:} \dotfill} \\
+\textbf{Serie:} \dotfill & \textbf{Tipo:} \dotfill & \\
+\hline
+\multicolumn{3}{|l|}{\textbf{Puertos:} \quad USB: \_\_\_ LTP: \_\_\_ VGA: \_\_\_ RJ45: \_\_\_ HDMI: \_\_\_ 1394: \_\_\_ PCI: \_\_\_ AGP: \_\_\_ SATA: \_\_\_} \\
+\hline
+\multicolumn{3}{|l|}{\textbf{Tarjetas:} \quad Video: \casilla \quad Sonido: \casilla \quad Ethernet: \casilla \quad Wireless: \casilla \quad TV: \casilla} \\
+\hline
+\multicolumn{3}{|l|}{\textbf{Otro:} \dotfill} \\
+\hline
+\end{tabularx}
+
+\vspace{-1pt}
+\noindent
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\subcabecera{PROCESADOR} & \subcabecera{MEMORIA RAM} & \subcabecera{DISCO DURO} & \subcabecera{MOTHERBOARD} & \subcabecera{F. DE PODER} \\
+\hline
+Marca: & Marca: & Marca: & Marca: & Modelo: \\
+Modelo: & Tipo: & Capacidad: & Modelo: & Capacidad: \\
+Velocidad: & Capacidad: & IDE \casilla\ SATA \casilla\ M.2 \casilla & & \\
+\hline
+\end{tabularx}
+\vspace{0.3cm}
+
+% HARDWARE EXTERNO E INTERNO
+\noindent
+\begin{tabularx}{\textwidth}{|l|l|X|l|c|X|}
+\hline
+\multicolumn{3}{|c|}{\cabecera{HARDWARE EXTERNO}} & \multicolumn{3}{c|}{\cabecera{HARDWARE INTERNO}} \\
+\hline
+\textbf{Dispositivo} & \textbf{Clasificación} & \textbf{Marca} & \textbf{Dispositivo} & \textbf{Estado} & \textbf{Marca} \\
+\hline
+Teclado & Sí \casilla\quad No \casilla & & Lector memorias & \casilla & \\
+Monitor & LCD \casilla\quad Touch \casilla & & CD/DVD-ROM & \casilla & \\
+Mouse & Mec.\casilla\ Ópt.\casilla\ Inal.\casilla & & Tarjeta de video & \casilla & \\
+Micrófono & Sí \casilla\quad No \casilla & & Tarjeta de sonido & \casilla & \\
+Bocinas & Sí \casilla\quad No \casilla & & Tarjeta de red & \casilla & \\
+Impresor & Sí \casilla\quad No \casilla & & Otro & \casilla & \\
+\hline
+\end{tabularx}
+\vspace{0.3cm}
+
+% RED Y SOFTWARE
+\noindent
+\begin{tabularx}{\textwidth}{|X|}
+\hline
+\multicolumn{1}{|c|}{\cabecera{INFORMACIÓN DE LA RED}} \\
+\hline
+\textbf{Conex. LAN:} \quad Eth. \casilla \quad WLAN \casilla \hfill \textbf{Internet:} Sí \casilla \quad No \casilla \hfill \textbf{IP:} \dotfill \\
+\textbf{Nombre de equipo:} \dotfill \hfill \textbf{Grupo de trabajo:} \dotfill \hfill \textbf{DHCP:} Sí \casilla \quad No \casilla \\
+\hline
+\multicolumn{1}{|c|}{\cabecera{SOFTWARE INSTALADO}} \\
+\hline
+\vspace{1cm} \\ % Espacio para escribir
+\hline
+\end{tabularx}
+\vspace{0.3cm}
+
+% ACTIVIDADES
+\noindent
+\begin{tabularx}{\textwidth}{|X X X X|}
+\hline
+\multicolumn{4}{|c|}{\cabecera{ACTIVIDADES REALIZADAS}} \\
+\hline
+\casilla\ Limpieza de case & \casilla\ Reparar teclado & \casilla\ Ins. Sistema Operativo & \casilla\ Depuración de software \\
+\casilla\ Limpieza de MB & \casilla\ Reparar mouse & \casilla\ Ins. de antivirus & \casilla\ Conf. Impresor \\
+\casilla\ Limpieza monitor & \casilla\ Reparar impresor & \casilla\ Escan con antivirus & \casilla\ Conf. Red \\
+\casilla\ Limpieza fuente & \casilla\ Cambio pasta térmica & \casilla\ Reparar disco duro & \casilla\ Actualizaciones OS \\
+\hline
+\multicolumn{4}{|c|}{\subcabecera{REPUESTOS}} \\
+\hline
+\casilla\ Motherboard & \casilla\ Memoria RAM & \casilla\ Teclado & \casilla\ Fuente de poder \\
+\casilla\ Disco Duro & \casilla\ Tarjeta de red & \casilla\ Mouse & \casilla\ Batería BIOS \\
+\hline
+\multicolumn{4}{|l|}{\textbf{Otras Actividades:} \dotfill} \\
+\multicolumn{4}{|l|}{\dotfill} \\
+\hline
+\end{tabularx}
+\vspace{1.5cm}
+
+% FIRMAS
+\noindent
+\begin{tabularx}{\textwidth}{X X X}
+\cline{1-1} \cline{3-3}
+\\
+\textbf{Firma:} & & \textbf{Firma:} \\
+\textbf{Nombre:} Jaime Berrios & & \textbf{Nombre:} \dotfill \\
+\textbf{Apoyo Informático} & \centering \textbf{SELLO} & \textbf{Usuario de equipo}
+\end{tabularx}
+
+\end{document}
