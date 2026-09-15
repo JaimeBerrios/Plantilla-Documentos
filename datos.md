@@ -6,24 +6,22 @@ Escribe texto normal, sin comandos LaTeX. No uses `|` dentro de una celda.
 
 ## Datos generales
 
-- Título: Título del proyecto
-- Subtítulo: Una idea central para desarrollar
-- Título corto: Tema del proyecto
+- Título: Certificación de DataCamp
+- Subtítulo: Introduction to Python for Developers
+- Título corto: Certificación Python
 - Institución: Universidad Dr. Andrés Bello
 - Facultad: Facultad de Tecnología e Innovación
-- Asignatura: Nombre de la asignatura
-- Docente: Nombre del docente
-- Grupo: Grupo 01
-- Lugar y fecha: San Salvador, fecha de entrega
+- Asignatura: Sistemas Expertos
+- Docente: Lic. Daniel Alexander Palacios Aguilera
+- Grupo: N/A
+- Lugar y fecha: San Salvador, 4 de septiembre de 2026
 - Firma: Jaime Berrios
 
 ## Integrantes
 
 | Nombre | Código |
 |---|---|
-| Nombre completo | Código |
-| Nombre completo | Código |
-| Nombre completo | Código |
+| Jaime Fernando Berrios Ortiz | BO0310042024 |
 
 ## Tema y objetivo
 
@@ -51,3 +49,8 @@ Agrega la consigna, la rúbrica, el formato de citas y cualquier requisito oblig
 Agrega apuntes, resultados, enlaces y referencias. Indica qué información está
 confirmada y qué hace falta investigar. Codex usará estas secciones como guía;
 el compilador solo sincroniza los datos generales y los integrantes.
+
+La Materia se llama sistemas expertos, el docente es el lic Daniel Alexander Palacios Aguilera
+el lic dijo:
+Adjuntar evidencia de contenidos desarrollados en Python
+fecha de entrega: 4 de septiembre de 2026

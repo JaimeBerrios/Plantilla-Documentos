@@ -41,35 +41,40 @@
   \singlespacing
   \logoreporte{assets/img/logo-unab.png}{6cm}\hfill
   \logoreporte{assets/img/logo-facultad.png}{2.7cm}
+  
   \begin{center}
-    \vspace{1cm}
+    \vspace*{1.5cm}
     {\large\sffamily\bfseries\color{unabblue}\Institucion\par}
     \vspace{0.25cm}
     {\sffamily\Facultad\par}
-    \vfill
-    {\small\sffamily\color{unabblue}REPORTE ACADÉMICO\par}
+    
+    \vspace{2cm}
+    {\small\sffamily\color{unabblue}R E P O R T E \ \ A C A D É M I C O\par}
     \vspace{0.5cm}
+    {\color{unabblue}\rule{0.6\textwidth}{1.5pt}\par}
+    \vspace{0.6cm}
     {\fontsize{26}{32}\selectfont\sffamily\bfseries\color{unabblue}\TituloTrabajo\par}
     \vspace{0.4cm}
-    {\large\SubtituloTrabajo\par}
+    {\Large\sffamily\color{black!80}\SubtituloTrabajo\par}
     \vspace{0.6cm}
-    {\color{unabblue}\rule{0.35\textwidth}{1.2pt}\par}
+    {\color{unabblue}\rule{0.6\textwidth}{1.5pt}\par}
     \vfill
+    
+    \begin{minipage}{0.65\textwidth}
+      \large\sffamily
+      \textbf{Asignatura:} \Asignatura\par
+      \vspace{0.3cm}
+      \textbf{Docente:} \Docente\par
+      \vspace{0.3cm}
+      \textbf{Estudiante:}\par
+      \begin{tabularx}{\linewidth}{@{}Xl@{}}
+        \Integrantes
+      \end{tabularx}
+    \end{minipage}
+    
+    \vfill
+    {\small\sffamily\color{black!70}\LugarFecha\par}
   \end{center}
-  \textbf{Asignatura:} \Asignatura\par
-  \textbf{Docente:} \Docente\par
-  \textbf{Grupo:} \Grupo\par
-  \vspace{0.4cm}
-  \textbf{Integrantes}\par
-  \begin{tabularx}{\textwidth}{@{}Xl@{}}
-    \toprule
-    \textbf{Nombre completo} & \textbf{Código} \\
-    \midrule
-    \Integrantes
-    \bottomrule
-  \end{tabularx}
-  \vfill
-  \begin{center}\small\LugarFecha\end{center}
   \end{titlepage}
   \hypersetup{pageanchor=true}
 }
@@ -79,11 +84,11 @@
 \newcommand{\firmareporte}{%
   \par\Needspace{4cm}
   \vspace{1cm}
+  \par\Needspace{3cm}
+  \vspace{0.3cm}
   \begin{flushright}
     {\color{unabblue}\FuenteFirma\fontsize{34}{42}\selectfont\NombreFirma\par}
     \vspace{0.2cm}
     {\color{linegray}\rule{5.3cm}{0.5pt}\par}
-    {\small\sffamily\color{unabblue}\NombreFirma\par}
-    {\footnotesize\sffamily Elaboración del documento\par}
   \end{flushright}
 }
