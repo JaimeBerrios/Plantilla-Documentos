@@ -28,6 +28,8 @@ FIELDS = {
     "Grupo": "Grupo",
     "Lugar y fecha": "LugarFecha",
     "Firma": "NombreFirma",
+    "Sede": "Sede",
+    "Carrera": "Carrera",
 }
 
 

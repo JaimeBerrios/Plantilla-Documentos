@@ -1,9 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{plantilla/unab_reporte}[2026/09/07 Plantilla institucional de reportes]
-\RequirePackage[margin=2.5cm,includefoot,headheight=16pt]{geometry}
+\RequirePackage[margin=2.54cm,includefoot,headheight=28pt]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 \RequirePackage{fontspec}
+\setmainfont{Arial}
 \RequirePackage{needspace}
 \newfontfamily\FuenteFirma[Path=assets/fonts/]{firma.otf}
 \RequirePackage{microtype}
@@ -28,8 +29,11 @@
 \titleformat{\subsection}{\large\sffamily\bfseries\color{unabblue}}{\thesubsection}{0.6em}{}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\sffamily\color{unabblue}\TituloCorto}
-\fancyfoot[C]{\small\sffamily\color{unabblue}Reporte académico\hfill\thepage}
+\fancyhead[L]{\includegraphics[height=0.68cm]{assets/img/logo-unab.png}}
+\fancyhead[C]{\small\sffamily\color{unabblue}\TituloCorto}
+\fancyhead[R]{\includegraphics[height=0.72cm]{assets/img/logo-facultad.png}}
+\fancyfoot[L]{\scriptsize\sffamily\color{unabblue}\Asignatura}
+\fancyfoot[R]{\scriptsize\sffamily\color{unabblue}Página\ \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 \newcommand{\logoreporte}[2]{%
@@ -37,28 +41,30 @@
 }
 \newcommand{\portadareporte}{%
   \hypersetup{pageanchor=false}
-  \begin{titlepage}
+\begin{titlepage}
+  \thispagestyle{empty}
   \singlespacing
-  \logoreporte{assets/img/logo-unab.png}{6cm}\hfill
-  \logoreporte{assets/img/logo-facultad.png}{2.7cm}
   \begin{center}
-    \vspace{1cm}
+  \includegraphics[width=3.3cm,height=3.3cm,keepaspectratio]{assets/img/logo-portada.png}
+  \end{center}
+  \begin{center}
+    \vspace{0.35cm}
     {\large\sffamily\bfseries\color{unabblue}\Institucion\par}
-    \vspace{0.25cm}
+    {\sffamily\Sede\par}
     {\sffamily\Facultad\par}
+    {\sffamily\Carrera\par}
     \vfill
-    {\small\sffamily\color{unabblue}REPORTE ACADÉMICO\par}
-    \vspace{0.5cm}
-    {\fontsize{26}{32}\selectfont\sffamily\bfseries\color{unabblue}\TituloTrabajo\par}
-    \vspace{0.4cm}
-    {\large\SubtituloTrabajo\par}
-    \vspace{0.6cm}
-    {\color{unabblue}\rule{0.35\textwidth}{1.2pt}\par}
+    {\small\sffamily\color{unabblue}TEMA DE INVESTIGACIÓN\par}
+    \vspace{0.35cm}
+    {\fontsize{19}{24}\selectfont\sffamily\bfseries\color{unabblue}\TituloTrabajo\par}
+    \vspace{0.25cm}
+    {\color{unabblue}\rule{0.3\textwidth}{1.2pt}\par}
     \vfill
   \end{center}
+  \begin{center}\small
   \textbf{Asignatura:} \Asignatura\par
   \textbf{Docente:} \Docente\par
-  \textbf{Grupo:} \Grupo\par
+  \end{center}
   \vspace{0.4cm}
   \textbf{Integrantes}\par
   \begin{tabularx}{\textwidth}{@{}Xl@{}}

@@ -1,209 +1,45 @@
-\documentclass[10pt, aspectratio=169]{beamer}
-
+\documentclass[10pt,aspectratio=169]{beamer}
 \usepackage{fontspec}
 \usepackage[spanish,es-noshorthands]{babel}
 \usepackage{plantilla/unab_presentacion}
-
-% Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
+\setmainfont{Arial}
 \input{.build/datos.tex}
-\title{\TituloTrabajo}
-\author{\Grupo}
+\title{\TituloCorto}\author{\Grupo}
 \hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\Grupo}}
 \setdatosfooter{\TituloCorto}{\Asignatura}
-
 \begin{document}
-
-% =========================================================
-% Lámina 1: Portada
-% =========================================================
 \portadainstitucional
-
-% =========================================================
-% Lámina 2: Reflexión
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faLightbulb \ Reflexión Inicial}
-  \begin{center}
-    \vfill
-    \IfFileExists{assets/img/reflexion.png}{%
-      \includegraphics[width=0.75\linewidth, height=0.75\textheight, keepaspectratio]{assets/img/reflexion.png}
-    }{%
-      \begin{beamercolorbox}[rounded=true,wd=0.78\textwidth,sep=0.45cm,center]{block body}
-        \Large\textcolor{unabblue}{\faLightbulb}\\[0.25cm]
-        \large ¿Qué problema queremos resolver y por qué importa?
-      \end{beamercolorbox}
-    }
-    \vfill
-  \end{center}
+\begin{frame}{\faBullseye\ Propósito y contexto}
+\justifying La Sede de Enlaces con la Educación de Santa Rosa de Lima apoya el mantenimiento del ecosistema tecnológico educativo de la zona oriental. El proyecto propone asegurar su red de datos mediante un modelo perimetral y segmentación lógica.
 \end{frame}
-
-% =========================================================
-% Lámina 3: Conceptos
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faInfoCircle \ Conceptos Fundamentales}
-  \begin{block}{Concepto principal}
-    Escribe aquí la definición central del tema. Mantén una idea clara, breve y orientada a la exposición oral.
-  \end{block}
-
-  \begin{columns}[onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{\faCheckCircle \ Punto 1:} descripción breve.
-      \item \textbf{\faCheckCircle \ Punto 2:} descripción breve.
-    \end{itemize}
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{\faCheckCircle \ Punto 3:} descripción breve.
-      \item \textbf{\faCheckCircle \ Punto 4:} descripción breve.
-    \end{itemize}
-  \end{columns}
+\begin{frame}{\faExclamationTriangle\ Situación problemática}
+\begin{itemize}\item La arquitectura de red es predominantemente plana.\item Equipos técnicos y administrativos comparten el mismo canal.\item No existen separación lógica formal, ACL estrictas, cortafuegos dedicados, NAT por zonas ni filtrado en capa de aplicación.\item Aumentan los riesgos de malware, fugas, accesos no autorizados e interrupciones.\end{itemize}
 \end{frame}
-
-% =========================================================
-% Lámina 4: Desarrollo
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faMicrochip \ Desarrollo del Tema}
-  \begin{block}{Idea operativa}
-    Explica aquí cómo funciona el tema, qué componentes intervienen y por qué es importante.
-  \end{block}
-
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{exampleblock}{Subtema A}
-      \begin{itemize}
-        \item Característica principal.
-        \item Ventaja o aplicación.
-        \item Ejemplo breve.
-      \end{itemize}
-    \end{exampleblock}
-    \column{0.48\textwidth}
-    \begin{exampleblock}{Subtema B}
-      \begin{itemize}
-        \item Característica principal.
-        \item Ventaja o aplicación.
-        \item Ejemplo breve.
-      \end{itemize}
-    \end{exampleblock}
-  \end{columns}
+\begin{frame}{\faQuestionCircle\ Pregunta de investigación}
+\begin{block}{Problema}¿De qué manera el diseño de un modelo de seguridad perimetral y segmentación lógica contribuirá a mitigar los riesgos informáticos y garantizar la confidencialidad, integridad y disponibilidad de la red durante 2026?\end{block}
 \end{frame}
-
-% =========================================================
-% Lámina 5: Casos de uso
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faBriefcase \ Aplicaciones y Casos de Uso}
-  \begin{block}{Dónde se aplica}
-    \begin{itemize}
-      \item \textbf{\faBriefcase \ Caso 1:} descripción del caso de uso.
-      \item \textbf{\faCogs \ Caso 2:} descripción del caso de uso.
-      \item \textbf{\faUsers \ Caso 3:} descripción del caso de uso.
-      \item \textbf{\faChartLine \ Caso 4:} descripción del caso de uso.
-    \end{itemize}
-  \end{block}
-
-  \begin{center}
-    \textcolor{unabblue}{\Large \faLightbulb \quad \faProjectDiagram \quad \faClipboardCheck \quad \faChartBar}
-  \end{center}
+\begin{frame}{\faBullseye\ Objetivo general}
+Diseñar un modelo de seguridad perimetral y segmentación lógica para la red de datos de la sede, con el fin de mitigar riesgos y preservar la confidencialidad, integridad y disponibilidad del tráfico institucional.
 \end{frame}
-
-% =========================================================
-% Lámina 6: Comparativa
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faBalanceScale \ Análisis Comparativo}
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{block}{\faArrowLeft \ Enfoque A}
-      \begin{itemize}
-        \item \textbf{Criterio 1:} descripción.
-        \item \textbf{Criterio 2:} descripción.
-        \item \textbf{Criterio 3:} descripción.
-        \item \textbf{Criterio 4:} descripción.
-      \end{itemize}
-    \end{block}
-
-    \column{0.48\textwidth}
-    \begin{block}{\faArrowRight \ Enfoque B}
-      \begin{itemize}
-        \item \textbf{Criterio 1:} descripción.
-        \item \textbf{Criterio 2:} descripción.
-        \item \textbf{Criterio 3:} descripción.
-        \item \textbf{Criterio 4:} descripción.
-      \end{itemize}
-    \end{block}
-  \end{columns}
-
-  \vspace{0.35cm}
-  \begin{center}
-    \begin{beamercolorbox}[rounded=true, wd=0.8\textwidth, sep=0.12cm, center]{block body}
-      \footnotesize \textcolor{unabblue}{\faLightbulb \ \textbf{Punto clave:}} escribe aquí la conclusión de la comparativa.
-    \end{beamercolorbox}
-  \end{center}
+\begin{frame}{\faTasks\ Objetivos específicos}
+\begin{itemize}\item Diagnosticar infraestructura, estaciones y flujos de tráfico.\item Formular matriz de riesgos y Políticas de Seguridad Informática.\item Estructurar en GNS3 VLAN, ACL y cortafuegos Linux.\item Configurar proxy y certificados HTTPS/TLS en laboratorio simulado.\end{itemize}
 \end{frame}
-
-% =========================================================
-% Lámina 7: Conclusiones
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faCheckCircle \ Conclusiones Estratégicas}
-  \begin{block}{Idea final}
-    Resume aquí el mensaje más importante de la exposición.
-  \end{block}
-
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{exampleblock}{\faBullhorn \ Conclusión 1}
-      \footnotesize
-      \begin{itemize}
-        \item Argumento de cierre.
-        \item Beneficio principal.
-        \item Aplicación práctica.
-      \end{itemize}
-    \end{exampleblock}
-
-    \column{0.48\textwidth}
-    \begin{exampleblock}{\faTools \ Conclusión 2}
-      \footnotesize
-      \begin{itemize}
-        \item Argumento de cierre.
-        \item Beneficio principal.
-        \item Aplicación práctica.
-      \end{itemize}
-    \end{exampleblock}
-  \end{columns}
+\begin{frame}{\faLightbulb\ Justificación}
+La propuesta permitirá aislar dispositivos en diagnóstico, estaciones administrativas y servidores; auditar el tráfico; optimizar el ancho de banda y aplicar competencias de seguridad de redes, gestión de riesgos y simulación. También podrá servir como base documental para otras sedes regionales.
 \end{frame}
-
-% =========================================================
-% Lámina 8: Referencias
-% =========================================================
-\expositor{\Grupo}
-\begin{frame}{\faBook \ Referencias Bibliográficas}
-  \begin{block}{Fuentes consultadas}
-    \justifying
-    \footnotesize
-    Agrega aquí las fuentes consultadas para respaldar la exposición.
-  \end{block}
-
-  \vspace{0.25cm}
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{Autor u organización:} título de la fuente.
-      \item \textbf{Autor u organización:} título de la fuente.
-    \end{itemize}
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{Autor u organización:} título de la fuente.
-      \item \textbf{Autor u organización:} título de la fuente.
-    \end{itemize}
-  \end{columns}
+\expositor{Equipo}
+\begin{frame}{\faFlask\ Metodología propuesta}
+\begin{itemize}\item Enfoque cuantitativo.\item Diseño no experimental y transversal.\item Alcance descriptivo y de desarrollo tecnológico propositivo.\item Validación prevista mediante simulación de una arquitectura de red segura.\end{itemize}
 \end{frame}
-
-% =========================================================
-% Lámina 9: Cierre
-% =========================================================
+\expositor{Equipo}
+\begin{frame}{\faClipboardCheck\ Estado del borrador}
+El borrador contiene el problema, la justificación, los objetivos y la metodología inicial. Aún no contiene marco teórico desarrollado, mediciones, resultados, cronograma, presupuesto, anexos ni referencias bibliográficas.
+\end{frame}
 \cierreinstitucional[Muchas gracias por su atención]
-
 \end{document}
