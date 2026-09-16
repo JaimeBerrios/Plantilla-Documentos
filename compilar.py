@@ -134,7 +134,7 @@ def main():
     parser.add_argument("--sin-red", action="store_true", help="Usar solo el motor y los paquetes ya descargados.")
     args = parser.parse_args()
     data = read_data()
-    for resource in ("assets/img/logo-unab.png", "assets/img/logo-facultad.png", "assets/fonts/firma.otf"):
+    for resource in ("assets/img/isotipo-azul.png", "assets/img/logo-facultad.png", "assets/fonts/firma.otf"):
         if not (ROOT / resource).is_file():
             raise FileNotFoundError(f"Falta un recurso institucional: {resource}")
     build = ROOT / ".build"

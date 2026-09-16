@@ -28,10 +28,12 @@
     \IfFileExists{assets/img/reflexion.png}{%
       \includegraphics[width=0.75\linewidth, height=0.75\textheight, keepaspectratio]{assets/img/reflexion.png}
     }{%
-      \begin{beamercolorbox}[rounded=true,wd=0.78\textwidth,sep=0.45cm,center]{block body}
-        \Large\textcolor{unabblue}{\faLightbulb}\\[0.25cm]
-        \large ¿Qué problema queremos resolver y por qué importa?
-      \end{beamercolorbox}
+      \makebox[\textwidth][c]{%
+        \begin{beamercolorbox}[rounded=true,wd=0.78\textwidth,sep=0.45cm,center]{block body}
+          \Large\textcolor{unabblue}{\faLightbulb}\\[0.25cm]
+          \large ¿Qué problema queremos resolver y por qué importa?
+        \end{beamercolorbox}%
+      }
     }
     \vfill
   \end{center}

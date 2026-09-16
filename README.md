@@ -20,11 +20,12 @@ personal al final del reporte.
    indicaciones y fuentes.
 4. Pídele a Codex:
 
-   > Lee AGENTS.md y datos.md. Prepara el reporte y la presentación para este
-   > trabajo, conserva la identidad de la universidad y la firma al final del
-   > reporte. Compila los dos PDF, revisa que no haya texto cortado y entrégamelos.
+   > Lee AGENTS.md y datos.md. Prepara el reporte y la presentación (PDF y web)
+   > para este trabajo, conserva la identidad de la universidad y la firma al final
+   > del reporte. Compila los dos PDF, revisa que no haya texto cortado y entrégamelos.
 
-5. Abre **[presentación](pdf/presentacion.pdf)** y **[reporte](pdf/reporte.pdf)**.
+5. Abre **[presentación PDF](pdf/presentacion.pdf)**, **[reporte PDF](pdf/reporte.pdf)** 
+   y **[presentación web](reveal.js/index.html)**.
    Los archivos iniciales son ejemplos editables, no una investigación terminada.
 6. Guarda las fuentes y los PDF en la misma rama. Sube esa rama a GitHub cuando
    quieras respaldarla; la compilación funciona localmente.
@@ -83,6 +84,7 @@ plantilla/                       Dos estilos institucionales reutilizables
 assets/img/                      Logo de la universidad y de la facultad
 assets/fonts/firma.otf           Fuente original de la firma
 pdf/                             Presentación y reporte listos para abrir
+reveal.js/                       Plantilla de presentación web interactiva
 .vscode/tasks.json               Compilación desde VS Code
 ```
 
