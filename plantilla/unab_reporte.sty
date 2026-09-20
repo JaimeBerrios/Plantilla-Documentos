@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{plantilla/unab_reporte}[2026/09/07 Plantilla institucional de reportes]
-\RequirePackage[margin=2.5cm,includefoot,headheight=16pt]{geometry}
+\RequirePackage[margin=2.5cm,includefoot,headheight=40pt]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 \RequirePackage{fontspec}
@@ -28,10 +28,11 @@
 \titleformat{\subsection}{\large\sffamily\bfseries\color{unabblue}}{\thesubsection}{0.6em}{}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\sffamily\color{unabblue}\TituloCorto}
-\fancyfoot[C]{\small\sffamily\color{unabblue}Reporte académico\hfill\thepage}
+\fancyhead[L]{\includegraphics[height=1.2cm,keepaspectratio]{assets/img/isotipo-azul.png}}
+\fancyhead[R]{\includegraphics[height=1.2cm,keepaspectratio]{assets/img/logo-facultad.png}}
+\fancyfoot[C]{\small\sffamily\color{unabblue}Proyecto de investigación\hfill\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\logoreporte}[2]{%
   \includegraphics[width=#2,height=2cm,keepaspectratio]{#1}%
 }
@@ -39,26 +40,22 @@
   \hypersetup{pageanchor=false}
   \begin{titlepage}
   \singlespacing
-  \logoreporte{assets/img/isotipo-azul.png}{2.7cm}\hfill
-  \logoreporte{assets/img/logo-facultad.png}{2.7cm}
   \begin{center}
-    \vspace{1cm}
-    {\large\sffamily\bfseries\color{unabblue}\Institucion\par}
-    \vspace{0.25cm}
+    \includegraphics[height=3.2cm,keepaspectratio]{assets/img/logo-vertical-completo.png}\par
+    \vspace{0.4cm}
     {\sffamily\Facultad\par}
     \vfill
-    {\small\sffamily\color{unabblue}REPORTE ACADÉMICO\par}
-    \vspace{0.5cm}
-    {\fontsize{26}{32}\selectfont\sffamily\bfseries\color{unabblue}\TituloTrabajo\par}
-    \vspace{0.4cm}
+    {\small\sffamily\color{unabblue}PROYECTO DE INVESTIGACIÓN\par}
+    \vspace{0.25cm}
+    {\fontsize{16}{20}\selectfont\sffamily\bfseries\color{unabblue}\TituloTrabajo\par}
+    \vspace{0.3cm}
     {\large\SubtituloTrabajo\par}
-    \vspace{0.6cm}
+    \vspace{0.4cm}
     {\color{unabblue}\rule{0.35\textwidth}{1.2pt}\par}
     \vfill
   \end{center}
   \textbf{Asignatura:} \Asignatura\par
   \textbf{Docente:} \Docente\par
-  \textbf{Grupo:} \Grupo\par
   \vspace{0.4cm}
   \textbf{Integrantes}\par
   \begin{tabularx}{\textwidth}{@{}Xl@{}}
@@ -71,8 +68,6 @@
   \vfill
   \begin{center}
     \small\LugarFecha\par
-    \vspace{0.6cm}
-    \includegraphics[height=2.5cm]{assets/img/acreditacion.png}
   \end{center}
   \end{titlepage}
   \hypersetup{pageanchor=true}

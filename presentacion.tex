@@ -1,211 +1,113 @@
-\documentclass[10pt, aspectratio=169]{beamer}
-
+\documentclass[10pt,aspectratio=169]{beamer}
 \usepackage{fontspec}
 \usepackage[spanish,es-noshorthands]{babel}
 \usepackage{plantilla/unab_presentacion}
-
-% Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
+% Datos compartidos generados desde datos.md.
 \input{.build/datos.tex}
-\title{\TituloTrabajo}
+\title[\TituloCorto]{\TituloTrabajo}
 \author{\Grupo}
 \hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\Grupo}}
 \setdatosfooter{\TituloCorto}{\Asignatura}
-
 \begin{document}
-
-% =========================================================
-% Lámina 1: Portada
-% =========================================================
 \portadainstitucional
-
-% =========================================================
-% Lámina 2: Reflexión
-% =========================================================
 \expositor{Equipo}
-\begin{frame}{\faLightbulb \ Reflexión Inicial}
-  \begin{center}
-    \vfill
-    \IfFileExists{assets/img/reflexion.png}{%
-      \includegraphics[width=0.75\linewidth, height=0.75\textheight, keepaspectratio]{assets/img/reflexion.png}
-    }{%
-      \makebox[\textwidth][c]{%
-        \begin{beamercolorbox}[rounded=true,wd=0.78\textwidth,sep=0.45cm,center]{block body}
-          \Large\textcolor{unabblue}{\faLightbulb}\\[0.25cm]
-          \large ¿Qué problema queremos resolver y por qué importa?
-        \end{beamercolorbox}%
-      }
-    }
-    \vfill
-  \end{center}
+
+\begin{frame}{Introducción}
+\begin{block}{Calidad técnica en la automatización con IA}
+\begin{itemize}
+\item \textbf{Pregunta inicial:} ¿Cómo comprobar que el código generado cumple las reglas del proceso empresarial?
+\item \textbf{Lugar y período:} San Miguel, El Salvador; julio, agosto, septiembre, octubre y noviembre de 2026.
+\end{itemize}
+\end{block}
 \end{frame}
 
-% =========================================================
-% Lámina 3: Conceptos
-% =========================================================
-\expositor{Equipo}
-\begin{frame}{\faInfoCircle \ Conceptos Fundamentales}
-  \begin{block}{Concepto principal}
-    Escribe aquí la definición central del tema. Mantén una idea clara, breve y orientada a la exposición oral.
-  \end{block}
-
-  \begin{columns}[onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{\faCheckCircle \ Punto 1:} descripción breve.
-      \item \textbf{\faCheckCircle \ Punto 2:} descripción breve.
-    \end{itemize}
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{\faCheckCircle \ Punto 3:} descripción breve.
-      \item \textbf{\faCheckCircle \ Punto 4:} descripción breve.
-    \end{itemize}
-  \end{columns}
+\begin{frame}{Situación problemática}
+\begin{block}{Una necesidad por investigar}
+\begin{itemize}
+\item \textbf{El problema en San Miguel:} Adopción rápida de herramientas de IA sin estándares, generando desconexión entre requisitos y código.
+\item \textbf{Riesgo:} Instrucciones a la IA y pruebas no registradas dificultan justificar la calidad del producto.
+\item \textbf{Fundamento:} El NIST identifica riesgos de IA generativa y la necesidad de gestión de riesgos (Autio et al., 2024).
+\end{itemize}
+\end{block}
+\vfill{\scriptsize Fuente: Autio et al. (2024), NIST AI 600-1.\par}
 \end{frame}
 
-% =========================================================
-% Lámina 4: Desarrollo
-% =========================================================
-\expositor{Equipo}
-\begin{frame}{\faMicrochip \ Desarrollo del Tema}
-  \begin{block}{Idea operativa}
-    Explica aquí cómo funciona el tema, qué componentes intervienen y por qué es importante.
-  \end{block}
-
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{exampleblock}{Subtema A}
-      \begin{itemize}
-        \item Característica principal.
-        \item Ventaja o aplicación.
-        \item Ejemplo breve.
-      \end{itemize}
-    \end{exampleblock}
-    \column{0.48\textwidth}
-    \begin{exampleblock}{Subtema B}
-      \begin{itemize}
-        \item Característica principal.
-        \item Ventaja o aplicación.
-        \item Ejemplo breve.
-      \end{itemize}
-    \end{exampleblock}
-  \end{columns}
+\begin{frame}{Enunciado del problema}
+\begin{block}{Pregunta de investigación}
+\begin{itemize}
+\item ¿Cómo diseñar un marco SDD que contribuya al aseguramiento de la calidad técnica en la automatización de procesos empresariales con IA en San Miguel, El Salvador, durante el período de julio a noviembre de 2026?
+\item \textbf{Relación con el desarrollo ágil:} Se estudiará cómo articular las especificaciones con las prácticas de desarrollo utilizadas.
+\end{itemize}
+\end{block}
 \end{frame}
 
-% =========================================================
-% Lámina 5: Casos de uso
-% =========================================================
-\expositor{Equipo}
-\begin{frame}{\faBriefcase \ Aplicaciones y Casos de Uso}
-  \begin{block}{Dónde se aplica}
-    \begin{itemize}
-      \item \textbf{\faBriefcase \ Caso 1:} descripción del caso de uso.
-      \item \textbf{\faCogs \ Caso 2:} descripción del caso de uso.
-      \item \textbf{\faUsers \ Caso 3:} descripción del caso de uso.
-      \item \textbf{\faChartLine \ Caso 4:} descripción del caso de uso.
-    \end{itemize}
-  \end{block}
-
-  \begin{center}
-    \textcolor{unabblue}{\Large \faLightbulb \quad \faProjectDiagram \quad \faClipboardCheck \quad \faChartBar}
-  \end{center}
+\begin{frame}{Justificación}
+\begin{block}{Aporte previsto del proyecto}
+\begin{itemize}
+\item \textbf{Implicación Práctica:} Evitar errores costosos y "código espagueti", al facilitar la revisión de código generado por IA con base documental.
+\item \textbf{Utilidad Metodológica:} Crear un nuevo instrumento procedimental (SDD adaptado) auditable y seguro para equipos de desarrollo.
+\end{itemize}
+\end{block}
 \end{frame}
 
-% =========================================================
-% Lámina 6: Comparativa
-% =========================================================
-\expositor{Equipo}
-\begin{frame}{\faBalanceScale \ Análisis Comparativo}
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{block}{\faArrowLeft \ Enfoque A}
-      \begin{itemize}
-        \item \textbf{Criterio 1:} descripción.
-        \item \textbf{Criterio 2:} descripción.
-        \item \textbf{Criterio 3:} descripción.
-        \item \textbf{Criterio 4:} descripción.
-      \end{itemize}
-    \end{block}
-
-    \column{0.48\textwidth}
-    \begin{block}{\faArrowRight \ Enfoque B}
-      \begin{itemize}
-        \item \textbf{Criterio 1:} descripción.
-        \item \textbf{Criterio 2:} descripción.
-        \item \textbf{Criterio 3:} descripción.
-        \item \textbf{Criterio 4:} descripción.
-      \end{itemize}
-    \end{block}
-  \end{columns}
-
-  \vspace{0.35cm}
-  \begin{center}
-    \begin{beamercolorbox}[rounded=true, wd=0.8\textwidth, sep=0.12cm, center]{block body}
-      \footnotesize \textcolor{unabblue}{\faLightbulb \ \textbf{Punto clave:}} escribe aquí la conclusión de la comparativa.
-    \end{beamercolorbox}
-  \end{center}
+\begin{frame}{Objetivos de la investigación}
+\begin{block}{Objetivo general}
+\begin{itemize}
+\item Diseñar un marco SDD para orientar el aseguramiento de la calidad técnica en la automatización de procesos empresariales con IA en San Miguel, El Salvador, durante julio a noviembre de 2026.
+\end{itemize}
+\end{block}
+\begin{block}{Metas específicas (secuencia de conocimiento)}
+\begin{itemize}
+\item \textbf{1. Diagnosticar:} Estado actual y riesgos de ambigüedad.
+\item \textbf{2. Determinar:} Componentes metodológicos útiles del SDD.
+\item \textbf{3. Estructurar:} Fases, plantillas y artefactos de validación.
+\item \textbf{4. Validar:} Evaluar el marco propuesto mediante expertos o caso práctico.
+\end{itemize}
+\end{block}
 \end{frame}
 
-% =========================================================
-% Lámina 7: Conclusiones
-% =========================================================
-\expositor{Equipo}
-\begin{frame}{\faCheckCircle \ Conclusiones Estratégicas}
-  \begin{block}{Idea final}
-    Resume aquí el mensaje más importante de la exposición.
-  \end{block}
-
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{exampleblock}{\faBullhorn \ Conclusión 1}
-      \footnotesize
-      \begin{itemize}
-        \item Argumento de cierre.
-        \item Beneficio principal.
-        \item Aplicación práctica.
-      \end{itemize}
-    \end{exampleblock}
-
-    \column{0.48\textwidth}
-    \begin{exampleblock}{\faTools \ Conclusión 2}
-      \footnotesize
-      \begin{itemize}
-        \item Argumento de cierre.
-        \item Beneficio principal.
-        \item Aplicación práctica.
-      \end{itemize}
-    \end{exampleblock}
-  \end{columns}
+\begin{frame}{Marco teórico: esquema pendiente}
+\begin{block}{Conceptos por desarrollar}
+\begin{itemize}
+\item Limitaciones de las prácticas ágiles al trabajar con IA.
+\item Generación de código con IA y ambigüedad de requisitos.
+\item Fundamentos del SDD y fases Specify, Plan, Tasks e Implement.
+\item Agentes de IA y modelos de lenguaje en la automatización.
+\end{itemize}
+\end{block}
 \end{frame}
 
-% =========================================================
-% Lámina 8: Referencias
-% =========================================================
-\expositor{\Grupo}
-\begin{frame}{\faBook \ Referencias Bibliográficas}
-  \begin{block}{Fuentes consultadas}
-    \justifying
-    \footnotesize
-    Agrega aquí las fuentes consultadas para respaldar la exposición.
-  \end{block}
-
-  \vspace{0.25cm}
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{Autor u organización:} título de la fuente.
-      \item \textbf{Autor u organización:} título de la fuente.
-    \end{itemize}
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{Autor u organización:} título de la fuente.
-      \item \textbf{Autor u organización:} título de la fuente.
-    \end{itemize}
-  \end{columns}
+\begin{frame}{Metodología (Rutas de Sampieri)}
+\begin{block}{Parámetros de la investigación}
+\begin{itemize}
+\item \textbf{Ruta:} Mixta (cualitativa para procesos, cuantitativa para evaluar código).
+\item \textbf{Alcance:} Descriptivo y correlacional/explicativo.
+\item \textbf{Diseño:} Investigación-acción / mixto concurrente o secuencial.
+\item \textbf{Muestra:} Equipos de desarrollo o proyectos en San Miguel (no probabilístico).
+\item \textbf{Técnicas:} Revisión documental, entrevistas y rúbricas de evaluación de código.
+\end{itemize}
+\end{block}
 \end{frame}
 
-% =========================================================
-% Lámina 9: Cierre
-% =========================================================
-\cierreinstitucional[Muchas gracias por su atención]
 
-\end{document}
+
+
+
+
+
+
+
+\begin{frame}{Referencias: SDD y riesgos de IA}
+\begin{itemize}
+\item \href{https://github.com/github/spec-kit/blob/main/spec-driven.md}{GitHub (s. f.). Spec-Driven Development.}
+\item \href{https://doi.org/10.6028/NIST.AI.600-1}{Autio et al. (2024). NIST AI 600-1.}
+\end{itemize}\medskip Consulta: 19 de septiembre de 2026. Referencias completas en el reporte.
+\end{frame}
+
+\begin{frame}{Referencias: enfoques de desarrollo}
+\begin{itemize}
+\item \href{https://agilemanifesto.org/iso/es/principles.html}{Beck et al. (2001). Principios del Manifiesto Ágil.}
+\item \href{https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Spanish-Latin-South-American.pdf}{Schwaber y Sutherland (2020). La Guía de Scrum.}
+\end{itemize}\medskip Consulta: 19 de septiembre de 2026. Referencias completas en el reporte.
+\end{frame}
+\begin{frame}{Muchas gracias}\centering\Large Espacio para dudas y preguntas\par\bigskip{\normalsize\Facultad\par\Institucion}\end{frame}\end{document}

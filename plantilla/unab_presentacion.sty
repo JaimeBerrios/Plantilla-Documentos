@@ -79,54 +79,42 @@
   }%
 }
 
+% Se separan tema y equipo para conservar la legibilidad de títulos largos.
 \newcommand{\portadainstitucional}{%
   {%
   \setbeamertemplate{footline}{}
   \begin{frame}[plain]
-    \begin{tikzpicture}[remember picture,overlay]
-      \node[anchor=north west,xshift=0.55cm,yshift=-0.35cm] at (current page.north west)
-      {\includegraphics[width=1.9cm,height=1.2cm,keepaspectratio]{assets/img/isotipo-azul.png}};
-      \node[anchor=north east,xshift=-0.55cm,yshift=-0.35cm] at (current page.north east)
-      {\includegraphics[width=1.9cm,height=1.2cm,keepaspectratio]{assets/img/logo-facultad.png}};
-      \fill[unabblue] (current page.south west) rectangle ([yshift=0.12cm]current page.south east);
-    \end{tikzpicture}
-
-    \vspace*{-0.6cm}
-
     \begin{center}
-      {\color{unabblue!65}\small \IconosPortada} \\[0.18cm]
-      {\color{unabblue}\bfseries\fontsize{22pt}{25pt}\selectfont \TituloTrabajo \par}
+      \includegraphics[height=1.3cm,keepaspectratio]{assets/img/logo-vertical-completo.png}\par
       \vspace{0.15cm}
-      {\color{unabblue}\fontsize{10pt}{12pt}\selectfont \SubtituloTrabajo \par}
-      \vspace{0.1cm}
-      {\color{unabblue}\rule{0.5\textwidth}{0.4pt}}
-    \end{center}
-
-    \vspace{0.1cm}
-
-    \begin{center}
-    \begin{minipage}{0.9\textwidth}
-    \begin{beamercolorbox}[rounded=true,wd=\textwidth,sep=0.2cm,left]{block body}
-      {\footnotesize\textcolor{unabblue}{\textbf{\faChalkboardTeacher \ Asignatura:}} \Asignatura} \\[0.12cm]
-      {\footnotesize\textcolor{unabblue}{\textbf{\faUserTie \ Docente:}} \Docente} \\[0.12cm]
-      {\footnotesize\textcolor{unabblue}{\textbf{\faUsers \ Equipo expositor:}} \Grupo} \\
-      \vspace{0.1cm}
-      {\fontsize{8pt}{10pt}\selectfont
-      \begin{tabularx}{\dimexpr\linewidth-0.4cm\relax}{@{}Xl@{}}
-        \Integrantes
-      \end{tabularx}}
-    \end{beamercolorbox}
-    \end{minipage}
-    \end{center}
-
-    \vspace{0.3cm}
-
-    \begin{center}
-      {\scriptsize \textcolor{unabblue}{\faIcon{map-marker-alt}} \LugarFecha}\\[0.15cm]
-      \includegraphics[height=1.6cm,keepaspectratio]{assets/img/acreditacion.png}
+      {\small\color{unabblue}PROYECTO DE INVESTIGACIÓN\par}
+      \vspace{0.05cm}
+      {\color{unabblue}\bfseries\fontsize{20pt}{23pt}\selectfont\TituloTrabajo\par}
+      \vspace{0.25cm}
+      {\color{unabblue}\SubtituloTrabajo\par}
+      \vspace{0.15cm}
+      {\scriptsize\LugarFecha\par}
     \end{center}
   \end{frame}
   }%
+  \expositor{Equipo}
+  \begin{frame}{Datos académicos e integrantes}
+    \textbf{Asignatura:} \Asignatura\par
+    \textbf{Docente:} \Docente\par
+    \textbf{Grupo:} \Grupo\par
+    \medskip
+    \begin{tabularx}{\textwidth}{@{}Xl@{}}
+      \toprule
+      \textbf{Nombre} & \textbf{Código} \\
+      \midrule
+      \Integrantes
+      \bottomrule
+    \end{tabularx}
+    \medskip
+    {\small Distribución de expositores pendiente de confirmar.\par}
+    \vfill
+    \centering\includegraphics[height=1.1cm,keepaspectratio]{assets/img/acreditacion.png}
+  \end{frame}
 }
 
 \newcommand{\cierreinstitucional}[1][Muchas gracias por su atención]{%
@@ -137,7 +125,7 @@
       {\color{unabblue}\Huge \faHandshake} \\
       \vspace{0.5cm}
       {\color{unabblue}\huge \bfseries #1 \par}
-      \vspace{0.3cm}
+      \vspace{0.15cm}
       {\color{unabblue}\large Espacio para dudas y preguntas \par}
       \vfill
       {\scriptsize \textcolor{unabblue!80}{\Facultad \textperiodcentered\ \Institucion}}

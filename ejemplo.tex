@@ -1,0 +1,100 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fontspec}
+\usepackage[spanish,es-noshorthands,es-tabla,es-lcroman]{babel}
+\usepackage{plantilla/unab_reporte}
+
+% Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
+\input{.build/datos.tex}
+\hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\Grupo}}
+
+\begin{document}
+\portadareporte
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\section{Título de la investigación}
+\TituloTrabajo
+
+\section{Introducción}
+
+\section{Planteamiento del problema}
+\subsection{Situación problemática}
+Las sedes de soporte técnico e infraestructura digital del sector educativo
+manejan volúmenes significativos de tráfico y equipos con diferentes niveles de
+confianza. En la sede interactúan estaciones del personal de planta con laptops
+y tabletas estudiantiles que ingresan para mantenimiento. La arquitectura actual
+es predominantemente plana y no existe una separación lógica formal entre los
+dominios técnico y administrativo. Equipos en revisión, potencialmente
+desactualizados o infectados con malware, comparten el canal con sistemas que
+procesan registros institucionales.
+
+La red carece de ACL estrictas, inspección de estado mediante cortafuegos
+dedicados, NAT estructurado por zonas y filtrado en capa de aplicación. Tampoco
+se dispone de políticas formales para el uso seguro de puertos y servicios. Esta
+carencia eleva la probabilidad de denegación de servicio interna, fugas de
+información, accesos no autorizados e interrupciones en la entrega de equipos.
+
+\subsection{Enunciado del problema}
+¿De qué manera el diseño de un modelo de seguridad perimetral y segmentación
+lógica contribuirá a mitigar los riesgos informáticos y garantizar la
+confidencialidad, integridad y disponibilidad en la red de datos de la Sede de
+Enlaces con la Educación en Santa Rosa de Lima durante 2026?
+
+\section{Justificación}
+La investigación responde a la necesidad de dotar a la sede de un esquema de
+seguridad formal, preventivo y técnicamente viable. La propuesta aborda las
+vulnerabilidades estructurales mediante VLAN para aislar dispositivos en
+diagnóstico, estaciones administrativas y servidores locales; reglas de
+filtrado perimetral en Linux; y servicios proxy para auditar el tráfico y
+optimizar el ancho de banda. En el ámbito académico y profesional, permite
+aplicar competencias de seguridad de redes, gestión de riesgos, simulación en
+GNS3 y normativa informática salvadoreña. El resultado esperado es una base
+documental replicable en otras sedes regionales.
+
+\section{Objetivos de la investigación}
+\subsection{Objetivo general}
+Diseñar un modelo de seguridad perimetral y segmentación lógica para la red de
+datos de la Sede de Enlaces con la Educación en el distrito de Santa Rosa de
+Lima, con el fin de mitigar riesgos informáticos y preservar la
+confidencialidad, integridad y disponibilidad del tráfico institucional durante
+2026.
+\subsection{Objetivos específicos}
+\begin{itemize}
+  \item Diagnosticar las condiciones técnicas actuales de la infraestructura,
+  estaciones y flujos de tráfico, identificando vulnerabilidades y amenazas.
+  \item Formular una matriz de análisis y evaluación de riesgos y Políticas de
+  Seguridad Informática alineadas al marco regulatorio y operativo institucional.
+  \item Estructurar en GNS3 una arquitectura perimetral con VLAN, ACL y
+  cortafuegos Linux para aislar zonas administrativas, técnicas y de diagnóstico.
+  \item Configurar controles de capa de aplicación mediante proxy y certificados
+  digitales HTTPS/TLS en un laboratorio simulado.
+\end{itemize}
+
+\section{Marco teórico}
+
+\section{Metodología}
+\subsection{Tipo y diseño de investigación}
+El estudio tendrá enfoque cuantitativo, pues se basará en la medición técnica de
+parámetros de red y seguridad. Su diseño será no experimental y transversal: las
+variables no se manipularán en un entorno físico, sino que se observarán y
+estructurarán en un momento único. El alcance será descriptivo y de desarrollo
+tecnológico propositivo, orientado a detallar la infraestructura actual y
+proponer una arquitectura segura mediante simulación.
+
+\section{Análisis e interpretación de los resultados}
+
+\section{Conclusiones}
+
+\section{Recomendaciones}
+
+\section{Referencias bibliográficas}
+
+\section{Cronograma}
+
+\section{Presupuesto}
+
+\section{Anexos}
+
+\end{document}

@@ -1,8 +1,36 @@
 # Plantilla académica · UNAB
 
-Una base para preparar **presentaciones y reportes con Codex**, conservando los
-logos de la Universidad Dr. Andrés Bello, el azul institucional y la firma
-personal al final del reporte.
+Una base para preparar **proyectos de investigación con Codex**, conservando los
+logos de la Universidad Dr. Andrés Bello y la estructura académica formal.
+
+## Variables de la Investigación
+
+A partir de la estructuración del proyecto *"Diseño de un marco de trabajo basado en Spec-Driven Development (SDD) para el aseguramiento de la calidad en la automatización de procesos empresariales con IA"*, se han definido las siguientes variables:
+
+*   **Variable Independiente (Causa):** El marco de trabajo basado en *Spec-Driven Development* (uso de especificaciones formales innegociables y reglas estrictas).
+*   **Variable Dependiente (Efecto):** El aseguramiento de la calidad técnica (reducción de deuda técnica, mitigación de alucinaciones y aumento del determinismo en la generación de código empresarial).
+
+## Guion sugerido para presentar a la Licenciada
+
+Si vas a leer o exponer el avance, aquí tienes un guion mucho más natural y conversacional, centrado en "vender" la idea principal sin aburrir leyendo la teoría. 
+
+> **1. Saludo e introducción (Portada)**
+> "Buenos días, Licenciada y compañeros. Como equipo, queremos presentarles la idea central de nuestro proyecto de investigación, que se titula: *Diseño de un marco de trabajo basado en Spec-Driven Development (SDD) para el aseguramiento de la calidad en la automatización de procesos empresariales con IA*."
+> 
+> **2. El Problema y la Justificación (De forma breve)**
+> "El proyecto nace de un problema muy actual: hoy en día, las empresas están usando Inteligencia Artificial para escribir código y automatizar procesos, pero lo intentan hacer usando metodologías ágiles tradicionales como Scrum. El problema es que, al darle a la IA historias de usuario ambiguas, la IA empieza a tomar sus propias decisiones, alucina y genera código inestable. A esto se le llama *Vibe Coding*, y está creando una inmensa deuda técnica. Nuestro enfoque justifica que el desarrollador ya no debe ser un 'digitador', sino un arquitecto de software."
+> 
+> **3. La Solución (Nuestros objetivos)**
+> "Para resolver esto, nuestro objetivo principal es proponer un marco de trabajo estructurado en *Spec-Driven Development*. Es decir, establecer reglas innegociables y especificaciones estrictas antes de que la IA genere siquiera una línea de código."
+> 
+> **4. Presentación de las Variables**
+> *(Nota: Este es el momento ideal para mencionar las variables, ya que acabas de explicar la causa y el efecto de tu investigación).*
+> "A partir de esto, tenemos muy claras nuestras variables de estudio:
+> Nuestra **variable independiente**, es decir la causa o herramienta, es la *implementación de este marco de trabajo SDD*. 
+> Por otro lado, nuestra **variable dependiente**, que es el impacto que buscamos, es *el aseguramiento de la calidad técnica*, reduciendo las alucinaciones y garantizando que el código final sea totalmente seguro para las empresas."
+> 
+> **5. Cierre**
+> "Actualmente ya estructuramos el planteamiento, la justificación y los objetivos bajo esta premisa. Estaríamos listos para recibir sus observaciones y arrancar con el marco teórico y la metodología."
 
 ## Tu flujo de trabajo
 
@@ -21,8 +49,8 @@ personal al final del reporte.
 4. Pídele a Codex:
 
    > Lee AGENTS.md y datos.md. Prepara el reporte y la presentación (PDF y web)
-   > para este trabajo, conserva la identidad de la universidad y la firma al final
-   > del reporte. Compila los dos PDF, revisa que no haya texto cortado y entrégamelos.
+   > para este trabajo, conserva la identidad de la universidad. Compila los 
+   > dos PDF, revisa que no haya texto cortado y entrégamelos.
 
 5. Abre **[presentación PDF](pdf/presentacion.pdf)**, **[reporte PDF](pdf/reporte.pdf)** 
    y **[presentación web](reveal.js/index.html)**.
@@ -90,7 +118,6 @@ reveal.js/                       Plantilla de presentación web interactiva
 
 Edita normalmente `datos.md` y deja que Codex trabaje en los dos `.tex`. Puedes
 agregar imágenes de apoyo en `assets/img/`. Los dos logos siempre se conservan.
-La firma toma el texto del campo `Firma` y solo aparece al final del reporte.
 
 `.build/` contiene datos generados y registros; está excluida de Git. Los PDF sí
 se versionan, para que cada rama conserve sus entregables. No se necesita HTML,

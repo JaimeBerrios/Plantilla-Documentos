@@ -1,126 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Plantilla UNAB - Reveal.js</title>
 
-	<link rel="stylesheet" href="dist/reset.css" />
-	<link rel="stylesheet" href="dist/reveal.css" />
-	<link rel="stylesheet" href="dist/theme/white.css" />
-	<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
-	
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-	<style>
-		:root {
-			--r-main-color: #333;
-			--r-heading-color: #173864; /* unabblue */
-			--r-link-color: #173864;
-			--r-link-color-hover: #2b5d9c;
-			--r-selection-background-color: #173864;
-		}
-		
-		.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-			color: #173864;
-			text-transform: none;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-weight: 600;
-		}
-		
-		.reveal .unab-blue { color: #173864; }
-		.reveal .slide-background-content { background-color: #ffffff; }
-
-		.portada .logos { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-		.portada .logos img { margin: 0; box-shadow: none; border: none; }
-		
-		.portada hr { border-top: 2px solid #173864; width: 50%; margin: 20px auto; }
-		
-		.portada .info { font-size: 0.6em; text-align: center; margin-top: 20px; }
-		.portada .info div { margin-bottom: 10px; }
-		.portada .footer-date { font-size: 0.5em; margin-top: 40px; color: #173864; }
-
-		.beamer-block { border: 2px solid #173864; border-radius: 8px; padding: 20px; margin: 20px auto; width: 80%; background-color: #f8f9fa; }
-		.beamer-block.center { text-align: center; }
-		
-		.column-container { display: flex; justify-content: space-between; width: 100%; }
-		.col { flex: 1; padding: 0 15px; }
-		
-		.reveal ul { list-style-type: none; }
-		.reveal ul li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #173864; display: inline-block; width: 1.5em; margin-left: -1.5em; }
-	</style>
-</head>
-<body>
-	<div class="reveal">
-		<div class="slides">
-			
-			<section class="portada">
-				<div class="logos">
-					<img src="../assets/img/isotipo-azul.png" alt="Logo UNAB" style="height: 80px;">
-					<img src="../assets/img/logo-facultad.png" alt="Logo Facultad" style="height: 80px;">
-				</div>
-				
-				<div style="font-size: 0.5em; color: #777;">
-					<i class="fas fa-book"></i> <i class="fas fa-laptop-code"></i> <i class="fas fa-chart-pie"></i>
-				</div>
-				
-				<h2 id="titulo" style="margin-top: 10px; margin-bottom: 0;">Título del proyecto</h2>
-				<h4 id="subtitulo" style="margin-top: 5px;">Una idea central para desarrollar</h4>
-				
-				<hr>
-				
-				<div class="info unab-blue">
-					<div><strong><i class="fas fa-chalkboard-teacher"></i> Asignatura:</strong> <span id="asignatura">Nombre de la asignatura</span></div>
-					<div><strong><i class="fas fa-user-tie"></i> Docente:</strong> <span id="docente">Nombre del docente</span></div>
-					<div><strong><i class="fas fa-users"></i> Equipo expositor:</strong> <span id="equipo">Grupo 01</span></div>
-				</div>
-				
-				<div class="footer-date">
-					<i class="fas fa-map-marker-alt"></i> <span id="lugar-fecha">San Miguel, fecha de entrega</span><br>
-					<img src="../assets/img/acreditacion.png" alt="Acreditación" style="height: 120px; margin-top: 15px; box-shadow: none; border: none;">
-				</div>
-			</section>
-
-			<section>
-				<h3><i class="fas fa-lightbulb"></i> Reflexión Inicial</h3>
-				<div class="beamer-block center" style="margin-top: 60px;">
-					<i class="fas fa-lightbulb fa-2x unab-blue"></i>
-					<p>¿Qué problema queremos resolver y por qué importa?</p>
-				</div>
-			</section>
-
-			<section>
-				<h3><i class="fas fa-info-circle"></i> Conceptos Fundamentales</h3>
-				<div class="beamer-block" style="background-color: #173864; color: white; border-radius: 8px 8px 0 0; padding: 10px; margin-bottom: 0; border-bottom: none;">
-					<strong>Concepto principal</strong>
-				</div>
-				<div class="beamer-block" style="margin-top: 0; border-radius: 0 0 8px 8px; padding-top: 10px;">
-					Escribe aquí la definición central del tema.
-				</div>
-			</section>
-
-			<section class="portada">
-				<div style="margin-top: 100px;">
-					<i class="fas fa-handshake fa-4x unab-blue"></i>
-					<h2 class="unab-blue" style="margin-top: 20px;">Muchas gracias por su atención</h2>
-					<p style="font-size: 0.7em;">Espacio para dudas y preguntas</p>
-					<p style="font-size: 0.5em; color: #555; margin-top: 40px;">Facultad de Tecnología e Innovación &middot; Universidad Dr. Andrés Bello</p>
-				</div>
-			</section>
-
-		</div>
-	</div>
-
-	<script src="dist/reveal.js"></script>
-	<script src="dist/plugin/notes.js"></script>
-	<script src="dist/plugin/markdown.js"></script>
-	<script src="dist/plugin/highlight.js"></script>
-	<script>
-		Reveal.initialize({
-			hash: true,
-			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-		});
-	</script>
-</body>
-</html>
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Marco SDD — julio a noviembre de 2026</title>
+<link href="dist/reset.css" rel="stylesheet"/><link href="dist/reveal.css" rel="stylesheet"/><link href="dist/theme/black.css" rel="stylesheet"/>
+<style>
+:root { --unab-blue: #173864; }
+.reveal { font-family: 'Segoe UI', sans-serif; font-size: 30px; }
+.reveal h1,.reveal h2,.reveal h3 { text-transform: none; font-family: inherit; }
+.reveal h1 { font-size: 1.3em; line-height: 1.3; }
+.reveal h2 { font-size: 1.5em; color: #99c8f8; }
+.reveal h3 { font-size: 1em; color: #cbdff5; }
+.reveal .slides section { box-sizing: border-box; padding: 15px 25px; }
+.reveal ul { display: block; margin: 25px 0 20px 1.2em; }
+.reveal li { margin: 16px 0; line-height: 1.35; }
+.reveal strong { color: #bddbfa; }
+.reveal table { font-size: .8em; width: 100%; }
+.reveal table td,.reveal table th { padding: .65em; }
+.reveal .note,.reveal .source { font-size: .62em; color: #c7d1df; line-height: 1.4; }
+.reveal .source { margin-top: 28px; }
+.reveal .subtitle { font-size: .75em; }
+.reveal .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .55em; }
+.logos-container { display: flex; justify-content: center; align-items: center; background: white; padding: 12px 22px; border-radius: 8px; margin-bottom: 20px; }
+.reveal .logos-container img { height: 80px; width: auto; margin: 0; }
+.reveal dl { display: grid; grid-template-columns: 190px 1fr; text-align: left; font-size: .85em; gap: 18px; margin: 25px 0; }
+.reveal dd { margin: 0; }
+.reveal a { color: #99c8f8; }
+.presentation-footer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--unab-blue); color: white; padding: 9px 70px 9px 20px; font: 14px 'Segoe UI',sans-serif; display: flex; justify-content: space-between; z-index: 5; }
+.reveal .controls { bottom: 45px; }
+</style></head><body><div class="reveal"><div class="slides">
+<section class="cover" data-expositor="Equipo"><div class="logos-container"><img alt="Universidad Dr. Andrés Bello" src="../assets/img/logo-vertical-completo.png"/></div><p class="eyebrow">Proyecto de investigación</p><h1>Diseño de un marco de trabajo basado en Spec-Driven Development (SDD) para el aseguramiento de la calidad en la automatización de procesos empresariales con inteligencia artificial en San Miguel, El Salvador, durante el período de julio a noviembre de 2026.</h1><p class="subtitle">Especificaciones y validación como apoyo al desarrollo ágil</p><p class="note">San Miguel, 16 de septiembre de 2026</p></section>
+<section data-expositor="Equipo"><h2>Datos académicos e integrantes</h2><p><strong>Asignatura:</strong> Programación IV<br/><strong>Docente:</strong> Licda. Maria Beatriz Amaya Villalta</p><table><thead><tr><th>Nombre</th><th>Código</th></tr></thead><tbody><tr><td>Andrea Patricia Nolasco Ortega</td><td>NO0882042024</td></tr><tr><td>Alexis Sebastián Castro Ramírez</td><td>CR0367042024</td></tr><tr><td>Carlos Alberto Campos Santos</td><td>CS1209042018</td></tr><tr><td>Jaime Fernando Berrios Ortiz</td><td>BO0310042024</td></tr></tbody></table><p class="note">Distribución de expositores pendiente de confirmar.</p></section>
+<section data-expositor="Equipo"><h2>Introducción</h2><h3>Calidad técnica en la automatización con IA</h3><ul><li><strong>Pregunta inicial:</strong> ¿Cómo comprobar que el código generado cumple las reglas del proceso empresarial?</li><li><strong>Lugar y período:</strong> San Miguel, El Salvador; julio, agosto, septiembre, octubre y noviembre de 2026.</li></ul></section>
+<section data-expositor="Equipo"><h2>Situación problemática</h2><h3>Una necesidad por investigar</h3><ul><li><strong>El problema en San Miguel:</strong> Adopción rápida de herramientas de IA sin estándares, generando desconexión entre requisitos y código.</li><li><strong>Riesgo:</strong> Instrucciones a la IA y pruebas no registradas dificultan justificar la calidad del producto.</li><li><strong>Fundamento:</strong> El NIST identifica riesgos de IA generativa y la necesidad de gestión de riesgos (Autio et al., 2024).</li></ul><p class="source">Fuente: Autio et al. (2024), NIST AI 600-1.</p></section>
+<section data-expositor="Equipo"><h2>Enunciado del problema</h2><h3>Pregunta de investigación</h3><ul><li>¿Cómo diseñar un marco SDD que contribuya al aseguramiento de la calidad técnica en la automatización de procesos empresariales con IA en San Miguel, El Salvador, durante el período de julio a noviembre de 2026?</li><li><strong>Relación con el desarrollo ágil:</strong> Se estudiará cómo articular las especificaciones con las prácticas de desarrollo utilizadas.</li></ul></section>
+<section data-expositor="Equipo"><h2>Justificación</h2><h3>Aporte previsto del proyecto</h3><ul><li><strong>Implicación Práctica:</strong> Evitar errores costosos y "código espagueti", al facilitar la revisión de código generado por IA con base documental.</li><li><strong>Utilidad Metodológica:</strong> Crear un nuevo instrumento procedimental (SDD adaptado) auditable y seguro para equipos de desarrollo.</li></ul></section>
+<section data-expositor="Equipo"><h2>Objetivos de la investigación</h2><h3>Objetivo general</h3><ul><li>Diseñar un marco SDD para orientar el aseguramiento de la calidad técnica en la automatización de procesos empresariales con IA en San Miguel, El Salvador, durante julio a noviembre de 2026.</li></ul><h3>Metas específicas (secuencia de conocimiento)</h3><ul><li><strong>1. Diagnosticar:</strong> Estado actual y riesgos de ambigüedad.</li><li><strong>2. Determinar:</strong> Componentes metodológicos útiles del SDD.</li><li><strong>3. Estructurar:</strong> Fases, plantillas y artefactos de validación.</li><li><strong>4. Validar:</strong> Evaluar el marco propuesto mediante expertos o caso práctico.</li></ul></section>
+<section data-expositor="Equipo"><h2>Marco teórico: esquema pendiente</h2><h3>Conceptos por desarrollar</h3><ul><li>Limitaciones de las prácticas ágiles al trabajar con IA.</li><li>Generación de código con IA y ambigüedad de requisitos.</li><li>Fundamentos del SDD y fases Specify, Plan, Tasks e Implement.</li><li>Agentes de IA y modelos de lenguaje en la automatización.</li></ul></section>
+<section data-expositor="Equipo"><h2>Metodología (Rutas de Sampieri)</h2><h3>Parámetros de la investigación</h3><ul><li><strong>Ruta:</strong> Mixta (cualitativa para procesos, cuantitativa para evaluar código).</li><li><strong>Alcance:</strong> Descriptivo y correlacional/explicativo.</li><li><strong>Diseño:</strong> Investigación-acción / mixto concurrente o secuencial.</li><li><strong>Muestra:</strong> Equipos de desarrollo o proyectos en San Miguel (no probabilístico).</li><li><strong>Técnicas:</strong> Revisión documental, entrevistas y rúbricas de evaluación de código.</li></ul></section>
+<section data-expositor="Equipo"><h2>Referencias: SDD y riesgos de IA</h2><ul class="references"><li><a href="https://github.com/github/spec-kit/blob/main/spec-driven.md">GitHub (s. f.). Spec-Driven Development.</a></li><li><a href="https://doi.org/10.6028/NIST.AI.600-1">Autio et al. (2024). NIST AI 600-1.</a></li></ul><p class="note">Consulta: 19 de septiembre de 2026. Referencias completas en el reporte.</p></section>
+<section data-expositor="Equipo"><h2>Referencias: enfoques de desarrollo</h2><ul class="references"><li><a href="https://agilemanifesto.org/iso/es/principles.html">Beck et al. (2001). Principios del Manifiesto Ágil.</a></li><li><a href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Spanish-Latin-South-American.pdf">Schwaber y Sutherland (2020). La Guía de Scrum.</a></li></ul><p class="note">Consulta: 19 de septiembre de 2026. Referencias completas en el reporte.</p></section><section data-expositor="Equipo"><h2>Muchas gracias</h2><p>Espacio para dudas y preguntas</p><p class="note">Facultad de Tecnología e Innovación · Universidad Dr. Andrés Bello</p></section>
+</div></div><footer class="presentation-footer"><span>Marco de Trabajo SDD · Programación IV</span><span id="presenter">Equipo</span></footer>
+<script src="dist/reveal.js"></script><script src="dist/plugin/notes.js"></script>
+<script>
+Reveal.initialize({ width: 1280, height: 720, margin: 0.09, controls: true, progress: true, center: true, hash: true, transition: 'slide', plugins: [RevealNotes] });
+function updateFooter(event) { document.getElementById('presenter').textContent = (event.currentSlide.dataset.expositor || 'Equipo') + ' · ' + (Reveal.getSlidePastCount() + 1) + ' / ' + Reveal.getTotalSlides(); }
+Reveal.on('ready', updateFooter); Reveal.on('slidechanged', updateFooter);
+</script></body></html>
