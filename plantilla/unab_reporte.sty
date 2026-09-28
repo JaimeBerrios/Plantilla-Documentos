@@ -6,7 +6,6 @@
 \RequirePackage{fontspec}
 \setmainfont{Arial}
 \RequirePackage{needspace}
-\newfontfamily\FuenteFirma[Path=assets/fonts/]{firma.otf}
 \RequirePackage{microtype}
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
@@ -78,18 +77,4 @@
   \begin{center}\small\LugarFecha\end{center}
   \end{titlepage}
   \hypersetup{pageanchor=true}
-}
-
-
-% Firma tipográfica personal; se imprime solo al final del reporte.
-\newcommand{\firmareporte}{%
-  \par\Needspace{4cm}
-  \vspace{1cm}
-  \begin{flushright}
-    {\color{unabblue}\FuenteFirma\fontsize{34}{42}\selectfont\NombreFirma\par}
-    \vspace{0.2cm}
-    {\color{linegray}\rule{5.3cm}{0.5pt}\par}
-    {\small\sffamily\color{unabblue}\NombreFirma\par}
-    {\footnotesize\sffamily Elaboración del documento\par}
-  \end{flushright}
 }

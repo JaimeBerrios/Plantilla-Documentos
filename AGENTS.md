@@ -13,7 +13,6 @@ con un nombre descriptivo; no cambies de rama ni publiques cambios por rutina.
 - `plantilla/*.sty`: diseño reutilizable; modificar solo si hace falta ajustar
   la presentación visual o si el usuario lo solicita.
 - `assets/img/`: logos obligatorios e imágenes adicionales.
-- `assets/fonts/firma.otf`: fuente personal original, usada solo por el reporte.
 - `compilar.py`: único punto de entrada para compilar los dos documentos.
 
 ## Edición
@@ -34,9 +33,7 @@ Conserva ambos logos, sus proporciones y el azul institucional `#173864`.
 Mantén diapositivas 16:9, textos breves y un pie con el expositor correspondiente.
 No reduzcas indiscriminadamente el tamaño de letra para hacer caber contenido:
 divide láminas o reorganiza la portada si hay muchos integrantes o títulos largos.
-El reporte usa tamaño carta y firma tipográfica al final de todo su contenido,
-incluidos los anexos. El texto de firma procede de `datos.md`; no agregar firma
-a las diapositivas. No crear HTML, vistas previas duplicadas o archivos accesorios.
+El reporte usa tamaño carta. No crear HTML, vistas previas duplicadas o archivos accesorios.
 
 ## Compilación y entrega obligatorias
 
@@ -52,7 +49,7 @@ red o escritura fuera del repositorio; no eludas esas restricciones.
 2. Revisa `.build/presentacion.log` y `.build/reporte.log`: resuelve referencias
    indefinidas, caracteres faltantes y desbordamientos visibles.
 3. Inspecciona los PDF: logos completos, portada legible, tablas y pies sin cortes,
-   numeración coherente y firma al final del reporte. Si hay herramientas de
+   numeración coherente. Si hay herramientas de
    renderizado, guarda las capturas temporales en `.build/` o fuera del repositorio.
 4. Entrega enlaces a los dos PDF y un resumen breve de los cambios y verificaciones.
 

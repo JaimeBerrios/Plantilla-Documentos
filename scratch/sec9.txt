@@ -1,0 +1,20 @@
+9. ANÁLISIS E INTERPRETACIÓN DE LOS RESULTADOS 
+
+A partir de la información recopilada durante la investigación, se determinó el estado operativo y de seguridad actual de la red de datos de la Sede de Enlaces con la Educación de Santa Rosa de Lima. Los resultados muestran que la sede cuenta con los recursos necesarios para desarrollar sus actividades, pero también presenta vulnerabilidades a nivel de arquitectura que comprometen la integridad y el rendimiento y la seguridad de la red.
+
+El principal hallazgo indica que la infraestructura actual carece de segmentación, operando como un único dominio de difusión (broadcast) para todos los nodos. En consecuencia, los equipos destinados a operaciones administrativas y áreas de diagnóstico comparten el mismo segmento lógico. Considerando que en la sede se realizan trabajos de mantenimiento y revisión de equipos, esta situación puede representar un riesgo, especialmente cuando se conectan dispositivos externos que podrían presentar algún problema de seguridad.
+
+Adicionalmente, se verificó que el switch central —elemento concentrador de la topología— presenta un alto grado de obsolescencia física, evidenciado por la pérdida de puertos de red viables. Debido a esto, la sede ha tenido que utilizar otros equipos para poder distribuir la conexión entre los diferentes dispositivos. Esta situación muestra que la infraestructura actual ha ido adaptándose con el tiempo a las necesidades de la sede.
+
+Asimismo, se constató la desincorporación de los controles perimetrales previos (servidor central y proxy físico) que administraban y filtraban las peticiones de red hacia el exterior. Actualmente, la conexión se distribuye principalmente mediante el equipo central, routers y conexiones inalámbricas. Esto significa que existen menos mecanismos para controlar de manera general el uso de la red y las conexiones que realizan los diferentes equipos.
+
+Al analizar estas condiciones, se considera necesario organizar la red de una manera más adecuada, implementando una segmentación lógica mediante VLANs (Redes de Área Local Virtuales) basadas en roles operativos. Por ejemplo, los equipos utilizados por el personal administrativo podrían mantenerse separados de aquellos utilizados para trabajos técnicos o para revisar dispositivos que ingresan a la sede. De esta manera, si uno de los equipos presentara algún problema, se reduciría la posibilidad de que este afecte directamente a los demás.
+
+Los resultados también permiten identificar la necesidad de desplegar Listas de Control de Acceso (ACLs) y políticas de cortafuegos para delimitar el tráfico transversal. No todos los equipos necesitan tener comunicación con todos los demás, por lo que establecer estas restricciones permitiría tener un mayor control y evitar accesos que no sean necesarios para realizar las actividades de la sede.
+
+En general, la información obtenida permite interpretar que las principales dificultades encontradas no se deben únicamente a la cantidad de equipos disponibles, sino principalmente a la forma en que actualmente se encuentra organizada la red y a la falta de controles que permitan separar y administrar adecuadamente las conexiones.
+
+Por esta razón, la propuesta planteada en la investigación busca establecer una organización más segura de la red, aislando dominios de colisión y restringiendo las comunicaciones no autorizadas a través de un esquema perimetral. La propuesta será desarrollada mediante una simulación, lo que permitirá observar cómo funcionará esta nueva organización sin realizar cambios directamente sobre la infraestructura actual de la sede.
+
+En síntesis, los resultados obtenidos sirven como base para plantear una mejora en la organización y seguridad de la red de la Sede de Enlaces con la Educación. La información recopilada permite comprender las condiciones actuales y, a partir de ellas, establecer una propuesta que contribuya a contar con una red más organizada, controlada y adecuada para las actividades que se desarrollan en la sede.
+

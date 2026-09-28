@@ -1,0 +1,1901 @@
+
+
+UNIVERSIDAD DR. ANDRÉS BELLO
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sede: San Miguel
+
+
+
+
+
+
+
+
+
+Facultad: Tecnología e Innovación
+
+
+
+
+
+
+
+
+
+DISEÑO INSTRUCCIONAL DE LA ASIGNATURA
+
+
+
+
+
+
+
+
+
+DISEÑO DE SISTEMAS DE SEGURIDAD DE REDES DE DATOS
+
+
+
+
+
+Plan: 2022
+
+
+
+
+
+
+
+
+
+Modalidad: No presencial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Generalidades
+
+
+
+
+
+Criterio
+
+Descripción
+
+Asignatura
+
+Diseño de Seguridad de redes de datos
+
+No de orden
+
+43
+
+Código
+
+sSR-43
+
+Horas no presenciales
+
+3
+
+Horas prácticas
+
+2
+
+Carrera
+
+Ingeniería en Sistemas y Computación
+
+Facultad
+
+Tecnología e Innovación
+
+Ciclo Académico
+
+02
+
+Unidades Valorativas
+
+4
+
+Semanas por ciclo
+
+16
+
+Horas Semanales
+
+5
+
+Ciclo en plan de estudios
+
+VIII
+
+Ciclo, año
+
+02 - 2026
+
+
+
+
+
+Horas teóricas semanales HTS
+
+Horas prácticas semanales HPS
+
+HTS presenciales
+
+0
+
+HPS presenciales
+
+0
+
+HTS no presenciales
+
+3
+
+HPS no presenciales
+
+2
+
+Proyectos colaborativos a desarrollar:
+
+DescribiLos estudiantes trabajarán en un único proyecto llamado "Diseño e Implementación de un Sistema de Red Seguro", donde formarán equipos para auditar una empresa ficticia, redactar sus políticas de seguridad y configurar cortafuegos, cifrado de datos y servidores proxy (SQUID/ISA) para protegerla contra atacantes.
+
+Escenarios pedagógicos mediados a utilizar:
+
+Las clases combinarán un aula virtual para revisar contenidos y debatir sobre leyes de protección de datos, junto con cuestionarios rápidos interactivos para reforzar los conceptos teóricos; además, se utilizarán simuladores de redes y máquinas virtuales para que los alumnos realicen las prácticas de configuración de servidores, defensas y filtros de forma segura.
+
+
+
+Estudios de caso: Se presentarán estudios de caso de empresas o proyectos de ingeniería que hayan tenido éxito o enfrentado desafíos. Los estudiantes deben analizar estos casos y proponer soluciones o enfoques alternativos basados en los conocimientos adquiridos.
+
+
+
+Evaluación de competencias a implementar:
+
+Diagnósticas, formativas y sumativas
+
+
+
+
+
+Personal académico responsable
+
+
+
+Nombre del docente:
+
+MduEv. Ing. Franklin Geovany Buruca Hernández
+
+Correo electrónico:
+
+franklin.buruca@unab.edu.sv
+
+Coordinador(a):
+
+Mdu. Ing. Carlos Mauricio García Morales
+
+
+
+
+
+Competencias que se desarrollarán
+
+
+
+UNIDAD I: FUNDAMENTOS DE LA SEGURIDAD INFORMÁTICA
+
+(CIBERSEGURIDAD)
+
+LO QUE DEBE SABER
+
+Conocimientos
+
+LO QUE DEBE HACER
+
+Habilidades
+
+SU FORMA DE ACTUAR
+
+Actitudes
+
+Conceptos básicos de seguridad informática: confidencialidad, integridad, disponibilidad y autenticidad de la información.
+
+Riesgos y amenazas comunes en el ámbito digital: virus, malware, phishing, ingeniería social.
+
+Principios y políticas de protección de datos personales y sensibles.
+
+Normativas legales relacionadas con la seguridad informática.
+
+Tipos de controles y herramientas de seguridad: firewalls, antivirus, sistemas de detección de intrusos.
+
+Modelos de seguridad y gestión de incidentes.
+
+
+
+Identificar vulnerabilidades en sistemas y redes.
+
+Aplicar medidas básicas de protección de la información (contraseñas robustas, cifrado, backups).
+
+Analizar riesgos de seguridad en diferentes situaciones tecnológicas.
+
+Implementar políticas de acceso y uso seguro de dispositivos y sistemas.
+
+Monitorear eventos y responder adecuadamente ante incidentes de seguridad.
+
+Comunicar y educar sobre buenas prácticas y políticas de seguridad informática.
+
+Demostrar responsabilidad y ética en el manejo de información sensible.
+
+Mantenerse actualizado frente a nuevas amenazas y mejores prácticas de seguridad.
+
+Actuar de manera proactiva para prevenir incidentes.
+
+Respetar la confidencialidad y privacidad de los datos de otras personas y organizaciones.
+
+Colaborar y trabajar en equipo para fortalecer la seguridad colectiva.
+
+Mostrar disposición para reportar y atender cualquier incidente de seguridad.
+
+
+
+UNIDAD II: GESTIÓN DE LA SEGURIDAD. POLÍTICAS.
+
+LO QUE DEBE SABER
+
+Conocimientos
+
+LO QUE DEBE HACER
+
+Habilidades
+
+SU FORMA DE ACTUAR
+
+Actitudes
+
+Definición y propósito de las políticas de seguridad informática: Entender qué son, por qué se implementan y su papel fundamental para la protección de la información organizacional.
+
+Componentes clave de una política de seguridad: Alcance, objetivos, responsabilidades, sanciones y mecanismos de actualización y revisión.
+
+Tipos de políticas: Políticas de buenas prácticas, de control de accesos, de riesgos y de gestión de incidentes.
+
+Principios de confidencialidad, integridad y disponibilidad (tríada CID) que deben regir toda política de seguridad.
+
+Normas y estándares internacionales aplicables, como la ISO/IEC 27001 para la gestión de la seguridad de la información.
+
+Importancia del compromiso gerencial, la accesibilidad y la concienciación de todo el personal sobre las políticas.
+
+Procedimientos y normas asociadas para la aplicación operativa de las políticas
+
+
+
+Desarrollar, documentar y actualizar políticas de seguridad alineadas a los objetivos estratégicos de la organización.
+
+Identificar, evaluar y gestionar riesgos en la organización para definir políticas acordes a las amenazas presentes.
+
+Implementar y hacer cumplir las políticas, controlando accesos, supervisando el uso de sistemas y monitoreando el cumplimiento.
+
+Comunicar y capacitar al personal para asegurar la comprensión e implicación sobre las normas y procedimientos de seguridad.
+
+Gestionar incidentes de seguridad siguiendo los procedimientos establecidos en las políticas.
+
+Medir la efectividad de las políticas a través de auditorías y revisiones periódicas; actualizarlas según cambios tecnológicos y regulatorios.
+
+
+
+Mantener la documentación: versiones, históricos, referencias y revisiones de las políticas
+
+
+
+Responsabilidad y compromiso con la protección de los activos de información y el cumplimiento de las políticas de seguridad.
+
+
+
+Proactividad para anticipar y mitigar riesgos de seguridad, actualizando prácticas ante nuevos desafíos y amenazas.
+
+
+
+Ética y confidencialidad en el manejo de información sensible; respeto estrictamente las normas internas y externas.
+
+
+
+Colaboración: las políticas de seguridad requieren cooperación interdepartamental y comunicación asertiva para su éxito.
+
+
+
+Cultura de mejora continua: disposición a revisar, aprender y adaptarse constantemente en función de incidentes, auditorías o nuevas amenazas.
+
+
+
+Actuar como modelo y referente para los colegas, promoviendo el cumplimiento y sensibilización en materia de seguridad de la información
+
+
+
+UNIDAD III: DISPOSITIVOS DE ASEGURAMIENTO DE CAPA RED Y
+
+TRANSPORTE
+
+LO QUE DEBE SABER
+
+Conocimientos
+
+LO QUE DEBE HACER
+
+Habilidades
+
+SU FORMA DE ACTUAR
+
+Actitudes
+
+La capa de red (tercera capa del modelo OSI) es responsable de la transmisión y encaminamiento de datos entre dispositivos en diferentes redes.
+
+La capa de transporte (cuarta capa del modelo OSI) garantiza la comunicación segura, confiable y transparente de extremo a extremo, gestionando la segmentación, control de errores, control de flujo y evitación de congestión.
+
+Protocolos clave de la capa de transporte: TCP (orientado a conexión) y UDP (no orientado a conexión), con sus particularidades y aplicaciones.
+
+Dispositivos comunes que aseguran estas capas: firewalls de capa 3/4, routers con funciones de control de acceso, sistemas de detección y prevención de intrusiones (IDS/IPS), y tecnologías de cifrado como TLS para la capa de transporte.
+
+Principales amenazas y ataques a estas capas, como SYN Flood, secuestro de sesión TCP, ataques de amplificación UDP, y sus mecanismos de defensa (por ejemplo, SYN cookies, filtrado de paquetes, cifrado TLS).
+
+Servicios que brinda la capa de transporte: transmisión confiable, control de errores y de secuencia, multiplexación y demultiplexación.
+
+
+
+Configurar y administrar dispositivos de seguridad de red, como firewalls y routers, para controlar y asegurar el tráfico en las capas de red y transporte.
+
+
+
+Implementar mecanismos de protección frente a ataques comunes en estas capas, aplicando técnicas como filtrado de puertos, inspección de paquetes y uso de protocolos seguros.
+
+
+
+Analizar y monitorear el tráfico de red para detectar conductas anómalas o intentos de intrusión a nivel de red y transporte.
+
+
+
+Implementar TLS u otros protocolos de seguridad para cifrar y proteger las transmisiones en la capa de transporte.
+
+
+
+Diagnosticar y gestionar problemas relacionados con la calidad de la comunicación, como pérdidas o segmentación de datos.
+
+
+
+Mantener un enfoque proactivo en la protección de la red, anticipándose a posibles amenazas y vulnerabilidades en los niveles de red y transporte.
+
+Mostrar rigurosidad en la configuración y actualización constante de dispositivos y políticas para asegurar la integridad y disponibilidad de la comunicación.
+
+Actuar con responsabilidad y ética para garantizar la confidencialidad y seguridad de la información en tránsito.
+
+Fomentar la colaboración con equipos técnicos y de seguridad para mejorar la defensa integral de la red.
+
+Adoptar una cultura de aprendizaje continuo para estar al día con las nuevas técnicas y herramientas en seguridad de estas capas.
+
+
+
+UNIDAD IV: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+LO QUE DEBE SABER
+
+Conocimientos
+
+LO QUE DEBE HACER
+
+Habilidades
+
+SU FORMA DE ACTUAR
+
+Actitudes
+
+La capa de aplicación (capa 7 del modelo OSI) es la más cercana al usuario y permite la interacción con los servicios y recursos de red, facilitando la comunicación de aplicaciones como navegadores, correo electrónico y sistemas de transferencia de archivos.
+
+Conceptos fundamentales de control de acceso, que regulan quién puede usar qué recursos, en qué condiciones y con qué permisos, asegurando la autenticidad y autorización adecuadas.
+
+Técnicas de filtrado en la capa de aplicación, que incluyen la inspección profunda de paquetes, validación de protocolos y análisis de contenido para prevenir ataques específicos de esta capa, como inyecciones SQL, cross-site scripting (XSS) y explotación de vulnerabilidades en aplicaciones.
+
+Protocolos y mecanismos de seguridad en esta capa, tales como HTTPS, autenticación multifactor, tokens de sesión, y cifrado para proteger la integridad y confidencialidad de los datos transmitidos.
+
+Tipos comunes de ataques a la capa de aplicación: exploits, phishing, malware distribuido a través de archivos maliciosos y ataques a la configuración de permisos; así como contramedidas para mitigarlos.
+
+La importancia del establecimiento y gestión correcta de sesiones, con controles para evitar secuestro de sesiones (session hijacking) y manejo adecuado de expiración e invalidación de sesiones.
+
+Políticas de acceso que deben aplicarse tanto a usuarios como a aplicaciones para proteger los recursos y mantener la seguridad organizacional.
+
+
+
+Diseñar y configurar mecanismos de control de acceso en la capa de aplicación, asegurando que solo usuarios y sistemas autorizados puedan acceder a servicios específicos.
+
+Implementar y administrar filtros y firewalls de aplicaciones web (WAF) que inspeccionen el tráfico, filtren solicitudes maliciosas y prevengan amenazas como inyección de código y ataques de denegación de servicio a nivel de aplicación.
+
+Realizar análisis y monitoreo continuo del tráfico y comportamiento en la capa de aplicación para detectar actividades sospechosas o intentos de explotación.
+
+Gestionar la autenticación y autorización en aplicaciones, aplicando métodos robustos y prácticas recomendadas para el manejo seguro de credenciales y sesiones.
+
+Actualizar y parchear aplicaciones para corregir vulnerabilidades conocidas que puedan ser explotadas a través de esta capa.
+
+Difundir y promover buenas prácticas de seguridad entre usuarios finales para prevenir vectores de ataque como phishing o mal uso de aplicaciones.
+
+
+
+Mostrar un compromiso firme con la protección de los recursos y datos a nivel de aplicación, entendiendo la importancia crítica de esta capa para la seguridad general del sistema.
+
+Actuar con responsabilidad y ética al manejar accesos y permisos, respetando la privacidad y confidencialidad de la información.
+
+Adoptar una mentalidad proactiva para anticipar vulnerabilidades y responder con rapidez ante incidentes que afecten la capa de aplicación.
+
+Fomentar una cultura de seguridad entre usuarios y colaboradores, educando sobre riesgos y conductas que pueden afectar la seguridad de las aplicaciones.
+
+Mantener una actitud de aprendizaje constante, actualizándose en nuevas técnicas de filtrado, control de acceso y contramedidas ante las amenazas emergentes de esta capa.
+
+
+
+
+
+
+
+Análisis
+
+
+
+Criterio
+
+Descripción
+
+Perfil de los estudiantes
+
+Pensamiento lógico y analítico, creatividad e innovación, trabajo en equipo, autonomía y aprendizaje, interés por la tecnología, responsabilidad, ética y adaptabilidad. 
+
+Conocimiento previo
+
+Conceptos básicos como la confidencialidad, integridad y disponibilidad de la información; gestión de accesos; identificación de amenazas y vulnerabilidades; control de accesos y autenticación; conceptos de segmentación y seguridad perimetral; y herramientas básicas como firewalls, sistemas de detección y prevención de intrusos (IDS/IPS) y VPNs
+
+Lo que necesita aprender en esta asignatura
+
+Diseñar e implementar soluciones de seguridad de red, enfocándose en tecnologías y herramientas actuales, como firewalls, grupos de seguridad de red (NSG), sistemas de protección DDoS y firewalls de aplicaciones web (WAF).
+
+
+
+Comprender y aplicar mecanismos de seguridad en arquitecturas en capas, identificando riesgos y controles apropiados en cada capa del modelo OSI, desde la comunicación segura de extremo a extremo hasta protocolos de seguridad como IPsec, SSL y TLS.
+
+
+
+Realizar análisis de riesgos y evaluación de vulnerabilidades para asegurar que el diseño considere amenazas reales y proporcione protección efectiva a los sistemas y datos.
+
+
+
+Conocer y aplicar protocolos y estándares de seguridad, además de implementar controles de acceso, cifrado y autenticación para garantizar la confidencialidad, integridad y disponibilidad de la información en redes.
+
+
+
+Implementar estrategias de monitoreo y auditoría para detectar incidentes de seguridad y evaluar la efectividad de las medidas implementadas en el sistema de red segura.
+
+
+
+Adquirir habilidades prácticas para configurar dispositivos y servicios de red seguros, gestionar políticas de seguridad y administrar la infraestructura de manera eficiente y confiable.
+
+
+
+Desarrollar competencia para diseñar redes confiables, eficientes y seguras, con conocimiento profundo de protocolos como TCP/IP, mecanismos de rutado, y elementos de tolerancia a fallos y redundancia (por ejemplo, RAID)
+
+
+
+Limitaciones
+
+Limitaciones de los modelos tradicionales de control de acceso
+
+Falta de granularidad: Los permisos suelen asignarse a usuarios o grupos con niveles idénticos de acceso, sin distinguir necesidades específicas, lo que puede generar sobreexposición o accesos inadecuados.
+
+
+
+Control estático y poco dinámico: Las políticas de acceso tradicionales son rígidas y no pueden adaptarse automáticamente a cambios contextuales o temporales, como accesos limitados por tiempo o ubicación.
+
+
+
+Ausencia de control basado en contexto: No incorporan datos contextuales (ubicación, dispositivo, hora), lo que limita la capacidad de mitigar accesos sospechosos en tiempo real.
+
+
+
+Dificultad para gestionar relaciones complejas: Expresar y manejar permisos en escenarios con múltiples roles y condiciones es complicado en modelos tradicionales.
+
+
+
+Limitaciones de las políticas de seguridad de red
+
+Complejidad y costo: La implementación y mantenimiento de políticas robustas pueden demandar recursos significativos y experiencia técnica especializada.
+
+
+
+Compatibilidad e interoperabilidad: Integrar políticas que funcionen de forma coherente en diferentes dispositivos, vendors y arquitecturas puede ser un desafío.
+
+
+
+Adaptabilidad y escalabilidad: Las políticas deben ajustarse a entornos dinámicos; la rigidez puede dificultar la respuesta a nuevas amenazas o cambios en la infraestructura.
+
+
+
+Dificultad en el cumplimiento y aplicación efectiva: La brecha entre políticas establecidas y su ejecución real genera vulnerabilidades.
+
+
+
+Limitaciones específicas en entornos OT (Tecnología Operativa)
+
+Falta de segmentación de red: Las arquitecturas planas facilitan movimientos laterales de atacantes entre redes IT y OT, exponiendo sistemas críticos.
+
+
+
+Sistemas sin parches y tecnología obsoleta: La dificultad para actualizar dispositivos industriales antiguos aumenta la vulnerabilidad.
+
+
+
+Configuraciones inseguras por defecto: Contraseñas predeterminadas, puertos abiertos y servicios innecesarios generan vectores de ataque.
+
+
+
+Acceso remoto mal configurado: Sin controles adecuados, el acceso externo se vuelve un punto débil considerable.
+
+
+
+Ausencia de inventario y monitoreo efectivo: Sin visibilidad clara, la detección temprana de amenazas es limitada.
+
+
+
+Limitaciones humanas
+
+Sesgos cognitivos y limitaciones físicas y mentales afectan la creación y gestión segura de contraseñas e interfaces, incrementando vulnerabilidades como el uso de contraseñas predecibles o el incumplimiento de buenas prácticas.
+
+
+
+Limitaciones generales en los enfoques tradicionales de ciberseguridad.
+
+
+
+Alta complejidad técnica y de administración, que puede resultar en retrasos, sobrecostos y problemas de mantenimiento.
+
+
+
+Problemas para lograr un tráfico y gestión óptimos debido a la dependencia de datos que deben ser precisos y confiables
+
+
+
+Software y hardware requerido para la asignatura
+
+Computadora con arquitectura Intel o AMD de 64 bits
+
+Memoria RAM mínima de 8 GB para un desempeño adecuado
+
+Espacio en disco disponible entre 40 y 80 GB para instalación y archivos temporales
+
+Procesador con velocidad mínima de 1 GHz (preferiblemente más rápido, como 2 GHz o dual core)
+
+Adaptador de red Ethernet compatible con gigabit y arquitectura PCI Express
+
+Unidad de DVD (si la instalación se realiza desde disco físico)
+
+Monitor con resolución mínima de 1024 x 768 píxeles
+
+Teclado y mouse compatibles
+
+Para servidores, se recomiendan tecnologías ECC en RAM y soporte UEFI con arranque seguro (según sistema operativo específico) Así como también los programas más comunes:
+
+Microsoft Windows
+
+Mozilla Firefox
+
+Microsoft Word
+
+PowerPoint
+
+Google Chrome
+
+Microsoft Excel.
+
+
+
+Windows 10 o Windows 11 (preferible Windows 11, ya que Windows 10 caduca en 2025)
+
+
+
+Windows Server 2019 para prácticas de servidores (requiere mínimo 32 GB de disco y 2 GB RAM para la versión con interfaz gráfica)
+
+
+
+Software de virtualización (opcional pero recomendado) como VirtualBox para ejecutar sistemas operativos virtualizados y prácticas de laboratorio
+
+
+
+Controladores específicos para hardware (tarjeta gráfica, red, sonido) compatibles con el sistema operativo elegido
+
+
+
+Soporte de instalación (CD/DVD o imagen ISO con auto arranque)
+
+
+
+
+
+
+
+
+
+Diseño
+
+
+
+Criterio
+
+Descripción
+
+Entorno de aprendizaje
+
+Plataforma Moodle 
+
+Herramientas de Moodle
+
+
+
+
+
+
+
+Recursos predefinidos 
+
+Página
+
+Libro
+
+Archivo
+
+Carpeta
+
+Paquete de contenido IMS
+
+Etiqueta
+
+Contenido H5P
+
+Actividades predefinidas 
+
+Foro
+
+Chat
+
+Cuestionario 
+
+Encuesta
+
+Tarea
+
+Wiki
+
+Taller 
+
+Lección 
+
+SCORM
+
+Otros 
+
+Asistencia
+
+Google Meet para Moodle
+
+Actividad H5P
+
+Game
+
+Tipos de materiales didácticos virtuales
+
+
+
+Genially
+
+Canva
+
+Presentaciones de Google
+
+Mentimeter
+
+Ebook
+
+Infografía 
+
+Audio 
+
+Videos
+
+Podcast
+
+Organizadores gráficos (Mapas mentales, mapas conceptuales, en herramientas web como Coogle, Mindmeister cmapstool, gitmind, cmapcloud, otros)
+
+Materiales de aprendizaje, en formato PDF
+
+Material de lectura, en formato PDF
+
+Revistas electrónicas (Redalyc, Scielo. Dialnet)
+
+Herramientas web
+
+
+
+Exelearning
+
+H5P
+
+Quizizz
+
+Kahoot
+
+Padlet
+
+Educaplay
+
+Objetivos de aprendizaje de la asignatura
+
+Comprender los conceptos fundamentales del diseño de redes informáticas, incluyendo topologías, protocolos (IP, enrutamiento y transporte) y equipos de red.
+
+
+
+Aplicar herramientas de simulación para analizar y evaluar el funcionamiento de una red informática, facilitando la identificación y resolución de problemas de configuración.
+
+
+
+Identificar y aplicar medidas de seguridad en redes informáticas, como configuración de firewalls, VPNs y otras tecnologías para proteger la red de amenazas y vulnerabilidades.
+
+
+
+Diseñar e implementar soluciones específicas de seguridad de red, como protección contra ataques DDoS, grupos de seguridad de red (NSG), firewalls tradicionales y de aplicaciones web (WAF), especialmente en plataformas como Azure.
+
+
+
+Conocer y utilizar protocolos y estándares de seguridad, incluyendo IPsec, TLS/SSL, y técnicas de control de acceso para garantizar la confidencialidad, integridad y disponibilidad de la información en tránsito.
+
+
+
+Analizar tráfico de red y realizar monitoreo continuo para detectar y responder a incidentes de seguridad en la infraestructura de red.
+
+
+
+Desarrollar habilidades prácticas para configurar y administrar dispositivos de seguridad de red, logrando una protección eficaz de los activos informáticos
+
+
+
+Selección de estrategias pedagógicas
+
+Aprendizaje basado en problemas 
+
+Aprendizaje orientado a proyectos 
+
+Aprendizaje cooperativo 
+
+Aprendizaje autónomo 
+
+Aula  invertida 
+
+
+
+Técnicas 
+
+Lecturas previas de materiales 
+
+Visualización de videos
+
+En el desarrollo de la sesión de aprendizaje
+
+Lluvia de ideas 
+
+El debate 
+
+Asesorías 
+
+Investigaciones
+
+Exposiciones 
+
+Investigación acción 
+
+Contrato de aprendizaje
+
+Simulación
+
+Unidades de aprendizaje
+
+UNIDAD 1: FUNDAMENTOS DE LA SEGURIDAD INFORMÁTICA.
+
+UNIDAD 2: GESTIÓN DE LA SEGURIDAD. POLÍTICAS.
+
+UNIDAD 3: DISPOSITIVOS DE ASEGURAMIENTO DE CAPA RED Y TRANSPORTE
+
+UNIDAD 4: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+
+
+Diseño de Materiales
+
+La elaboración de los objetos de aprendizaje, como Material de lectura y Guías de evaluación cuenta con una estructura que permitirá  los estudiantes 
+
+
+
+Una vez obtenga los formatos debe eliminar los enlaces 
+
+Clic aquí para acceder al formato de Un Material de lectura
+
+
+
+
+
+
+
+Desarrollo
+
+
+
+Criterio
+
+Descripción
+
+Materiales didácticos del aula virtual 
+
+La asignatura de trabajo, cuenta con una serie de materiales de aprendizaje, elaborados por docentes especialistas de la materia diseñados en formato pdf y genially, que están a disposición del maestro responsable.
+
+Creación de materiales didácticos
+
+Presentaciones de las tutorías
+
+Explicaciones o ampliación de actividades (grabaciones)
+
+Guías de trabajo (pregrabadas)
+
+Herramienta de aprendizaje colaborativo (Nombre de la herramienta)
+
+Estructura del aula virtual, por semana
+
+Las aulas virtuales cuentan con una estructura por semana, en dicha semana se evidenciará lo siguiente:
+
+Contenidos
+
+El recurso Google Meet para Moodle donde se encontrará el enlace para conectarse a las tutorías y las grabaciones de estas. El material didáctico virtual con el que se desarrollará el tema planificado:
+
+Material didáctico utilizado para las tutorías (presentaciones, juegos, dinámicas, otros)
+
+Material complementario (libros, revistas digitales, videos de YouTube, páginas web)
+
+Guías prácticas 
+
+
+
+Actividades
+
+Se configurará un foro de socialización (dudas, debates, opiniones, otros) en cada semana para que los estudiantes puedan realizar consultas relacionadas con los temas desarrollados
+
+Configuración de actividades tales como: tareas, cuestionarios actividades con H5P, gamificación, wikis y otros; de acuerdo al sistema de evaluación 
+
+Tipo de Evaluación
+
+Sumativas 
+
+Formativas
+
+
+
+
+
+Implementación
+
+
+
+Criterio
+
+Descripción
+
+Modalidad de distribución de la asignatura
+
+Semipresenciales 
+
+No presenciales
+
+Presencial
+
+Tipo de aprendizaje
+
+Significativo
+
+Colaborativo
+
+Cooperativo
+
+Distribución de materiales 
+
+Los materiales didácticos virtuales destinados al desarrollo de los contenidos están distribuidos en el aula virtual, según la programación presentada en este documento.
+
+Estrategia metodológica
+
+Aula invertida 
+
+Aprendizaje colaborativo 
+
+Aprendizaje basado en Proyectos
+
+
+
+
+
+Evaluación de competencias
+
+
+
+Criterio
+
+Descripción
+
+Herramientas de evaluación
+
+De observación
+
+Lista de cotejo
+
+Escala de calificación o de rango
+
+Rúbrica
+
+Sumativas
+
+Pruebas objetivas con preguntas de:
+
+Opción múltiple/Selección única
+
+Verdadero/Falso
+
+Emparejamiento
+
+Respuesta corta
+
+Ensayo
+
+Arrastrar y soltar marcadores
+
+Arrastrar y soltar sobre texto
+
+Arrastrar y soltar sobre imagen 
+
+Elige la palabra perdida
+
+Actividades de evaluación sugeridas
+
+Portafolio 
+
+Estudio de casos
+
+Organizadores gráficos 
+
+Resolución de problemas
+
+Proyectos de investigación
+
+Texto paralelo
+
+Guía práctica (Guías de trabajo)
+
+Videos argumentativos
+
+Ensayos
+
+Foros académicos
+
+Cuadros comparativos
+
+Formativa 
+
+Gamificación con H5P integrado a Moodle con las herramientas: 
+
+Quiz (Question Set, Drag the Words, Fill in the Blanks, Interactive Video, Mark the Words, Memorý Game, Multiple Choice, entre otros)
+
+Game integrado a Moodle con las herramientas: Juego ahorcado, juego criptograma, juego crucigrama, juego imagen oculta, juego millonario, juego serpientes y escaleras, juego sudoku.
+
+Diagnóstica
+
+Lluvia de ideas 
+
+Preguntas orales o ruleta preguntona
+
+Evidencias de aprendizaje
+
+Mapas conceptuales
+
+Libreta digital
+
+Infografías
+
+Resúmenes 
+
+Conferencias
+
+
+
+ODS 9: Industria, Innovación e Infraestructura: El proyecto impulsa la investigación aplicada y la creación de infraestructura tecnológica segura para el sector FinTech.
+
+
+
+ODS 8: Trabajo Decente y Crecimiento Económico: Al mitigar los riesgos informáticos en comercios, se fomenta un entorno de confianza y digitalización financiera que impulsa la productividad salvadoreña ODS 8 de la ONU.
+
+
+
+ODS 16: Paz, Justicia e Instituciones Sólidas: Al cumplir y evaluar leyes locales (como la Ley de Bitcoin) y estándares internacionales, promueve marcos legales transparentes y seguros.
+
+
+
+Criterios de evaluación de la evidencia presentada
+
+Rubricas de evaluación 
+
+Ponderación de evaluación de cómputos según actividades
+
+
+
+
+
+
+
+
+
+Programación
+
+
+
+Unidad
+
+Tema
+
+Objetivo
+
+Semana 1: Del 21 de julio al 26 de julio
+
+UNIDAD I: FUNDAMENTOS DE LA SEGURIDAD INFORMÁTICA
+
+Misión, Visión, Valores de la Universidad  
+
+Introducción y definición a los sistemas de información.
+
+Introducción y definición de seguridad informática o ciberseguridad.
+
+Introducción y objetivos del análisis de riesgos.
+
+Conociendo al enemigo informático y los tipos de atacantes.
+
+Tipos y herramientas usadas en ataques a los sistemas de red.
+
+Generar identificación con el ser la institución y dar a conocer a los estudiantes las generalidades y actividades propias de la asignatura.
+
+
+
+Introducir y definir los conceptos y generalidades de los sistemas de información.
+
+
+
+Introducir y definir los conceptos y generalidades de la seguridad informática.
+
+
+
+Introducir y definir los objetivos del análisis de riesgos.
+
+
+
+Conocer al enemigo informático y los tipos de atacantes.
+
+
+
+Conocer los tipos y herramientas usadas en ataques a los sistemas de red.
+
+Semana 2: Del 28 de julio al 02 de agosto
+
+UNIDAD I: FUNDAMENTOS DE LA SEGURIDAD INFORMÁTICA
+
+Definición de estándares de seguridad informática.
+
+
+
+Estándares modernos de la seguridad informática.
+
+
+
+Confidencialidad, integridad y disponibilidad de la información
+
+Definir estándares de seguridad informática y analizar sus aplicaciones en la actualidad.
+
+Conocer estándares modernos de la seguridad informática.
+
+Conocer la confidencialidad, integridad y disponibilidad de la información
+
+Semana 3: Del 11 de agosto al 16 agosto
+
+UNIDAD I: FUNDAMENTOS DE LA SEGURIDAD INFORMÁTICA
+
+Introducción a la Criptografía.
+
+Clasificación de los criptosistemas.
+
+Criptosistemas simétricos.
+
+Criptosistemas asimétricos.
+
+Ley orgánica 15/1999, de 13 de diciembre, de protección de datos de carácter personal.
+
+Leyes Actuales.
+
+Introducir a las generalidades de la criptografía, sus orígenes y avances en la actualidad
+
+
+
+Diferenciar entre la clasificación de los criptosistemas.
+
+
+
+Analizar los criptosistemas simétricos y sus características.
+
+
+
+Analizar los criptosistemas asimétricos y sus características
+
+
+
+Conocer la Ley orgánica 15/1999, de 13 de diciembre, de protección de datos de carácter personal.
+
+
+
+Conocer las leyes actuales, su aplicabilidad y ajustes al contexto de la realidad actual
+
+
+
+Fase 1 de la Investigación:  Investigación de Contexto y Criptografía
+
+Semana 4: Del 18 de agosto al 23 agosto
+
+UNIDAD II: GESTIÓN DE LAS POLÍTICAS DE SEGURIDAD
+
+La Política de Seguridad Informática (PSI)
+
+
+
+Definir y analizar la política de seguridad informática PSI
+
+
+
+
+
+
+
+LABORATORIO 1
+
+
+
+Semana 5: Del 25 de agosto al 30 agosto
+
+UNIDAD II: GESTIÓN DE LAS POLÍTICAS DE SEGURIDAD
+
+
+
+Desarrollo de un plan básico de políticas de seguridad informática.
+
+
+
+Desarrollar un plan básico de políticas de seguridad informática
+
+
+
+PARCIAL 1
+
+
+
+Semana 6: Del 01 de septiembre al 06 de septiembre
+
+UNIDAD II: GESTIÓN DE LAS POLÍTICAS DE SEGURIDAD
+
+Manual de procedimientos.
+
+
+
+Auditoría del sistema de seguridad.
+
+
+
+Análisis de riesgo.
+
+Desarrollar un manual de procedimientos en complemento del plan básico de políticas de seguridad
+
+
+
+Analizar los sistemas de la información de una organización con el objetivo de evaluar su estado y el nivel de seguridad existente.
+
+
+
+Realizar el análisis de riesgo para identificar vulnerabilidades
+
+Semana 7: Del 08 de septiembre al 13 de septiembre
+
+UNIDAD II: GESTIÓN DE LAS POLÍTICAS DE SEGURIDAD
+
+Principales riesgos para la seguridad informática.
+
+Identificar los principales riesgos para la implementación de la seguridad informática.
+
+
+
+CONGRESO DE FACULTAD
+
+
+
+Semana 8: Del 15 de septiembre al 20 de septiembre
+
+UNIDAD II: GESTIÓN DE LAS POLÍTICAS DE SEGURIDAD
+
+
+
+UNIDAD III: DISPOSITIVOS DE ASEGURAMIENTO DE CAPA DE RED Y TRANSPORTE
+
+Administración del riesgo.
+
+
+
+
+
+Sistemas cortafuegos.
+
+Conocer sobre la administración del riesgo
+
+
+
+Conocer sobre los sistemas cortafuegos y su importancia en la protección.
+
+
+
+Fase 2 de la investigación: Gestión de Riesgos y Políticas.
+
+
+
+LABORATORIO 2
+
+
+
+Semana 9: Del 22 de septiembre al 27 de septiembre
+
+UNIDAD III: DISPOSITIVOS DE ASEGURAMIENTO DE CAPA DE RED Y TRANSPORTE
+
+Configuración y administración de cortafuegos de Microsoft Windows.
+
+
+
+Configuración y administración de cortafuegos de GNU/LINUX.
+
+Configurar y administrar los cortafuegos de Microsoft Windows.
+
+
+
+
+
+Configurar y administrar cortafuegos de GNU/LINUX
+
+Semana 10: Del 29 de septiembre al 04 de octubre
+
+UNIDAD III: DISPOSITIVOS DE ASEGURAMIENTO DE CAPA DE RED Y TRANSPORTE
+
+Sistemas de filtro y control de tráfico.
+
+
+
+Fundamentos de Lista de Control de Accesos (ACL).
+
+Conocer los sistemas de filtro y control de tráfico
+
+
+
+
+
+Conocer los fundamentos de la Lista de Control de Accesos
+
+Semana 11: Del 06 de octubre al 11 de octubre
+
+UNIDAD III: DISPOSITIVOS DE ASEGURAMIENTO DE CAPA DE RED Y TRANSPORTE
+
+Conceptos de traducción de direcciones de red (NAT).
+
+Conocer los conceptos de traducción de direcciones de red
+
+
+
+PARCIAL 2
+
+
+
+Semana 12: Del 13 de octubre al 18 de octubre
+
+UNIDAD IV: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+Creación de certificados digitales en Servidor Web y configurar HTTPS.
+
+
+
+Instalación y configuración de Microsoft Internet Security and Aceleration Server (ISA).
+
+Crear certificados digitales en servidor web y configurar el HTTPS.
+
+
+
+
+
+Instalar y configurar de Microsoft internet Security y el Aceleratión Server
+
+
+
+Fase 3 de la investigación: Aseguramiento de Red y Transporte.
+
+Semana 13: Del 20 de octubre al 25 de octubre
+
+UNIDAD IV: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+Configuración de reglas de filtro de capa aplicación en ISA Server.
+
+
+
+Configuración de autenticación de usuarios ISA Server.
+
+Efectuar la configuración de reglas de filtro de capa de aplicación en ISA Server.
+
+
+
+Efectuar la configuración de autenticación de usuarios ISA Server
+
+
+
+CLASE ESPEJO Milton Javier Mateus Hernandéz, Colombia, UCC
+
+Semana 14: Del 27 de octubre al 01 de noviembre
+
+UNIDAD IV: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+Configuración control de acceso y restricciones de usuarios ISA Server.
+
+Conocer la configuración de control de acceso y restricciones de usuarios ISA Server.
+
+
+
+
+
+LABORATORIO 3
+
+
+
+Semana 15: Del 03 de noviembre al 08 de noviembre
+
+UNIDAD IV: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+Instalación y configuración de Proxy SQUID
+
+
+
+Configuración de listas de control de acceso de SQUID.
+
+Instalar y configurar Proxy SQUID.
+
+
+
+
+
+Configurar las listas de control de acceso de SQUID.
+
+Semana 16: Del 10 de noviembre al 15 de noviembre
+
+UNIDAD IV: CONTROL DE ACCESO Y FILTROS DE CAPA DE APLICACIÓN
+
+Configuración básica de filtrado de capa aplicación SQUID
+
+
+
+Configuración de autenticación de usuarios de SQUID.
+
+
+
+Configuración control de acceso y restricciones de usuarios de SQUID.
+
+Realizar la configuración básica de filtrado de capa aplicación SQUID.
+
+
+
+Realizar la configuración de autenticación de usuarios de SQUID.
+
+
+
+Configurar el control de acceso y restricciones de usuarios de SQUID.
+
+
+
+Fase 4 de la investigación: Control en Capa de Aplicación
+
+CIERRE
+
+PARCIAL 3
+
+
+
+
+
+
+
+Proyectos de actividades de Investigación en cátedra
+
+
+
+Criterio
+
+Descripción
+
+Área
+
+Ciberseguridad aplicada a tecnologías financieras (FinTech), redes descentralizadas y cumplimiento legal en El Salvador.
+
+Duración
+
+Todo el ciclo académico (dividido en 4 fases metodológicas acumulativas). 
+
+Temas de Contenidos del Área
+
+Amenazas y motivaciones de atacantes contra billeteras digitales y nodos Bitcoin.
+
+Estándares de seguridad y leyes aplicables (Ley de Bitcoin y Ley de Delitos Informáticos de El Salvador).
+
+Criptografía simétrica y asimétrica en la verificación de transacciones blockchain.
+
+Políticas de seguridad (PSI) y cortafuegos para la protección de infraestructura de red transaccional.
+
+Filtrado en capa de aplicación y proxies (SQUID) para asegurar el tráfico de APIs financieras. 
+
+Objetivo
+
+Investigar los vectores de ataque actuales dirigidos a la infraestructura que procesa transacciones de Bitcoin en El Salvador, para diseñar un modelo de seguridad perimetral y políticas de protección de datos que mitiguen los riesgos informáticos en comercios o instituciones locales.
+
+Actividades a Desarrollar
+
+Fase 1 (U1): Investigación de Contexto y Criptografía: Analizar el histórico de incidentes de ciberseguridad en plataformas FinTech en El Salvador. Investigar cómo la criptografía asimétrica protege la blockchain y evaluar el marco legal local (Ley de Bitcoin, Ley de Firmas Electrónicas y Ley de Protección de Datos en discusión).
+
+Fase 2 (U2): Gestión de Riesgos y Políticas: Identificar amenazas específicas (Ransomware, Phishing, ataques de denegación de servicio DDoS a nodos) y desarrollar una matriz de análisis de riesgo para un comercio salvadoreño que acepta Bitcoin. Redactar las Políticas de Seguridad Informática (PSI) para el manejo seguro de llaves privadas y terminales de punto de venta (PoS).
+
+Fase 3 (U3): Aseguramiento de Red y Transporte: Diseñar un entorno de red segmentado usando simuladores (GNS3). Configurar reglas de cortafuegos (ACL y NAT) en GNU/Linux para bloquear accesos no autorizados a los puertos de comunicación del protocolo Bitcoin (puerto 8333) y restringir el tráfico a IPs locales autorizadas.
+
+Fase 4 (U4): Control en Capa de Aplicación: Implementar un servidor proxy (SQUID) para auditar y filtrar las peticiones web hacia las APIs de las pasarelas de pago (como Chivo Wallet, Strike o OpenNode). Configurar certificados HTTPS para encriptar todo el tráfico entre los terminales de venta y los servidores de procesamiento.
+
+Recursos
+
+Fuentes de Investigación: Datos públicos de la Oficina de Innovación Digital de El Salvador, reportes de incidentes del BCR (Banco Central de Reserva), artículos académicos sobre la adopción del Bitcoin, y estándares como ISO 27001 / PCI-DSS.• Tecnológicos: Máquinas virtuales (Kali Linux para auditoría, Ubuntu Server para configurar Squid/Iptables), Wireshark para analizar tráfico de red, y simuladores como Cisco Packet Tracer o GNS3.
+
+Criterios e Instrumentos de Evaluación
+
+Criterios: Profundidad en el diagnóstico del panorama del Bitcoin en el país, rigor metodológico en la matriz de riesgos, coherencia entre el ataque investigado y la regla del cortafuegos/proxy diseñada, y cumplimiento de la normativa salvadoreña.
+
+
+
+Heteroevaluación (Sumativa) / Presenta la documentación formal de la fase de Gestión de Riesgos y Políticas de la organización (Fase 2).
+
+
+
+Heteroevaluación (Sumativa) / Presenta la documentación formal de la fase de Gestión de Riesgos y Políticas de la organización (Fase 2).
+
+
+
+Heteroevaluación (Sumativa) / Presenta la documentación formal de la fase de Aseguramiento de Red y Transporte. (Fase 3).
+
+
+
+Heteroevaluación (Sumativa) / Defiende mediante sustentación técnica frente al docente el proyecto integrador de control en capa de aplicación (Fase 4).
+
+
+
+Instrumentos: Rúbrica para los reportes de investigación teórica (Fases 1 y 2), lista de verificación técnica para los laboratorios de redes/proxy (Fases 3 y 4), y rúbrica de exposición final del caso de estudio.
+
+
+
+Proyectos de actividades de Proyección Social en cátedra
+
+
+
+Criterio
+
+Descripción
+
+Área
+
+
+
+Duración
+
+
+
+Temas de Contenidos del Área
+
+
+
+Objetivo
+
+
+
+Actividades a Desarrollar
+
+
+
+Recursos
+
+
+
+
+
+
+
+Evidencias de aprendizaje
+
+
+
+No
+
+Estratégica
+
+Tipo de evaluación /
+
+Criterios de evaluación *
+
+Semana
+
+Porcentaje de evaluación
+
+1
+
+Cuestionario
+
+Heteroevaluación (Diagnóstica) / Identifica conocimientos previos en redes y sistemas operativos mediante reactivos de opción múltiple.
+
+1
+
+
+
+2
+
+Mapa conceptual 
+
+Heteroevaluación (Formativa) / Clasifica correctamente los tipos de atacantes y herramientas de ataque según la documentación técnica
+
+2
+
+
+
+3
+
+Cuadro comparativo/ casos de estudio
+
+Heteroevaluación (Sumativa) / Analiza la aplicación de estándares modernos y el cumplimiento de los tres pilares de la tríada CIA.
+
+2
+
+20%
+
+4
+
+Documento de investigación (Avance 1)
+
+Heteroevaluación (Sumativa) / Entrega formal del análisis de contexto y fundamentación criptográfica bajo la normativa de protección de datos (Fase 1).
+
+3
+
+20%
+
+Total, Laboratorio 1
+
+40%
+
+5
+
+Cuestionario corto
+
+Heteroevaluación (Diagnóstica) / Explora el conocimiento empírico del estudiante sobre qué es y para qué sirve una política empresarial.
+
+4
+
+
+
+6
+
+Formulario
+
+Autoevaluación (Formativa) / Mide el nivel de comprensión teórica previo a la prueba escrita utilizando un simulador conceptual interactivo.
+
+4
+
+
+
+7
+
+Tarea en equipo
+
+Heteroevaluación (Sumativa) / Diseña una Política de Seguridad Informática (PSI) estructurada y alineada a las necesidades del negocio.
+
+4
+
+20%
+
+8
+
+Cuestionario
+
+Heteroevaluación (Sumativa) / Resuelve reactivos teóricos estructurados sobre ciberseguridad, criptografía y políticas de seguridad.
+
+5
+
+40%
+
+Total, Parcial 1
+
+60%
+
+9
+
+Lluvia de ideas digital
+
+Heteroevaluación (Diagnóstica) / Sensa el entendimiento previo sobre conceptos de vulnerabilidad, amenaza e impacto organizacional.
+
+6
+
+
+
+10
+
+Manual técnico
+
+Heteroevaluación (Sumativa) / Redacta pasos operativos claros y secuenciales que complementen el plan básico de seguridad en un manual de procedimientos.
+
+6
+
+20%
+
+11
+
+Foro de debate
+
+Coevaluación (Formativa) / Discute y analiza de forma grupal las innovaciones tecnológicas de ciberseguridad expuestas en el Congreso de la Facultad.
+
+7
+
+
+
+12
+
+Documento de investigación (Avance 2)
+
+Heteroevaluación (Sumativa) / Presenta la documentación formal de la fase de Gestión de Riesgos y Políticas de la organización (Fase 2).
+
+8
+
+20%
+
+Total, Laboratorio 2
+
+40%
+
+13
+
+Diagrama de bloques
+
+Heteroevaluación (Diagnóstica) / Evalúa el reconocimiento previo de la arquitectura perimetral y la ubicación lógica de un cortafuegos.
+
+8
+
+
+
+14
+
+Guía de práctica de laboratorio
+
+Heteroevaluación (Sumativa) / Configura, administra y comprueba con éxito reglas de filtrado en entornos de red Windows y GNU/Linux.
+
+9
+
+20%
+
+15
+
+Cuestionario
+
+Heteroevaluación (Sumativa) / Aplica de manera correcta la lógica secuencial de listas de control de acceso (ACL) y enmascaramiento IP (NAT).
+
+10
+
+40%
+
+16
+
+Guía de valoración entre pares
+
+Coevaluación (Formativa) / Revisa en parejas los scripts y cadenas de comandos ejecutados en los entornos Linux del compañero.
+
+11
+
+
+
+Total, Parcial 2
+
+60%
+
+17
+
+Preguntas dirigidas
+
+Heteroevaluación (Diagnóstica) / Verifica la comprensión de conceptos como certificados SSL, llaves públicas y cifrado en tránsito (HTTPS).
+
+12
+
+
+
+18
+
+Tarea en equipo
+
+Heteroevaluación (Sumativa) / Crea, firma e instala certificados digitales válidos en un servidor web garantizando conexiones HTTPS funcionales. 
+
+12
+
+10%
+
+19
+
+Formulario
+
+Autoevaluación (Formativa) / Sintetiza y reporta los conocimientos avanzados adquiridos durante la ponencia internacional de la Clase Espejo.
+
+13
+
+
+
+20
+
+Guía de práctica de laboratorio
+
+Heteroevaluación (Sumativa) / Implementa filtros avanzados de capa de aplicación y esquemas de autenticación corporativa en ISA Server.
+
+13
+
+10%
+
+21
+
+Documento de investigación (Avance 3)
+
+Heteroevaluación (Sumativa) / Presenta la documentación formal de la fase de Aseguramiento de Red y Transporte. (Fase 3).
+
+13
+
+20%
+
+Total, Laboratorio 3
+
+40%
+
+22
+
+Esquema de red
+
+Heteroevaluación (Diagnóstica) / Válida de forma gráfica si el estudiante comprende el flujo de una petición web a través de un servidor Proxy.
+
+14
+
+
+
+23
+
+Guía de práctica de laboratorio
+
+Heteroevaluación (Sumativa) / Instala, despliega y optimiza de forma funcional el servicio de proxy SQUID en una topología de red local de prueba.
+
+15
+
+20%
+
+24
+
+Infografía
+
+Heteroevaluación (Formativa) / Diseña un resumen visual del funcionamiento de las expresiones regulares para el bloqueo de URLs en Squid.
+
+16
+
+
+
+25
+
+Defensa de investigación
+
+Heteroevaluación (Sumativa) / Defiende mediante sustentación técnica frente al docente el proyecto integrador de control en capa de aplicación (Fase 4).
+
+16
+
+40%
+
+Total, Parcial 3
+
+60%
+
+*Los criterios de evaluación no solamente son aspectos de puntualidad y forma, si no de contenido y fondo
+
+
+
+
+
+Referencias bibliográficas
+
+
+
+Autor
+
+Título
+
+García Cervigón Hurtado, Alfonso; Alegre Ramos, María del Pila (2011).
+
+Seguridad Informática, Editorial Paraninfo, 1a ed. España. (3 ejemplares)
+
+Gómez Vieites, Álvaro (2016)
+
+Enciclopedia de la seguridad informática, Alfaomega, 2a ed., México. (3 ejemplares)
+
+
+
+
+
+Referencias web
+
+
+
+Introducción a la Seguridad Informática. Recuperado el 14 de septiembre de 2022, de 
+
+https://www.um.es/docencia/barzana/GESESI/GESESI-Introduccion-a-la-seguridad.pdf
+
+
+
+Avenía, C. A. (n.d.). Fundamentos de seguridad informática. CORE. Recuperado el 14 de septiembre de 2022, de 
+
+https://core.ac.uk/download/pdf/326424171.pdf 
+
+
+
+Orellana, F. (2021, June 15). ¿Qué es la Seguridad Informática? UNIR Ecuador. Recuperado el 14 de septiembre de 2022, de  
+
+https://ecuador.unir.net/actualidad-unir/que-es-seguridad-informatica
+
+‌

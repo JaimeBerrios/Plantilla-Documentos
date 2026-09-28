@@ -1,0 +1,365 @@
+  UNIVERSIDAD DR. ANDRÉS BELLO
+
+SEDE REGIONAL DE SAN MIGUEL
+
+ 
+
+ 
+
+ 
+
+FACULTAD:
+
+Tecnología e Innovación
+
+CARRERA:
+
+Ingeniería en Sistemas y Computación
+
+TEMA DE INVESTIGACIÓN:
+
+Diseño de un modelo de seguridad perimetral y segmentación lógica para el aseguramiento de la red de datos en la Sede de Enlaces con la Educación, Distrito de Santa Rosa de Lima, Municipio de La Unión Norte, El Salvador, 2026.
+
+AUTORES
+
+Genesis Abigail Saravia Carpio sc0139042023 (Líder)
+
+Jaime Fernando Berrios Ortiz bo0310042024
+
+Jefferson Jared Bonilla Melendez bm0749042022
+
+Rosmeri Estefani Gonzalez Perez gp0382042023
+
+Florentin Alexander Treminio Herrera th0988042023
+
+CATEDRÁTICO
+
+Ing. Franklin Geovany Buruca Hernández
+
+ASIGNATURA
+
+Diseño de Sistemas de Seguridad de Redes de Datos
+
+AÑO: 2026
+
+FECHA DE ENTREGA
+
+17 de agosto de 2026
+
+ 1. PORTADA 2.TÍTULO DE LA INVESTIGACIÓN 3. INTRODUCCIÓN 4. PLANTEAMIENTO DEL PROBLEMA 5. JUSTIFICACIÓN 6. OBJETIVOS DE LA INVESTIGACIÓN  7. MARCO TEÓRICO 8. METODOLOGÍA 9. ANÁLISIS E INTERPRETACIÓN DE LOS RESULTADOS 10. CONCLUSIONES 11. RECOMENDACIONES 12. REFERENCIAS BIBLIOGRÁFICAS 13. CRONOGRAMA 14. PRESUPUESTO 15. ANEXOS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. TÍTULO DE LA INVESTIGACIÓN
+
+Diseño de un modelo de seguridad perimetral y segmentación lógica para el aseguramiento de la red de datos en la Sede de Enlaces con la Educación, Distrito de Santa Rosa de Lima, Municipio de La Unión Norte, El Salvador, 2026. 
+
+3. INTRODUCCIÓN
+
+4. PLANTEAMIENTO DEL PROBLEMA
+
+4.1 Situación Problemática
+
+Las sedes de soporte técnico e infraestructura digital del sector educativo manejan volúmenes significativos de tráfico informático y administran equipos con diferentes niveles de confianza. En la Sede de Enlaces con la Educación en Santa Rosa de Lima, el personal técnico realiza labores de configuración de imágenes de sistema, despliegue de aplicaciones pedagógicas y gestión de garantías, a la par de las actividades administrativas cotidianas de control y reporte institucional.
+
+Para ejecutar dichas actividades, la sede hace uso de una red de datos local en la que interactúan estaciones de trabajo del personal de planta junto con dispositivos externos (laptops y tabletas estudiantiles) que ingresan para mantenimiento correctivo o preventivo. No obstante, la infraestructura de red actual presenta una arquitectura predominantemente plana, donde no existe una separación lógica formal entre los dominios de difusión técnica y administrativa. Esta condición técnica permite que equipos en revisión —los cuales podrían encontrarse desactualizados o infectados con malware— compartan el mismo canal de comunicación con los sistemas donde se procesan registros institucionales.
+
+Aunado a lo anterior, la red carece de mecanismos formales de control perimetral tales como listas de control de acceso (ACLs) estrictas, inspección de estado de paquetes mediante cortafuegos dedicados o esquemas de traducción de direcciones (NAT) estructurados por zonas de seguridad. Asimismo, no se dispone de un sistema de control de acceso y filtrado en capa de aplicación que restrinja el consumo indebido de ancho de banda o bloquee dominios sospechosos y no autorizados, ni de políticas formales que normen el uso seguro de los puertos y servicios de red.
+
+Esta falta de controles perimetrales y segmentación debilita la postura de ciberseguridad de la sede, elevando la probabilidad de incidentes como la denegación de servicio interna, fugas de información, accesos no autorizados a recursos compartidos e interrupción de los cronogramas de entrega de equipos a las instituciones educativas de la zona oriental.
+
+4.2 Enunciado del Problema
+
+¿De qué manera el diseño de un modelo de seguridad perimetral y segmentación lógica contribuirá a mitigar los riesgos informáticos y garantizar la confidencialidad, integridad y disponibilidad en la red de datos de la Sede de Enlaces con la Educación en Santa Rosa de Lima durante el año 2026?
+
+5. JUSTIFICACIÓN
+
+La realización del presente estudio responde a la imperativa necesidad de dotar a la Sede de Enlaces con la Educación en Santa Rosa de Lima de un esquema de seguridad de redes formal, preventivo y técnicamente viable. Dado que esta sede constituye un punto neurálgico para el mantenimiento del ecosistema tecnológico educativo en la zona oriental, la estabilidad y protección de sus flujos de datos son indispensables para evitar retrasos operativos o vulneraciones a la información del programa.
+
+Desde el punto de vista práctico y técnico, la investigación aporta una propuesta integral que aborda las vulnerabilidades estructurales de la red actual. Mediante la implementación teórica y simulada de VLANs, se logrará aislar el tráfico de los dispositivos en diagnóstico respecto a las estaciones del personal administrativo y los servidores locales. Complementariamente, el establecimiento de reglas de filtrado perimetral en Linux y la incorporación de servicios proxy para la capa de aplicación permitirán auditar el tráfico, optimizar el uso del ancho de banda y mitigar vectores de intrusión externa e interna.
+
+En el ámbito académico y profesional, el proyecto permite a los investigadores aplicar y consolidar las competencias adquiridas en la carrera de Ingeniería en Sistemas y Computación, específicamente dentro del área de seguridad en redes de datos, gestión de riesgos, diseño de topologías seguras en simuladores de alto rendimiento (GNS3) y aplicación del marco legal informático salvadoreño.
+
+Por último, los resultados de este proyecto no solo beneficiará de manera directa a la sede evaluada mediante la entrega de directrices claras y planos de configuración seguros, sino que también constituirán una base documental estandarizada que podrá ser replicada como modelo de referencia técnica en otras sedes regionales del país.
+
+
+
+
+
+
+
+
+
+6. OBJETIVOS DE LA INVESTIGACIÓN
+
+6.1 Objetivo General
+
+Diseñar un modelo de seguridad perimetral y segmentación lógica para la red de datos de la Sede de Enlaces con la Educación en el distrito de Santa Rosa de Lima, con el fin de mitigar riesgos informáticos y preservar los principios de confidencialidad, integridad y disponibilidad del tráfico institucional durante el año 2026.
+
+6.2 Objetivos Específicos
+
+Diagnosticar las condiciones técnicas actuales de la infraestructura de red, estaciones de trabajo y flujos de tráfico en la Sede de Enlaces con la Educación en Santa Rosa de Lima, identificando las principales vulnerabilidades y amenazas informáticas.
+
+Formular una matriz de análisis y evaluación de riesgos informáticos, complementada con un cuerpo de Políticas de Seguridad Informática (PSI) alineadas al marco regulatorio y operativo institucional.
+
+Estructurar una arquitectura de red perimetral simulada en GNS3 que incorpore segmentación lógica mediante VLANs, listas de control de acceso (ACLs) y un cortafuegos basado en Linux (iptables/nftables) para aislar las zonas administrativas, técnicas y de diagnóstico.
+
+Configurar controles de seguridad en capa de aplicación a través del despliegue de un servidor proxy y la gestión de certificados digitales (HTTPS/TLS) para la auditoría, filtrado y aseguramiento de las conexiones salientes, ejecutado en un entorno de laboratorio simulado.
+
+7. MARCO TEÓRICO
+
+El desarrollo de una propuesta de seguridad para una red de datos requiere comprender los fundamentos relacionados con la seguridad informática, la seguridad de redes, la segmentación lógica y los mecanismos utilizados para controlar el intercambio de información entre dispositivos. Estos elementos permiten analizar las condiciones de una infraestructura tecnológica y establecer medidas orientadas a disminuir los riesgos asociados con accesos no autorizados, propagación de amenazas y exposición de información.
+
+En el caso de la Sede de Enlaces con la Educación del distrito de Santa Rosa de Lima, la importancia de estos fundamentos se relaciona directamente con las condiciones actuales de su infraestructura. La sede dispone de una sola red en la que se conectan los equipos utilizados por el personal y mantiene una topología de tipo estrella. Por esta razón, resulta necesario estudiar los conceptos técnicos que fundamentan el diseño de un modelo de seguridad perimetral y segmentación lógica adecuado a las características de dicha red.
+
+7.1. Seguridad informática
+
+La seguridad informática comprende el conjunto de principios, medidas, procedimientos y controles destinados a proteger los sistemas de información, dispositivos, redes y datos frente a amenazas que puedan afectar su funcionamiento o permitir el acceso, modificación, destrucción o divulgación no autorizada de la información.
+
+Dentro de la seguridad de la información, tres propiedades constituyen una referencia fundamental: confidencialidad, integridad y disponibilidad. La confidencialidad busca que la información únicamente pueda ser conocida o utilizada por personas, sistemas o procesos autorizados; la integridad procura mantener la exactitud y consistencia de la información, evitando alteraciones no autorizadas; mientras que la disponibilidad pretende garantizar que los sistemas, servicios y datos puedan ser utilizados cuando sean requeridos por los usuarios autorizados.
+
+Estos principios resultan relevantes para una infraestructura de red debido a que los dispositivos conectados intercambian información y utilizan recursos compartidos. Una deficiencia en los controles de seguridad puede facilitar accesos indebidos, interrupciones de los servicios o propagación de amenazas entre dispositivos.
+
+En consecuencia, la seguridad informática no depende únicamente de herramientas tecnológicas. También requiere identificar los activos que deben protegerse, las amenazas existentes, las vulnerabilidades que pueden ser aprovechadas y los riesgos derivados de la combinación de estos factores. A partir de dicho análisis es posible establecer controles acordes con las necesidades y características de una organización.
+
+7.2. Seguridad de redes
+
+La seguridad de redes constituye una aplicación de los principios de seguridad informática orientada específicamente a proteger la infraestructura de comunicaciones, los dispositivos conectados y el tráfico que circula entre ellos. Su finalidad es establecer mecanismos que permitan controlar las comunicaciones y reducir la posibilidad de accesos o intercambios de información no autorizados.
+
+La protección de una red puede implementarse mediante diferentes controles, entre ellos cortafuegos, listas de control de acceso, segmentación de red, autenticación, monitoreo del tráfico y establecimiento de políticas para determinar qué dispositivos pueden comunicarse entre sí.
+
+La seguridad de redes adquiere especial importancia cuando dispositivos con funciones o niveles de confianza diferentes utilizan una misma infraestructura. Una red sin separación suficiente entre grupos de dispositivos puede incrementar la exposición de los recursos ante incidentes originados en otro equipo conectado.
+
+En este sentido, organismos especializados en ciberseguridad recomiendan implementar segmentación mediante mecanismos como VLAN, listas de control de acceso en routers y capacidades de firewall como parte de una estrategia de defensa en profundidad.
+
+7.3. Seguridad perimetral
+
+La seguridad perimetral comprende los mecanismos destinados a controlar las comunicaciones entre diferentes zonas de una red y entre la infraestructura interna y redes externas. El perímetro representa un punto de control desde el cual pueden establecerse reglas para permitir, restringir, inspeccionar o registrar las comunicaciones.
+
+Uno de los principales componentes utilizados para establecer este control es el firewall o cortafuegos. Este dispositivo o software analiza el tráfico de red de acuerdo con reglas previamente establecidas y determina qué comunicaciones se permiten o se bloquean. Dependiendo de su implementación, puede realizar inspección del tráfico considerando direcciones IP, puertos, protocolos, conexiones y otros parámetros.
+
+El diseño de un perímetro de seguridad no debe entenderse exclusivamente como una barrera entre Internet y la red interna. En arquitecturas segmentadas también pueden establecerse controles entre diferentes zonas internas, de manera que el acceso de un segmento a otro se encuentre sujeto a políticas específicas.
+
+Para la presente investigación, este concepto constituye uno de los fundamentos de la arquitectura propuesta, debido a que se pretende establecer controles que permitan regular el tráfico entre los diferentes grupos de dispositivos que forman parte de la infraestructura de la sede.
+
+7.4. Segmentación lógica de redes
+
+La segmentación de redes consiste en dividir una infraestructura en diferentes segmentos con el propósito de establecer límites de comunicación y facilitar la aplicación de políticas de seguridad. Esta separación puede realizarse físicamente mediante equipos independientes o lógicamente mediante tecnologías de red.
+
+
+
+CISA define la segmentación como una aproximación arquitectónica física o virtual mediante la cual una red es dividida en múltiples segmentos que funcionan como subredes independientes, proporcionando mayor control sobre las comunicaciones.
+
+Una de las tecnologías empleadas para realizar esta separación lógica son las Virtual Local Area Networks (VLAN). Las VLAN permiten agrupar dispositivos lógicamente aunque utilicen una infraestructura física común. De esta manera, los equipos pueden organizarse de acuerdo con su función, nivel de confianza o requerimientos de seguridad.
+
+NIST señala que, en un enfoque tradicional de segmentación, los recursos que poseen requerimientos de seguridad similares pueden agruparse en segmentos mediante mecanismos como identificadores VLAN, mientras las políticas de comunicación se establecen utilizando parámetros de red como direcciones IP y puertos.
+
+La utilización de VLAN permite disminuir la comunicación directa e innecesaria entre grupos de dispositivos. Sin embargo, la segmentación por sí sola no constituye un mecanismo completo de protección; debe complementarse con reglas que determinen qué tráfico puede circular entre los diferentes segmentos.
+
+7.5. Listas de control de acceso (ACL)
+
+Las listas de control de acceso, conocidas como ACL por sus siglas en inglés (Access Control Lists), permiten establecer reglas para autorizar o denegar determinados tipos de tráfico de red.
+
+Las ACL pueden utilizar criterios como direcciones IP de origen y destino, protocolos y puertos para determinar si una comunicación debe permitirse. De esta manera, permiten aplicar restricciones entre diferentes segmentos de una infraestructura.
+
+En una arquitectura segmentada, las ACL complementan el uso de VLAN debido a que permiten controlar la comunicación entre ellas. Esto posibilita establecer, por ejemplo, que un determinado segmento tenga acceso únicamente a los servicios necesarios para desarrollar sus funciones, evitando comunicaciones que no hayan sido expresamente autorizadas.
+
+La aplicación de estos controles responde al principio de reducir las comunicaciones innecesarias entre grupos de dispositivos. CISA incluye las ACL de router junto con los firewalls y las VLAN entre los mecanismos que pueden utilizarse para conseguir una segmentación robusta de la red.
+
+
+
+7.6. Cortafuegos y filtrado del tráfico
+
+Un firewall constituye un mecanismo de seguridad encargado de controlar el tráfico que atraviesa diferentes interfaces o zonas de una red. Su funcionamiento se basa en políticas y reglas mediante las cuales se determina qué comunicaciones pueden establecerse y cuáles deben ser rechazadas.
+
+Los cortafuegos pueden utilizarse tanto para controlar las conexiones procedentes de redes externas como para establecer restricciones entre segmentos internos. En una arquitectura de seguridad por capas, estos controles permiten crear fronteras entre recursos que presentan diferentes niveles de confianza.
+
+CISA señala que los firewalls pueden configurarse para bloquear tráfico proveniente de determinadas direcciones de red, aplicaciones o puertos, permitiendo simultáneamente las comunicaciones que resultan necesarias para el funcionamiento de los servicios.
+
+Para el modelo propuesto en esta investigación se considera el empleo de un cortafuegos basado en Linux dentro del ambiente simulado, con el propósito de establecer reglas de filtrado y controlar las comunicaciones entre los segmentos definidos.
+
+7.7. Proxy y control de acceso a servicios de Internet
+
+Un servidor proxy funciona como intermediario entre los dispositivos de una red y determinados servicios externos. Las solicitudes realizadas por los usuarios pueden ser procesadas por el proxy antes de establecer comunicación con el recurso solicitado.
+
+Su implementación puede utilizarse para establecer políticas de navegación, controlar determinados tipos de solicitudes, mantener registros de actividad y aplicar restricciones de acceso de acuerdo con las necesidades de una organización.
+
+Este elemento posee además un antecedente directo dentro de la infraestructura objeto de estudio. De acuerdo con la información proporcionada por la sede, anteriormente existía un servidor central encargado de filtrar y distribuir el acceso a Internet y se utilizaba un proxy físico para realizar funciones de filtrado. Con modificaciones realizadas posteriormente a la infraestructura, tanto el servidor como el proxy dejaron de utilizarse, permaneciendo principalmente el switch y el cableado de la red. 
+
+Por tanto, estudiar la función del proxy permite comprender tanto parte de la arquitectura que existió anteriormente como las posibilidades de incorporar controles de capa de aplicación dentro del modelo propuesto.
+
+
+
+7.8. HTTPS/TLS y protección de las comunicaciones
+
+La seguridad de una red no solamente requiere controlar qué dispositivos pueden establecer comunicación, sino también proteger la información mientras es transmitida. Para ello pueden utilizarse protocolos criptográficos destinados a proporcionar seguridad a las comunicaciones.
+
+Transport Layer Security (TLS) permite establecer comunicaciones protegidas mediante mecanismos criptográficos. Su utilización está asociada, entre otras aplicaciones, con HTTPS, mediante el cual se protege la comunicación entre clientes y servicios web.
+
+Los certificados digitales forman parte de este proceso al permitir vincular una identidad con información criptográfica utilizada durante el establecimiento de comunicaciones seguras. La incorporación de HTTPS/TLS en un ambiente de laboratorio permite analizar mecanismos destinados a proteger la información durante su transmisión y complementar los controles de segmentación y filtrado establecidos en la arquitectura.
+
+7.9. Topologías de red
+
+Una topología de red representa la forma en que los diferentes dispositivos y medios de comunicación se encuentran organizados dentro de una infraestructura. Entre las topologías conocidas se encuentran bus, anillo, malla, árbol y estrella.
+
+En una topología estrella, los dispositivos se conectan hacia un punto central encargado de concentrar las conexiones. Esta configuración facilita la administración de los enlaces, aunque también genera una dependencia significativa respecto del dispositivo central, debido a que su funcionamiento puede afectar la conectividad de los equipos asociados.
+
+La topología estrella resulta particularmente relevante para la presente investigación debido a que corresponde a la configuración utilizada en la Sede de Enlaces con la Educación. Según la información proporcionada por la institución, la red ha mantenido esta topología desde su implementación y actualmente las conexiones se concentran principalmente en un switch. 
+
+7.10. Infraestructura actual de la Sede de Enlaces con la Educación
+
+La Sede de Enlaces con la Educación del distrito de Santa Rosa de Lima dispone actualmente de una infraestructura en la que los dispositivos utilizados por el personal comparten una misma red. De acuerdo con la información proporcionada por la sede, se encuentran diez equipos de oficina, correspondientes a los técnicos que trabajan en la institución. 
+
+La infraestructura utiliza una topología estrella cuyo punto de concentración es un switch. Este equipo se encuentra instalado desde aproximadamente el año 2003 y actualmente presenta diferentes puertos que han dejado de funcionar. La sede indica que algunos puertos permanecen operativos, pero el dispositivo presenta deterioro debido a su antigüedad.
+
+La arquitectura original disponía de un servidor central encargado del filtrado y distribución de Internet y de un proxy físico. Posteriormente, estos elementos dejaron de formar parte de la infraestructura y permanecieron principalmente el cableado y el switch. En la configuración actual se utilizan algunos puntos de red para conectar routers, mientras otros equipos acceden mediante Wi-Fi.
+
+Adicionalmente, la sede dispone de un módem del proveedor Claro. La computadora principal se conecta a este equipo debido a la disponibilidad limitada de puntos funcionales de la red. El módem dispone de conexiones utilizadas para las cámaras de la sede, un router y la computadora principal de la persona encargada. 
+
+Estas condiciones permiten contextualizar la necesidad de estudiar una arquitectura que incorpore segmentación lógica y controles de seguridad, sin asumir que todas las vulnerabilidades posibles se encuentran presentes. La identificación específica de vulnerabilidades, amenazas y riesgos deberá derivarse del diagnóstico y de los instrumentos establecidos dentro de la metodología de la investigación.
+
+7.11. Marco normativo y planificación educativa en El Salvador
+
+La infraestructura tecnológica objeto de estudio se encuentra dentro de un contexto educativo y, por tanto, resulta pertinente considerar el marco jurídico y de planificación que orienta el sistema educativo salvadoreño.
+
+El Sistema de Información de Tendencias Educativas en América Latina (SITEAL), del Instituto Internacional de Planeamiento de la Educación de UNESCO, establece que los compromisos nacionales relacionados con el derecho a la educación se encuentran expresados principalmente mediante la Constitución y las leyes nacionales de educación. Para El Salvador, identifica a la Constitución de la República como el marco de mayor jerarquía para la protección del derecho a la educación y a la Ley General de Educación como el instrumento que regula la prestación del servicio educativo.
+
+7.11.1. Compromisos y obligaciones jurídicas en el ámbito nacional
+
+
+
+La Constitución de la República de El Salvador establece los fines generales de la educación y constituye el marco jurídico sobre el cual se desarrollan las leyes y políticas educativas del país.
+
+Por su parte, la Ley General de Educación regula la prestación del servicio educativo en las instituciones oficiales y privadas y desarrolla las responsabilidades relacionadas con el funcionamiento y organización del sistema educativo. SITEAL identifica esta legislación como parte de los compromisos y obligaciones nacionales asumidos por el Estado salvadoreño para garantizar el derecho a la educación.
+
+Este marco permite contextualizar institucionalmente la presente investigación, debido a que la infraestructura tecnológica y los servicios de soporte asociados al ámbito educativo forman parte de los recursos utilizados para apoyar el funcionamiento de dicho sistema.
+
+7.11.2. Planificación de la educación
+
+La planificación educativa permite trasladar los principios y obligaciones establecidos en el marco jurídico hacia planes, estrategias, programas y líneas de acción.
+
+SITEAL señala que el Plan Sectorial de Educación 2022-2030 establece prioridades, programas y líneas de acción para el sistema educativo salvadoreño, además de contemplar aspectos relacionados con costos, financiamiento, planificación operativa, monitoreo y evaluación.
+
+La consideración de la planificación educativa dentro de esta investigación permite situar la infraestructura tecnológica de la Sede de Enlaces con la Educación dentro de un contexto institucional más amplio, en el cual los recursos tecnológicos constituyen elementos que apoyan las actividades y servicios del sector educativo.
+
+7.11.3. Caracterización de la política educativa nacional
+
+La política educativa nacional comprende las diferentes acciones mediante las cuales el Estado busca garantizar el funcionamiento del sistema educativo y el ejercicio del derecho a la educación.
+
+SITEAL caracteriza estas acciones considerando, entre otros componentes, el currículo y los modelos de gestión institucional, los docentes y la infraestructura, tecnología y equipamiento. En este último ámbito se incluyen las acciones dirigidas a mantener, ampliar, rehabilitar, equipar y dotar de tecnología a los servicios educativos.
+
+
+
+Esta dimensión guarda relación con el contexto de la investigación debido a que el funcionamiento de servicios tecnológicos educativos requiere infraestructura de comunicaciones que permita conectar dispositivos y acceder a recursos digitales. En consecuencia, la seguridad de la red puede analizarse como un componente técnico relacionado con la protección y adecuada administración de dicha infraestructura, sin sustituir ni ampliar las obligaciones establecidas por la normativa educativa.
+
+7.12. Relación de los fundamentos teóricos con el modelo propuesto
+
+Los conceptos desarrollados permiten establecer la base teórica para el diseño del modelo de seguridad perimetral y segmentación lógica propuesto para la Sede de Enlaces con la Educación del distrito de Santa Rosa de Lima.
+
+La segmentación mediante VLAN permitirá plantear la separación lógica de dispositivos de acuerdo con las funciones identificadas durante el diagnóstico. Las ACL y el firewall permitirán establecer políticas para controlar las comunicaciones entre dichos segmentos, mientras que los mecanismos de proxy y HTTPS/TLS permitirán estudiar controles adicionales relacionados con el acceso a servicios y la protección de las comunicaciones.
+
+La propuesta será estructurada y evaluada dentro de un ambiente simulado en GNS3, conforme a los objetivos definidos en la investigación. Esto permitirá representar la arquitectura propuesta y analizar técnicamente su funcionamiento sin realizar modificaciones directas sobre la infraestructura física de la sede.
+
+De esta manera, el marco teórico vincula los fundamentos de seguridad informática y redes con las condiciones identificadas en la institución y proporciona los conceptos necesarios para sustentar posteriormente el diseño, implementación simulada y análisis del modelo de seguridad propuesto.
+
+8. METODOLOGÍA
+
+8.1. Tipo y diseño de investigación
+
+Bajo el enfoque metodológico de Hernández Sampieri, el presente estudio se clasifica como una investigación con enfoque cuantitativo, ya que se basará en la medición técnica de parámetros relacionados con la red de datos y la seguridad informática de la Sede de Enlaces con la Educación. El diseño es no experimental y transversal, debido a que las variables no serán manipuladas en un entorno físico real, sino observadas y analizadas en las condiciones actuales de la infraestructura durante un período determinado.
+
+En cuanto a su alcance, corresponde a un estudio descriptivo y de desarrollo tecnológico (propositivo), ya que busca detallar las características operativas de la infraestructura de red actual, identificar vulnerabilidades y riesgos de seguridad, y proponer el diseño de un modelo de arquitectura de red segura mediante simulación.
+
+8.2. Enfoque de la investigación
+
+La investigación tendrá un enfoque cuantitativo, debido a que se recopilarán y analizarán datos relacionados con las condiciones técnicas de la infraestructura de red, los dispositivos conectados, la distribución de la conectividad y los aspectos de seguridad informática identificados en la sede.
+
+La información obtenida permitirá establecer las condiciones actuales de la red y utilizar estos resultados como base para el diseño de una propuesta de mejora orientada al aseguramiento de la red de datos.
+
+8.3. Diseño de la investigación
+
+El diseño será no experimental, debido a que no se modificarán deliberadamente las condiciones actuales de la infraestructura física de la sede para obtener los resultados. La situación existente será observada, documentada y analizada para identificar las principales condiciones y riesgos relacionados con la seguridad de la red.
+
+Asimismo, será de tipo transversal, debido a que la recopilación de información se realizará durante un período determinado de 2026, considerando las condiciones existentes de la infraestructura en el momento del estudio.
+
+8.4. Alcance de la investigación
+
+El estudio tendrá un alcance descriptivo y de desarrollo tecnológico (propositivo). Desde el componente descriptivo, se caracterizará la infraestructura de red existente, su topología, los dispositivos utilizados, la distribución de la conectividad y las principales condiciones que pueden representar riesgos para la seguridad informática.
+
+Desde el componente propositivo, se diseñará un modelo de seguridad perimetral y segmentación lógica que permita establecer una arquitectura de red más segura. La propuesta contemplará mecanismos como VLAN, listas de control de acceso (ACL), reglas de cortafuegos mediante Linux, NAT y un servidor proxy SQUID, además de mecanismos relacionados con HTTPS/TLS. La arquitectura será desarrollada y evaluada mediante un entorno de simulación, sin realizar modificaciones sobre la infraestructura física de la sede.
+
+8.5. Unidad de análisis
+
+La unidad de análisis estará constituida por la red de datos de la Sede de Enlaces con la Educación, ubicada en el distrito de Santa Rosa de Lima, Municipio de La Unión Norte, El Salvador.
+
+La infraestructura analizada cuenta con aproximadamente diez equipos de oficina utilizados por los técnicos de la sede. Actualmente, la distribución de la conectividad se concentra principalmente en un switch que funciona como elemento central de la red, complementado con routers y conexiones inalámbricas.
+
+8.6. Caracterización de la infraestructura actual
+
+La sede utiliza una topología de red tipo estrella, en la cual los diferentes puntos de conexión convergen hacia un dispositivo central. Esta topología ha sido utilizada desde el establecimiento inicial de la infraestructura de red.
+
+Anteriormente, la sede contaba con un servidor central y un proxy físico encargado de participar en la distribución y filtrado del acceso a internet. Con el paso de los años y debido a modificaciones realizadas en la infraestructura del edificio, estos elementos dejaron de utilizarse, permaneciendo principalmente el cableado estructurado y el switch como parte de la infraestructura existente.
+
+Actualmente, el switch concentra la distribución de la conectividad dentro de la sede. Sin embargo, el dispositivo presenta un estado de obsolescencia debido a su antigüedad, ya que se encuentra instalado desde aproximadamente el año 2003. Como consecuencia, algunos de sus puertos han dejado de funcionar, mientras que otros continúan proporcionando conectividad a los equipos.
+
+La distribución actual también presenta diferentes mecanismos de conexión. Algunos puntos de red funcionales son utilizados para conectar routers que posteriormente distribuyen la conectividad hacia los equipos, mientras que otros dispositivos utilizan conexión inalámbrica.
+
+Además, la sede dispone de un módem de Claro, al cual se encuentra conectada la computadora principal de la encargada jde la sede. Debido a la disponibilidad limitada de puntos de red funcionales, dicha computadora utiliza directamente una de las salidas disponibles del módem. El módem cuenta con tres salidas utilizadas para diferentes servicios: cámaras de la sede, conexión de un router y conexión de la computadora principal. Debido a esta limitación, recientemente fue incorporado un nuevo router para facilitar la distribución de la conectividad hacia los demás equipos.
+
+Estas condiciones evidencian una infraestructura en la que la conectividad se encuentra distribuida mediante diferentes dispositivos, sin contar actualmente con el servidor central y el proxy físico que anteriormente participaban en la administración y filtrado del tráfico.
+
+8.7. Problemática de seguridad informática
+
+La situación actual de la infraestructura presenta diferentes aspectos que deben ser considerados desde la perspectiva de la seguridad informática. La concentración de la conectividad en un dispositivo central obsoleto, la ausencia de un mecanismo centralizado de filtrado y control del tráfico, la utilización de diferentes routers y la coexistencia de conexiones cableadas e inalámbricas generan condiciones que deben ser analizadas para determinar los riesgos existentes.
+
+Por esta razón, el estudio se enfocará principalmente en los fundamentos de seguridad informática aplicables a la problemática identificada. Se analizarán conceptos relacionados con seguridad perimetral, segmentación de redes, control de acceso, cortafuegos, listas de control de acceso, VLAN, NAT, filtrado de tráfico, servidores proxy, HTTPS/TLS y gestión de riesgos informáticos.
+
+Estos fundamentos servirán como base teórica para sustentar la propuesta de una arquitectura de red que permita mejorar el control, aislamiento y protección de los diferentes segmentos de la red.
+
+8.8. Técnicas e instrumentos para la recopilación de información
+
+Para la recopilación de información se considerarán técnicas como la observación directa de la infraestructura, revisión de las condiciones de conectividad, identificación de los dispositivos utilizados y recopilación de información proporcionada por el personal relacionado con el funcionamiento de la sede.
+
+Como instrumentos se podrán utilizar fichas de observación, listas de verificación, registros de dispositivos, matrices de identificación de riesgos y documentación técnica de la infraestructura.
+
+La información recopilada será utilizada para establecer un diagnóstico de las condiciones actuales y determinar los requerimientos técnicos que deberá considerar el modelo de seguridad propuesto.
+
+8.9. Propuesta tecnológica
+
+A partir de los resultados obtenidos en el diagnóstico, se estructurará una propuesta de arquitectura de red segura mediante un entorno de simulación en GNS3.
+
+La propuesta contemplará la segmentación lógica de la red mediante VLAN, la implementación de listas de control de acceso (ACL), la aplicación de reglas de cortafuegos mediante Linux utilizando iptables o nftables y la configuración de mecanismos de NAT.
+
+Asimismo, se incorporará un servidor proxy SQUID para el filtrado y control de las conexiones salientes, junto con la gestión de certificados digitales y HTTPS/TLS para el aseguramiento y auditoría de las conexiones.
+
+La simulación permitirá evaluar la estructura propuesta sin intervenir físicamente la infraestructura de la sede y permitirá representar los controles de seguridad planteados para las zonas administrativas, técnicas y de diagnóstico.
+
+Nota: el presente documento es solo un borrador, este es el oficial: clic aquí
