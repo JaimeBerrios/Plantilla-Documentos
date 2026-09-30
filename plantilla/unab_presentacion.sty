@@ -91,13 +91,15 @@
       \fill[unabblue] (current page.south west) rectangle ([yshift=0.12cm]current page.south east);
     \end{tikzpicture}
 
-    \vspace*{-0.6cm}
+    \vspace*{0.5cm}
 
     \begin{center}
-      {\color{unabblue!65}\small \IconosPortada} \\[0.18cm]
+      \begin{minipage}{0.78\textwidth}
+      \centering
       {\color{unabblue}\bfseries\fontsize{22pt}{25pt}\selectfont \TituloTrabajo \par}
       \vspace{0.15cm}
       {\color{unabblue}\fontsize{10pt}{12pt}\selectfont \SubtituloTrabajo \par}
+      \end{minipage}
       \vspace{0.1cm}
       {\color{unabblue}\rule{0.5\textwidth}{0.4pt}}
     \end{center}
@@ -109,7 +111,7 @@
     \begin{beamercolorbox}[rounded=true,wd=\textwidth,sep=0.2cm,left]{block body}
       {\footnotesize\textcolor{unabblue}{\textbf{\faChalkboardTeacher \ Asignatura:}} \Asignatura} \\[0.12cm]
       {\footnotesize\textcolor{unabblue}{\textbf{\faUserTie \ Docente:}} \Docente} \\[0.12cm]
-      {\footnotesize\textcolor{unabblue}{\textbf{\faUsers \ Equipo expositor:}} \Grupo} \\
+      {\footnotesize\textcolor{unabblue}{\textbf{\faGraduationCap \ Carrera:}} \Carrera} \\
       \vspace{0.1cm}
       {\fontsize{8pt}{10pt}\selectfont
       \begin{tabularx}{\dimexpr\linewidth-0.4cm\relax}{@{}Xl@{}}
@@ -119,18 +121,18 @@
     \end{minipage}
     \end{center}
 
-    \vspace{0.3cm}
+    \vspace{0.1cm}
 
     \begin{center}
       {\scriptsize \textcolor{unabblue}{\faIcon{map-marker-alt}} \LugarFecha}\\[0.15cm]
-      \includegraphics[height=1.6cm,keepaspectratio]{assets/img/acreditacion.png}
+      \includegraphics[height=1.2cm,keepaspectratio]{assets/img/acreditacion.png}
     \end{center}
   \end{frame}
   }%
 }
 
 \newcommand{\cierreinstitucional}[1][Muchas gracias por su atención]{%
-  \expositor{\Grupo}
+  \expositor{\NombreFirma}
   \begin{frame}[plain]
     \begin{center}
       \vspace{1.5cm}

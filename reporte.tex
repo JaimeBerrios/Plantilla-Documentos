@@ -1,108 +1,189 @@
-\documentclass[12pt,letterpaper]{article}
+﻿\documentclass[12pt,letterpaper]{article}
 \usepackage{fontspec}
 \usepackage[spanish,es-noshorthands,es-tabla,es-lcroman]{babel}
 \usepackage{plantilla/unab_reporte}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\setmainfont{Arial}
+\setsansfont{Arial}
 
 % Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
 \input{.build/datos.tex}
 \hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\NombreFirma}}
 
+% Sustituye cada orientación y espacio pendiente con el contenido definitivo.
+\newcommand{\pendiente}[1]{\par{\small\itshape Pendiente: #1}\par}
+\newcommand{\espacio}[1]{\par\vspace{#1}}
+\newcommand{\evidencia}[2]{%
+  \par\medskip\noindent\fcolorbox{linegray}{softgray}{%
+    \parbox[c][#2][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \centering\small\color{unabblue}#1}}\par}
+
 \begin{document}
 \portadareporte
 \pagenumbering{roman}
-\section*{Resumen}
-\addcontentsline{toc}{section}{Resumen}
-Escribe aquí una síntesis del reporte: el problema abordado, el objetivo,
-la metodología utilizada, los principales resultados y la conclusión central.
-Redacta este apartado cuando hayas terminado el desarrollo del documento.
-
-\textbf{Palabras clave:} tema; concepto; área de estudio.
-\clearpage
 \tableofcontents
+\vfill
+{\small\textbf{Plantilla para completar.} Los textos de orientación y los espacios
+marcados como pendientes deben sustituirse antes de entregar. Redacta en tono
+académico, formal y en tercera persona.}
 \clearpage
 \pagenumbering{arabic}
 
-\section{Introducción}
-Presenta el tema, su contexto y su importancia. Describe el problema o la
-pregunta que motiva el trabajo, el alcance del reporte y cómo está organizado.
-Reemplaza todos los textos de orientación con el contenido de tu investigación.
+\section{Datos generales}
+Los nombres completos y números de carné o matrícula se completan en la tabla
+Nombre/Código de \texttt{datos.md} y se muestran en la portada. La asignatura,
+el docente y los demás datos compartidos también se editan en ese archivo.
 
-\section{Objetivos}
-\subsection{Objetivo general}
-Expresa el propósito principal del trabajo con un verbo en infinitivo.
-\subsection{Objetivos específicos}
-\begin{itemize}
-  \item Identificar los elementos principales del problema de estudio.
-  \item Analizar la información recopilada mediante criterios definidos.
-  \item Proponer recomendaciones a partir de los resultados obtenidos.
-\end{itemize}
+\textbf{Carrera:} \Carrera.\par
+\textbf{Nombre oficial del congreso:} \TituloTrabajo.\par
+\textbf{Fecha del congreso:} \FechaCongreso.\par
+\textbf{Sede del congreso:} \TituloCorto.\par
+\textbf{Coordinación o docente a quien se dirige:} \Docente.
+\pendiente{Si se dirige a una coordinación, sustituir el destinatario según corresponda.}
 
-\section{Marco teórico}
-\subsection{Conceptos fundamentales}
-Desarrolla las definiciones y los antecedentes necesarios para comprender el
-tema. Respalda las afirmaciones con fuentes y citas, por ejemplo~\cite{fuente}.
-La referencia incluida al final es un modelo que debes reemplazar.
-\subsection{Antecedentes}
-Describe los trabajos previos y explica su relación con el problema estudiado.
-
-\section{Metodología}
-Explica el enfoque del trabajo, las fuentes de información, los instrumentos
-utilizados y el procedimiento seguido. Indica los criterios de selección y
-las limitaciones para que el proceso pueda comprenderse y reproducirse.
-
-\section{Resultados y análisis}
-\subsection{Presentación de resultados}
-Expón los hallazgos de forma ordenada. La tabla~\ref{tab:resultados} muestra
-una estructura de ejemplo; sustituye las filas con tus datos.
-\begin{table}[htbp]
-  \centering
-  \caption{Síntesis de resultados (ejemplo de estructura)}
-  \label{tab:resultados}
-  \begin{tabularx}{\linewidth}{@{}lXX@{}}
-    \toprule
-    \textbf{Criterio} & \textbf{Resultado} & \textbf{Interpretación} \\
-    \midrule
-    Criterio 1 & Describe el hallazgo. & Explica su significado. \\
-    Criterio 2 & Describe el hallazgo. & Relación con el objetivo. \\
-    Criterio 3 & Describe el hallazgo. & Implicaciones principales. \\
-    \bottomrule
-  \end{tabularx}
-  \par\smallskip {\small Fuente: elaboración propia.}
-\end{table}
-
-\subsection{Discusión}
-Interpreta los resultados y contrástalos con el marco teórico. Distingue entre
-los datos observados y tus interpretaciones. Explica las limitaciones del análisis.
-
-% Para insertar una figura, guarda el archivo en assets/img/ y descomenta:
-% \begin{figure}[htbp]
-%   \centering
-%   \includegraphics[width=0.8\linewidth]{assets/img/resultado.png}
-%   \caption{Descripción de la figura. Fuente: elaboración propia.}
-%   \label{fig:resultado}
-% \end{figure}
-
-\section{Conclusiones}
-Responde al objetivo general y sintetiza los hallazgos principales. Explica
-qué se puede concluir a partir de la evidencia presentada, sin introducir
-resultados nuevos.
-
-\section{Recomendaciones}
-Propón acciones concretas derivadas de las conclusiones. Señala responsables,
-condiciones o líneas de investigación futura cuando corresponda.
+\section{Objetivo de la asistencia}
+\pendiente{Redactar un párrafo que explique las razones académicas o
+institucionales que motivaron la participación en el congreso.}
+\espacio{3cm}
 
 \clearpage
+\section{Resumen de contenidos y ponencias}
+% Completar las ponencias restantes con los apuntes del estudiante.
+
+\subsection{Primera ponencia}
+\textbf{Más allá del código: tecnología, creatividad y experiencia de usuario
+en la creación de soluciones digitales.}\par
+\textbf{Ponente:} Ing. Gabriel Domínguez.\par
+\input{ponencia-1.tex}
+
+\clearpage
+\subsection{Segunda ponencia}
+\textbf{Gobernanza y estrategia de inteligencia artificial.}\par
+\textbf{Ponente:} Dr. Virgilio Ernesto Reyes Vásquez.\par
+\textbf{Síntesis del contenido:} [Por completar].
+\espacio{1.5cm}
+
+\clearpage
+\subsection{Tercera ponencia}
+\textbf{IA generativa para fotos y video: nuevas herramientas, mismo criterio
+creativo.}\par
+\textbf{Ponente:} Mtra. María de los Ángeles Miranda.\par
+\textbf{Síntesis del contenido:} [Por completar].
+\espacio{1.5cm}
+
+\subsection{Cuarta ponencia: bloque 1}
+\textbf{Narrativas sintéticas y storytelling de vanguardia.}\par
+\textbf{Ponente del bloque 1:} [Por confirmar].\par
+\textbf{Síntesis del contenido:} [Por completar].
+\espacio{1.5cm}
+
+\clearpage
+\subsection{Quinta ponencia: bloque 1}
+\textbf{Campañas transmedia e innovación disruptiva de producto.}\par
+\textbf{Ponente del bloque 1:} [Por confirmar].\par
+\textbf{Síntesis del contenido:} [Por completar].
+\espacio{1.5cm}
+
+\subsection{Aprendizajes clave, metodologías o innovaciones}
+\begin{enumerate}
+  \item \textbf{Aprendizaje 1:} [Por completar].
+  \item \textbf{Aprendizaje 2:} [Por completar].
+  \item \textbf{Aprendizaje 3:} [Por completar].
+  \item \textbf{Aprendizaje 4 (opcional):} [Por completar o eliminar].
+  \item \textbf{Aprendizaje 5 (opcional):} [Por completar o eliminar].
+\end{enumerate}
+\pendiente{Explicar cada aprendizaje y vincularlo con la actividad correspondiente.}
+
+\clearpage
+\section{Aporte y aplicación académica}
+\pendiente{Analizar cómo los conocimientos adquiridos benefician la formación
+universitaria, los proyectos actuales o la futura práctica profesional.}
+
+\subsection{Aporte a la formación universitaria}
+\pendiente{Relacionar los aprendizajes con la carrera, la asignatura y las
+competencias académicas que contribuyen a desarrollar.}
+\espacio{2.2cm}
+
+\subsection{Aplicación en proyectos actuales}
+\pendiente{Explicar cómo podrían aplicarse los conocimientos, metodologías o
+herramientas en un proyecto académico concreto.}
+\espacio{2.2cm}
+
+\subsection{Aplicación en la futura práctica profesional}
+\pendiente{Describir una posible aplicación profesional y justificar su utilidad.}
+\espacio{2.2cm}
+
+\clearpage
+\section{Evidencias de participación (anexos)}
+\pendiente{Sustituir los recuadros por evidencias reales y legibles. Conservar
+las proporciones de las imágenes y agregar páginas cuando sea necesario.}
+
+\subsection{Constancia oficial}
+\evidencia{Insertar certificado, diploma de asistencia o gafete del evento.}{8cm}
+\textbf{Descripción de la constancia:} [Por completar].
+
+\clearpage
+\subsubsection*{Comprobante de pago}
 \phantomsection
-\addcontentsline{toc}{section}{Referencias}
-\begin{thebibliography}{9}
-  \bibitem{fuente} Apellido, N. (Año). \textit{Título de la obra}.
-  Editorial o institución. [Referencia de ejemplo: reemplazar con una fuente real.]
-\end{thebibliography}
+\addcontentsline{toc}{subsubsection}{Comprobante de pago}
+\begin{center}
+  % Recorte de presentación: conserva la factura y oculta el fondo del navegador.
+  % La captura original permanece intacta en assets/img/ (120 ppp).
+  \includegraphics[width=\linewidth,height=16cm,keepaspectratio,
+    trim=306bp 0bp 304.8bp 5.4bp,clip]{assets/img/comprobante-de-pago.png}
+\end{center}
+{\small\textbf{Comprobante de pago.} Factura electrónica emitida el 8 de
+septiembre de 2026 por el concepto «Congreso Tecnología 2026», por un importe
+de \$20.00. Fuente: comprobante proporcionado por el estudiante.\par}
 
 \clearpage
-\appendix
-\section{Material complementario}
-Incluye instrumentos, datos adicionales, evidencias u otros materiales que
-complementen el reporte. Elimina esta sección si no necesitas anexos.
+\subsubsection*{Asignaturas inscritas}
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Asignaturas inscritas}
+\begin{center}
+  % Conserva la ficha completa, incluidos los datos del estudiante y su código QR.
+  \includegraphics[width=0.9\linewidth,height=16cm,keepaspectratio,
+    trim=345bp 27.6bp 344.4bp 15.6bp,clip]{assets/img/asignaturas-inscritas.png}
+\end{center}
+{\small\textbf{Evidencia de inscripción.} Ficha del estudiante con las
+asignaturas vinculadas al congreso. Fuente: captura proporcionada por el
+estudiante.\par}
+\textbf{Asignaturas:} \Asignatura.\par
+
+\clearpage
+\subsection{Registro fotográfico}
+% Se incluyen dos fotografías con sus pies explicativos.
+% Si se agregan una tercera y cuarta fotografía, distribuirlas en otra página.
+
+\begin{center}
+  \includegraphics[width=\linewidth,height=7cm,keepaspectratio]{assets/img/foto-estudiante-1.jpeg}
+\end{center}
+{\small\textbf{Fotografía 1.} Escucha activa del estudiante durante la ponencia
+«Gobernanza y estrategia de inteligencia artificial».\par}
+\begin{center}
+  \includegraphics[width=\linewidth,height=7cm,keepaspectratio]{assets/img/foto-estudiante-2.jpeg}
+\end{center}
+{\small\textbf{Fotografía 2.} Fotografía grupal con estudiantes de la sede
+San Miguel.\par}
+
+\clearpage
+\subsection{Material de soporte}
+\subsubsection*{Notas clave}
+\pendiente{Incorporar apuntes relevantes e identificar la ponencia o actividad
+a la que corresponden.}
+\espacio{1.3cm}
+
+\subsubsection*{Programa de actividades}
+\evidencia{Insertar captura legible del programa de actividades.}{4cm}
+
+\subsubsection*{Recursos compartidos durante el congreso}
+\pendiente{Agregar títulos, enlaces y una breve descripción de los recursos.
+Repetir la ficha según sea necesario.}
+\textbf{Recurso:} [Por completar].\par
+\textbf{Enlace:} [Por completar].\par
+\textbf{Descripción o utilidad:} [Por completar].
+
+% Mantener la firma después de todo el contenido, incluidos los anexos.
 \firmareporte
 \end{document}

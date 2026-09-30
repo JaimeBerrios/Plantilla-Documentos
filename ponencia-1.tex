@@ -1,0 +1,120 @@
+% Desarrollo basado en los apuntes del estudiante; no es una transcripción.
+\par\textbf{\textcolor{unabblue}{\faLightbulb}\quad Más allá de la corrección del código}\par
+Un sistema puede procesar datos correctamente en el backend y fracasar si el
+usuario no comprende cómo utilizarlo. La corrección de la lógica interna no
+garantiza que una persona encuentre una función, interprete un mensaje o complete
+una tarea. Cuando la interfaz exige adivinar qué hacer, la capacidad técnica
+no se convierte en una solución efectiva.
+
+Desde la Ingeniería en Sistemas, verificar el resultado de una operación debe
+complementarse con comprobar que el usuario pueda iniciarla y reconocer su
+finalización. Una navegación confusa puede generar errores de uso y abandono,
+aunque el código cumpla sus especificaciones. Comprender a las personas es,
+por tanto, parte de la definición del problema y de la validación del producto.
+
+\par\textbf{\textcolor{unabblue}{\faCogs}\quad Pilares y convergencia interdisciplinaria}\par
+Los pilares son \textbf{tecnología, creatividad, diseño y experiencia}:
+implementar funciones, explorar alternativas, organizar las interacciones y
+valorar su utilidad. Su integración requiere colaboración entre diseño gráfico
+y multimedia, computación e Ingeniería en Sistemas, con enfoque en UX.
+La arquitectura, los flujos y las decisiones visuales deben responder al mismo
+objetivo; el diseño no puede reducirse a decorar un producto ya construido.
+
+\par\textbf{\textcolor{unabblue}{\faUsers}\quad UI y UX: funciones complementarias}\par
+La \textbf{interfaz de usuario (UI)} comprende la capa visual y tangible:
+iconos, gráficos, colores, tipografías y controles. La \textbf{experiencia de
+usuario (UX)} abarca el recorrido cognitivo y funcional: comprender, encontrar,
+realizar una acción, obtener ayuda y alcanzar un objetivo.
+
+\clearpage
+\subsubsection*{\textcolor{unabblue}{\faIcon{sync-alt}}\quad Ciclo de trabajo iterativo}
+El recorrido de ocho pasos relaciona la exploración del problema con la
+construcción y la evaluación de la solución. La disposición en S representa
+su secuencia; el retorno del paso 7 al 2 expresa que la mejora requiere volver
+a comprender al usuario, no limitarse a corregir la interfaz.
+
+\begin{center}
+\begin{tikzpicture}[x=4.7cm,y=1.8cm,
+  etapa/.style={draw=unabblue,fill=softgray,rounded corners=3pt,
+    text width=3.6cm,minimum height=1.05cm,align=center,
+    font=\small\sffamily,inner sep=5pt},
+  flujo/.style={->,thick,draw=unabblue,>=stealth}]
+  \node[etapa] (a) at (0,0) {\textbf{1.} Identificar\\la necesidad};
+  \node[etapa] (b) at (1,0) {\textbf{2.} Conocer\\al usuario};
+  \node[etapa] (c) at (2,0) {\textbf{3.} Diseñar\\la propuesta};
+  \node[etapa] (d) at (2,-1) {\textbf{4.} Crear\\el prototipo};
+  \node[etapa] (e) at (1,-1) {\textbf{5.} Desarrollar};
+  \node[etapa] (f) at (0,-1) {\textbf{6.} Probar\\con usuarios};
+  \node[etapa] (g) at (0,-2) {\textbf{7.} Mejorar};
+  \node[etapa] (h) at (1.5,-2) {\textbf{8.} Solución digital\\centrada en las personas};
+  \draw[flujo] (a)--(b); \draw[flujo] (b)--(c);
+  \draw[flujo] (c)--(d); \draw[flujo] (d)--(e);
+  \draw[flujo] (e)--(f); \draw[flujo] (f)--(g);
+  \draw[flujo] (g)--(h);
+  \draw[flujo,dashed] (g.west)--(-0.62,-2)--(-0.62,0.65)
+    --(1,0.65)--(b.north);
+\end{tikzpicture}
+
+{\small\textbf{Ciclo de creación.} La flecha discontinua indica el retorno
+7 $\rightarrow$ 2. Elaboración propia a partir de los apuntes.\par}
+\end{center}
+
+\textbf{Comprender y proponer (pasos 1 a 3).} Identificar la necesidad delimita
+el problema que se busca resolver. Conocer al usuario permite examinar sus
+objetivos, dificultades y contexto de uso. Diseñar la propuesta transforma
+esa comprensión en una organización de funciones e interacciones, evitando
+que la solución dependa únicamente de supuestos del equipo técnico.
+
+\textbf{Construir y contrastar (pasos 4 a 6).} El prototipo hace visible la
+propuesta antes de desarrollar todos sus componentes. El desarrollo materializa
+las decisiones de diseño, mientras que las pruebas con usuarios permiten
+observar si las personas entienden el recorrido y completan las tareas.
+Estas pruebas complementan las verificaciones del funcionamiento interno.
+
+\textbf{Aprender y mejorar (pasos 7 y 8).} La mejora convierte lo observado
+en ajustes y nuevas preguntas. Retornar al paso 2 permite revisar necesidades
+mal interpretadas y reconsiderar la propuesta, el prototipo o el desarrollo.
+El paso 8 representa una solución contrastada con las personas; no significa
+que deje de necesitar evaluación cuando cambien sus necesidades.
+
+\clearpage
+\subsubsection*{\textcolor{unabblue}{\faCheckCircle}\quad El usuario como criterio de calidad}
+Los atributos del usuario deben traducirse en requisitos de calidad observables
+y verificables. La tabla propone criterios de revisión derivados de los apuntes,
+no resultados medidos durante el congreso.
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{}p{3.2cm}X@{}}
+\toprule
+\textbf{Atributo} & \textbf{Aplicación como requisito de calidad} \\
+\midrule
+Claridad & Las etiquetas y los mensajes permiten comprender qué hace una
+función y qué se espera del usuario, sin depender de términos técnicos internos. \\
+Facilidad de uso & Las tareas siguen una secuencia comprensible. Las pruebas
+permiten identificar pasos innecesarios y dificultades para completar acciones. \\
+Accesibilidad & La interacción contempla distintas capacidades y formas de
+acceso, por ejemplo, navegación con teclado, texto legible y señales que no
+dependan exclusivamente del color. \\
+Coherencia visual & Los controles, términos y patrones mantienen un significado
+consistente para que lo aprendido en una pantalla sea útil en las demás. \\
+Retroalimentación & El sistema comunica el progreso, el resultado de las
+acciones y los errores, e indica cómo continuar o recuperar la tarea. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+
+\subsubsection*{\textcolor{unabblue}{\faLaptopCode}\quad Aplicación en Ingeniería en Sistemas}
+Estos criterios pueden incorporarse al levantamiento de requisitos, al prototipado
+y a la validación de proyectos. Como ejemplo de aplicación académica, una
+herramienta de administración de redes debe permitir comprender el alcance
+de una operación y confirmar su resultado. Evaluar etiquetas, permisos visibles
+y mensajes vincula el funcionamiento técnico con el uso responsable del sistema.
+
+\subsubsection*{\textcolor{unabblue}{\faRobot}\quad Inteligencia artificial como apoyo transversal}
+La inteligencia artificial actúa como catalizador creativo y técnico: puede
+apoyar la exploración de alternativas, el prototipado y el desarrollo. Sus
+propuestas requieren revisión según el contexto del usuario. Como apoyo
+transversal al trabajo interdisciplinario y a la iteración, no sustituye la
+validación con personas de una solución comprensible, accesible y útil.

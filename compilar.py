@@ -25,7 +25,8 @@ FIELDS = {
     "Facultad": "Facultad",
     "Asignatura": "Asignatura",
     "Docente": "Docente",
-    "Grupo": "Grupo",
+    "Carrera": "Carrera",
+    "Fecha del congreso": "FechaCongreso",
     "Lugar y fecha": "LugarFecha",
     "Firma": "NombreFirma",
 }
