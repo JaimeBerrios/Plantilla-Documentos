@@ -1,0 +1,92 @@
+% Desarrollo basado en los apuntes del estudiante; no es una transcripción.
+\par\textbf{\textcolor{unabblue}{\faIcon{cloud}}\quad Evolución arquitectónica y el nuevo ADN nativo de la nube}\par
+La transformación de los sistemas de información corporativos ha desplazado definitivamente el esquema de silos monolíticos aislados hacia arquitecturas inteligentes, desacopladas y nativas de la nube (\textit{Cloud Native}). En este paradigma, las plataformas digitales no se conciben como bloques de código estáticos, sino como ecosistemas modulares gobernados por un nuevo «ADN arquitectónico» compuesto por seis principios fundamentales:
+\begin{itemize}
+  \item \textbf{Composable:} Capacidades de negocio empaquetadas en módulos independientes y reutilizables, que pueden reconfigurarse dinámicamente según la demanda.
+  \item \textbf{Event-Driven:} Comunicación asíncrona basada en eventos en tiempo real, garantizando bajo acoplamiento y alta reactividad operacional.
+  \item \textbf{API-First:} Definición formal y estandarizada de los contratos de interfaz antes de la implementación, facilitando la integración interoperable.
+  \item \textbf{Secure by Design:} Incorporación de controles de protección, cifrado y trazabilidad en la etapa de concepción arquitectónica, no como parches posteriores.
+  \item \textbf{Data-Driven:} Gestión y procesamiento de telemetría y datos en tiempo real como insumo rector para la toma de decisiones técnicas y comerciales.
+  \item \textbf{AI-Native:} Integración de modelos predictivos y cognitivos como componentes inherentes de cómputo dentro de la arquitectura de servicios.
+\end{itemize}
+
+\subsubsection*{\textcolor{unabblue}{\faIcon{layer-group}}\quad Escalabilidad de la inteligencia artificial e infraestructura de soporte}
+La madurez en la adopción de capacidades inteligentes dentro de la nube evoluciona a través de tres niveles progresivos de integración y complejidad:
+\begin{enumerate}
+  \item \textbf{Nivel 1: Modelos generativos directos.} Consumo básico de modelos de lenguaje para asistencia operativa, síntesis textual y generación de contenidos.
+  \item \textbf{Nivel 2: Generación aumentada por recuperación (\textit{RAG}).} Conexión de modelos fundacionales con bases de datos vectoriales y repositorios documentales privados, garantizando respuestas contextualizadas sin fugar datos confidenciales ni requerir reentrenamientos costosos.
+  \item \textbf{Nivel 3: Agentes autónomos (\textit{Agentic AI}).} Despliegue de entidades con razonamiento en bucle, capaces de descomponer planes, invocar APIs heterogéneas y ejecutar procesos operacionales sin supervisión humana constante.
+\end{enumerate}
+
+Para sostener esta escalabilidad de forma resiliente, la infraestructura subyacente exige el despliegue de clústeres elásticos en \textbf{Kubernetes} para la orquestación de contenedores, cortafuegos de aplicaciones web (\textbf{WAF}) para neutralizar ataques en capa 7, mallas de servicios (\textit{service mesh}) para cifrado mutuo (\textit{mTLS}) y motores de bases de datos distribuidas con esquemas de alta disponibilidad (\textit{HA}).
+
+\subsubsection*{\textcolor{unabblue}{\faIcon{shield-alt}}\quad Ciberresiliencia 360: de «defender el castillo» a ser imposible de detener}
+La ciberseguridad convencional concentraba sus esfuerzos en un enfoque perimetral medieval («defender el castillo»), pretendiendo erigir murallas infranqueables. En ecosistemas hiperconectados y multinube, este paradigma es obsoleto. La \textbf{Ciberresiliencia 360} asume la certeza de la brecha y traslada el objetivo hacia una premisa operativa superior: estructurar la organización para que sea \textit{imposible de detener}, garantizando la continuidad de las funciones vitales aún en condiciones de hostilidad o compromiso parcial.
+
+\begin{center}
+\begin{tikzpicture}[x=3.2cm,y=1.2cm,
+  fase/.style={draw=unabblue,fill=softgray,rounded corners=3pt,
+    text width=2.85cm,minimum height=1.55cm,align=center,
+    font=\footnotesize\sffamily,inner sep=3pt},
+  flujo/.style={->,thick,draw=unabblue,>=stealth}]
+  \node[fase] (r1) at (0,0) {\textbf{1. Resistir}\\Bastionado y\\Zero Trust};
+  \node[fase] (d) at (1,0) {\textbf{2. Detectar}\\Telemetría EDR/SIEM\\y análisis IA};
+  \node[fase] (r2) at (2,0) {\textbf{3. Responder}\\Aislamiento y\\contención SOAR};
+  \node[fase] (rc) at (3,0) {\textbf{4. Recuperar}\\Restauración WORM\\3-2-1-1-0};
+  \node[fase] (a) at (4,0) {\textbf{5. Aprender}\\Post-mortem y\\adaptación activa};
+  \draw[flujo] (r1)--(d); \draw[flujo] (d)--(r2);
+  \draw[flujo] (r2)--(rc); \draw[flujo] (rc)--(a);
+\end{tikzpicture}
+
+{\small\textbf{Ciclo Cyber Resilience 360.} Estrategia integral para la continuidad de negocio.\par}
+\end{center}
+
+El mayor riesgo en los incidentes de ciberseguridad radica en el tiempo de permanencia desapercibida del atacante (\textit{dwell time}), que alcanza un promedio global crítico de \textbf{194 días} antes de ser identificado. Durante este periodo, los adversarios escalan privilegios, mapean recursos y exfiltran activos estratégicos.
+
+En este escenario, la inteligencia artificial desempeña un papel dual y asimétrico:
+\begin{itemize}
+  \item \textbf{IA ofensiva:} Utilizada por grupos adversarios para automatizar el reconocimiento de vectores de ataque, crear campañas de ingeniería social hiperpersonalizadas y modificar dinámicamente cargas maliciosas para eludir firmas estáticas.
+  \item \textbf{IA defensiva:} Escudo indispensable dentro de los centros de operaciones para procesar petabytes de registros, correlacionar alertas en milisegundos, predecir comportamientos anómalos y reducir drásticamente las ventanas de detección y contención.
+\end{itemize}
+
+\subsubsection*{\textcolor{unabblue}{\faIcon{users-cog}}\quad La tríada organizacional y el factor humano especializado}
+Frente a la automatización tecnológica, la defensa efectiva depende del equilibrio indisoluble entre \textbf{Personas, Procesos y Tecnología}. Las plataformas más sofisticadas de EDR, SIEM y SOAR resultan inútiles sin el criterio y la intervención del talento humano de alta cualificación. La capacidad de discernir un falso positivo, liderar una investigación forense y anticipar tácticas de adversarios recae en equipos especializados: analistas de SOC de diversos niveles, especialistas en pruebas de penetración (\textit{pentesters}), operadores de equipo rojo (\textit{Red Team}) e ingenieros DevSecOps.
+
+\subsubsection*{\textcolor{unabblue}{\faIcon{key}}\quad Identidad como nuevo perímetro y DevSecOps en profundidad}
+En un modelo donde el perímetro físico se ha disuelto, la \textbf{identidad} se constituye en la primera y última línea de defensa. Dado que más del 80\,\% de las brechas de seguridad confirmadas involucran el robo, la suplantación o el abuso de credenciales, el modelo \textit{Zero Trust} exige verificar explícitamente cada identidad humana y sintética (cuentas de servicio, claves de API y procesos).
+
+Para asegurar que las aplicaciones no introduzcan vectores de riesgo en producción, el modelo DevSecOps integra validaciones continuas en el pipeline de integración y despliegue (\textit{CI/CD}):
+\begin{itemize}
+  \item \textbf{SAST (\textit{Static Application Security Testing}):} Análisis del código fuente en reposo para identificar vulnerabilidades lógicas y malas prácticas de codificación.
+  \item \textbf{SCA (\textit{Software Composition Analysis}):} Detección de dependencias y librerías de terceros desactualizadas o afectadas por vulnerabilidades conocidas (\textit{CVEs}).
+  \item \textbf{DAST (\textit{Dynamic Application Security Testing}):} Simulación automatizada de ataques contra la aplicación en ejecución antes de autorizar su pase a producción.
+\end{itemize}
+
+\subsubsection*{\textcolor{unabblue}{\faIcon{database}}\quad Respaldos inmutables y el reloj de la resiliencia (3-2-1-1-0)}
+Frente a ataques destructivos de ransomware que comprometen intencionalmente las copias de seguridad convencionales, la última línea de defensa inexpugnable reside en la \textbf{regla de respaldos 3-2-1-1-0}:
+\begin{itemize}
+  \item \textbf{3} copias de los datos críticos (la primaria y dos respaldos).
+  \item \textbf{2} medios de almacenamiento físicamente diferentes (ej. disco de alto rendimiento y almacenamiento en la nube).
+  \item \textbf{1} copia alojada fuera de sitio (\textit{off-site}) en una región geográfica aislada.
+  \item \textbf{1} copia rigurosamente \textbf{inmutable} (almacenamiento WORM que impide modificaciones o borrado durante el periodo de retención) o fuera de línea (\textit{air-gapped}).
+  \item \textbf{0} errores, garantizado mediante pruebas automatizadas y periódicas de restauración de datos.
+\end{itemize}
+
+\begin{center}
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.2cm}X@{}}
+\toprule
+\textbf{Métrica de resiliencia} & \textbf{Objetivo operacional y de negocio} \\
+\midrule
+\textbf{MTTD} (\textit{Mean Time to Detect}) & Tiempo promedio transcurrido entre la intrusión inicial y su identificación efectiva por las defensas del SOC. \\
+\textbf{MTTR} (\textit{Mean Time to Respond}) & Tiempo requerido para contener la amenaza, erradicar la persistencia del atacante y estabilizar el entorno. \\
+\textbf{RTO} (\textit{Recovery Time Objective}) & Ventana máxima tolerable de tiempo de inactividad que la organización puede soportar sin quebrar su operación. \\
+\textbf{RPO} (\textit{Recovery Point Objective}) & Volumen máximo de pérdida de datos aceptable, medido en tiempo desde el último respaldo validado. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{center}
+
+El «reloj de la resiliencia» demuestra que la supervivencia digital no depende de evitar todo impacto, sino de comprimir matemáticamente el MTTD y MTTR por debajo del umbral marcado por el RTO y RPO, garantizando que el negocio continúe operando bajo cualquier circunstancia hostil.

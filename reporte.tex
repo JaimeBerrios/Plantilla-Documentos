@@ -1,4 +1,4 @@
-﻿\documentclass[12pt,letterpaper]{article}
+\documentclass[12pt,letterpaper]{article}
 \usepackage{fontspec}
 \usepackage[spanish,es-noshorthands,es-tabla,es-lcroman]{babel}
 \usepackage{plantilla/unab_reporte}
@@ -11,45 +11,25 @@
 \input{.build/datos.tex}
 \hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\NombreFirma}}
 
-% Sustituye cada orientación y espacio pendiente con el contenido definitivo.
-\newcommand{\pendiente}[1]{\par{\small\itshape Pendiente: #1}\par}
-\newcommand{\espacio}[1]{\par\vspace{#1}}
-\newcommand{\evidencia}[2]{%
-  \par\medskip\noindent\fcolorbox{linegray}{softgray}{%
-    \parbox[c][#2][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-      \centering\small\color{unabblue}#1}}\par}
-
 \begin{document}
 \portadareporte
 \pagenumbering{roman}
 \tableofcontents
-\vfill
-{\small\textbf{Plantilla para completar.} Los textos de orientación y los espacios
-marcados como pendientes deben sustituirse antes de entregar. Redacta en tono
-académico, formal y en tercera persona.}
 \clearpage
 \pagenumbering{arabic}
 
 \section{Datos generales}
-Los nombres completos y números de carné o matrícula se completan en la tabla
-Nombre/Código de \texttt{datos.md} y se muestran en la portada. La asignatura,
-el docente y los demás datos compartidos también se editan en ese archivo.
-
 \textbf{Carrera:} \Carrera.\par
 \textbf{Nombre oficial del congreso:} \TituloTrabajo.\par
 \textbf{Fecha del congreso:} \FechaCongreso.\par
 \textbf{Sede del congreso:} \TituloCorto.\par
-\textbf{Coordinación o docente a quien se dirige:} \Docente.
-\pendiente{Si se dirige a una coordinación, sustituir el destinatario según corresponda.}
+\textbf{Docente:} \Docente.
 
 \section{Objetivo de la asistencia}
-\pendiente{Redactar un párrafo que explique las razones académicas o
-institucionales que motivaron la participación en el congreso.}
-\espacio{3cm}
+Actualizar y profundizar competencias teóricas, metodológicas y prácticas en áreas de vanguardia tecnológica, tales como la gobernanza de inteligencia artificial, la arquitectura de sistemas escalables en la nube y los marcos modernos de ciberseguridad y resiliencia de la información. La participación en el congreso tuvo como propósito contrastar los modelos conceptuales del plan de estudios de la carrera de Ingeniería en Sistemas y Computación con las tendencias, requerimientos y estándares operativos del sector productivo, adquiriendo criterios estratégicos que fortalezcan el desempeño en las asignaturas formativas, enriquezcan el desarrollo de proyectos académicos e impulsen la proyección en el ámbito profesional y empresarial.
 
 \clearpage
 \section{Resumen de contenidos y ponencias}
-% Completar las ponencias restantes con los apuntes del estudiante.
 
 \subsection{Primera ponencia}
 \textbf{Más allá del código: tecnología, creatividad y experiencia de usuario
@@ -61,129 +41,131 @@ en la creación de soluciones digitales.}\par
 \subsection{Segunda ponencia}
 \textbf{Gobernanza y estrategia de inteligencia artificial.}\par
 \textbf{Ponente:} Dr. Virgilio Ernesto Reyes Vásquez.\par
-\textbf{Síntesis del contenido:} [Por completar].
-\espacio{1.5cm}
+\input{ponencia-2.tex}
 
 \clearpage
 \subsection{Tercera ponencia}
-\textbf{IA generativa para fotos y video: nuevas herramientas, mismo criterio
-creativo.}\par
+\textbf{IA generativa para fotos y video: nuevas herramientas, mismo criterio creativo.}\par
 \textbf{Ponente:} Mtra. María de los Ángeles Miranda.\par
-\textbf{Síntesis del contenido:} [Por completar].
-\espacio{1.5cm}
-
-\subsection{Cuarta ponencia: bloque 1}
-\textbf{Narrativas sintéticas y storytelling de vanguardia.}\par
-\textbf{Ponente del bloque 1:} [Por confirmar].\par
-\textbf{Síntesis del contenido:} [Por completar].
-\espacio{1.5cm}
+\input{ponencia-3.tex}
 
 \clearpage
-\subsection{Quinta ponencia: bloque 1}
-\textbf{Campañas transmedia e innovación disruptiva de producto.}\par
-\textbf{Ponente del bloque 1:} [Por confirmar].\par
-\textbf{Síntesis del contenido:} [Por completar].
-\espacio{1.5cm}
+\subsection{Cuarta ponencia: bloque 2}
+\textbf{Sistemas inteligentes: diseñando la arquitectura digital escalable del futuro.}\par
+\textbf{Ponente:} Mtro. Edgar Antonio Peñate Melgar.\par
+\input{ponencia-4.tex}
+
+\clearpage
+\subsection{Quinta ponencia: bloque 2}
+\textbf{Cyber Resilience 360: construyendo la arquitectura digital que resiste, detecta y responde.}\par
+\textbf{Ponente:} Ing. Salvador Alcides Franco.\par
+\input{ponencia-5.tex}
 
 \subsection{Aprendizajes clave, metodologías o innovaciones}
+A partir del análisis transversal de las cinco ponencias magistrales, se sintetizan cinco aprendizajes estratégicos para el ejercicio contemporáneo de la profesión:
 \begin{enumerate}
-  \item \textbf{Aprendizaje 1:} [Por completar].
-  \item \textbf{Aprendizaje 2:} [Por completar].
-  \item \textbf{Aprendizaje 3:} [Por completar].
-  \item \textbf{Aprendizaje 4 (opcional):} [Por completar o eliminar].
-  \item \textbf{Aprendizaje 5 (opcional):} [Por completar o eliminar].
+  \item \textbf{Evolución del rol hacia la orquestación directiva:} Trascender la visión del especialista técnico en codificación operativa para consolidar competencias de liderazgo, gestión de riesgos y toma de decisiones bajo incertidumbre. El ingeniero en sistemas debe dominar el lenguaje de negocios y coordinar soluciones que respondan a objetivos estratégicos corporativos.
+  \item \textbf{Gobernanza y marcos regulatorios en inteligencia artificial:} La adopción de sistemas inteligentes (predictivos, generativos o agénticos) exige marcos de gobernanza formales. El Decreto Legislativo N.° 234 en El Salvador fija los estándares de «lo posible, lo permitido y lo correcto», delimitando la responsabilidad algorítmica y la protección de datos corporativos.
+  \item \textbf{La «verdad del consumidor» (\textit{Consumer Insights}) ante la IA generativa:} En comunicación digital, mercadeo y gestión de pautas comerciales (como campañas en Meta Ads), la IA generativa optimiza tiempos de producción pero carece de empatía intrínseca. El criterio ético, la narrativa y la autenticidad humana deben permanecer bajo control de las personas para evitar el rechazo de la audiencia.
+  \item \textbf{Cultura de «Asumir la brecha» (\textit{Assume Breach}) y DevSecOps:} La superación del dilema entre velocidad y seguridad exige integrar controles tempranos (SAST, SCA, DAST) en el pipeline de CI/CD. Asumiendo la certeza de un compromiso potencial, es imperativo implementar Confianza Cero (\textit{Zero Trust}) y respaldos inmutables (WORM) frente al ransomware.
+  \item \textbf{Ciberresiliencia 360 y el nuevo ADN nativo de la nube:} Las arquitecturas escalables exigen principios modulares (\textit{Composable, Event-Driven, API-First, AI-Native}) soportados en Kubernetes. La resiliencia desplaza el enfoque perimetral hacia la continuidad operacional ininterrumpida, reduciendo el tiempo de permanencia del atacante (\textit{dwell time}) y optimizando MTTD y MTTR.
 \end{enumerate}
-\pendiente{Explicar cada aprendizaje y vincularlo con la actividad correspondiente.}
 
 \clearpage
 \section{Aporte y aplicación académica}
-\pendiente{Analizar cómo los conocimientos adquiridos benefician la formación
-universitaria, los proyectos actuales o la futura práctica profesional.}
+Los conocimientos y marcos metodológicos expuestos a lo largo del congreso impactan de manera directa la trayectoria formativa, los proyectos en fase de ejecución y la proyección profesional en el sector tecnológico.
 
 \subsection{Aporte a la formación universitaria}
-\pendiente{Relacionar los aprendizajes con la carrera, la asignatura y las
-competencias académicas que contribuyen a desarrollar.}
-\espacio{2.2cm}
+El congreso complementa los fundamentos teóricos impartidos en la carrera de Ingeniería en Sistemas y Computación al proporcionar una perspectiva industrial y gerencial del ejercicio profesional. Permite comprender que el desarrollo de software y la administración de redes no son fines aislados, sino componentes integrados dentro de una estrategia global de negocio. Los conceptos de gobernanza algorítmica, marcos éticos y diseño centrado en el usuario enriquecen el pensamiento crítico indispensable para concebir arquitecturas de información que equilibren viabilidad técnica, cumplimiento regulatorio y valor tangible para la sociedad.
 
 \subsection{Aplicación en proyectos actuales}
-\pendiente{Explicar cómo podrían aplicarse los conocimientos, metodologías o
-herramientas en un proyecto académico concreto.}
-\espacio{2.2cm}
+Los marcos conceptuales adquiridos se vinculan directamente con las asignaturas en curso: \textit{Sistemas Digitales} y \textit{Diseño de Sistemas de Seguridad de Redes de Datos}. A nivel de red e infraestructura, el análisis de telemetría, segmentación Zero Trust y protocolos de cifrado mutuo (\textit{mTLS}) fortalece el diseño de topologías seguras y tolerantes a fallos.
+
+Asimismo, estos principios tienen una aplicación práctica inmediata en el desarrollo del proyecto de servicio social que actualmente se lidera: la plataforma web de gestión turística \textbf{SAMI (Sami Travels \& Tours)}\footnote{\url{https://samitravelstours.com/}}. En dicha plataforma, que involucra catálogo de servicios, gestión de reservas, interacción con usuarios y pasarelas transaccionales, se aplicará el paradigma \textbf{DevSecOps} mediante:
+\begin{itemize}
+  \item Integración de herramientas de análisis estático de código (\textit{SAST}) y análisis de dependencias de terceros (\textit{SCA}) dentro del flujo de integración continua, mitigando vulnerabilidades antes de cada despliegue.
+  \item Blindaje de módulos de autenticación y manejo de sesiones bajo premisas de \textit{Zero Trust}, validando estrictamente accesos administrativos y roles de usuario.
+  \item Esquema de respaldo de base de datos automatizado y estructurado bajo políticas de retención segura, garantizando la recuperación rápida (\textit{RTO/RPO}) ante fallos o contingencias de disponibilidad.
+\end{itemize}
 
 \subsection{Aplicación en la futura práctica profesional}
-\pendiente{Describir una posible aplicación profesional y justificar su utilidad.}
-\espacio{2.2cm}
+En el ámbito profesional, el ejercicio en el área de mercadeo digital y gestión de campañas publicitarias de rendimiento (Meta Ads y analítica web en plataformas de conversión) se potencia al articularse con la formación de ingeniería de sistemas. La comprensión técnica de la inteligencia artificial predictiva permite optimizar algoritmos de segmentación, análisis de atribución y personalización de pauta basada en datos (\textit{Data-Driven}), sin perder de vista la «verdad del consumidor» para diseñar comunicaciones auténticas y efectivas.
+
+Adicionalmente, el dominio de arquitecturas nativas de la nube y principios de Ciberresiliencia 360 faculta la creación de soluciones digitales comerciales que garantizan la privacidad de la información de los clientes, la protección contra fraudes transaccionales y la alta disponibilidad de servicios bajo alta demanda de tráfico. Esta dualidad entre visión analítica comercial y rigor técnico en infraestructura posiciona un perfil profesional integral, capaz de orquestar soluciones tecnológicas de alto impacto empresarial.
 
 \clearpage
 \section{Evidencias de participación (anexos)}
-\pendiente{Sustituir los recuadros por evidencias reales y legibles. Conservar
-las proporciones de las imágenes y agregar páginas cuando sea necesario.}
 
 \subsection{Constancia oficial}
-\evidencia{Insertar certificado, diploma de asistencia o gafete del evento.}{8cm}
-\textbf{Descripción de la constancia:} [Por completar].
+\begin{center}
+  \includegraphics[width=0.92\linewidth,height=12cm,keepaspectratio]{assets/img/gafete-del-evento.png}
+\end{center}
+{\small\textbf{Constancia oficial de participación.} Gafete institucional de acreditación del XI Congreso Internacional de Tecnología e Innovación, emitido por la Universidad Dr. Andrés Bello a nombre de Jaime Fernando Berrios Ortiz.\par}
 
 \clearpage
 \subsubsection*{Comprobante de pago}
 \phantomsection
 \addcontentsline{toc}{subsubsection}{Comprobante de pago}
 \begin{center}
-  % Recorte de presentación: conserva la factura y oculta el fondo del navegador.
-  % La captura original permanece intacta en assets/img/ (120 ppp).
   \includegraphics[width=\linewidth,height=16cm,keepaspectratio,
     trim=306bp 0bp 304.8bp 5.4bp,clip]{assets/img/comprobante-de-pago.png}
 \end{center}
 {\small\textbf{Comprobante de pago.} Factura electrónica emitida el 8 de
 septiembre de 2026 por el concepto «Congreso Tecnología 2026», por un importe
-de \$20.00. Fuente: comprobante proporcionado por el estudiante.\par}
+de \$20.00.\par}
 
 \clearpage
 \subsubsection*{Asignaturas inscritas}
 \phantomsection
 \addcontentsline{toc}{subsubsection}{Asignaturas inscritas}
 \begin{center}
-  % Conserva la ficha completa, incluidos los datos del estudiante y su código QR.
   \includegraphics[width=0.9\linewidth,height=16cm,keepaspectratio,
     trim=345bp 27.6bp 344.4bp 15.6bp,clip]{assets/img/asignaturas-inscritas.png}
 \end{center}
-{\small\textbf{Evidencia de inscripción.} Ficha del estudiante con las
-asignaturas vinculadas al congreso. Fuente: captura proporcionada por el
-estudiante.\par}
+{\small\textbf{Evidencia de inscripción.} Ficha de registro académico con las
+asignaturas vinculadas al congreso.\par}
 \textbf{Asignaturas:} \Asignatura.\par
 
 \clearpage
 \subsection{Registro fotográfico}
-% Se incluyen dos fotografías con sus pies explicativos.
-% Si se agregan una tercera y cuarta fotografía, distribuirlas en otra página.
 
 \begin{center}
   \includegraphics[width=\linewidth,height=7cm,keepaspectratio]{assets/img/foto-estudiante-1.jpeg}
 \end{center}
-{\small\textbf{Fotografía 1.} Escucha activa del estudiante durante la ponencia
+{\small\textbf{Fotografía 1.} Escucha activa durante la ponencia
 «Gobernanza y estrategia de inteligencia artificial».\par}
 \begin{center}
   \includegraphics[width=\linewidth,height=7cm,keepaspectratio]{assets/img/foto-estudiante-2.jpeg}
 \end{center}
-{\small\textbf{Fotografía 2.} Fotografía grupal con estudiantes de la sede
+{\small\textbf{Fotografía 2.} Participación grupal con estudiantes de la sede
 San Miguel.\par}
 
 \clearpage
 \subsection{Material de soporte}
-\subsubsection*{Notas clave}
-\pendiente{Incorporar apuntes relevantes e identificar la ponencia o actividad
-a la que corresponden.}
-\espacio{1.3cm}
 
-\subsubsection*{Programa de actividades}
-\evidencia{Insertar captura legible del programa de actividades.}{4cm}
+\subsubsection*{Programa y distribución de ponencias}
+A continuación se detalla la distribución horaria de las conferencias magistrales impartidas durante la jornada del congreso en el Hotel Hilton:
 
+\input{cronograma.tex}
+
+{\small\textbf{Nota sobre la agenda:} Distribución horaria y secuencia de ponencias sistematizadas a partir del desarrollo presencial de las actividades en el Hotel Hilton.\par}
+
+\subsubsection*{Notas clave y sistematización de apuntes}
+Los apuntes técnicos, diagramas de flujo arquitectónico y tablas comparativas elaborados durante las sesiones fueron sistematizados e incorporados de manera analítica en las secciones 3.1 a 3.5 del presente informe, abarcando desde las metodologías de iteración en S y gobernanza algorítmica, hasta los pipelines de DevSecOps (SAST, SCA, DAST) y el esquema de respaldos inmutables 3-2-1-1-0.
+
+\clearpage
 \subsubsection*{Recursos compartidos durante el congreso}
-\pendiente{Agregar títulos, enlaces y una breve descripción de los recursos.
-Repetir la ficha según sea necesario.}
-\textbf{Recurso:} [Por completar].\par
-\textbf{Enlace:} [Por completar].\par
-\textbf{Descripción o utilidad:} [Por completar].
+Durante las exposiciones magistrales se destacaron casos de estudio multimedia, plataformas de formación, normativas y estándares internacionales:
+\begin{itemize}
+  \item \textbf{Caso de estudio publicitario tradicional (Tercera ponencia):} Anuncio clásico navideño original de Coca-Cola (\textit{Holidays Are Coming}, 1995), grabado con rodaje físico y actores reales: \url{https://youtu.be/X13N-Bx17Oc}.
+  \item \textbf{Caso de estudio generado por IA (Tercera ponencia):} Recreación publicitaria de Coca-Cola generada íntegramente mediante Inteligencia Artificial Generativa (campaña navideña de noviembre de 2024): \url{https://youtu.be/Yy6fByUmPuE}.
+  \item \textbf{Plataforma formativa y profesional (Cuarta ponencia):} Portal corporativo y repositorio de aprendizaje compartido mediante código QR por el ponente durante la conferencia: \url{https://corplearning.net/} (\textit{CorpLearning}).
+  \item \textbf{Marco Regulatorio Nacional:} Decreto Legislativo N.° 234 (\textit{Ley de Fomento a la Inteligencia Artificial y Tecnologías}, Diario Oficial de El Salvador).
+  \item \textbf{Estándares de Seguridad e Identidad:} Guías de Arquitectura Zero Trust (NIST SP 800-207) y directrices de ciberresiliencia de la Secretaría de Innovación.
+  \item \textbf{Ecosistema DevSecOps y Cloud Native:} Taxonomías OWASP Top 10, especificaciones de la \textit{Cloud Native Computing Foundation} (CNCF) y herramientas automatizadas (SonarQube, Snyk y OWASP ZAP).
+\end{itemize}
 
 % Mantener la firma después de todo el contenido, incluidos los anexos.
 \firmareporte
 \end{document}
+
