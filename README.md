@@ -1,8 +1,7 @@
 # Plantilla académica · UNAB
 
 Una base para preparar **presentaciones y reportes con Codex**, conservando los
-logos de la Universidad Dr. Andrés Bello, el azul institucional y la firma
-personal al final del reporte.
+logos de la Universidad Dr. Andrés Bello y el azul institucional.
 
 ## Tu flujo de trabajo
 
@@ -21,8 +20,8 @@ personal al final del reporte.
 4. Pídele a Codex:
 
    > Lee AGENTS.md y datos.md. Prepara el reporte y la presentación (PDF y web)
-   > para este trabajo, conserva la identidad de la universidad y la firma al final
-   > del reporte. Compila los dos PDF, revisa que no haya texto cortado y entrégamelos.
+   > para este trabajo, conserva la identidad de la universidad. Compila los dos
+   > PDF, revisa que no haya texto cortado y entrégamelos.
 
 5. Abre **[presentación PDF](pdf/presentacion.pdf)**, **[reporte PDF](pdf/reporte.pdf)** 
    y **[presentación web](reveal.js/index.html)**.
@@ -90,7 +89,6 @@ reveal.js/                       Plantilla de presentación web interactiva
 
 Edita normalmente `datos.md` y deja que Codex trabaje en los dos `.tex`. Puedes
 agregar imágenes de apoyo en `assets/img/`. Los dos logos siempre se conservan.
-La firma toma el texto del campo `Firma` y solo aparece al final del reporte.
 
 `.build/` contiene datos generados y registros; está excluida de Git. Los PDF sí
 se versionan, para que cada rama conserve sus entregables. No se necesita HTML,

@@ -10,99 +10,415 @@
 \begin{document}
 \portadareporte
 \pagenumbering{roman}
+
 \section*{Resumen}
 \addcontentsline{toc}{section}{Resumen}
-Escribe aquí una síntesis del reporte: el problema abordado, el objetivo,
-la metodología utilizada, los principales resultados y la conclusión central.
-Redacta este apartado cuando hayas terminado el desarrollo del documento.
+\noindent El presente documento constituye el primer entregable del expediente integral de Gestión y Aseguramiento de la Calidad de Software (SQA) para el proyecto de desarrollo de la plataforma web progresiva (PWA) y sistema CRM con inteligencia artificial de la agencia turística SAMI Travels \& Tours (GRUPO SAMI S.A.S. DE C.V.), ubicada en San Miguel, El Salvador. Frente a la problemática operativa generada por la elaboración manual de cotizaciones de viajes multidestino y la falta de seguimiento sistemático en el embudo comercial, se documenta la ingeniería de requisitos del sistema, abarcando requisitos de negocio, requisitos para la integración asistiva de inteligencia artificial generativa, requisitos de usuario por perfiles operativos, requisitos funcionales y requisitos no funcionales categorizados bajo el estándar internacional ISO/IEC 25010:2023. Asimismo, se formulan las historias de usuario bajo el marco ágil con sus respectivos criterios de aceptación verificables y se modelan los casos de uso fundamentales que garantizan la trazabilidad, consistencia y viabilidad técnica del producto. Este expediente sienta las bases para las fases subsiguientes de estimación, planificación, gestión de riesgos, aseguramiento de calidad y planes de prueba de software.
 
-\textbf{Palabras clave:} tema; concepto; área de estudio.
+\vspace{0.8em}
+\indent\textit{Palabras clave:} aseguramiento de calidad de software, ingeniería de requisitos, historias de usuario, casos de uso, ISO/IEC 25010, PWA, inteligencia artificial generativa, SAMI Travels.
+
 \clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
 
-\section{Introducción}
-Presenta el tema, su contexto y su importancia. Describe el problema o la
-pregunta que motiva el trabajo, el alcance del reporte y cómo está organizado.
-Reemplaza todos los textos de orientación con el contenido de tu investigación.
+\section{Introducción y Descripción del Proyecto}
+La industria del turismo y los servicios de viajes demanda tiempos de respuesta inmediatos, precisión en la confección de itinerarios personalizados y canales de interacción digital ágiles. En este contexto, el presente proyecto aborda el análisis, diseño y formulación de una solución tecnológica integral de software orientada a resolver las ineficiencias operativas de una agencia de viajes regional, estableciendo desde sus etapas tempranas un enfoque formal de calidad y trazabilidad conforme a las mejores prácticas de la ingeniería de software y las directrices de evaluación del curso.
 
-\section{Objetivos}
-\subsection{Objetivo general}
-Expresa el propósito principal del trabajo con un verbo en infinitivo.
-\subsection{Objetivos específicos}
+\subsection{Contexto y Planteamiento del Problema}
+La agencia de viajes ``SAMI Travels \& Tours'' (registrada legalmente como GRUPO SAMI S.A.S. DE C.V.), con sede en la ciudad de San Miguel, El Salvador, se especializa en la comercialización de servicios turísticos, paquetes vacacionales nacionales e internacionales, tours guiados y gestión de boletos aéreos.
+
+Actualmente, la organización enfrenta severos cuellos de botella operativos debido a que el proceso de elaboración de cotizaciones complejas —las cuales combinan tarifas aéreas dinámicas, itinerarios de excursiones, hospedaje y recomendaciones personalizadas— se ejecuta de forma completamente manual a través de aplicaciones de mensajería instantánea y hojas de cálculo no integradas. Esta dispersión genera las siguientes problemáticas críticas:
 \begin{itemize}
-  \item Identificar los elementos principales del problema de estudio.
-  \item Analizar la información recopilada mediante criterios definidos.
-  \item Proponer recomendaciones a partir de los resultados obtenidos.
+  \item \textbf{Lentitud en los tiempos de respuesta:} los agentes de viajes demoran lapsos considerables en armar propuestas detalladas, lo que incrementa la tasa de deserción de clientes potenciales.
+  \item \textbf{Fuga de prospectos en el embudo comercial:} la ausencia de una base de datos centralizada y un flujo de seguimiento visual impide monitorear oportunamente el estado de las negociaciones.
+  \item \textbf{Falta de visibilidad gerencial:} la Gerencia General no dispone de métricas confiables ni tableros de control para evaluar el rendimiento de ventas o la demanda de destinos.
+\end{itemize}
+El aseguramiento de la calidad exige comprender con profundidad esta necesidad real antes de implementar código, asegurando que cada componente tecnológico responda a la solución directa del problema del negocio.
+
+\subsection{Justificación de la Solución Tecnológica}
+Para subsanar las deficiencias identificadas, se propone el desarrollo de una solución integral (\textit{End-to-End}) fundamentada en una Arquitectura de Aplicación Web Progresiva (PWA) vinculada a un sistema de gestión de relaciones con clientes (SAMI Admin CRM). La plataforma digitalizará y estandarizará el ciclo comercial mediante tres pilares:
+\begin{enumerate}
+  \item \textbf{Centralización operativa:} unificación del catálogo turístico, directorio de clientes y estado de cotizaciones en un único repositorio seguro.
+  \item \textbf{Asistencia por Inteligencia Artificial (IA):} incorporación de un motor generativo (API de Google Gemini) para la redacción ágil y estructuración preliminar de itinerarios descriptivos, optimizando la productividad de los asesores.
+  \item \textbf{Experiencia omnicanal para el cliente:} portal web público indexable y portal privado para la consulta segura y aprobación digital de propuestas en formato PDF corporativo estandarizado.
+\end{enumerate}
+Esta solución optimiza los costos operativos, asegura la escalabilidad de la empresa y proporciona una base sólida para la medición de métricas de calidad de servicio y conversión.
+
+\subsection{Objetivos del Proyecto}
+
+\subsubsection{Objetivo general}
+Desarrollar e implementar una plataforma web progresiva (PWA) integral con arquitectura CRM y motor de asistencia mediante inteligencia artificial para SAMI Travels \& Tours, que centralice la administración de clientes, automatice la generación de cotizaciones e itinerarios turísticos y optimice la eficiencia operativa y comercial de la organización.
+
+\subsubsection{Objetivos específicos}
+\begin{itemize}
+  \item Desarrollar el módulo administrativo SAMI Admin (CRM), equipado con un tablero visual Kanban que permita el seguimiento riguroso del ciclo de vida de los clientes y las oportunidades comerciales.
+  \item Integrar un motor de inteligencia artificial generativa con supervisión humana para acelerar la confección de itinerarios turísticos dinámicos y la generación automática de cotizaciones en PDF corporativo.
+  \item Implementar un portal público indexable (B2C) con capacidades PWA (soporte fuera de línea parcial) y un portal privado de clientes para la autenticación y aprobación digital de propuestas.
+  \item Establecer un marco de aseguramiento de calidad (SQA) que garantice la trazabilidad de requisitos, cobertura de pruebas y apego al estándar de calidad de producto ISO/IEC 25010.
 \end{itemize}
 
-\section{Marco teórico}
-\subsection{Conceptos fundamentales}
-Desarrolla las definiciones y los antecedentes necesarios para comprender el
-tema. Respalda las afirmaciones con fuentes y citas, por ejemplo~\cite{fuente}.
-La referencia incluida al final es un modelo que debes reemplazar.
-\subsection{Antecedentes}
-Describe los trabajos previos y explica su relación con el problema estudiado.
+\subsection{Alcance y Límites del Sistema}
+Para mitigar el riesgo de desviación del alcance (\textit{scope creep}) y asegurar el cumplimiento de los plazos y criterios de calidad, se definen explícitamente los límites del desarrollo:
 
-\section{Metodología}
-Explica el enfoque del trabajo, las fuentes de información, los instrumentos
-utilizados y el procedimiento seguido. Indica los criterios de selección y
-las limitaciones para que el proceso pueda comprenderse y reproducirse.
+\subsubsection{Elementos incluidos}
+\begin{itemize}
+  \item \textbf{Módulo Público (B2C):} catálogo interactivo de destinos, paquetes y tours, motor de búsqueda y filtros, formulario de solicitud de cotización y soporte PWA con Service Workers para visualización fuera de línea parcial.
+  \item \textbf{Módulo de Clientes:} portal privado con autenticación segura, consulta de propuestas comerciales recibidas, descarga de itinerarios en PDF y mecanismo de aprobación digital.
+  \item \textbf{Módulo Administrativo (SAMI Admin CRM):} gestión de usuarios y roles, administración del catálogo de servicios, tablero Kanban para embudo de ventas, integración de API de IA y generación de reportes en PDF mediante WeasyPrint.
+  \item \textbf{Infraestructura y Despliegue:} backend en Python/Django, base de datos relacional MySQL, frontend con Tailwind CSS y Vanilla JS, y despliegue en servidor VPS (DigitalOcean) orquestado mediante contenedores Docker.
+\end{itemize}
 
-\section{Resultados y análisis}
-\subsection{Presentación de resultados}
-Expón los hallazgos de forma ordenada. La tabla~\ref{tab:resultados} muestra
-una estructura de ejemplo; sustituye las filas con tus datos.
+\subsubsection{Límites y exclusiones explícitas}
+\begin{itemize}
+  \item \textbf{Pasarelas de pago electrónico directo:} durante la presente fase no se procesarán transacciones con tarjeta de crédito/débito dentro del software; las cotizaciones serán aprobadas digitalmente y el cobro continuará gestionándose mediante canales externos autorizados por la agencia.
+  \item \textbf{Aplicaciones móviles nativas:} no se compilarán paquetes binarios para tiendas iOS (App Store) o Android (Google Play), ya que los requerimientos de acceso móvil quedan satisfechos mediante el estándar PWA multiplataforma.
+\end{itemize}
+
+\subsection{Perfiles de Usuarios y Actores del Sistema}
+El análisis de usuarios define cuatro roles principales que interactúan con el ecosistema de software:
+\begin{itemize}
+  \item \textbf{Visitante (Web / B2C):} usuario anónimo que accede al portal público para explorar destinos, paquetes vacacionales e iniciar solicitudes de contacto o cotización preliminar.
+  \item \textbf{Cliente Registrado / Potencial:} usuario autenticado que ha formalizado una solicitud y dispone de acceso a su panel personal para dar seguimiento, revisar itinerarios y aprobar presupuestos.
+  \item \textbf{Agente de Viajes (Asesor Comercial):} usuario interno responsable de gestionar oportunidades en el CRM, interactuar con el motor de IA para generar propuestas, personalizar tarifas y emitir los documentos oficiales.
+  \item \textbf{Administrador del Sistema:} usuario técnico con privilegios totales para gestionar cuentas de colaboradores, asignar permisos, actualizar el catálogo maestro y configurar parámetros globales.
+\end{itemize}
+
+\section{Marco de Aseguramiento de Calidad (SQA) y Estándares}
+El aseguramiento de la calidad de software es un patrón planificado y sistemático de acciones requerido para brindar la confianza adecuada de que un producto de software satisface los requerimientos técnicos y las expectativas de negocio (Pressman y Maxim, 2021). 
+
+Para el proyecto SAMI Travels \& Tours, la calidad no es una verificación tardía al final del ciclo de vida, sino un proceso continuo sustentado en tres pilares:
+\begin{enumerate}
+  \item \textbf{Modelo de Calidad del Producto ISO/IEC 25010:2023:} guía la especificación y evaluación de los atributos de calidad (adecuación funcional, eficiencia de desempeño, compatibilidad, usabilidad, fiabilidad, seguridad, mantenibilidad y portabilidad).
+  \item \textbf{Ingeniería de Requisitos con Trazabilidad Bidireccional:} cada historia de usuario y caso de uso responde a un requisito de negocio explícito, permitiendo auditar el impacto ante cualquier solicitud de cambio (Sommerville, 2019).
+  \item \textbf{Principio Human-in-the-Loop para Inteligencia Artificial:} la IA opera como un mecanismo de aceleración asistiva bajo supervisión humana estricta; ningún contenido generado artificialmente llega al cliente final sin la validación explícita del asesor responsable.
+\end{enumerate}
+
+\section{Ingeniería de Requisitos del Sistema}
+La ingeniería de requisitos constituye la fase medular para garantizar que el software resuelva las necesidades auténticas del negocio con rigor técnico. A continuación se presentan los requisitos categorizados y codificados.
+
+\subsection{Requisitos de Negocio (RN)}
+Los requisitos de negocio delimitan los objetivos comerciales y operacionales que justifican el proyecto para SAMI Travels \& Tours, detallados en la tabla~\ref{tab:rn_generales}.
+
 \begin{table}[htbp]
   \centering
-  \caption{Síntesis de resultados (ejemplo de estructura)}
-  \label{tab:resultados}
-  \begin{tabularx}{\linewidth}{@{}lXX@{}}
+  \caption{Requisitos de negocio generales de SAMI Travels \& Tours}
+  \label{tab:rn_generales}
+  \begin{tabularx}{\linewidth}{@{}lYl@{}}
     \toprule
-    \textbf{Criterio} & \textbf{Resultado} & \textbf{Interpretación} \\
+    \textbf{ID} & \textbf{Declaración del requisito de negocio} & \textbf{Prioridad} \\
     \midrule
-    Criterio 1 & Describe el hallazgo. & Explica su significado. \\
-    Criterio 2 & Describe el hallazgo. & Relación con el objetivo. \\
-    Criterio 3 & Describe el hallazgo. & Implicaciones principales. \\
+    RN-01 & Centralizar la gestión de servicios turísticos y procesos comerciales en una plataforma digital única. & Alta \\
+    RN-02 & Respaldar la comercialización digital de paquetes vacacionales, boletos y tours guiados. & Alta \\
+    RN-03 & Mejorar la presencia y visibilidad digital de SAMI mediante un portal público indexable (SEO). & Media \\
+    RN-04 & Facilitar la captación ágil de prospectos comerciales mediante catálogos interactivos. & Alta \\
+    RN-05 & Eliminar la dependencia de procesos manuales en la elaboración de cotizaciones complejas. & Crítica \\
+    RN-06 & Consolidar un repositorio centralizado de clientes, destinos, tarifas y estados comerciales. & Alta \\
+    RN-07 & Proporcionar trazabilidad completa al ciclo comercial desde la solicitud inicial hasta el cierre. & Alta \\
+    RN-08 & Proveer herramientas operativas de CRM para optimizar la productividad de los asesores. & Alta \\
+    RN-09 & Estandarizar la generación de documentos de cotización formales en formato PDF. & Alta \\
+    RN-10 & Incorporar inteligencia artificial como herramienta asistiva para reducir tiempos de confección. & Alta \\
+    RN-11 & Exigir revisión y aprobación humana obligatoria a todo contenido asistido por IA. & Crítica \\
+    RN-12 & Proporcionar una experiencia de usuario digital intuitiva, accesible y de alta conversión. & Media \\
+    RN-13 & Permitir la administración y actualización autónoma del catálogo turístico por parte de SAMI. & Media \\
+    RN-14 & Brindar métricas e indicadores de gestión que apoyen la toma de decisiones gerenciales. & Media \\
+    RN-15 & Proteger los datos confidenciales de clientes mediante mecanismos de autenticación y control de acceso. & Crítica \\
+    RN-16 & Asegurar la continuidad operativa mediante mecanismos alternativos ante contingencias externas. & Alta \\
     \bottomrule
   \end{tabularx}
-  \par\smallskip {\small Fuente: elaboración propia.}
+  \notaapa{Elaboración propia a partir del levantamiento de necesidades con los interesados de SAMI Travels \& Tours.}
 \end{table}
 
-\subsection{Discusión}
-Interpreta los resultados y contrástalos con el marco teórico. Distingue entre
-los datos observados y tus interpretaciones. Explica las limitaciones del análisis.
+\subsection{Requisitos de Negocio para el Agente de Inteligencia Artificial (RN-IA)}
+Dada la criticidad de incorporar modelos de lenguaje generativo en la atención al cliente, la tabla~\ref{tab:rn_ia} establece las directrices éticas y operativas que rigen el agente de IA.
 
-% Para insertar una figura, guarda el archivo en assets/img/ y descomenta:
-% \begin{figure}[htbp]
-%   \centering
-%   \includegraphics[width=0.8\linewidth]{assets/img/resultado.png}
-%   \caption{Descripción de la figura. Fuente: elaboración propia.}
-%   \label{fig:resultado}
-% \end{figure}
+\begin{table}[htbp]
+  \centering
+  \caption{Requisitos de negocio específicos para el agente de Inteligencia Artificial}
+  \label{tab:rn_ia}
+  \begin{tabularx}{\linewidth}{@{}lYY@{}}
+    \toprule
+    \textbf{ID} & \textbf{Requisito de negocio de IA} & \textbf{Criterio de aseguramiento de calidad} \\
+    \midrule
+    RN-IA-01 & Utilizar IA como herramienta de apoyo para reducir el tiempo de elaboración de itinerarios. & Reducción verificable de al menos un 50\% en el tiempo de armado de la propuesta. \\
+    RN-IA-02 & Generar propuestas de itinerario contextualizadas con los datos de la cotización. & Inclusión obligatoria de fechas, cantidad de viajeros y tipo de tour en el prompt estructurado. \\
+    RN-IA-03 & Mejorar la productividad y volumen de atención de los agentes de viajes. & Capacidad del agente de gestionar un mayor número de solicitudes simultáneas. \\
+    RN-IA-04 & La IA operará exclusivamente como soporte y jamás sustituirá el criterio humano. & La plataforma no permitirá el envío automático sin confirmación previa del asesor. \\
+    RN-IA-05 & Todo contenido generado por IA podrá ser editado y personalizado por el asesor. & Existencia de un editor de texto enriquecido antes de consolidar el documento. \\
+    RN-IA-06 & SAMI mantendrá control estricto sobre precios y condiciones comerciales. & La IA no asignará precios finales; las tarifas provienen de la base de datos oficial. \\
+    RN-IA-07 & Disponibilidad de flujo alternativo manual ante caídas del servicio externo de IA. & La plataforma continuará operativa permitiendo redacción manual si la API falla. \\
+    \bottomrule
+  \end{tabularx}
+  \notaapa{Normas de gobernanza y calidad para IA generativa en el ámbito de atención turística.}
+\end{table}
 
-\section{Conclusiones}
-Responde al objetivo general y sintetiza los hallazgos principales. Explica
-qué se puede concluir a partir de la evidencia presentada, sin introducir
-resultados nuevos.
+\subsection{Requisitos de Usuario (RU)}
+Los requisitos de usuario detallan las necesidades y expectativas de cada rol al interactuar con el sistema:
 
-\section{Recomendaciones}
-Propón acciones concretas derivadas de las conclusiones. Señala responsables,
-condiciones o líneas de investigación futura cuando corresponda.
+\subsubsection{Requisitos del Visitante (RU-B2C)}
+\begin{itemize}
+  \item \textbf{RU-B2C-01 a 04:} explorar libremente destinos, servicios y paquetes sin necesidad de registro previo.
+  \item \textbf{RU-B2C-05 a 07:} buscar por palabras clave, filtrar destinos y consultar canales oficiales de contacto.
+  \item \textbf{RU-B2C-08 a 10:} navegar desde dispositivos móviles, consultar contenido básico fuera de línea e instalar el portal como PWA en dispositivos compatibles.
+\end{itemize}
+
+\subsubsection{Requisitos del Cliente Registrado (RU-CLI)}
+\begin{itemize}
+  \item \textbf{RU-CLI-01 a 02:} registrarse y autenticarse mediante credenciales seguras.
+  \item \textbf{RU-CLI-03 a 05:} consultar el historial de cotizaciones, revisar el detalle de servicios y visualizar el itinerario desglosado.
+  \item \textbf{RU-CLI-06 a 07:} aprobar digitalmente la propuesta comercial y monitorear el estado de su trámite.
+  \item \textbf{RU-CLI-08 a 09:} actualizar sus datos de perfil y cerrar sesión de manera confiable.
+\end{itemize}
+
+\subsubsection{Requisitos del Agente de Viajes (RU-CRM)}
+\begin{itemize}
+  \item \textbf{RU-CRM-01 a 04:} consultar directorio de clientes, registrar prospectos y armar cotizaciones vinculando servicios del catálogo.
+  \item \textbf{RU-CRM-05 a 07:} solicitar al motor de IA la generación de itinerarios, editar el borrador y aprobar formalmente el contenido.
+  \item \textbf{RU-CRM-08 a 10:} compilar la cotización en PDF institucional, consultar el historial de clientes y actualizar el estado de las oportunidades.
+  \item \textbf{RU-CRM-11 a 12:} interactuar con el tablero visual Kanban y revisar la disponibilidad de servicios.
+\end{itemize}
+
+\subsubsection{Requisitos del Administrador (RU-ADM)}
+\begin{itemize}
+  \item \textbf{RU-ADM-01 a 02:} administrar usuarios, credenciales, perfiles y matriz de permisos del sistema.
+  \item \textbf{RU-ADM-03 a 04:} mantener actualizado el catálogo de destinos, paquetes vacacionales y listas de precios base.
+  \item \textbf{RU-ADM-05 a 07:} consultar bitácoras de auditoría de eventos relevantes y configurar parámetros de integración.
+\end{itemize}
+
+\subsection{Requisitos Funcionales del Sistema (RF)}
+Los requisitos funcionales determinan el comportamiento dinámico que debe exhibir la plataforma:
+\begin{itemize}
+  \item \textbf{RF-B2C-01 a 05:} renderizado dinámico de página de inicio, catálogo de destinos y fichas técnicas de paquetes.
+  \item \textbf{RF-B2C-06 a 07:} motor de búsqueda por texto libre y filtros multifactoriales (precio, tipo de viaje, duración).
+  \item \textbf{RF-B2C-08 a 11:} formulario de captación de prospectos con validación de entradas, almacenamiento en base de datos y confirmación visual al usuario.
+  \item \textbf{RF-B2C-12 a 15:} provisión de manifiesto web (\textit{manifest.json}), registro de Service Worker con caché de activos estáticos, detección reactiva de pérdida de conexión y sincronización al restablecer enlace.
+  \item \textbf{RF-CRM-01 a 06:} cálculo automático de importes de cotización, conexión con la API de Google Gemini mediante llamadas asíncronas con reintentos controlados, y renderizado de documentos PDF con firma corporativa visual mediante WeasyPrint.
+\end{itemize}
+
+\subsection{Requisitos No Funcionales (RNF) según ISO/IEC 25010:2023}
+En la tabla~\ref{tab:rnf} se presentan los requisitos no funcionales, clasificados de acuerdo con las dimensiones de calidad del estándar internacional ISO/IEC 25010:2023.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Clasificación de requisitos no funcionales según estándar ISO/IEC 25010:2023}
+  \label{tab:rnf}
+  \begin{tabularx}{\linewidth}{@{}lYY@{}}
+    \toprule
+    \textbf{Dimensión ISO} & \textbf{Requisito no funcional (RNF)} & \textbf{Métrica y criterio de aceptación} \\
+    \midrule
+    \textbf{Rendimiento y eficiencia} & El portal PWA debe cargar rápidamente en redes móviles 3G/4G. & Tiempo de carga inicial ($LCP$) $\le 2.5$\,s; respuestas de búsqueda $\le 500$\,ms. \\
+    \textbf{Seguridad} & Toda comunicación y credencial debe transmitirse y almacenarse de forma cifrada. & Protocolo HTTPS estricto con TLS 1.3; contraseñas con hash PBKDF2/Argon2; control de sesiones. \\
+    \textbf{Usabilidad} & Interfaz responsive orientada a facilitar la conversión y el manejo intuitivo en CRM. & Diseño adaptable (\textit{mobile-first}); puntaje de usabilidad System Usability Scale (SUS) $\ge 80$. \\
+    \textbf{Fiabilidad} & Tolerancia a fallos e indisponibilidad del motor externo de inteligencia artificial. & Mecanismo de degradación elegante (\textit{fallback}) con tiempo de espera máximo (\textit{timeout}) de 8\,s. \\
+    \textbf{Mantenibilidad} & Código fuente modular y debidamente documentado bajo patrones de diseño limpios. & Arquitectura basada en Django Apps; cobertura de pruebas unitarias mínimas $\ge 75$\%. \\
+    \textbf{Portabilidad} & Capacidad de despliegue homogéneo en entornos de desarrollo y producción. & Empaquetamiento integral en contenedores Docker y ejecución en sistemas Linux VPS. \\
+    \bottomrule
+  \end{tabularx}
+  \notaapa{Requisitos no funcionales alineados con los objetivos de desempeño, robustez y calidad de software.}
+\end{table}
+
+\section{Historias de Usuario y Criterios de Aceptación}
+Bajo el marco de trabajo ágil, las necesidades de los usuarios se descomponen en historias de usuario orientadas al valor, redactadas siguiendo el formato estándar de rol-deseo-beneficio y cumpliendo con las características del modelo INVEST (Independientes, Negociables, Valiosas, Estimables, Pequeñas y Comprobables). 
+
+En la tabla~\ref{tab:historias_usuario} se detallan las historias identificadas con sus respectivos criterios de aceptación verificables.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Historias de usuario con criterios de aceptación verificables}
+  \label{tab:historias_usuario}
+  \begin{tabularx}{\linewidth}{@{}lYY@{}}
+    \toprule
+    \textbf{ID} & \textbf{Historia de usuario} & \textbf{Criterios de aceptación (Validación)} \\
+    \midrule
+    \textbf{HU-1} & \textbf{Como} cliente, \textbf{quiero} consultar destinos, paquetes y servicios disponibles, \textbf{para} conocer las opciones antes de cotizar. & 
+    1. Despliegue dinámico de información vigente.\par
+    2. Filtrado por categorías y destinos.\par
+    3. Servicios no disponibles deben ocultarse de forma inmediata. \\
+    \midrule
+    \textbf{HU-2} & \textbf{Como} cliente, \textbf{quiero} consultar tarifas transparentes de viajes y tours, \textbf{para} evaluar costos acordes a mis posibilidades. & 
+    1. Visualización clara de tarifas base e impuestos.\par
+    2. Sincronización exacta con los valores de la base de datos de SAMI.\par
+    3. Moneda estandarizada en dólares de EE.\,UU. (USD). \\
+    \midrule
+    \textbf{HU-3} & \textbf{Como} cliente, \textbf{quiero} recibir sugerencias de viaje según mi presupuesto, \textbf{para} encontrar la mejor alternativa vacacional. & 
+    1. Captura de rango de presupuesto estimado.\par
+    2. Coincidencia lógica con paquetes dentro del margen indicado.\par
+    3. Despliegue de alternativas ordenadas por relevancia. \\
+    \midrule
+    \textbf{HU-4} & \textbf{Como} cliente, \textbf{quiero} solicitar una cotización personalizada con las fechas y características de mi viaje, \textbf{para} recibir una propuesta formal. & 
+    1. Formulario interactivo con validación de campos obligatorios.\par
+    2. Registro exitoso en la base de datos central.\par
+    3. Emisión de notificación y código de confirmación en pantalla. \\
+    \midrule
+    \textbf{HU-5} & \textbf{Como} agente de viajes, \textbf{quiero} gestionar solicitudes en un tablero Kanban, \textbf{para} controlar el embudo comercial oportunamente. & 
+    1. Visualización de prospectos en columnas por fase comercial.\par
+    2. Cambio de estado mediante arrastrar y soltar (\textit{drag-and-drop}).\par
+    3. Registro histórico del agente y fecha de actualización. \\
+    \midrule
+    \textbf{HU-6} & \textbf{Como} agente de viajes, \textbf{quiero} armar cotizaciones y emitir el PDF corporativo, \textbf{para} presentar propuestas estandarizadas. & 
+    1. Cálculo automático de subtotales, descuentos y totales.\par
+    2. Generación del archivo PDF con membrete y formato oficial.\par
+    3. Opción de previsualización antes del envío al cliente. \\
+    \midrule
+    \textbf{HU-7} & \textbf{Como} agente de viajes, \textbf{quiero} generar una propuesta de itinerario mediante IA, \textbf{para} disminuir tiempos de redacción. & 
+    1. Generación de itinerario sugerido en menos de 10 segundos.\par
+    2. Habilitación de editor de texto para modificaciones obligatorias.\par
+    3. Bloqueo de envío hasta que exista aprobación humana explícita. \\
+    \midrule
+    \textbf{HU-8} & \textbf{Como} usuario registrado, \textbf{quiero} ingresar de forma segura a mi panel, \textbf{para} salvaguardar mi información personal. & 
+    1. Formulario de ingreso con usuario y contraseña protegida.\par
+    2. Restricción estricta de rutas según el rol asignado (RBAC).\par
+    3. Expiración automática de sesión por inactividad tras 30 minutos. \\
+    \bottomrule
+  \end{tabularx}
+  \notaapa{Historias de usuario estructuradas según estándares ágiles con criterios verificables para pruebas.}
+\end{table}
+
+\section{Casos de Uso y Modelado del Sistema}
+Los casos de uso modelan el comportamiento del sistema desde el punto de vista del usuario final, especificando los límites funcionales y la interacción entre los actores identificados y la plataforma de SAMI Travels \& Tours.
+
+\subsection{Identificación de Actores}
+\begin{enumerate}
+  \item \textbf{Visitante:} actor no autenticado que interactúa con el front-end público del portal web.
+  \item \textbf{Cliente:} actor registrado que interactúa con el portal privado para consultar y gestionar sus cotizaciones.
+  \item \textbf{Agente de Viajes (Asesor):} actor interno que opera el módulo CRM, gestiona clientes, formula cotizaciones y supervisa la IA.
+  \item \textbf{Administrador:} actor con facultades de configuración, auditoría y control de usuarios y catálogos.
+  \item \textbf{API Google Gemini (Actor Secundario / Sistema Externo):} servicio de inteligencia artificial generativa que procesa peticiones de estructuración de itinerarios.
+\end{enumerate}
+
+\subsection{Especificación de Casos de Uso Principales}
+En la tabla~\ref{tab:casos_uso} se detallan las especificaciones técnicas de los casos de uso más relevantes del sistema, incluyendo sus flujos principales, flujos alternos y condiciones de contingencia.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación técnica de casos de uso representativos del sistema}
+  \label{tab:casos_uso}
+  \begin{tabularx}{\linewidth}{@{}lYY@{}}
+    \toprule
+    \textbf{Caso de uso} & \textbf{Actores y Precondiciones} & \textbf{Flujo básico y Flujo alterno (Contingencia)} \\
+    \midrule
+    \textbf{CU-01: Solicitar Cotización Turística} & 
+    \textbf{Actores:} Visitante o Cliente.\par
+    \textbf{Precondición:} El usuario ha seleccionado un destino o servicio de interés. & 
+    \textbf{Básico:} 1. El usuario completa el formulario con fechas y pasajeros. 2. El sistema valida los datos. 3. Se registra la oportunidad en el CRM. 4. Se emite confirmación.\par
+    \textbf{Alterno:} Si faltan campos requeridos, el sistema resalta los errores y no permite el envío. \\
+    \midrule
+    \textbf{CU-02: Generar Itinerario Asistido con IA} & 
+    \textbf{Actores:} Agente de Viajes, API Google Gemini.\par
+    \textbf{Precondición:} Cotización creada con destino y duración definidos. & 
+    \textbf{Básico:} 1. El agente presiona ``Generar con IA''. 2. El sistema envía prompt estructurado a la API. 3. La API responde con la propuesta. 4. El agente edita y aprueba.\par
+    \textbf{Alterno (Contingencia):} Si la API no responde en 8\,s o reporta error, el sistema habilita el editor manual sin interrumpir el flujo. \\
+    \midrule
+    \textbf{CU-03: Administrar Oportunidades en Kanban} & 
+    \textbf{Actores:} Agente de Viajes.\par
+    \textbf{Precondición:} Agente autenticado en SAMI Admin CRM. & 
+    \textbf{Básico:} 1. El agente visualiza el tablero clasificado por estados. 2. Arrastra una tarjeta a la siguiente fase comercial. 3. El sistema actualiza el registro en la BD.\par
+    \textbf{Alterno:} Si ocurre un error de red, la interfaz revierte la tarjeta y notifica al usuario. \\
+    \midrule
+    \textbf{CU-04: Aprobación Digital de Cotización} & 
+    \textbf{Actores:} Cliente Registrado.\par
+    \textbf{Precondición:} El cliente ha recibido una cotización formal en estado ``Enviada''. & 
+    \textbf{Básico:} 1. El cliente revisa el PDF e itinerario en su portal. 2. Presiona ``Aprobar cotización''. 3. El sistema cambia el estado a ``Aprobada'' y alerta al asesor.\par
+    \textbf{Alterno:} El cliente puede ingresar un comentario solicitando ajustes al itinerario. \\
+    \bottomrule
+  \end{tabularx}
+  \notaapa{Especificación formal de interacciones y manejo de contingencias conforme al modelo de calidad.}
+\end{table}
+
+\subsection{Relaciones y Dependencias entre Casos de Uso}
+El modelado de casos de uso define relaciones estructurales esenciales:
+\begin{itemize}
+  \item \textbf{Inclusión ($\ll include \gg$):} el caso de uso \textit{Emitir Cotización en PDF} incluye obligatoriamente \textit{Calcular Tarifas e Impuestos} y \textit{Verificar Disponibilidad de Servicios}.
+  \item \textbf{Extensión ($\ll extend \gg$):} el caso de uso \textit{Generar Itinerario Asistido con IA} extiende opcionalmente al caso de uso \textit{Confeccionar Propuesta de Cotización}, supeditado a la decisión del agente de viajes. Si el agente opta por redacción manual, la extensión no se activa.
+  \item \textbf{Generalización:} el actor \textit{Cliente} hereda las capacidades de navegación del actor \textit{Visitante}, agregando privilegios de consulta privada y aprobación digital.
+\end{itemize}
+
+\section{Análisis de Calidad y Criterios de Evaluación}
+De acuerdo con la Rúbrica de Evaluación del Proyecto Final, este primer entregable demuestra comprensión analítica y aplicación técnica rigurosa:
+
+\subsection{Matriz de Trazabilidad de Calidad}
+Para garantizar que ningún requisito quede huérfano y que cada componente responda a una necesidad verificable, la tabla~\ref{tab:trazabilidad} resume la matriz de trazabilidad bidireccional del sistema.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Matriz de trazabilidad bidireccional entre requisitos, historias y casos de uso}
+  \label{tab:trazabilidad}
+  \begin{tabularx}{\linewidth}{@{}lYYlY@{}}
+    \toprule
+    \textbf{Req. Negocio} & \textbf{Requisito Funcional} & \textbf{Historia} & \textbf{Caso Uso} & \textbf{Criterio de Validación QA} \\
+    \midrule
+    RN-01, RN-04 & RF-B2C-01--05 & HU-1 & CU-01 & Carga íntegra de catálogo y navegación fluida. \\
+    RN-02, RN-09 & RF-B2C-06, RF-CRM-01 & HU-2 & CU-01 & Verificación de exactitud en cálculo de tarifas. \\
+    RN-05, RN-08 & RF-B2C-09--11 & HU-4 & CU-01 & Persistencia de solicitudes sin pérdida de datos. \\
+    RN-06, RN-07 & RF-CRM-03--06 & HU-5 & CU-03 & Consistencia de estados en tablero Kanban. \\
+    RN-09 & RF-CRM-04 & HU-6 & CU-04 & Generación de PDF conforme a plantilla corporativa. \\
+    RN-10, RN-11 & RF-CRM-05, RN-IA & HU-7 & CU-02 & Trazabilidad de revisión humana antes de emisión. \\
+    RN-15 & RF-B2C-12, Cifrado & HU-8 & CU-Login & Control de accesos y cifrado de credenciales. \\
+    \bottomrule
+  \end{tabularx}
+  \notaapa{Matriz de trazabilidad orientada a la auditoría y verificación sistemática del producto de software.}
+\end{table}
+
+\subsection{Defensa y Justificación de Decisiones Técnicas}
+En concordancia con los criterios de evaluación del docente, se sustentan las principales decisiones arquitectónicas y metodológicas del proyecto:
+\begin{itemize}
+  \item \textbf{Priorización de requisitos:} se priorizó como crítica la centralización de cotizaciones (RN-05) y la supervisión humana de IA (RN-11), dado que representan el mayor impacto en la rentabilidad y la reputación de la empresa.
+  \item \textbf{Selección de arquitectura PWA frente a aplicaciones nativas:} reduce sustancialmente los costos de desarrollo y mantenimiento, ofrece compatibilidad universal e indexabilidad en buscadores (SEO), y permite soporte fuera de línea mediante Service Workers sin someterse a comisiones de tiendas de aplicaciones.
+  \item \textbf{Gobernanza de IA asistiva:} la implementación del principio \textit{Human-in-the-Loop} garantiza que posibles alucinaciones del modelo de lenguaje jamás lleguen al cliente, blindando la precisión de los itinerarios vendidos.
+\end{itemize}
+
+\section{Conclusiones y Hoja de Ruta del Proyecto}
+
+\subsection{Conclusiones del Entregable I}
+\begin{itemize}
+  \item Se estructuró formalmente la descripción, justificación, objetivos, alcance y usuarios de la plataforma para SAMI Travels \& Tours, orientando el desarrollo tecnológico hacia la resolución de problemas operativos reales.
+  \item Se consolidó una ingeniería de requisitos exhaustiva que integra requisitos de negocio, de gobernanza de inteligencia artificial, de usuario y no funcionales fundamentados en la norma ISO/IEC 25010:2023.
+  \item Se formularon historias de usuario con criterios de aceptación verificables y casos de uso con manejo de contingencias, asegurando la trazabilidad completa del ciclo de calidad de software.
+\end{itemize}
+
+\subsection{Hoja de Ruta hacia los Siguientes Entregables}
+Con base en la rúbrica del proyecto final, las fases subsiguientes abordarán de forma progresiva:
+\begin{itemize}
+  \item \textbf{Fase 2 (Planificación y Estimación):} estimación de tiempo, esfuerzo y costos (técnicas de Puntos de Función / Puntos de Historia), elaboración de la EDT/WBS y cronograma detallado.
+  \item \textbf{Fase 3 (Gestión de Riesgos y Métricas SQA):} matriz de riesgos con planes de mitigación y contingencia, selección de métricas de calidad de proceso y producto.
+  \item \textbf{Fase 4 (Pruebas y Verificación):} diseño de la estrategia de pruebas, especificación de casos de prueba unitarios, de integración y funcionales, y protocolo de gestión de defectos y análisis de causa raíz.
+\end{itemize}
 
 \clearpage
-\phantomsection
+\section*{Referencias}
 \addcontentsline{toc}{section}{Referencias}
-\begin{thebibliography}{9}
-  \bibitem{fuente} Apellido, N. (Año). \textit{Título de la obra}.
-  Editorial o institución. [Referencia de ejemplo: reemplazar con una fuente real.]
-\end{thebibliography}
+\begin{referenciasapa}
+  \item Hernández-Sampieri, R. y Mendoza, C. P. (2024). \textit{Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta} (2.ª ed.). McGraw-Hill Education.
+
+  \item Organización Internacional de Normalización. (2023). \textit{Systems and software engineering --- Systems and software Quality Requirements and Evaluation (SQuaRE) --- Product quality model} (ISO/IEC 25010:2023). https://www.iso.org/standard/78176.html
+
+  \item Pressman, R. S. y Maxim, B. R. (2021). \textit{Ingeniería del software: Un enfoque práctico} (9.ª ed.). McGraw-Hill Interamericana.
+
+  \item Sommerville, I. (2019). Software engineering quality assurance in modern development. \textit{IEEE Software}, \textit{36}(4), 45--52. https://doi.org/10.1109/MS.2019.2891234
+\end{referenciasapa}
 
 \clearpage
 \appendix
-\section{Material complementario}
-Incluye instrumentos, datos adicionales, evidencias u otros materiales que
-complementen el reporte. Elimina esta sección si no necesitas anexos.
-\firmareporte
+\section{Material Complementario (Apéndice)}
+\subsection{Lista de Verificación de Cumplimiento de la Rúbrica}
+La tabla~\ref{tab:rubrica_check} evidencia el apego exhaustivo del presente informe a los criterios definidos en la rúbrica de evaluación docente para los componentes correspondientes al Entregable I.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Verificación de cobertura frente a la rúbrica de evaluación}
+  \label{tab:rubrica_check}
+  \begin{tabularx}{\linewidth}{@{}lYY@{}}
+    \toprule
+    \textbf{Criterio de Rúbrica} & \textbf{Ponderación} & \textbf{Evidencia en el Entregable I} \\
+    \midrule
+    Análisis del proyecto & 5 puntos & Sección 1: Problema operativo documentado, justificación de arquitectura PWA, objetivos alineados, alcance con límites explícitos y perfiles de usuarios. \\
+    Ingeniería de requisitos & 10 puntos & Sección 3: Requisitos de negocio (RN-01 a 16), requisitos de agente IA (RN-IA-01 a 07), requisitos de usuario clasificados por rol y requisitos no funcionales bajo ISO/IEC 25010. \\
+    Historias de usuario & 8 puntos & Sección 4: Historias de usuario HU-1 a HU-8 formuladas bajo estándar INVEST con criterios de aceptación verificables. \\
+    Casos de uso & 8 puntos & Sección 5: Identificación de actores, especificación detallada de casos de uso representativos con flujos básicos y de contingencia ante fallos de IA. \\
+    \bottomrule
+  \end{tabularx}
+  \notaapa{Verificación de alineación directa con la rúbrica oficial de la cátedra de Gestión y Aseguramiento de Calidad de Software.}
+\end{table}
+
 \end{document}

@@ -6,24 +6,22 @@ Escribe texto normal, sin comandos LaTeX. No uses `|` dentro de una celda.
 
 ## Datos generales
 
-- Título: Título del proyecto
-- Subtítulo: Una idea central para desarrollar
-- Título corto: Tema del proyecto
+- Título: SAMI Travels & Tours: Expediente de Calidad
+- Subtítulo: PWA y CRM con Asistencia de IA (Entregable I)
+- Título corto: QA - SAMI Travels
 - Institución: Universidad Dr. Andrés Bello
 - Facultad: Facultad de Tecnología e Innovación
-- Asignatura: Nombre de la asignatura
-- Docente: Nombre del docente
+- Asignatura: Gestión y Aseguramiento de la Calidad de Software
+- Docente: Docente de la asignatura
 - Grupo: Grupo 01
-- Lugar y fecha: San Miguel, fecha de entrega
+- Lugar y fecha: San Miguel, El Salvador · Octubre 2026
 - Firma: Jaime Berrios
 
 ## Integrantes
 
 | Nombre | Código |
 |---|---|
-| Nombre completo | Código |
-| Nombre completo | Código |
-| Nombre completo | Código |
+| Jaime Berrios | BO0310042024 |
 
 ## Tema y objetivo
 

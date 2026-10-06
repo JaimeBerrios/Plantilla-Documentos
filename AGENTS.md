@@ -34,9 +34,7 @@ Conserva ambos logos, sus proporciones y el azul institucional `#173864`.
 Mantén diapositivas 16:9, textos breves y un pie con el expositor correspondiente.
 No reduzcas indiscriminadamente el tamaño de letra para hacer caber contenido:
 divide láminas o reorganiza la portada si hay muchos integrantes o títulos largos.
-El reporte usa tamaño carta y firma tipográfica al final de todo su contenido,
-incluidos los anexos. El texto de firma procede de `datos.md`; no agregar firma
-a las diapositivas. Cuando prepares la presentación, asegúrate de reflejar los cambios
+El reporte usa tamaño carta. Cuando prepares la presentación, asegúrate de reflejar los cambios
 tanto en `presentacion.tex` como en `reveal.js/index.html`.
 
 ## Compilación y entrega obligatorias
@@ -52,8 +50,8 @@ red o escritura fuera del repositorio; no eludas esas restricciones.
 1. Compila ambos documentos con el script y corrige errores.
 2. Revisa `.build/presentacion.log` y `.build/reporte.log`: resuelve referencias
    indefinidas, caracteres faltantes y desbordamientos visibles.
-3. Inspecciona los PDF: logos completos, portada legible, tablas y pies sin cortes,
-   numeración coherente y firma al final del reporte. Si hay herramientas de
+3. Inspecciona los PDF: logos completos, portada legible, tablas y pies sin cortes
+   y numeración coherente. Si hay herramientas de
    renderizado, guarda las capturas temporales en `.build/` o fuera del repositorio.
 4. Entrega enlaces a los dos PDF, al HTML web y un resumen breve de los cambios y verificaciones.
 

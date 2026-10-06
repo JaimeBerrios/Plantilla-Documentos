@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{plantilla/unab_reporte}[2026/09/07 Plantilla institucional de reportes]
-\RequirePackage[margin=2.5cm,includefoot,headheight=16pt]{geometry}
+\RequirePackage[margin=2.54cm,includefoot,headheight=16pt]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 \RequirePackage{fontspec}
@@ -14,24 +14,110 @@
 \RequirePackage{tabularx}
 \RequirePackage{array}
 \RequirePackage{enumitem}
+\RequirePackage{caption}
 \RequirePackage{hyperref}
 \definecolor{unabblue}{HTML}{173864}
 \definecolor{softgray}{HTML}{F2F2F2}
 \definecolor{linegray}{HTML}{D8DEE8}
 \hypersetup{colorlinks=true,linkcolor=unabblue,urlcolor=unabblue,citecolor=unabblue}
+
+% Formato de párrafos según Normas APA (7ma edición)
 \onehalfspacing
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0.6em}
+\setlength{\parindent}{1.27cm}
+\setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{2em}
-\setlist[itemize]{topsep=0.3em,itemsep=0.2em}
-\titleformat{\section}{\Large\sffamily\bfseries\color{unabblue}}{\thesection.}{0.6em}{}
-\titleformat{\subsection}{\large\sffamily\bfseries\color{unabblue}}{\thesubsection}{0.6em}{}
+\setlist[itemize]{topsep=0.3em,itemsep=0.2em,leftmargin=1.27cm}
+\setlist[enumerate]{topsep=0.3em,itemsep=0.2em,leftmargin=1.27cm}
+
+% Niveles de encabezados según Normas APA (7ma edición)
+% Nivel 1: Centrado, Negrita
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{unabblue}\centering}
+  {\thesection.}{0.5em}{}
+% Nivel 2: Alineado a la izquierda, Negrita
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{unabblue}}
+  {\thesubsection}{0.5em}{}
+% Nivel 3: Alineado a la izquierda, Negrita, Cursiva
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\itshape\color{unabblue}}
+  {\thesubsubsection}{0.5em}{}
+% Nivel 4: Con sangría, Negrita, en el mismo renglón con punto
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries\color{unabblue}}
+  {\hspace*{1.27cm}\theparagraph}{0.5em}{}[.]
+% Nivel 5: Con sangría, Negrita, Cursiva, en el mismo renglón con punto
+\titleformat{\subparagraph}[runin]
+  {\normalfont\normalsize\bfseries\itshape\color{unabblue}}
+  {\hspace*{1.27cm}\thesubparagraph}{0.5em}{}[.]
+
+\titlespacing*{\section}{0pt}{2ex plus 0.5ex minus 0.2ex}{1.2ex plus 0.2ex}
+\titlespacing*{\subsection}{0pt}{1.5ex plus 0.4ex minus 0.2ex}{0.8ex plus 0.2ex}
+\titlespacing*{\subsubsection}{0pt}{1.2ex plus 0.3ex minus 0.2ex}{0.6ex plus 0.2ex}
+\titlespacing*{\paragraph}{0pt}{1ex plus 0.2ex minus 0.1ex}{0.8em}
+\titlespacing*{\subparagraph}{0pt}{1ex plus 0.2ex minus 0.1ex}{0.8em}
+
+% Formato APA para tablas y figuras
+\captionsetup{
+  justification=raggedright,
+  singlelinecheck=false,
+  font=small
+}
+\captionsetup[table]{
+  labelfont={bf,color=unabblue},
+  textfont=it,
+  labelsep=newline,
+  skip=4pt
+}
+\captionsetup[figure]{
+  labelfont={bf,color=unabblue},
+  textfont=it,
+  labelsep=newline,
+  skip=4pt
+}
+
+% Macro para notas de tablas y figuras en formato APA
+\newcommand{\notaapa}[1]{%
+  \par\vspace{4pt}%
+  {\raggedright\small\textit{Nota.} #1\par}%
+}
+
+% Encabezado y numeración estilo APA (número arriba a la derecha)
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small\sffamily\color{unabblue}\TituloCorto}
-\fancyfoot[C]{\small\sffamily\color{unabblue}Reporte académico\hfill\thepage}
+\fancyhead[R]{\small\sffamily\color{unabblue}\thepage}
+\fancyfoot{}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
+
+% Formato de referencias con sangría francesa (Normas APA 7ma edición)
+\newlength{\bibhangindent}
+\setlength{\bibhangindent}{1.27cm}
+\let\oldthebibliography\thebibliography
+\let\endoldthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]{%
+  \begin{oldthebibliography}{#1}%
+  \setlength{\itemindent}{-\bibhangindent}%
+  \setlength{\leftmargin}{\bibhangindent}%
+  \setlength{\itemsep}{0.6em}%
+  \setlength{\parsep}{0pt}%
+}{%
+  \end{oldthebibliography}%
+}
+
+\newenvironment{referenciasapa}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{\bibhangindent}%
+    \setlength{\itemindent}{-\bibhangindent}%
+    \setlength{\itemsep}{0.6em}%
+    \setlength{\parsep}{0pt}%
+  }%
+}{%
+  \end{list}%
+}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcommand{\logoreporte}[2]{%
   \includegraphics[width=#2,height=2cm,keepaspectratio]{#1}%
 }
@@ -39,6 +125,7 @@
   \hypersetup{pageanchor=false}
   \begin{titlepage}
   \singlespacing
+  \setlength{\parindent}{0pt}
   \logoreporte{assets/img/isotipo-azul.png}{2.7cm}\hfill
   \logoreporte{assets/img/logo-facultad.png}{2.7cm}
   \begin{center}
