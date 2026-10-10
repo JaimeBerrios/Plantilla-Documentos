@@ -15,8 +15,14 @@
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,backgrounds}
 \RequirePackage{hyperref}
 
-% Color institucional UNAB
+% Color institucional UNAB y paleta armónica para tablas
 \definecolor{unabblue}{HTML}{173864}
+\definecolor{unabheaderbg}{HTML}{173864}
+\definecolor{tablelightgray}{HTML}{F8FAFC}
+\definecolor{tablerowalt}{HTML}{F1F5F9}
+\definecolor{tableheadergray}{HTML}{E9ECEF}
+
+\RequirePackage{colortbl}
 
 \hypersetup{colorlinks=true,linkcolor=unabblue,urlcolor=unabblue,citecolor=unabblue}
 
@@ -43,7 +49,7 @@
 \newcommand{\cuadrado}{\textnormal{{\SymFont ▪}}\;}
 \newcommand{\checkmarck}{\textnormal{{\SymFont ✓}}\;}
 
-% Encabezado institucional de la Guía
+% Encabezado institucional de la Guía y Ficha de Propuesta
 \newcommand{\encabezadoguia}{%
   \noindent
   \begin{minipage}[c]{0.16\textwidth}
@@ -70,6 +76,32 @@
     \includegraphics[width=\linewidth,height=2.3cm,keepaspectratio]{assets/img/logo-facultad.png}
   \end{minipage}%
   \par\vspace{0.4em}
+}
+
+\newcommand{\encabezadopropuesta}{%
+  \noindent
+  \begin{minipage}[c]{0.15\textwidth}
+    \includegraphics[width=\linewidth,height=2.2cm,keepaspectratio]{assets/img/isotipo-azul.png}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.68\textwidth}
+    \centering
+    {\fontsize{12.5}{14.5}\selectfont\textbf{\Institucion}\par}
+    \vspace{2pt}
+    {\fontsize{10.5}{12.5}\selectfont\Facultad\par}
+    \vspace{1.5pt}
+    {\fontsize{9.5}{11.5}\selectfont\textbf{Asignatura:} \Asignatura \quad|\quad \textbf{Docente:} \Docente\par}
+    \vspace{2pt}
+    {\fontsize{10.5}{12.5}\selectfont\textbf{FASE 1: FICHA DE PROPUESTA DE PROYECTO}\par}
+    \vspace{1.5pt}
+    {\fontsize{8.5}{10.5}\selectfont\textbf{Fecha de Entrega:} \LugarFecha\par}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.15\textwidth}
+    \raggedleft
+    \includegraphics[width=\linewidth,height=2.2cm,keepaspectratio]{assets/img/logo-facultad.png}
+  \end{minipage}%
+  \par\vspace{0.3em}
 }
 
 \endinput

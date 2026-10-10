@@ -6,25 +6,25 @@ Escribe texto normal, sin comandos LaTeX. No uses `|` dentro de una celda.
 
 ## Datos generales
 
-- Título: SIGA-LoRa: Sistema Inteligente de Monitoreo y Alerta de Crecidas e Inundaciones mediante Arduino, ESP32, Comunicación LoRa y Lógica Digital.
-- Subtítulo: Prototipo universitario funcional de electrónica digital aplicada al monitoreo ambiental y comunicación inalámbrica
+- Título: SIGA-LoRa: Sistema Inteligente de Gestión de Alertas
+- Subtítulo: Prototipo de monitoreo inalámbrico de niveles de agua ante riesgos de inundación
 - Título corto: SIGA-LoRa
 - Institución: Universidad Dr. Andrés Bello
-- Facultad: Facultad de Tecnología e Innovación
-- Asignatura: Diseño de Sistemas de Seguridad de Redes
-- Docente: Nombre del docente
+- Facultad: Tecnología e Innovación
+- Asignatura: Sistemas Digitales
+- Docente: MduEV. Ing. Franklin Geovany Buruca Hernández
 - Grupo: Grupo 01
 - Lugar y fecha: San Miguel, sábado 10 de octubre de 2026
-- Firma: Jaime Berrios
+- Firma: Alexis Sebastián Castro Ramírez
 
 ## Integrantes
 
 | Nombre | Código |
 |---|---|
-| Estudiante líder: nombre pendiente | Carné pendiente |
-| Estudiante 2: nombre pendiente | Carné pendiente |
-| Estudiante 3: nombre pendiente | Carné pendiente |
-| Estudiante 4: nombre pendiente | Carné pendiente |
+| Alexis Sebastián Castro Ramírez | CR0367042024 |
+| Jefferson Jared Bonilla Meléndez | BM0749042022 |
+| Jaime Fernando Berrios Ortiz | BO0310042024 |
+| | |
 
 ## Fase 1: Ficha de Propuesta de Proyecto
 

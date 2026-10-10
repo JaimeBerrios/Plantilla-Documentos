@@ -70,21 +70,28 @@
 
 \vspace{0.25em}
 \noindent
-\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{2.8cm}|X|>{\raggedright\arraybackslash}p{1.7cm}|>{\raggedright\arraybackslash}p{3.2cm}|}
+\begingroup
+\renewcommand{\arraystretch}{1.15}%
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{4.0cm}|X|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{3.0cm}|}
   \hline
-  \textbf{Nombre del Proyecto:} & \multicolumn{3}{>{\raggedright\arraybackslash}X|}{\TituloTrabajo} \\
+  \rowcolor{tableheadergray}
+  \textbf{Nombre del Proyecto:} & \multicolumn{3}{>{\columncolor{tableheadergray}\raggedright\arraybackslash}p{14.2cm}|}{\textbf{\TituloTrabajo}\par\vspace{1pt}{\footnotesize\textit{\SubtituloTrabajo}}} \\
   \hline
-  \multicolumn{4}{|l|}{\textbf{Integrantes del Equipo (4 estudiantes)}} \\
+  \rowcolor{tableheadergray}
+  \multicolumn{4}{|>{\columncolor{tableheadergray}}l|}{\textbf{Integrantes del Equipo (4 estudiantes)}} \\
   \hline
   \textbf{Estudiante (Líder):} & \IntegrantesLiderNombre & \textbf{Carnet:} & \IntegrantesLiderCodigo \\
   \hline
+  \rowcolor{tablerowalt}
   \textbf{Estudiante:} & \IntegrantesDosNombre & \textbf{Carnet:} & \IntegrantesDosCodigo \\
   \hline
   \textbf{Estudiante:} & \IntegrantesTresNombre & \textbf{Carnet:} & \IntegrantesTresCodigo \\
   \hline
+  \rowcolor{tablerowalt}
   \textbf{Estudiante:} & \IntegrantesCuatroNombre & \textbf{Carnet:} & \IntegrantesCuatroCodigo \\
   \hline
 \end{tabularx}
+\endgroup
 
 \vspace{0.8em}
 \begin{itemize}[leftmargin=1.5em,itemsep=0.2em,topsep=0.1em]
@@ -96,21 +103,17 @@
 \noindent
 \begin{tabularx}{\linewidth}{|X|}
   \hline
-  \textbf{Problemática Ambiental Identificada:}\par\vspace{0.3em}
-  {\fontsize{9.5}{12}\selectfont En San Miguel, El Salvador, las lluvias torrenciales y ondas tropicales provocan incrementos críticos del caudal en la cuenca del Río Grande de San Miguel y severas acumulaciones pluviales en sectores urbanos como la colonia Palo Blanco, debido a deficiencias del drenaje e inundaciones repentinas. La dependencia de inspecciones visuales manuales limita el tiempo de respuesta comunitario, evidenciando la necesidad de investigar un sistema digital continuo de monitoreo del nivel de agua con comunicación de advertencias tempranas.\par}
-  \vspace{0.4em}
-  \\
-  \hline
-  \textbf{Justificación:}\par\vspace{0.3em}
-  {\fontsize{9.5}{12}\selectfont El desarrollo de un prototipo digital de bajo costo permite detectar de forma automatizada niveles críticos de agua combinando sensores ultrasónicos y de flotador. La integración de lógica combinacional pura mediante compuertas físicas (AND, OR, NOT) asegura una validación robusta y prefiltrado de umbrales en hardware antes del procesamiento, mientras que la tecnología LoRa garantiza la transmisión inalámbrica de estados hacia una estación receptora comunitaria sin depender de infraestructura Wi-Fi o telefonía celular, decodificando las alertas mediante un demultiplexor físico (DEMUX).\par}
-  \vspace{0.4em}
-  \\
-  \hline
-  \textbf{Población Objetivo y Beneficiarios Directos:}\par\vspace{0.4em}
-  \textbf{Población Objetivo:} {\fontsize{9.5}{12}\selectfont Habitantes y familias de la colonia Palo Blanco (San Miguel Centro, distrito con 74,650 hogares según el Censo de Población y Vivienda 2024 de la ONEC/BCR), específicamente aquellos domicilios ubicados en sectores vulnerables a inundaciones repentinas y saturación de drenajes pluviales.\par}\vspace{0.3em}
-  \textbf{Beneficiarios Directos:} {\fontsize{9.5}{12}\selectfont Cantidad de beneficiarios directos pendiente de delimitación y verificación (familias residentes en el área proyectada de cobertura del nodo receptor, con un núcleo inicial de aproximadamente 15 a 30 familias en calle y senda Los Laureles que registran antecedentes documentados de anegamientos e inundaciones recurrentes según informes de Protección Civil y prensa local).\par}
-  \vspace{0.4em}
-  \\
+  \vspace{0.15em}
+  \textbf{Problemática Ambiental Identificada:}\par\vspace{0.25em}
+  {\fontsize{9.5}{11.8}\selectfont En el municipio de San Miguel Centro, El Salvador, los temporales y ondas tropicales provocan dos fenómenos hidrológicos distintos: por un lado, crecidas fluviales y desbordamientos en la cuenca baja del Río Grande de San Miguel (alcanzando niveles críticos de hasta 8.52~m en la estación La Canoa, equivalentes al 89\,\% de banca llena [4], con alertas de Protección Civil [5]); y por otro, inundaciones urbanas repentinas derivadas de la saturación de drenajes pluviales, deficiencias de infraestructura y colapso de muros perimetrales en sectores como la colonia Palo Blanco [1], [2], [3]. Registros periodísticos y de Protección Civil documentan anegamientos en calle Los Laureles (11 viviendas tras colapso estructural en 2020 [2]) y en senda Los Laureles (más de 15 viviendas por escorrentía superficial [3]). Aunque no existe evidencia de que las inundaciones de Palo Blanco provengan directamente del río, ambos escenarios confirman la vulnerabilidad local y la carencia de monitoreo instrumental continuo para emitir advertencias oportunas.\par}
+  \vspace{0.35em}
+  \textbf{Justificación:}\par\vspace{0.25em}
+  {\fontsize{9.5}{11.8}\selectfont Se propone el diseño de un prototipo académico de laboratorio para monitoreo instrumental de niveles de agua y emisión de advertencias locales. El sistema no sustituye los sistemas oficiales de protección civil ni garantiza alcances absolutos antes de pruebas de campo. Emplea un sensor ultrasónico impermeable (JSN-SR04T) y tres interruptores tipo flotador para verificar niveles de lámina de agua de forma redundante. A nivel de hardware, compuertas discretas 74HC08 (AND), 74HC32 (OR) y 74HC04 (NOT) validan físicamente las condiciones de alarma antes o en paralelo al Arduino Uno, cumpliendo el requisito de lógica pura. La telemetría entre estaciones se gestiona mediante microcontroladores ESP32 acoplados a transceptores LoRa RFM95W (915~MHz), permitiendo establecer un enlace inalámbrico punto a punto sin dependencia de red Wi-Fi o telefonía celular. En la estación receptora, un CI 74HC238 (DEMUX 3:8) decodifica el código de advertencia para conmutar selectivamente LEDs por código de color y un mini buzzer BGD08 para señalización local.\par}
+  \vspace{0.35em}
+  \textbf{Población Objetivo y Beneficiarios Directos:}\par\vspace{0.25em}
+  \textbf{Población Objetivo:} {\fontsize{9.5}{11.8}\selectfont Habitantes y familias de la colonia Palo Blanco (San Miguel Centro), específicamente aquellos domicilios ubicados en sectores vulnerables a inundaciones repentinas y saturación de drenajes pluviales.\par}\vspace{0.2em}
+  \textbf{Beneficiarios Directos:} {\fontsize{9.5}{11.8}\selectfont Cantidad de beneficiarios directos pendiente de delimitación y verificación formal (familias residentes en el área proyectada de cobertura del nodo receptor). Se aclara que la cifra de 74,650 hogares (Censo 2024 de ONEC/BCR [7]) corresponde a la totalidad distrital de San Miguel y no a Palo Blanco; asimismo, los antecedentes de 11 y más de 15 viviendas afectadas en calle y senda Los Laureles son eventos históricos independientes que sirven de referencia para el posterior levantamiento de campo.\par}
+  \vspace{0.25em}\strut\\
   \hline
 \end{tabularx}
 
@@ -124,54 +127,75 @@
   \item \textbf{Diagrama de bloques preliminar del sistema (Sensores, Lógica Combinacional / MUX / DEMUX, Arduino, Actuadores).}
 \end{itemize}
 
-\vspace{0.2em}
+\vspace{0.3em}
 \begin{center}
-  \vspace*{-0.2em}
-  \includegraphics[width=0.88\linewidth,height=7.4cm,keepaspectratio]{assets/img/circuito.png}
+  \makebox[\linewidth][c]{\includegraphics[width=1.02\linewidth,height=11.2cm,keepaspectratio]{assets/img/diagrama_bloques_siga_tight.png}}
 \end{center}
 
-\vspace{-0.2em}
+\vspace{0.1em}
 \begin{itemize}[leftmargin=1.5em,itemsep=0.1em,topsep=0.1em]
   \item \textbf{Presupuesto estimado y lista de materiales a utilizar.}
 \end{itemize}
 
-\vspace{0.1em}
-\vspace{0.15em}
-{\small\renewcommand{\arraystretch}{0.92}%
+\vspace{0.2em}
+\begingroup
+\fontsize{8.0}{10.5}\selectfont
+\renewcommand{\arraystretch}{1.08}%
 \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{1.75cm}|>{\centering\arraybackslash}p{1.75cm}|}
   \hline
+  \rowcolor{tableheadergray}
   \textbf{Cant.} & \textbf{Descripción del Material / Componente} & \textbf{Aplicación en el Proyecto} & \textbf{\shortstack{Costo Unitario\\(\$)}} & \textbf{\shortstack{Costo Total\\(\$)}} \\
   \hline
-  1 & Arduino Uno & Procesamiento y lectura de sensores (Estación A) & \$5.10 & \$5.10 \\
+  1 & Arduino Uno R3 con cable USB & Procesamiento y lectura de sensores (Estación A) & \$5.10 & \$5.10 \\
   \hline
-  2 & Módulos ESP32 NodeMCU & Control y gestión de enlace LoRa (Estación A y B) & \$4.37 & \$8.74 \\
+  \rowcolor{tablerowalt}
+  2 & Módulos ESP32 NodeMCU (30 pines) & Gestión de protocolo LoRa (Estación A y B) & \$4.37 & \$8.74 \\
   \hline
-  2 & Módulos LoRa RFM95 / SX1276 & Enlace inalámbrico de advertencia a larga distancia & \$7.25 & \$14.50 \\
+  2 & Módulos transceptores HopeRF RFM95W (915 MHz) & Enlace inalámbrico de advertencia a larga distancia & \$7.70 & \$15.40 \\
   \hline
-  2 & Antenas omnidireccionales LoRa 6 dBi & Radiación y recepción de señal RF & \$15.63 & \$31.26 \\
+  \rowcolor{tablerowalt}
+  2 & Antenas LoRa omnidireccionales de 6 dBi & Radiación y ganancia RF con adaptador SMA & \$5.33 & \$10.66 \\
   \hline
-  1 & Sensor ultrasónico impermeable JSN-SR04T & Medición continua de distancia a la lámina de agua & \$2.12 & \$2.12 \\
+  1 & Sensor ultrasónico impermeable JSN-SR04T & Medición continua sin contacto de lámina de agua & \$2.12 & \$2.12 \\
   \hline
-  3 & Interruptores de nivel tipo flotador & Detección discreta de umbrales físicos (F1, F2, F3) & \$1.29 & \$3.87 \\
+  \rowcolor{tablerowalt}
+  3 & Interruptores de nivel tipo flotador vertical & Detección discreta escalonada de umbrales físicos & \$1.29 & \$3.87 \\
   \hline
-  1 & CI 74HC08 (AND) / CI 74HC32 (OR) & Lógica combinacional física de validación & \$1.09 & \$1.09 \\
+  1 & CI 74HC08 (4 compuertas AND 2 entradas, DIP-14) & Validación lógica física de nivel crítico & \$0.83 & \$0.83 \\
   \hline
-  1 & CI 74HC04 (NOT) / CI 74HC238 (DEMUX) & Inversión de señales y decodificación de alertas & \$2.02 & \$2.02 \\
+  \rowcolor{tablerowalt}
+  1 & CI 74HC32 (4 compuertas OR 2 entradas, DIP-14) & Enrutamiento combinacional físico de alarmas & \$0.73 & \$0.73 \\
   \hline
-  4 & LEDs indicadores / Mini buzzer BGD08 & Señalización visual y acústica en Estación B & \$1.80 & \$1.80 \\
+  1 & CI 74HC04 (6 inversores NOT, DIP-14) & Inversión de señales lógicas de flotadores & \$1.92 & \$1.92 \\
   \hline
-  4 & Baquelas perforadas soldables (mod. 400/405) & Base física y montaje soldado de circuitería & \$2.49 & \$9.96 \\
+  \rowcolor{tablerowalt}
+  1 & CI 74HC238 (Decodificador / DEMUX 3:8, DIP-16) & Decodificación y selección de estados de alerta & \$1.12 & \$1.12 \\
   \hline
-  1 & Soldadura SOL60-020 y Alambre estañado & Ensamblado permanente y conexionado físico & \$5.99 & \$5.99 \\
+  4 & Diodos LED indicadores (Verde, Amarillo, Naranja, Rojo) & Señalización óptica por niveles en Estación B & \$0.20 & \$0.80 \\
   \hline
-  --- & Materiales de Maqueta (Estructura/Cauce) & Simulación física de cauce y entorno comunitario & \$12.00 & \$12.00 \\
+  \rowcolor{tablerowalt}
+  1 & Mini buzzer piezoeléctrico continuo BGD08 & Señalización acústica local ante peligro & \$1.00 & \$1.00 \\
   \hline
-  --- & Accesorios USB y Regulación 3.3V & Adaptación de niveles lógicos y potencia & \$12.14 & \$12.14 \\
+  2 & Baquelas perforadas soldables mod. 400 & Base física soldada para circuitería de nodos & \$3.49 & \$6.98 \\
   \hline
-  \multicolumn{4}{|r|}{\textbf{TOTAL ESTIMADO}} & \textbf{\$110.59} \\
+  \rowcolor{tablerowalt}
+  2 & Baquelas perforadas soldables mod. 405 & Montaje soldado de etapas lógicas discretas & \$1.49 & \$2.98 \\
+  \hline
+  1 & Soldadura estaño-plomo SOL60-020 (tubo 17 g) & Unión eléctrica soldada permanente & \$3.99 & \$3.99 \\
+  \hline
+  \rowcolor{tablerowalt}
+  8 m & Alambre estañado para conexiones 22 AWG & Cableado interno soldado entre componentes & \$0.25 & \$2.00 \\
+  \hline
+  --- & Pasivos, zócalos DIP y convertidores de nivel 3.3V/5V & Protección de CI y acoplamiento de niveles lógicos & \$6.00 & \$6.00 \\
+  \hline
+  \rowcolor{tablerowalt}
+  --- & Accesorios de alimentación y materiales de maqueta & Alimentación de nodos y maquetado de canal a escala & \$14.00 & \$14.00 \\
+  \hline
+  \rowcolor{tableheadergray}
+  \multicolumn{4}{|l|}{\textbf{TOTAL}} & \textbf{\$88.24} \\
   \hline
 \end{tabularx}%
-}
+\endgroup
 
 \clearpage
 
@@ -188,9 +212,9 @@
 \begin{tabularx}{\linewidth}{|X|}
   \hline
   \vspace{0.15em}
-  \textbf{Firma del Líder del Equipo}\par\vspace{0.2em}
+  \textbf{Firma del Líder del Equipo:}\par\vspace{0.2em}
   Fecha de entrega: \rule{1.2cm}{0.4pt} / \rule{1.2cm}{0.4pt} / \rule{1.8cm}{0.4pt}\par\vspace{0.5em}
-  \textbf{RESERVADO PARA EL DOCENTE DE LA ASIGNATURA:}\par\vspace{0.2em}
+  \textbf{RESERVADO PARA EL DOCENTE DE LA ASIGNATURA (\Docente):}\par\vspace{0.2em}
   \begin{itemize}[leftmargin=1.5em,itemsep=0.15em,topsep=0.1em]
     \item \textbf{Dictamen:} [~~] APROBADO \quad [~~] RECHAZADO \quad [~~] REVISAR Y REENVIAR
     \item \textbf{Observaciones / Modificaciones sugeridas:}
@@ -198,7 +222,7 @@
   \vspace{1.1cm}
   \textbf{Firma y Sello del Catedrático}\par\vspace{0.2em}
   Fecha de validación: \rule{1.2cm}{0.4pt} / \rule{1.2cm}{0.4pt} / \rule{1.8cm}{0.4pt}\par\vspace{0.3em}
-  \\
+  \strut\\
   \hline
 \end{tabularx}
 
@@ -234,7 +258,7 @@
     \item Tablas de verdad completas.
     \item Ecuaciones booleanas obtenidas y su proceso de simplificación algebraico o por mapas de Karnaugh.
   \end{itemize}\vspace{0.3em}
-  \\
+  \strut\\
   \hline
 \end{tabularx}
 
@@ -265,8 +289,16 @@
   \end{itemize}\par\vspace{0.6em}
   \textbf{VI. CONCLUSIONES Y TRABAJO FUTURO:}\par\vspace{0.2em}
   {\fontsize{10}{12.5}\selectfont Evaluación del cumplimiento de objetivos y posibles mejoras a la plataforma tecnológica.\par}\vspace{0.8em}
-  \textbf{REFERENCIAS:} Fuentes bibliográficas en formato IEEE.\vspace{0.4em}
-  \\
+  \textbf{REFERENCIAS:} Fuentes bibliográficas en formato IEEE.\par\vspace{0.3em}
+  {\fontsize{8.5}{10}\selectfont
+  [1] Dir. Gral. de Protección Civil, «Informe de afectaciones por lluvias», San Salvador, El Salvador, nov. 2014.\par
+  [2] La Prensa Gráfica, «Lluvia inunda 11 viviendas y calle», San Miguel, El Salvador, abr. 2020.\par
+  [3] La Prensa Gráfica, «Filtración de agua afecta residencias», San Miguel, El Salvador, sep. 2020.\par
+  [4] MARN, «Niveles críticos en estación La Canoa, Río Grande de San Miguel», San Salvador, ago. 2021.\par
+  [5] Dir. Gral. Protección Civil, «Alerta Verde por lluvias asociadas a Tormenta Tropical Melissa», oct. 2025.\par
+  [6] Texas Instruments, «CD74HC238 High-Speed CMOS Logic 3-to-8 Line Decoder/Demultiplexer», Datasheet SCHS207D, 2003.\par
+  [7] BCR / ONEC, «VII Censo de Población y VI de Vivienda 2024: Hogares por distrito», San Salvador, 2025.\par}
+  \vspace{0.3em}\strut\\
   \hline
 \end{tabularx}
 
