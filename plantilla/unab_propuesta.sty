@@ -1,0 +1,75 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{plantilla/unab_propuesta}[2026/10/09 Plantilla de propuesta idéntica a Guía Técnica UNAB]
+
+% Márgenes exactos de la guía (0.5 in = 1.27 cm en los 4 lados)
+\RequirePackage[letterpaper,margin=1.27cm,top=1.27cm,bottom=1.27cm,headheight=0pt,headsep=0pt,footskip=0pt]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{fontspec}
+\RequirePackage{microtype}
+\RequirePackage{setspace}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,backgrounds}
+\RequirePackage{hyperref}
+
+% Color institucional UNAB
+\definecolor{unabblue}{HTML}{173864}
+
+\hypersetup{colorlinks=true,linkcolor=unabblue,urlcolor=unabblue,citecolor=unabblue}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\linespread{1.03}
+
+% Tipografía idéntica a Calibri / Century Gothic de la guía
+\setmainfont{Carlito}[
+  BoldFont={* Bold},
+  ItalicFont={* Italic},
+  BoldItalicFont={* Bold Italic}
+]
+\setsansfont{Carlito}[
+  BoldFont={* Bold},
+  ItalicFont={* Italic},
+  BoldItalicFont={* Bold Italic}
+]
+
+% Fuente para glifos exactos de la guía (➢, ▪, ✓)
+\newfontfamily\SymFont{Symbola}
+
+\newcommand{\flecha}{\textnormal{{\SymFont ➢}}\;}
+\newcommand{\cuadrado}{\textnormal{{\SymFont ▪}}\;}
+\newcommand{\checkmarck}{\textnormal{{\SymFont ✓}}\;}
+
+% Encabezado institucional de la Guía
+\newcommand{\encabezadoguia}{%
+  \noindent
+  \begin{minipage}[c]{0.16\textwidth}
+    \includegraphics[width=\linewidth,height=2.3cm,keepaspectratio]{assets/img/isotipo-azul.png}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.64\textwidth}
+    \centering
+    {\fontsize{14}{16}\selectfont\textbf{\Institucion}\par}
+    \vspace{2pt}
+    {\fontsize{11}{13}\selectfont\Facultad\par}
+    \vspace{1pt}
+    {\fontsize{10}{12}\selectfont\textbf{Asignatura:} \Asignatura\par}
+    \vspace{1pt}
+    {\fontsize{10.5}{12.5}\selectfont\textbf{GUÍA TÉCNICA DE PROPUESTAS DE PROYECTOS}\par}
+    \vspace{1pt}
+    {\fontsize{9}{11}\selectfont\textbf{Duración Estimada:}\par}
+    \vspace{1pt}
+    {\fontsize{9}{11}\selectfont\textbf{Fecha:} \LugarFecha\par}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.16\textwidth}
+    \raggedleft
+    \includegraphics[width=\linewidth,height=2.3cm,keepaspectratio]{assets/img/logo-facultad.png}
+  \end{minipage}%
+  \par\vspace{0.4em}
+}
+
+\endinput

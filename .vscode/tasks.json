@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Generar presentación y reporte PDF",
+      "label": "Generar propuesta PDF",
       "type": "process",
       "command": "python3",
       "windows": { "command": "python" },

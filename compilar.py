@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera los dos PDF con Tectonic; solo requiere Python 3.9 o posterior."""
+"""Genera pdf/propuesta.pdf con Tectonic; solo requiere Python 3.9 o posterior."""
 
 import argparse
 import os
@@ -57,9 +57,10 @@ def read_data():
             cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
             if cells == ["Nombre", "Código"] or all(re.fullmatch(r":?-+:?", c) for c in cells):
                 continue
-            if len(cells) != 2 or not all(cells):
-                raise ValueError("Cada integrante debe tener Nombre y Código en datos.md.")
-            members.append(cells)
+            if len(cells) != 2:
+                raise ValueError("La tabla de integrantes debe tener dos columnas (Nombre y Código).")
+            if any(cells):
+                members.append(cells)
     missing = [key for key in FIELDS if not fields.get(key)]
     if missing:
         raise ValueError("Completa estos campos de datos.md: " + ", ".join(missing))
@@ -69,6 +70,17 @@ def read_data():
     lines += [rf"\newcommand{{\{macro}}}{{{tex_escape(fields[key])}}}" for key, macro in FIELDS.items()]
     rows = [" & ".join(map(tex_escape, member)) + r" \\" for member in members]
     lines.append("\\newcommand{\\Integrantes}{%\n" + "\n".join(rows) + "\n}")
+
+    # Macros individuales para la ficha técnica de propuesta (hasta 4 integrantes según la guía)
+    ordinales = ["Lider", "Dos", "Tres", "Cuatro"]
+    for i, ord_name in enumerate(ordinales):
+        if i < len(members):
+            nombre, codigo = members[i]
+        else:
+            nombre, codigo = "", ""
+        lines.append(rf"\newcommand{{\Integrantes{ord_name}Nombre}}{{{tex_escape(nombre)}}}")
+        lines.append(rf"\newcommand{{\Integrantes{ord_name}Codigo}}{{{tex_escape(codigo)}}}")
+
     return "\n".join(lines) + "\n"
 
 
@@ -134,7 +146,7 @@ def main():
     parser.add_argument("--sin-red", action="store_true", help="Usar solo el motor y los paquetes ya descargados.")
     args = parser.parse_args()
     data = read_data()
-    for resource in ("assets/img/isotipo-azul.png", "assets/img/logo-facultad.png", "assets/fonts/firma.otf"):
+    for resource in ("assets/img/logo-horizontal-azul.png", "assets/img/logo-facultad.png"):
         if not (ROOT / resource).is_file():
             raise FileNotFoundError(f"Falta un recurso institucional: {resource}")
     build = ROOT / ".build"
@@ -143,26 +155,25 @@ def main():
     compiler = get_compiler(args.sin_red)
     # Una salida nueva evita confundir archivos de una ejecución anterior con los actuales.
     with tempfile.TemporaryDirectory(prefix="pdf-", dir=build) as staging:
-        for name in ("presentacion", "reporte"):
-            print(f"\nCompilando {name}.tex…", flush=True)
-            command = [str(compiler), "--untrusted", "--keep-logs", "--outdir", staging]
-            if args.sin_red:
-                command.append("--only-cached")
-            command.append(str(ROOT / f"{name}.tex"))
-            result = subprocess.run(command, cwd=ROOT)
-            log = Path(staging) / f"{name}.log"
-            if log.exists():
-                shutil.copy2(log, build / log.name)
-            if result.returncode:
-                raise RuntimeError(f"Falló {name}.tex. Revisa .build/{name}.log. Los PDF anteriores no se actualizaron.")
-            pdf = Path(staging) / f"{name}.pdf"
-            if not pdf.is_file() or not pdf.read_bytes().startswith(b"%PDF-"):
-                raise RuntimeError(f"No se generó un PDF válido para {name}.")
+        name = "propuesta"
+        print(f"\nCompilando {name}.tex…", flush=True)
+        command = [str(compiler), "--untrusted", "--keep-logs", "--outdir", staging]
+        if args.sin_red:
+            command.append("--only-cached")
+        command.append(str(ROOT / f"{name}.tex"))
+        result = subprocess.run(command, cwd=ROOT)
+        log = Path(staging) / f"{name}.log"
+        if log.exists():
+            shutil.copy2(log, build / log.name)
+        if result.returncode:
+            raise RuntimeError(f"Falló {name}.tex. Revisa .build/{name}.log. El PDF anterior no se actualizó.")
+        pdf = Path(staging) / f"{name}.pdf"
+        if not pdf.is_file() or not pdf.read_bytes().startswith(b"%PDF-"):
+            raise RuntimeError(f"No se generó un PDF válido para {name}.")
         destination = ROOT / "pdf"
         destination.mkdir(exist_ok=True)
-        for name in ("presentacion", "reporte"):
-            shutil.copy2(Path(staging) / f"{name}.pdf", destination / f"{name}.pdf")
-            print(f"PDF actualizado: pdf/{name}.pdf", flush=True)
+        shutil.copy2(Path(staging) / f"{name}.pdf", destination / f"{name}.pdf")
+        print(f"PDF actualizado: pdf/{name}.pdf", flush=True)
 
 
 if __name__ == "__main__":
