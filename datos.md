@@ -8,7 +8,7 @@
 - Institución: Universidad Dr. Andrés Bello
 - Facultad: Facultad de Tecnología e Innovación
 - Asignatura: Diseño de Sistemas de Seguridad de Redes de Datos
-- Docente: MduEV Ing. Franklin Geovany Buruca Hernández
+- Docente: MduEV. Ing. Franklin Geovany Buruca Hernández
 - Grupo: Equipo de investigación
 - Lugar y fecha: San Miguel, 30 de septiembre de 2026
 - Sede: Sede Regional de San Miguel
@@ -20,9 +20,9 @@
 |---|---|
 | Genesis Abigail Saravia Carpio | sc0139042023 |
 | Jaime Fernando Berrios Ortiz | bo0310042024 |
-| Jefferson Jared Bonilla Melendez | bm0749042022 |
-| Rosmeri Estefani Gonzalez Perez | gp0382042023 |
-| Florentin Alexander Treminio Herrera | th0988042023 |
+| Jefferson Jared Bonilla Meléndez | bm0749042022 |
+| Rosmeri Estefani González Pérez | gp0382042023 |
+| Florentín Alexander Treminio Herrera | th0988042023 |
 
 ## Tema y objetivo
 

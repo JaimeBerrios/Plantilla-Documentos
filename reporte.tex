@@ -68,16 +68,16 @@ Lima, con el fin de mitigar riesgos informáticos y preservar la
 confidencialidad, integridad y disponibilidad del tráfico institucional durante
 2026.
 \subsection{Objetivos específicos}
-% \begin{itemize}
-  % \item Diagnosticar las condiciones técnicas actuales de la infraestructura,
+\begin{itemize}
+  \item Diagnosticar las condiciones técnicas actuales de la infraestructura,
   estaciones y flujos de tráfico, identificando vulnerabilidades y amenazas.
-  % \item Formular una matriz de análisis y evaluación de riesgos y Políticas de
+  \item Formular una matriz de análisis y evaluación de riesgos y Políticas de
   Seguridad Informática alineadas al marco regulatorio y operativo institucional.
-  % \item Estructurar en GNS3 una arquitectura perimetral con VLAN, ACL y
+  \item Estructurar en GNS3 una arquitectura perimetral con VLAN, ACL y
   cortafuegos Linux para aislar zonas administrativas, técnicas y de diagnóstico.
-  % \item Configurar controles de capa de aplicación mediante proxy y certificados
+  \item Configurar controles de capa de aplicación mediante proxy y certificados
   digitales HTTPS/TLS en un laboratorio simulado.
-% \end{itemize}
+\end{itemize}
 
 
 % ==============================================================================
@@ -330,6 +330,32 @@ Por esta razón, la propuesta planteada en la investigación busca establecer un
 En síntesis, los resultados obtenidos sirven como base para plantear una mejora en la organización y seguridad de la red de la Sede de Enlaces con la Educación. La información recopilada permite comprender las condiciones actuales y, a partir de ellas, establecer una propuesta que contribuya a contar con una red más organizada, controlada y adecuada para las actividades que se desarrollan en la sede.
 
 
+\subsection{Matriz de Análisis y Evaluación de Riesgos}
+
+Como parte de la fase de gestión de riesgos, se procedió a categorizar los hallazgos técnicos identificados en la sede mediante una matriz estructurada. Esta matriz permite priorizar las vulnerabilidades según la probabilidad de ocurrencia y el impacto que tendrían sobre la triada CIA (Confidencialidad, Integridad y Disponibilidad) de la información institucional.
+
+\begin{table}[h]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.5} % Dar un respiro vertical al texto
+    \begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X c c c @{}}
+    \toprule
+    \textbf{\color{unabblue}Activo} & \textbf{\color{unabblue}Amenaza} & \textbf{\color{unabblue}Vulnerabilidad} & \textbf{\color{unabblue}Probabilidad} & \textbf{\color{unabblue}Impacto} & \textbf{\color{unabblue}Riesgo} \\
+    \midrule
+    \textbf{Switch Central}\newline(Topología física) & Falla de hardware e interrupción masiva del servicio & Alto grado de obsolescencia (instalado aprox. en 2003) y puertos físicos dañados. & Alta & Alto & \textbf{Crítico} \\
+    \textbf{Equipos}\newline\textbf{Administrativos} & Movimiento lateral de \textit{malware} o accesos no autorizados & Operación en una red plana (dominio de \textit{broadcast} único) sin segmentación VLAN. & Alta & Alto & \textbf{Crítico} \\
+    \textbf{Equipos en}\newline\textbf{Diagnóstico} & Infección por conexión de dispositivos externos comprometidos & Ausencia de una red o DMZ aislada para soporte técnico. & Media & Alto & \textbf{Alto} \\
+    \textbf{Tráfico Saliente} & Acceso a sitios maliciosos o consumo indebido de red & Desincorporación del servidor central y del proxy SQUID para filtrado perimetral. & Alta & Medio & \textbf{Alto} \\
+    \textbf{Conexiones}\newline\textbf{Inalámbricas} & Interceptación de datos no encriptados (ataque MITM) & Tránsito de datos sin políticas forzadas de encriptación (HTTPS/TLS). & Media & Medio & \textbf{Medio} \\
+    \bottomrule
+    \end{tabularx}
+    \vspace{0.1cm}
+    \caption{Matriz de análisis y evaluación de riesgos de la infraestructura actual.}
+    \label{tab:matriz_riesgos}
+\end{table}
+
+La evaluación confirma que las debilidades más críticas se concentran en la falta de segmentación lógica y en la obsolescencia del hardware central. Estos niveles de riesgo justifican plenamente la urgencia de desplegar el modelo propuesto, utilizando un esquema de VLANs, listas de control de acceso (ACLs) y filtrado perimetral.
+
 \section{Conclusiones}
 % \begin{itemize}
   % \item 
@@ -374,7 +400,7 @@ Instituto Internacional de Planeamiento de la Educación de la UNESCO. (s. f.). 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/img/anexos/reunion-2/foto-1.jpeg}
+    \includegraphics[width=0.8\textwidth]{assets/img/anexos/reunion-2/foto-2.jpeg}
     \caption{Reunión de trabajo para el desarrollo del Marco Teórico, Metodología y Análisis de Resultados.}
     \label{fig:anexo2}
 \end{figure}
