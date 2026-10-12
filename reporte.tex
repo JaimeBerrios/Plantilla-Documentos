@@ -85,19 +85,13 @@ confidencialidad, integridad y disponibilidad del tráfico institucional durante
 % ==============================================================================
 \section{Marco teórico}
 
-El desarrollo de una propuesta de seguridad para una red de datos requiere comprender los fundamentos relacionados con la seguridad informática, la seguridad de redes, la segmentación lógica y los mecanismos utilizados para controlar el intercambio de información entre dispositivos. Estos elementos permiten analizar las condiciones de una infraestructura tecnológica y establecer medidas orientadas a disminuir los riesgos asociados con accesos no autorizados, propagación de amenazas y exposición de información.
-
-En el caso de la Sede de Enlaces con la Educación del distrito de Santa Rosa de Lima, la importancia de estos fundamentos se relaciona directamente con las condiciones actuales de su infraestructura. La sede dispone de una sola red en la que se conectan los equipos utilizados por el personal y mantiene una topología de tipo estrella. Por esta razón, resulta necesario estudiar los conceptos técnicos que fundamentan el diseño de un modelo de seguridad perimetral y segmentación lógica adecuado a las características de dicha red.
+Diseñar una infraestructura de red resiliente exige articular los principios de seguridad de la información con las técnicas de conmutación y filtrado de paquetes. En la Sede de Enlaces con la Educación (distrito de Santa Rosa de Lima), este marco cobra relevancia directa ante la presencia de una topología centralizada en estrella que concentra el tráfico de diez puestos técnicos sin barreras de aislamiento interno.
 
 \subsection{Seguridad informática}
 
-La seguridad informática comprende el conjunto de principios, medidas, procedimientos y controles destinados a proteger los sistemas de información, dispositivos, redes y datos frente a amenazas que puedan afectar su funcionamiento o permitir el acceso, modificación, destrucción o divulgación no autorizada de la información.
+La seguridad informática engloba las políticas, controles técnicos y procedimientos destinados a salvaguardar los activos digitales y la infraestructura de comunicaciones frente a incidentes intencionados o accidentales.
 
-Dentro de la seguridad de la información, tres propiedades constituyen una referencia fundamental: confidencialidad, integridad y disponibilidad. La confidencialidad busca que la información únicamente pueda ser conocida o utilizada por personas, sistemas o procesos autorizados; la integridad procura mantener la exactitud y consistencia de la información, evitando alteraciones no autorizadas; mientras que la disponibilidad pretende garantizar que los sistemas, servicios y datos puedan ser utilizados cuando sean requeridos por los usuarios autorizados.
-
-Estos principios resultan relevantes para una infraestructura de red ya que en este tipo de redes los dispositivos intercambian información y utilizan recursos compartidos. Una deficiencia en los controles de seguridad puede facilitar accesos indebidos, interrupciones de los servicios o propagación de amenazas entre dispositivos.
-
-En consecuencia, la seguridad informática no depende únicamente de herramientas tecnológicas. También requiere identificar los activos que deben protegerse, las amenazas existentes, las vulnerabilidades que pueden ser aprovechadas y los riesgos derivados de la combinación de estos factores. A partir de dicho análisis es posible establecer controles acordes con las necesidades y características de una organización.
+Su marco operativo gravita sobre la tríada CIA: confidencialidad (acceso restringido a entidades legítimas), integridad (preservación de la exactitud de los datos frente a alteraciones no autorizadas) y disponibilidad (acceso continuo a los servicios cuando la labor institucional lo requiera). En redes locales compartidas, vulnerar cualquiera de estos pilares impacta directamente en las operaciones diarias. Por ello, la protección efectiva trasciende la simple instalación de software: exige clasificar activos, dimensionar vectores de amenaza y mitigar vulnerabilidades mediante controles técnicos proporcionados.
 
 \subsection{Seguridad de redes}
 
@@ -189,11 +183,11 @@ La Sede de Enlaces con la Educación del distrito de Santa Rosa de Lima dispone 
 
 La infraestructura utiliza una topología estrella cuyo punto de concentración es un switch. Este equipo se encuentra instalado desde aproximadamente el año 2003 y actualmente presenta diferentes puertos que han dejado de funcionar. La sede indica que algunos puertos permanecen operativos, pero el dispositivo presenta deterioro debido a su antigüedad.
 
-La arquitectura original disponía de un servidor central encargado del filtrado y distribución de Internet y de un proxy físico. Posteriormente, estos elementos dejaron de formar parte de la infraestructura y permanecieron principalmente el cableado y el switch. En la configuración actual se utilizan algunos puntos de red para conectar routers, mientras otros equipos acceden mediante Wi-Fi.
+La arquitectura original disponía de un servidor central encargado del filtrado y distribución de Internet y de un proxy físico. Tras remodelaciones estructurales en el inmueble, ambos equipos quedaron fuera de servicio, conservándose únicamente el cableado y el switch central. En el esquema actual, la conectividad se reparte entre bocas cableadas y routers inalámbricos secundarios.
 
-Adicionalmente, la sede dispone de un módem del proveedor Claro. La computadora principal se conecta a este equipo debido a la disponibilidad limitada de puntos funcionales de la red. El módem dispone de conexiones utilizadas para las cámaras de la sede, un router y la computadora principal de la persona encargada.
+En cuanto al enlace externo, la sede opera con un módem provisto por la compañía de telecomunicaciones. Debido al daño en varios puntos de pared, la computadora de la administración se conecta de forma directa a una de las tres salidas físicas del módem, compartiendo dicho acceso con el sistema de videovigilancia y un router adicional.
 
-Estas condiciones permiten contextualizar la necesidad de estudiar una arquitectura que incorpore segmentación lógica y controles de seguridad, sin asumir que todas las vulnerabilidades posibles se encuentran presentes. La identificación específica de vulnerabilidades, amenazas y riesgos deberá derivarse del diagnóstico y de los instrumentos establecidos dentro de la metodología de la investigación.
+Estas condiciones fundamentan la necesidad de diseñar una arquitectura con segmentación lógica y barreras perimetrales, derivando las vulnerabilidades concretas del diagnóstico técnico de campo.
 
 \subsection{Marco normativo y planificación educativa en El Salvador}
 
@@ -243,101 +237,61 @@ De esta manera, el marco teórico vincula los fundamentos de seguridad informát
 
 \subsection{Tipo y diseño de investigación}
 
-Bajo el enfoque metodológico de Hernández Sampieri, el presente estudio se clasifica como una investigación con enfoque cuantitativo, ya que se basará en la medición técnica de parámetros relacionados con la red de datos y la seguridad informática de la Sede de Enlaces con la Educación. El diseño es no experimental y transversal, ya que no habrá manipulación de variables en un entorno físico real, sino observadas y analizadas en las condiciones actuales de la infraestructura durante un período determinado.
+Bajo los criterios metodológicos de Hernández-Sampieri y Mendoza Torres (2023), el estudio adopta un enfoque cuantitativo y un diseño no experimental de corte transversal. No existe manipulación deliberada sobre los conmutadores ni el cableado de la sede; los parámetros técnicos y los flujos de tráfico se registran en su estado operativo habitual dentro del periodo lectivo de 2026.
 
-En cuanto a su alcance, corresponde a un estudio descriptivo y de desarrollo tecnológico (propositivo), ya que busca detallar las características operativas de la infraestructura de red actual, identificar vulnerabilidades y riesgos de seguridad, y proponer el diseño de un modelo de arquitectura de red segura mediante simulación.
-
-\subsection{Enfoque de la investigación}
-
-La investigación tendrá un enfoque cuantitativo, al basarse en la recopilación y el análisis de datos relacionados con las condiciones técnicas de la infraestructura de red, los dispositivos conectados, la distribución de la conectividad y los aspectos de seguridad informática identificados en la sede.
-
-La información obtenida permitirá establecer las condiciones actuales de la red y utilizar estos resultados como base para el diseño de una propuesta de mejora orientada al aseguramiento de la red de datos.
-
-\subsection{Diseño de la investigación}
-
-El diseño será no experimental, por el hecho de que no se alterarán deliberadamente las condiciones actuales de la infraestructura física de la sede para obtener los resultados. La situación existente será observada, documentada y analizada para identificar las principales condiciones y riesgos relacionados con la seguridad de la red.
-
-Asimismo, será de tipo transversal, en vista de que los datos se recolectarán durante un período determinado de 2026, considerando las condiciones existentes de la infraestructura en el momento del estudio.
-
-\subsection{Alcance de la investigación}
-
-El estudio tendrá un alcance descriptivo y de desarrollo tecnológico (propositivo). Su fase descriptiva consistirá en caracterizar la topología, los dispositivos, la distribución de conectividad y los posibles factores de riesgo en la infraestructura actual. Sobre esta base, su dimensión propositiva abarcará el diseño de un modelo de seguridad perimetral y segmentación lógica para conformar una arquitectura sólidamente protegida. La propuesta contemplará mecanismos como VLAN, listas de control de acceso (ACL), reglas de cortafuegos mediante Linux, NAT y un servidor proxy SQUID, además de mecanismos relacionados con HTTPS/TLS. La arquitectura será desarrollada y evaluada mediante un entorno de simulación, sin realizar modificaciones sobre la infraestructura física de la sede.
+La investigación tiene un alcance descriptivo y propositivo (desarrollo tecnológico). En primer término, detalla la topología instalada, la distribución de bocas funcionales y los vectores de exposición que comprometen los datos. Con estos insumos, formula un modelo de seguridad perimetral y segmentación lógica simulado en GNS3, integrando cortafuegos GNU/Linux, particionado en VLANs y control de navegación mediante proxy.
 
 \subsection{Unidad de análisis}
 
-La unidad de análisis estará constituida por la red de datos de la Sede de Enlaces con la Educación, ubicada en el distrito de Santa Rosa de Lima, Municipio de La Unión Norte, El Salvador.
-
-La infraestructura analizada cuenta con aproximadamente diez equipos de oficina utilizados por los técnicos de la sede. Actualmente, la distribución de la conectividad se concentra principalmente en un switch que funciona como elemento central de la red, complementado con routers y conexiones inalámbricas.
+La unidad de análisis corresponde a la red de datos de la Sede de Enlaces con la Educación (distrito de Santa Rosa de Lima, La Unión Norte). El ecosistema operativo enlaza diez computadoras de escritorio asignadas al personal técnico y docente, cuya conectividad converge en un switch central complementado por routers inalámbricos secundarios.
 
 \subsection{Caracterización de la infraestructura actual}
 
-La sede utiliza una topología de red tipo estrella, en la cual los diferentes puntos de conexión convergen hacia un dispositivo central. Esta topología ha sido utilizada desde el establecimiento inicial de la infraestructura de red.
+La sede conserva la topología física en estrella montada desde la edificación del inmueble (circa 2003). Su núcleo de conmutación sigue siendo el switch instalado en esa fecha, el cual exhibe un desgaste físico notable: múltiples bocas RJ-45 quedaron inoperativas por deterioro eléctrico, reduciendo los puertos de red estables a una fracción del total original.
 
-Anteriormente, la sede contaba con un servidor central y un proxy físico encargado de participar en la distribución y filtrado del acceso a internet. Con el paso de los años y debido a modificaciones realizadas en la infraestructura del edificio, estos elementos dejaron de utilizarse, permaneciendo principalmente el cableado estructurado y el switch como parte de la infraestructura existente.
-
-Actualmente, el switch concentra la distribución de la conectividad dentro de la sede. Sin embargo, el dispositivo presenta un estado de obsolescencia debido a su antigüedad, ya que se encuentra instalado desde aproximadamente el año 2003. Como consecuencia, algunos de sus puertos han dejado de funcionar, mientras que otros continúan proporcionando conectividad a los equipos.
-
-La distribución actual también presenta diferentes mecanismos de conexión. Algunos puntos de red funcionales son utilizados para conectar routers que posteriormente distribuyen la conectividad hacia los equipos, mientras que otros dispositivos utilizan conexión inalámbrica.
-
-Además, la sede dispone de un módem de Claro, al cual se encuentra conectada la computadora principal de la encargada de la sede. Debido a la disponibilidad limitada de puntos de red funcionales, dicha computadora utiliza directamente una de las salidas disponibles del módem. El módem cuenta con tres salidas utilizadas para diferentes servicios: cámaras de la sede, conexión de un router y conexión de la computadora principal. Debido a esta limitación, recientemente fue incorporado un nuevo router para facilitar la distribución de la conectividad hacia los demás equipos.
-
-Estas condiciones evidencian una infraestructura en la que la conectividad se encuentra distribuida mediante diferentes dispositivos, sin contar actualmente con el servidor central y el proxy físico que anteriormente participaban en la administración y filtrado del tráfico.
+A nivel perimetral, la sede perdió con los años el servidor dedicado y el proxy físico que antiguamente filtraban y balanceaban el acceso hacia el exterior. Para abastecer a los diez técnicos ante la falta de tomas de pared funcionales, se interconectaron routers comerciales que radian señal Wi-Fi hacia varias oficinas. A su vez, el módem del proveedor de telecomunicaciones cuenta con tres salidas físicas ocupadas: una alimenta las cámaras de videovigilancia, otra enlaza un router de distribución y la tercera conecta directamente la máquina de la jefatura de sede.
 
 \subsection{Problemática de seguridad informática}
 
-La situación actual de la infraestructura presenta diferentes aspectos que deben ser considerados desde la perspectiva de la seguridad informática. La concentración de la conectividad en un dispositivo central obsoleto, la ausencia de un mecanismo centralizado de filtrado y control del tráfico, la utilización de diferentes routers y la coexistencia de conexiones cableadas e inalámbricas generan condiciones que deben ser analizadas para determinar los riesgos existentes.
-
-Por esta razón, el estudio se enfocará principalmente en los fundamentos de seguridad informática aplicables a la problemática identificada. Se analizarán conceptos relacionados con seguridad perimetral, segmentación de redes, control de acceso, cortafuegos, listas de control de acceso, VLAN, NAT, filtrado de tráfico, servidores proxy, HTTPS/TLS y gestión de riesgos informáticos.
-
-Estos fundamentos servirán como base teórica para sustentar la propuesta de una arquitectura de red que permita mejorar el control, aislamiento y protección de los diferentes segmentos de la red.
+Esta configuración dispersa genera tres problemas de fondo: ausencia de visibilidad y auditoría centralizada, saturación de puertos deteriorados y tránsito indiscriminado de paquetes entre puestos de trabajo. Al convivir equipos de planta con dispositivos foráneos que ingresan a soporte técnico, la falta de aislamiento eleva el riesgo de contagio por malware y saturación del canal.
 
 \subsection{Técnicas e instrumentos para la recopilación de información}
 
-Para la recopilación de información se considerarán técnicas como la observación directa de la infraestructura, revisión de las condiciones de conectividad, identificación de los dispositivos utilizados y recopilación de información proporcionada por el personal relacionado con el funcionamiento de la sede.
+La recolección de datos combinó observación técnica directa en campo con una encuesta estructurada dirigida al personal operativo de la sede. El instrumento principal consistió en el \textbf{Cuestionario de Diagnóstico Técnico de Infraestructura de Red} (Anexo 3), cuyos siete reactivos analizan tres ejes clave:
+\begin{enumerate}
+    \item \textbf{Infraestructura física y conmutación central:} recuento de puestos, estado físico de los puertos del switch matriz y ocupación de bocas en el módem de enlace.
+    \item \textbf{Topología y segmentación de red:} esquema de distribución en estrella, presencia de VLANs y mecanismos de contención aplicados a computadoras externas en mantenimiento.
+    \item \textbf{Seguridad perimetral y políticas de tráfico:} existencia de servidores proxy, filtrado de contenido, listas de control de acceso (ACL) y gestión de certificados HTTPS/TLS.
+\end{enumerate}
 
-Como instrumentos se podrán utilizar fichas de observación, listas de verificación, registros de dispositivos, matrices de identificación de riesgos y documentación técnica de la infraestructura.
-
-La información recopilada será utilizada para establecer un diagnóstico de las condiciones actuales y determinar los requerimientos técnicos que deberá considerar el modelo de seguridad propuesto.
+La información levantada permitió diagnosticar las condiciones operativas de la sede y construir la matriz de riesgos institucionales.
 
 \subsection{Propuesta tecnológica}
 
-A partir de los resultados obtenidos en el diagnóstico, se estructurará una propuesta de arquitectura de red segura mediante un entorno de simulación en GNS3.
+Tomando como base los requerimientos levantados, la solución se estructurará sobre un laboratorio simulado en GNS3. Este entorno recrea la topología sin interferir con las operaciones cotidianas del edificio.
 
-La propuesta contemplará la segmentación lógica de la red mediante VLAN, la implementación de listas de control de acceso (ACL), la aplicación de reglas de cortafuegos mediante Linux utilizando iptables o nftables y la configuración de mecanismos de NAT.
-
-Asimismo, se incorporará un servidor proxy SQUID para el filtrado y control de las conexiones salientes, junto con la gestión de certificados digitales y HTTPS/TLS para el aseguramiento y auditoría de las conexiones.
-
-La simulación permitirá evaluar la estructura propuesta sin intervenir físicamente la infraestructura de la sede y permitirá representar los controles de seguridad planteados para las zonas administrativas, técnicas y de diagnóstico.
+El diseño proyecta la segmentación lógica mediante VLANs para aislar áreas administrativas, técnicas y de diagnóstico; políticas de filtrado con iptables/nftables en GNU/Linux; traducción de direcciones de red (NAT); y la implementación de un servidor proxy SQUID configurado con certificados HTTPS/TLS para auditar y controlar el tráfico saliente.
 
 \section{Análisis e interpretación de los resultados}
 
-A partir de la información recopilada durante la investigación, se determinó el estado operativo y de seguridad actual de la red de datos de la Sede de Enlaces con la Educación de Santa Rosa de Lima. Los resultados muestran que la sede cuenta con los recursos necesarios para desarrollar sus actividades, pero también presenta vulnerabilidades a nivel de arquitectura que comprometen la integridad y el rendimiento y la seguridad de la red.
+El diagnóstico de campo constató que, si bien la red permite la operación básica de los diez puestos de trabajo, presenta vulnerabilidades estructurales críticas derivadas de su diseño plano y de la obsolescencia del hardware central.
 
-El principal hallazgo indica que la infraestructura actual carece de segmentación, operando como un único dominio de difusión (broadcast) para todos los nodos. En consecuencia, los equipos destinados a operaciones administrativas y áreas de diagnóstico comparten el mismo segmento lógico. Considerando que en la sede se realizan trabajos de mantenimiento y revisión de equipos, esta situación puede representar un riesgo, especialmente cuando se conectan dispositivos externos que podrían presentar algún problema de seguridad.
+El hallazgo principal radica en la inexistencia de segmentación lógica: toda la sede comparte un único dominio de broadcast. Las computadoras de administración, donde se procesan registros institucionales, conviven en el mismo segmento de red con laptops y tabletas estudiantiles conectadas para diagnóstico o mantenimiento de hardware. Si un equipo externo ingresa comprometido con código malicioso, el tráfico dañino tiene visibilidad directa hacia cualquier nodo de la red interna sin ninguna barrera de contención.
 
-Adicionalmente, se verificó que el switch central —elemento concentrador de la topología— presenta un alto grado de obsolescencia física, evidenciado por la pérdida de puertos de red viables. Debido a esto, la sede ha tenido que utilizar otros equipos para poder distribuir la conexión entre los diferentes dispositivos. Esta situación muestra que la infraestructura actual ha ido adaptándose con el tiempo a las necesidades de la sede.
+En el núcleo físico, el switch central arrastra más de dos décadas de operación ininterrumpida. La pérdida progresiva de puertos RJ-45 forzó la instalación empírica de routers secundarios para cubrir las áreas sin tomas de pared, fragmentando la administración física y multiplicando puntos potenciales de fallo.
 
-Asimismo, se constató la desincorporación de los controles perimetrales previos (servidor central y proxy físico) que administraban y filtraban las peticiones de red hacia el exterior. Actualmente, la conexión se distribuye principalmente mediante el equipo central, routers y conexiones inalámbricas. Esto significa que existen menos mecanismos para controlar de manera general el uso de la red y las conexiones que realizan los diferentes equipos.
+En el plano perimetral, la eliminación del servidor y del proxy originales dejó el tráfico huérfano de auditoría. Las conexiones salen directamente por el módem del proveedor hacia Internet sin listas de control de acceso (ACL), sin bloqueo de categorías riesgosas y sin inspección criptográfica sobre canales HTTPS/TLS.
 
-Al analizar estas condiciones, se considera necesario organizar la red de una manera más adecuada, implementando una segmentación lógica mediante VLANs (Redes de Área Local Virtuales) basadas en roles operativos. Por ejemplo, los equipos utilizados por el personal administrativo podrían mantenerse separados de aquellos utilizados para trabajos técnicos o para revisar dispositivos que ingresan a la sede. De esta manera, si uno de los equipos presentara algún problema, se reduciría la posibilidad de que este afecte directamente a los demás.
-
-Los resultados también permiten identificar la necesidad de desplegar Listas de Control de Acceso (ACLs) y políticas de cortafuegos para delimitar el tráfico transversal. No todos los equipos necesitan tener comunicación con todos los demás, por lo que establecer estas restricciones permitiría tener un mayor control y evitar accesos que no sean necesarios para realizar las actividades de la sede.
-
-En general, la información obtenida permite interpretar que las principales dificultades encontradas no se deben únicamente a la cantidad de equipos disponibles, sino principalmente a la forma en que actualmente se encuentra organizada la red y a la falta de controles que permitan separar y administrar adecuadamente las conexiones.
-
-Por esta razón, la propuesta planteada en la investigación busca establecer una organización más segura de la red, aislando dominios de colisión y restringiendo las comunicaciones no autorizadas a través de un esquema perimetral. La propuesta será desarrollada mediante una simulación, lo que permitirá observar cómo funcionará esta nueva organización sin realizar cambios directamente sobre la infraestructura actual de la sede.
-
-En síntesis, los resultados obtenidos sirven como base para plantear una mejora en la organización y seguridad de la red de la Sede de Enlaces con la Educación. La información recopilada permite comprender las condiciones actuales y, a partir de ellas, establecer una propuesta que contribuya a contar con una red más organizada, controlada y adecuada para las actividades que se desarrollan en la sede.
-
+Estos factores evidencian que las fallas de la sede no obedecen a la cantidad de dispositivos conectados, sino a la falta de aislamiento y control jerárquico. La solución requiere separar el tráfico en tres VLANs operativas (administración, soporte técnico y zona de cuarentena/diagnóstico) y desplegar un cortafuegos Linux con proxy SQUID que supervise el perímetro y bloquee el movimiento lateral no autorizado.
 
 \subsection{Matriz de Análisis y Evaluación de Riesgos}
 
-Como parte de la fase de gestión de riesgos, se procedió a categorizar los hallazgos técnicos identificados en la sede mediante una matriz estructurada. Esta matriz permite priorizar las vulnerabilidades según la probabilidad de ocurrencia y el impacto que tendrían sobre la triada CIA (Confidencialidad, Integridad y Disponibilidad) de la información institucional.
+Para jerarquizar el impacto de cada vulnerabilidad frente a la tríada de confidencialidad, integridad y disponibilidad (CIA), los hallazgos se consolidaron en la siguiente matriz estructurada:
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \footnotesize
-    \renewcommand{\arraystretch}{1.5} % Dar un respiro vertical al texto
+    \renewcommand{\arraystretch}{1.4}
     \begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X c c c @{}}
     \toprule
     \textbf{\color{unabblue}Activo} & \textbf{\color{unabblue}Amenaza} & \textbf{\color{unabblue}Vulnerabilidad} & \textbf{\color{unabblue}Probabilidad} & \textbf{\color{unabblue}Impacto} & \textbf{\color{unabblue}Riesgo} \\
@@ -354,20 +308,15 @@ Como parte de la fase de gestión de riesgos, se procedió a categorizar los hal
     \label{tab:matriz_riesgos}
 \end{table}
 
-La evaluación confirma que las debilidades más críticas se concentran en la falta de segmentación lógica y en la obsolescencia del hardware central. Estos niveles de riesgo justifican plenamente la urgencia de desplegar el modelo propuesto, utilizando un esquema de VLANs, listas de control de acceso (ACLs) y filtrado perimetral.
+La matriz evidencia que los niveles de mayor severidad se concentran en el conmutador central (riesgo de interrupción total por falla de hardware) y en las estaciones administrativas (riesgo crítico de contaminación lateral). Estos resultados justifican la implementación del modelo perimetral y el esquema de segmentación lógica propuesto.
 
+\clearpage
 \section{Conclusiones}
-% \begin{itemize}
-  % \item 
-% \end{itemize}
 
 \section{Recomendaciones}
-% \begin{itemize}
-  % \item 
-% \end{itemize}
 
 \section{Referencias bibliográficas}
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 \noindent\hangindent=1.27cm \hangafter=1
 Chandramouli, R. (2022). \textit{Guide to a secure enterprise network landscape} (NIST Special Publication 800-215). National Institute of Standards and Technology. \url{https://doi.org/10.6028/NIST.SP.800-215}
@@ -384,25 +333,86 @@ Hernández-Sampieri, R., \& Mendoza Torres, C. P. (2023). \textit{Metodología d
 \noindent\hangindent=1.27cm \hangafter=1
 Instituto Internacional de Planeamiento de la Educación de la UNESCO. (s. f.). El Salvador: Perfil de educación. \textit{Sistema de Información de Tendencias Educativas en América Latina (SITEAL)}. Recuperado el 27 de septiembre de 2026, de \url{https://siteal.iiep.unesco.org/pais/el_salvador}
 
-
+\clearpage
 \section{Cronograma}
 
 \section{Presupuesto}
 
 \section{Anexos}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/img/anexos/reunion-1/horizontal-1.jpeg}
+    \includegraphics[width=0.85\textwidth]{assets/img/anexos/reunion-1/horizontal-1.jpeg}
     \caption{Reunión de lectura del libro \textit{Metodología de la investigación: las rutas cuantitativa, cualitativa y mixta} (Hernández Sampieri).}
     \label{fig:anexo1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/img/anexos/reunion-2/foto-2.jpeg}
+    \includegraphics[width=0.85\textwidth]{assets/img/anexos/reunion-2/foto-2.jpeg}
     \caption{Reunión de trabajo para el desarrollo del Marco Teórico, Metodología y Análisis de Resultados.}
     \label{fig:anexo2}
+\end{figure}
+
+\clearpage
+\subsection*{Anexo 3: Instrumento de Recolección de Datos}
+
+\noindent\textbf{Cuestionario de Diagnóstico Técnico de Infraestructura de Red}
+
+\vspace{0.2cm}
+A continuación se presenta la ficha técnica y la estructura temática del instrumento diseñado para el diagnóstico de la infraestructura de red en la Sede de Enlaces con la Educación (Distrito de Santa Rosa de Lima):
+
+\begin{table}[!htbp]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabularx}{\textwidth}{@{}>{\bfseries\color{unabblue}}p{3.8cm} X@{}}
+    \toprule
+    Nombre del instrumento: & Cuestionario de Diagnóstico Técnico de Infraestructura de Red \\
+    \midrule
+    Objetivo: & Levantar información técnica sobre el estado físico, lógico y de seguridad de la red de datos para fundamentar el modelo perimetral propuesto. \\
+    \midrule
+    Técnica de recolección: & Encuesta técnica estructurada. \\
+    \midrule
+    Población objetivo: & Personal técnico y operativo de la Sede de Enlaces con la Educación. \\
+    \midrule
+    Estructura temática: & 7 ítems abiertos distribuidos en 3 dimensiones operativas:
+    \begin{itemize}[leftmargin=1.2em,noitemsep,topsep=2pt]
+        \item \textbf{Dimensión 1 (Física y central):} Equipamiento, puertos y distribución del módem (3 ítems).
+        \item \textbf{Dimensión 2 (Lógica):} Topología en estrella, ausencia de VLANs y soporte a laptops externas (2 ítems).
+        \item \textbf{Dimensión 3 (Seguridad perimetral):} Servidores proxy, filtrado y políticas de acceso (2 ítems).
+    \end{itemize} \\
+    \midrule
+    Evidencia documental: & Cuestionario físico aplicado y digitalizado con las respuestas recopiladas en campo (\textit{Anexo\_3\_Cuestionario\_Diagnostico\_Aplicado.pdf}), complementado con el formato técnico en blanco (\textit{Instrumento\_Cuestionario\_Diagnostico\_Tecnico.pdf}). \\
+    \bottomrule
+    \end{tabularx}
+    \vspace{0.1cm}
+    \caption{Ficha técnica del instrumento de recolección de datos.}
+    \label{tab:ficha_instrumento}
+\end{table}
+
+\clearpage
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{assets/img/anexos/cuestionario/pagina-1.png}
+    \caption{Evidencia de aplicación de instrumento - Página 1 (Información general y Dimensión 1).}
+    \label{fig:encuesta_p1}
+\end{figure}
+
+\clearpage
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{assets/img/anexos/cuestionario/pagina-2.png}
+    \caption{Evidencia de aplicación de instrumento - Página 2 (Dimensiones 1 y 2).}
+    \label{fig:encuesta_p2}
+\end{figure}
+
+\clearpage
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{assets/img/anexos/cuestionario/pagina-3.png}
+    \caption{Evidencia de aplicación de instrumento - Página 3 (Dimensión 3).}
+    \label{fig:encuesta_p3}
 \end{figure}
 
 \end{document}

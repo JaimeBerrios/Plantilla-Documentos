@@ -1,0 +1,90 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{setspace}
+
+\definecolor{unabblue}{HTML}{173864}
+\definecolor{softgray}{HTML}{F9FAFC}
+\hypersetup{colorlinks=true,linkcolor=unabblue,urlcolor=unabblue}
+
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \includegraphics[width=2.5cm,height=2.5cm,keepaspectratio]{/home/jaimeberrios/Proyectos/UNAB/Ciclo-6/sDSR43/Plantilla-Documentos-Investigacion/assets/img/logo-portada.png}\\[0.3cm]
+  {\large\sffamily\bfseries\color{unabblue}UNIVERSIDAD DR. ANDRÉS BELLO}\\[0.1cm]
+  {\normalsize\sffamily\bfseries\color{unabblue}FACULTAD DE TECNOLOGÍA E INNOVACIÓN}\\[0.1cm]
+  {\small\sffamily\color{unabblue}DISEÑO DE SISTEMAS DE SEGURIDAD DE REDES DE DATOS}\\[0.4cm]
+  {\Large\sffamily\bfseries\color{unabblue}BITÁCORA DE AVANCES Y MODIFICACIONES - FASE 2}\\[0.15cm]
+  {\color{unabblue}\rule{0.6\textwidth}{1.2pt}}
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{table}[h!]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries\color{unabblue}}p{3.8cm} X@{}}
+    \toprule
+    Proyecto: & Diseño de un modelo de seguridad perimetral y segmentación lógica para el aseguramiento de la red de datos en la Sede de Enlaces con la Educación (Santa Rosa de Lima, 2026). \\
+    \midrule
+    Periodo / Fase: & Fase 2: Gestión de Riesgos y Políticas. \\
+    \midrule
+    Fecha de entrega: & 12 de octubre de 2026. \\
+    \midrule
+    Docente titular: & MduEV. Ing. Franklin Geovany Buruca Hernández. \\
+    \midrule
+    Equipo de trabajo: & Genesis Saravia, Jaime Berrios, Jefferson Bonilla, Rosmeri González, Florentín Treminio. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\vspace{0.3cm}
+
+\section*{\color{unabblue}1. Propósito de la Bitácora}
+El presente documento tiene como objetivo registrar de forma sistemática las correcciones, adaptaciones metodológicas y desarrollos técnicos ejecutados por el equipo investigador durante la Fase 2 del proyecto integrador de cátedra, atendiendo las directrices académicas y las observaciones emitidas por la cátedra en el primer entregable.
+
+\section*{\color{unabblue}2. Registro de Actividades y Cambios Implementados}
+
+\begin{table}[h!]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.2cm} X X@{}}
+    \toprule
+    \color{unabblue}\textbf{Aspecto / Módulo} & \color{unabblue}\textbf{Modificación o Avance Realizado} & \color{unabblue}\textbf{Impacto Metodológico} \\
+    \midrule
+    Objetivo Específico 4 & Sustitución del verbo «Implementar» por «Configurar controles de capa de aplicación... en un laboratorio simulado». & Aclara el alcance tecnológico sin comprometer la intervención física en las instalaciones de la sede. \\
+    \midrule
+    Carátula Institucional & Ajuste de la portada para presentar un único logotipo institucional UNAB centrado y debidamente ordenado. & Elimina duplicidad visual y estandariza la presentación según el manual de estilo institucional. \\
+    \midrule
+    Marco Metodológico (Sampieri) & Ratificación del diseño descriptivo y propositivo (no experimental y transversal) y justificación de no requerir hipótesis causal obligatoria. & Alineación estricta con las pautas de Hernández-Sampieri y la retroalimentación del docente. \\
+    \midrule
+    Análisis de Resultados (Fase 2) & Incorporación de la Matriz de Análisis y Evaluación de Riesgos formal categorizando 5 activos críticos y evaluando probabilidad e impacto. & Cumplimiento formal del entregable de la Fase 2 (Gestión de Riesgos) según la planificación académica. \\
+    \midrule
+    Instrumentos de Medición & Diseño y formalización del Cuestionario de Diagnóstico Técnico de Infraestructura y Seguridad de Red aplicado a informantes clave. & Respaldo metodológico documental para la recolección de datos y justificación técnica del diagnóstico. \\
+    \midrule
+    Anexos y Evidencias & Inclusión del registro fotográfico de las sesiones de trabajo del equipo (Anexos 1 y 2) y digitalización del cuestionario formal aplicado en campo a la informante clave (Anexo 3). & Constancia, trazabilidad y verificación fehaciente del trabajo colaborativo y de campo. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\vspace{0.3cm}
+
+\section*{\color{unabblue}3. Estado Actual y Siguiente Fase}
+Con la culminación de la Fase 2, el proyecto cuenta con un diagnóstico situacional consolidado, delimitación metodológica aprobada y una matriz de evaluación de riesgos formalizada. La siguiente etapa (Fase 3: Aseguramiento de Red y Transporte) comprenderá el diseño topológico en GNS3, la configuración de zonas lógicas (VLANs), direccionamiento IP y políticas de filtrado mediante cortafuegos GNU/Linux.
+
+\end{document}

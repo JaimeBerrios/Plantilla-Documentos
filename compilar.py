@@ -144,26 +144,28 @@ def main():
     compiler = get_compiler(args.sin_red)
     # Una salida nueva evita confundir archivos de una ejecución anterior con los actuales.
     with tempfile.TemporaryDirectory(prefix="pdf-", dir=build) as staging:
-        for name in ("presentacion", "reporte"):
-            print(f"\nCompilando {name}.tex…", flush=True)
-            command = [str(compiler), "--untrusted", "--keep-logs", "--outdir", staging]
-            if args.sin_red:
-                command.append("--only-cached")
-            command.append(str(ROOT / f"{name}.tex"))
-            result = subprocess.run(command, cwd=ROOT)
-            log = Path(staging) / f"{name}.log"
-            if log.exists():
-                shutil.copy2(log, build / log.name)
-            if result.returncode:
-                raise RuntimeError(f"Falló {name}.tex. Revisa .build/{name}.log. Los PDF anteriores no se actualizaron.")
-            pdf = Path(staging) / f"{name}.pdf"
-            if not pdf.is_file() or not pdf.read_bytes().startswith(b"%PDF-"):
-                raise RuntimeError(f"No se generó un PDF válido para {name}.")
+        print("\nCompilando reporte.tex…", flush=True)
+        command = [str(compiler), "--untrusted", "--keep-logs", "--outdir", staging]
+        if args.sin_red:
+            command.append("--only-cached")
+        command.append(str(ROOT / "reporte.tex"))
+        result = subprocess.run(command, cwd=ROOT)
+        log = Path(staging) / "reporte.log"
+        if log.exists():
+            shutil.copy2(log, build / log.name)
+        if result.returncode:
+            raise RuntimeError("Falló reporte.tex. Revisa .build/reporte.log. El PDF anterior no se actualizó.")
+        pdf = Path(staging) / "reporte.pdf"
+        if not pdf.is_file() or not pdf.read_bytes().startswith(b"%PDF-"):
+            raise RuntimeError("No se generó un PDF válido para el reporte.")
         destination = ROOT / "pdf"
         destination.mkdir(exist_ok=True)
-        for name in ("presentacion", "reporte"):
-            shutil.copy2(Path(staging) / f"{name}.pdf", destination / f"{name}.pdf")
-            print(f"PDF actualizado: pdf/{name}.pdf", flush=True)
+        # Limpiar PDF antiguos para dejar únicamente el entregable solicitado
+        for old_pdf in destination.glob("*.pdf"):
+            if old_pdf.name != "Entregable2.pdf":
+                old_pdf.unlink(missing_ok=True)
+        shutil.copy2(pdf, destination / "Entregable2.pdf")
+        print("PDF actualizado: pdf/Entregable2.pdf", flush=True)
 
 
 if __name__ == "__main__":

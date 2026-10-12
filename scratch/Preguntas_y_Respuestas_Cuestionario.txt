@@ -1,0 +1,116 @@
+================================================================================
+GUÍA DE PREGUNTAS Y RESPUESTAS DEL CUESTIONARIO DE DIAGNÓSTICO TÉCNICO
+Sede de Enlaces con la Educación (Distrito de Santa Rosa de Lima, 2026)
+Asignatura: Diseño de Sistemas de Seguridad de Redes de Datos
+================================================================================
+
+A continuación se presentan las preguntas del cuestionario junto con las respuestas
+técnicas recopiladas en la sede, redactadas de forma natural y directa según la
+información brindada por el personal:
+
+--------------------------------------------------------------------------------
+DIMENSIÓN 1: INFRAESTRUCTURA FÍSICA Y EQUIPAMIENTO CENTRAL
+--------------------------------------------------------------------------------
+
+PREGUNTA 1:
+¿Cuántas estaciones de trabajo operan activamente en la sede y bajo qué
+modalidades (cableada / inalámbrica) se distribuye la conectividad hacia los
+puestos del personal?
+
+RESPUESTA:
+Aquí en la sede somos 10 técnicos y cada uno tiene su computadora de oficina, así
+que en total son 10 equipos principales. La forma en que nos conectamos varía
+bastante: algunos compañeros que están más cerca de la caja del switch se conectan
+por cable de red directo a la pared, pero como muchos puntos de red ya no dan señal,
+los demás se tienen que conectar por Wi-Fi a los routers que hemos ido poniendo.
+
+--------------------------------------------------------------------------------
+
+PREGUNTA 2:
+¿Cuál es el dispositivo principal que concentra la distribución de red en el
+edificio, cuál es su tiempo aproximado de operación continua y en qué estado
+físico se encuentran sus puertos?
+
+RESPUESTA:
+Todo el internet y la red de la sede se concentra en un solo switch que está en la
+caja principal. El gran detalle con este switch es que es viejísimo: está instalado
+desde que se construyó el edificio allá por el año 2003, o sea que ya tiene como 23
+años de estar funcionando. Por los mismos años que tiene ya está bastante
+deteriorado y obsoleto; de hecho, varios de los puertos físicos ya se quemaron y
+dejaron de funcionar. Hay unos pocos puertos que todavía dan internet de forma
+estable, pero la red en general se siente inestable por el mismo estado del switch.
+
+--------------------------------------------------------------------------------
+
+PREGUNTA 3:
+¿Cómo se encuentran administradas y distribuidas las salidas físicas del módem
+del proveedor de servicios de Internet?
+
+RESPUESTA:
+El módem del proveedor de internet solo trae 3 puertos de salida y los tres están ocupados:
+una salida va para las cámaras de seguridad del edificio, otra va para un router,
+y la tercera salida se tuvo que conectar directo a la computadora de la encargada
+de la sede, porque en su oficina no le llegaba ningún punto de red funcional de la
+pared. Como esas 3 salidas no alcanzaban para todo el personal, hace poco tuvimos
+que agregar otro router para poder repartir señal a los demás técnicos.
+
+--------------------------------------------------------------------------------
+DIMENSIÓN 2: TOPOLOGÍA Y SEGMENTACIÓN LÓGICA DE RED
+--------------------------------------------------------------------------------
+
+PREGUNTA 4:
+¿Qué topología física rige la comunicación interna de la sede y existe
+actualmente alguna división lógica (VLAN) para separar los flujos de tráfico
+administrativo y técnico?
+
+RESPUESTA:
+La topología que siempre se ha usado aquí desde el principio es en estrella, porque
+todo el cableado baja al switch central. Pero a nivel de configuración o división
+lógica no hay nada de VLANs; todos los equipos estamos metidos en la misma red
+plana. Cualquiera puede ver las otras máquinas y compartimos el mismo espacio de
+red sin ninguna separación entre lo administrativo y lo técnico.
+
+--------------------------------------------------------------------------------
+
+PREGUNTA 5:
+¿Cuál es el tratamiento y canal de red utilizado cuando ingresan laptops externas
+de estudiantes o docentes para soporte técnico o diagnóstico?
+
+RESPUESTA:
+Cuando la gente o los centros escolares traen laptops o tablets de los paquetes de
+Enlaces para que las revisemos o reparemos, se conectan directamente a los mismos
+puntos de red o al mismo Wi-Fi que usamos nosotros en la oficina. No tenemos una
+red aparte ni una zona aislada para diagnóstico, así que esas máquinas que a veces
+vienen con virus o desactualizadas terminan compartiendo el mismo canal de internet
+con los equipos donde manejamos la información de la sede.
+
+--------------------------------------------------------------------------------
+DIMENSIÓN 3: SEGURIDAD PERIMETRAL Y CONTROLES DE TRÁFICO
+--------------------------------------------------------------------------------
+
+PREGUNTA 6:
+¿Existe actualmente algún servidor central o proxy activo encargado de la
+auditoría y el filtrado del tráfico hacia Internet, o qué antecedentes existen
+sobre dichos controles en la sede?
+
+RESPUESTA:
+Ahorita no tenemos ningún servidor ni proxy. Antes sí había un servidor central que
+repartía la red y también teníamos un proxy físico que se encargaba de filtrar las
+páginas y controlar el internet. Pero con los años y después de varias remodelaciones
+y cambios que le hicieron al edificio, tanto el servidor como el proxy se quitaron
+y desaparecieron. De todo eso solo nos quedó el switch viejo y el cableado, así que
+ahorita el internet pasa directo sin ningún filtro ni bloqueo.
+
+--------------------------------------------------------------------------------
+
+PREGUNTA 7:
+¿Se aplican listas de control de acceso (ACL), políticas de puertos/servicios o
+mecanismos de inspección criptográfica (HTTPS/TLS) en los enlaces de red?
+
+RESPUESTA:
+No, no tenemos listas de acceso ni filtros configurados. Los routers que usamos
+están prácticamente con la configuración básica con la que vienen. No hay bloqueo
+de puertos, ni reglas para restringir páginas, ni certificados especiales
+configurados en la red. Todo el tráfico sale directo hacia el módem sin que nadie lo
+esté monitoreando o filtrando.
+================================================================================

@@ -1,0 +1,136 @@
+\documentclass[10.5pt,letterpaper]{article}
+\usepackage[margin=2.0cm,top=1.6cm,bottom=1.8cm,headheight=14pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{pgffor}
+\usepackage{microtype}
+\usepackage{setspace}
+
+\definecolor{unabblue}{HTML}{173864}
+\definecolor{linegray}{HTML}{BFBFBF}
+\hypersetup{colorlinks=true,linkcolor=unabblue,urlcolor=unabblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\scriptsize\sffamily\color{unabblue}UNIVERSIDAD DR. ANDRÉS BELLO - FACULTAD DE TECNOLOGÍA E INNOVACIÓN}
+\fancyhead[R]{\scriptsize\sffamily\color{unabblue}Ciclo 02-2026}
+\fancyfoot[L]{\scriptsize\sffamily\color{unabblue}Diseño de Sistemas de Seguridad de Redes de Datos}
+\fancyfoot[R]{\scriptsize\sffamily\color{unabblue}Página \thepage\ de 3}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\singlespacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Renglones limpios estilo Word
+\newcommand{\renglones}[1]{%
+  \par\nopagebreak\vspace{0.4cm}%
+  \foreach \i in {1,...,#1}{%
+    \noindent{\color{linegray}\rule{\textwidth}{0.4pt}}\par\vspace{0.6cm}%
+  }%
+  \vspace{-0.15cm}%
+}
+
+\begin{document}
+
+% =============================================================================
+% PÁGINA 1
+% =============================================================================
+\begin{center}
+  \includegraphics[width=1.6cm,height=1.6cm,keepaspectratio]{/home/jaimeberrios/Proyectos/UNAB/Ciclo-6/sDSR43/Plantilla-Documentos-Investigacion/assets/img/logo-portada.png}\\[0.08cm]
+  {\normalsize\sffamily\bfseries\color{unabblue}UNIVERSIDAD DR. ANDRÉS BELLO}\\[0.02cm]
+  {\small\sffamily\bfseries\color{unabblue}FACULTAD DE TECNOLOGÍA E INNOVACIÓN}\\[0.02cm]
+  {\footnotesize\sffamily\color{unabblue}CARRERA: INGENIERÍA EN SISTEMAS Y COMPUTACIÓN}\\[0.02cm]
+  {\scriptsize\sffamily Asignatura: Diseño de Sistemas de Seguridad de Redes de Datos - Ciclo 02-2026}\\[0.18cm]
+  {\normalsize\sffamily\bfseries\color{unabblue}CUESTIONARIO DE DIAGNÓSTICO TÉCNICO DE INFRAESTRUCTURA DE RED}\\[0.08cm]
+  {\color{unabblue}\rule{0.6\textwidth}{0.8pt}}
+\end{center}
+
+\vspace{0.1cm}
+
+\textbf{\color{unabblue}\footnotesize I. DATOS GENERALES DEL DIAGNÓSTICO}
+\vspace{0.05cm}
+
+\begin{table}[h!]
+  \centering
+  \scriptsize
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{|>{\bfseries\color{unabblue}\raggedright\arraybackslash}p{4.2cm}|X|}
+    \hline
+    Unidad de análisis: & Red de datos de la Sede de Enlaces con la Educación (Santa Rosa de Lima). \\
+    \hline
+    Lugar y fecha de aplicación: & \\
+    \hline
+    Nombre del informante: & \\
+    \hline
+    Cargo o función técnica: & \\
+    \hline
+    Equipo investigador: & Genesis Saravia, Jaime Berrios, Jefferson Bonilla, Rosmeri González, Florentín Treminio. \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+\vspace{0.04cm}
+{\scriptsize\itshape\color{black!80}Objetivo del instrumento: Recabar información técnica directa sobre el equipamiento, estado de obsolescencia física, topología, segmentación lógica y controles de filtrado perimetral de la sede institucional.}
+
+\vspace{0.25cm}
+
+\textbf{\color{unabblue}\footnotesize II. BATERÍA DE PREGUNTAS TÉCNICAS}
+
+\vspace{0.15cm}
+
+\subsection*{\color{unabblue}\footnotesize DIMENSIÓN 1: INFRAESTRUCTURA FÍSICA Y EQUIPAMIENTO CENTRAL}
+
+\vspace{0.1cm}
+\textbf{1. ¿Cuántas estaciones de trabajo operan activamente en la sede y bajo qué modalidades (cableada / inalámbrica) se distribuye la conectividad hacia los puestos del personal?}
+\renglones{4}
+
+\vspace{0.25cm}
+\textbf{2. ¿Cuál es el dispositivo principal que concentra la distribución de red en el edificio, cuál es su tiempo aproximado de operación continua y en qué estado físico se encuentran sus puertos?}
+\renglones{4}
+
+\newpage
+
+% =============================================================================
+% PÁGINA 2
+% =============================================================================
+
+\textbf{3. ¿Cómo se encuentran administradas y distribuidas las salidas físicas del módem del proveedor de servicios de Internet?}
+\renglones{4}
+
+\vspace{0.5cm}
+
+\subsection*{\color{unabblue}\footnotesize DIMENSIÓN 2: TOPOLOGÍA Y SEGMENTACIÓN LÓGICA DE RED}
+
+\vspace{0.15cm}
+\textbf{4. ¿Qué topología física rige la comunicación interna de la sede y existe actualmente alguna división lógica (VLAN) para separar los flujos de tráfico administrativo y técnico?}
+\renglones{4}
+
+\vspace{0.4cm}
+\textbf{5. ¿Cuál es el tratamiento y canal de red utilizado cuando ingresan laptops externas de estudiantes o docentes para soporte técnico o diagnóstico?}
+\renglones{4}
+
+\newpage
+
+% =============================================================================
+% PÁGINA 3
+% =============================================================================
+
+\subsection*{\color{unabblue}\footnotesize DIMENSIÓN 3: SEGURIDAD PERIMETRAL Y CONTROLES DE TRÁFICO}
+
+\vspace{0.15cm}
+\textbf{6. ¿Existe actualmente algún servidor central o proxy activo encargado de la auditoría y el filtrado del tráfico hacia Internet, o qué antecedentes existen sobre dichos controles en la sede?}
+\renglones{5}
+
+\vspace{0.6cm}
+\textbf{7. ¿Se aplican listas de control de acceso (ACL), políticas de puertos/servicios o mecanismos de inspección criptográfica (HTTPS/TLS) en los enlaces de red?}
+\renglones{5}
+
+\end{document}

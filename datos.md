@@ -10,7 +10,7 @@
 - Asignatura: Diseño de Sistemas de Seguridad de Redes de Datos
 - Docente: MduEV. Ing. Franklin Geovany Buruca Hernández
 - Grupo: Equipo de investigación
-- Lugar y fecha: San Miguel, 30 de septiembre de 2026
+- Lugar y fecha: San Miguel, 12 de octubre de 2026
 - Sede: Sede Regional de San Miguel
 - Carrera: Ingeniería en Sistemas y Computación
 
