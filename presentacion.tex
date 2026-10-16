@@ -6,6 +6,7 @@
 
 % Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
 \input{.build/datos.tex}
+\input{.build/citas.tex}
 \title{\TituloTrabajo}
 \author{\Grupo}
 \hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\Grupo}}
@@ -25,8 +26,8 @@
 \begin{frame}{\faLightbulb \ Reflexión Inicial}
   \begin{center}
     \vfill
-    \IfFileExists{assets/img/reflexion.png}{%
-      \includegraphics[width=0.75\linewidth, height=0.75\textheight, keepaspectratio]{assets/img/reflexion.png}
+    \IfFileExists{assets/img/contenido/reflexion.png}{%
+      \includegraphics[width=0.75\linewidth, height=0.75\textheight, keepaspectratio]{assets/img/contenido/reflexion.png}
     }{%
       \makebox[\textwidth][c]{%
         \begin{beamercolorbox}[rounded=true,wd=0.78\textwidth,sep=0.45cm,center]{block body}
@@ -45,7 +46,7 @@
 \expositor{Equipo}
 \begin{frame}{\faInfoCircle \ Conceptos Fundamentales}
   \begin{block}{Concepto principal}
-    Escribe aquí la definición central del tema. Mantén una idea clara, breve y orientada a la exposición oral.
+    Escribe aquí la definición central del tema. Mantén una idea clara, breve y orientada a la exposición oral. Ejemplo de cita: \cita{fuente}.
   \end{block}
 
   \begin{columns}[onlytextwidth]
@@ -188,19 +189,7 @@
     Agrega aquí las fuentes consultadas para respaldar la exposición.
   \end{block}
 
-  \vspace{0.25cm}
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{Autor u organización:} título de la fuente.
-      \item \textbf{Autor u organización:} título de la fuente.
-    \end{itemize}
-    \column{0.48\textwidth}
-    \begin{itemize}
-      \item \textbf{Autor u organización:} título de la fuente.
-      \item \textbf{Autor u organización:} título de la fuente.
-    \end{itemize}
-  \end{columns}
+  \input{.build/referencias-presentacion.tex}
 \end{frame}
 
 % =========================================================

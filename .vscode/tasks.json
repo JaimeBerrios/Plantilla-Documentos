@@ -2,13 +2,24 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Generar presentación y reporte PDF",
+      "label": "Generar solo reporte PDF",
       "type": "process",
       "command": "python3",
       "windows": { "command": "python" },
       "args": ["${workspaceFolder}/compilar.py"],
       "options": { "cwd": "${workspaceFolder}" },
       "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Generar reporte y presentación (PDF y web)",
+      "type": "process",
+      "command": "python3",
+      "windows": { "command": "python" },
+      "args": ["${workspaceFolder}/compilar.py", "--con-presentacion"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "dedicated" }
     }

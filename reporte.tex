@@ -5,6 +5,7 @@
 
 % Los datos compartidos se generan desde datos.md al ejecutar compilar.py.
 \input{.build/datos.tex}
+\input{.build/citas.tex}
 \hypersetup{pdftitle={\TituloTrabajo},pdfauthor={\NombreFirma}}
 
 \begin{document}
@@ -40,7 +41,7 @@ Expresa el propósito principal del trabajo con un verbo en infinitivo.
 \section{Marco teórico}
 \subsection{Conceptos fundamentales}
 Desarrolla las definiciones y los antecedentes necesarios para comprender el
-tema. Respalda las afirmaciones con fuentes y citas, por ejemplo~\cite{fuente}.
+tema. Respalda las afirmaciones con fuentes y citas, por ejemplo~\cita{fuente}.
 La referencia incluida al final es un modelo que debes reemplazar.
 \subsection{Antecedentes}
 Describe los trabajos previos y explica su relación con el problema estudiado.
@@ -74,10 +75,10 @@ una estructura de ejemplo; sustituye las filas con tus datos.
 Interpreta los resultados y contrástalos con el marco teórico. Distingue entre
 los datos observados y tus interpretaciones. Explica las limitaciones del análisis.
 
-% Para insertar una figura, guarda el archivo en assets/img/ y descomenta:
+% Para insertar una figura, guarda el archivo en assets/img/contenido/ y descomenta:
 % \begin{figure}[htbp]
 %   \centering
-%   \includegraphics[width=0.8\linewidth]{assets/img/resultado.png}
+%   \includegraphics[width=0.8\linewidth]{assets/img/contenido/resultado.png}
 %   \caption{Descripción de la figura. Fuente: elaboración propia.}
 %   \label{fig:resultado}
 % \end{figure}
@@ -94,10 +95,10 @@ condiciones o líneas de investigación futura cuando corresponda.
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{Referencias}
-\begin{thebibliography}{9}
-  \bibitem{fuente} Apellido, N. (Año). \textit{Título de la obra}.
-  Editorial o institución. [Referencia de ejemplo: reemplazar con una fuente real.]
-\end{thebibliography}
+\section*{Referencias}
+\begin{doublespace}
+\input{.build/referencias-reporte.tex}
+\end{doublespace}
 
 \clearpage
 \appendix

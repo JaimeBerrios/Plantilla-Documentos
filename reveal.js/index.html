@@ -1,126 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Plantilla UNAB - Reveal.js</title>
-
-	<link rel="stylesheet" href="dist/reset.css" />
-	<link rel="stylesheet" href="dist/reveal.css" />
-	<link rel="stylesheet" href="dist/theme/white.css" />
-	<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
-	
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-	<style>
-		:root {
-			--r-main-color: #333;
-			--r-heading-color: #173864; /* unabblue */
-			--r-link-color: #173864;
-			--r-link-color-hover: #2b5d9c;
-			--r-selection-background-color: #173864;
-		}
-		
-		.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-			color: #173864;
-			text-transform: none;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-weight: 600;
-		}
-		
-		.reveal .unab-blue { color: #173864; }
-		.reveal .slide-background-content { background-color: #ffffff; }
-
-		.portada .logos { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-		.portada .logos img { margin: 0; box-shadow: none; border: none; }
-		
-		.portada hr { border-top: 2px solid #173864; width: 50%; margin: 20px auto; }
-		
-		.portada .info { font-size: 0.6em; text-align: center; margin-top: 20px; }
-		.portada .info div { margin-bottom: 10px; }
-		.portada .footer-date { font-size: 0.5em; margin-top: 40px; color: #173864; }
-
-		.beamer-block { border: 2px solid #173864; border-radius: 8px; padding: 20px; margin: 20px auto; width: 80%; background-color: #f8f9fa; }
-		.beamer-block.center { text-align: center; }
-		
-		.column-container { display: flex; justify-content: space-between; width: 100%; }
-		.col { flex: 1; padding: 0 15px; }
-		
-		.reveal ul { list-style-type: none; }
-		.reveal ul li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: #173864; display: inline-block; width: 1.5em; margin-left: -1.5em; }
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Título del proyecto</title>
+  <link rel="stylesheet" href="../vendor/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../vendor/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../vendor/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="css/unab.css">
 </head>
 <body>
-	<div class="reveal">
-		<div class="slides">
-			
-			<section class="portada">
-				<div class="logos">
-					<img src="../assets/img/isotipo-azul.png" alt="Logo UNAB" style="height: 80px;">
-					<img src="../assets/img/logo-facultad.png" alt="Logo Facultad" style="height: 80px;">
-				</div>
-				
-				<div style="font-size: 0.5em; color: #777;">
-					<i class="fas fa-book"></i> <i class="fas fa-laptop-code"></i> <i class="fas fa-chart-pie"></i>
-				</div>
-				
-				<h2 id="titulo" style="margin-top: 10px; margin-bottom: 0;">Título del proyecto</h2>
-				<h4 id="subtitulo" style="margin-top: 5px;">Una idea central para desarrollar</h4>
-				
-				<hr>
-				
-				<div class="info unab-blue">
-					<div><strong><i class="fas fa-chalkboard-teacher"></i> Asignatura:</strong> <span id="asignatura">Nombre de la asignatura</span></div>
-					<div><strong><i class="fas fa-user-tie"></i> Docente:</strong> <span id="docente">Nombre del docente</span></div>
-					<div><strong><i class="fas fa-users"></i> Equipo expositor:</strong> <span id="equipo">Grupo 01</span></div>
-				</div>
-				
-				<div class="footer-date">
-					<i class="fas fa-map-marker-alt"></i> <span id="lugar-fecha">San Miguel, fecha de entrega</span><br>
-					<img src="../assets/img/acreditacion.png" alt="Acreditación" style="height: 120px; margin-top: 15px; box-shadow: none; border: none;">
-				</div>
-			</section>
+  <!-- compilar.py sincroniza data-campo e integrantes; edita libremente las láminas. -->
+  <div class="reveal">
+    <div class="slides">
+<section class="portada" data-expositor="">
+  <div class="logos">
+    <img src="../assets/img/institucional/isotipo-azul.png" alt="Universidad Dr. Andrés Bello">
+    <img src="../assets/img/institucional/logo-facultad.png" alt="Facultad de Tecnología e Innovación">
+  </div>
+  <p class="institucion"><span data-campo="Institución">Universidad Dr. Andrés Bello</span><br><span data-campo="Facultad">Facultad de Tecnología e Innovación</span></p>
+  <h1><span data-campo="Título">Título del proyecto</span></h1>
+  <p class="subtitulo"><span data-campo="Subtítulo">Una idea central para desarrollar</span></p>
+  <div class="datos-portada">
+    <p><strong>Asignatura:</strong> <span data-campo="Asignatura">Nombre de la asignatura</span></p>
+    <p><strong>Docente:</strong> <span data-campo="Docente">Nombre del docente</span></p>
+    <p><strong>Grupo:</strong> <span data-campo="Grupo">Grupo 01</span></p>
+  </div>
+  <table class="integrantes"><thead><tr><th>Nombre</th><th>Código</th></tr></thead><tbody id="integrantes">
+<tr><td>Nombre completo</td><td>Código</td></tr>
+<tr><td>Nombre completo</td><td>Código</td></tr>
+<tr><td>Nombre completo</td><td>Código</td></tr>
+</tbody></table>
+  <div class="lugar"><span data-campo="Lugar y fecha">San Miguel, fecha de entrega</span><img src="../assets/img/institucional/acreditacion.png" alt="Acreditación"></div>
+</section>
 
-			<section>
-				<h3><i class="fas fa-lightbulb"></i> Reflexión Inicial</h3>
-				<div class="beamer-block center" style="margin-top: 60px;">
-					<i class="fas fa-lightbulb fa-2x unab-blue"></i>
-					<p>¿Qué problema queremos resolver y por qué importa?</p>
-				</div>
-			</section>
+<section data-expositor="Equipo"><h2>Reflexión Inicial</h2><div class="bloque"><h3>Una pregunta para comenzar</h3><p>¿Qué problema queremos resolver y por qué importa?</p></div></section>
 
-			<section>
-				<h3><i class="fas fa-info-circle"></i> Conceptos Fundamentales</h3>
-				<div class="beamer-block" style="background-color: #173864; color: white; border-radius: 8px 8px 0 0; padding: 10px; margin-bottom: 0; border-bottom: none;">
-					<strong>Concepto principal</strong>
-				</div>
-				<div class="beamer-block" style="margin-top: 0; border-radius: 0 0 8px 8px; padding-top: 10px;">
-					Escribe aquí la definición central del tema.
-				</div>
-			</section>
+<section data-expositor="Equipo"><h2>Conceptos Fundamentales</h2><div class="bloque"><h3>Concepto principal</h3><p>Escribe aquí la definición central del tema. Mantén una idea clara, breve y orientada a la exposición oral. Ejemplo de cita: <span data-cita="fuente">(Apellido, Año)</span>.</p></div><div class="columnas"><ul><li><strong>Punto 1:</strong> descripción breve.</li><li><strong>Punto 2:</strong> descripción breve.</li></ul><ul><li><strong>Punto 3:</strong> descripción breve.</li><li><strong>Punto 4:</strong> descripción breve.</li></ul></div></section>
 
-			<section class="portada">
-				<div style="margin-top: 100px;">
-					<i class="fas fa-handshake fa-4x unab-blue"></i>
-					<h2 class="unab-blue" style="margin-top: 20px;">Muchas gracias por su atención</h2>
-					<p style="font-size: 0.7em;">Espacio para dudas y preguntas</p>
-					<p style="font-size: 0.5em; color: #555; margin-top: 40px;">Facultad de Tecnología e Innovación &middot; Universidad Dr. Andrés Bello</p>
-				</div>
-			</section>
+<section data-expositor="Equipo"><h2>Desarrollo del Tema</h2><div class="bloque"><h3>Idea operativa</h3><p>Explica aquí cómo funciona el tema, qué componentes intervienen y por qué es importante.</p></div><div class="columnas"><div class="bloque"><h3>Subtema A</h3><ul><li>Característica principal.</li><li>Ventaja o aplicación.</li><li>Ejemplo breve.</li></ul></div><div class="bloque"><h3>Subtema B</h3><ul><li>Característica principal.</li><li>Ventaja o aplicación.</li><li>Ejemplo breve.</li></ul></div></div></section>
 
-		</div>
-	</div>
+<section data-expositor="Equipo"><h2>Aplicaciones y Casos de Uso</h2><div class="bloque"><h3>Dónde se aplica</h3><ul><li><strong>Caso 1:</strong> descripción del caso de uso.</li><li><strong>Caso 2:</strong> descripción del caso de uso.</li><li><strong>Caso 3:</strong> descripción del caso de uso.</li><li><strong>Caso 4:</strong> descripción del caso de uso.</li></ul></div></section>
 
-	<script src="dist/reveal.js"></script>
-	<script src="dist/plugin/notes.js"></script>
-	<script src="dist/plugin/markdown.js"></script>
-	<script src="dist/plugin/highlight.js"></script>
-	<script>
-		Reveal.initialize({
-			hash: true,
-			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-		});
-	</script>
+<section data-expositor="Equipo"><h2>Análisis Comparativo</h2><div class="columnas"><div class="bloque"><h3>Enfoque A</h3><ul><li><strong>Criterio 1:</strong> descripción.</li><li><strong>Criterio 2:</strong> descripción.</li><li><strong>Criterio 3:</strong> descripción.</li><li><strong>Criterio 4:</strong> descripción.</li></ul></div><div class="bloque"><h3>Enfoque B</h3><ul><li><strong>Criterio 1:</strong> descripción.</li><li><strong>Criterio 2:</strong> descripción.</li><li><strong>Criterio 3:</strong> descripción.</li><li><strong>Criterio 4:</strong> descripción.</li></ul></div></div><p class="clave"><strong>Punto clave:</strong> escribe aquí la conclusión de la comparativa.</p></section>
+
+<section data-expositor="Equipo"><h2>Conclusiones Estratégicas</h2><div class="bloque"><h3>Idea final</h3><p>Resume aquí el mensaje más importante de la exposición.</p></div><div class="columnas"><div class="bloque"><h3>Conclusión 1</h3><ul><li>Argumento de cierre.</li><li>Beneficio principal.</li><li>Aplicación práctica.</li></ul></div><div class="bloque"><h3>Conclusión 2</h3><ul><li>Argumento de cierre.</li><li>Beneficio principal.</li><li>Aplicación práctica.</li></ul></div></div></section>
+
+<section data-expositor="grupo"><h2>Referencias Bibliográficas</h2><div class="bloque"><h3>Fuentes consultadas</h3><p>Agrega aquí las fuentes consultadas para respaldar la exposición.</p></div><!-- referencias:inicio -->
+<ul class="referencias-apa"><li>Apellido, N. (Año). <em>Título de la obra</em>. Editorial o institución. [Referencia de ejemplo: reemplazar con una fuente real.]</li></ul>
+<!-- referencias:fin --></section>
+
+<section class="cierre" data-expositor=""><h2>Muchas gracias por su atención</h2><p>Espacio para dudas y preguntas</p><p class="institucion"><span data-campo="Facultad">Facultad de Tecnología e Innovación</span> · <span data-campo="Institución">Universidad Dr. Andrés Bello</span></p></section>
+    </div>
+    <footer class="pie"><span><span data-campo="Título corto">Tema del proyecto</span></span><span id="expositor"></span><span><span data-campo="Asignatura">Nombre de la asignatura</span></span></footer>
+  </div>
+  <script src="../vendor/reveal.js/dist/reveal.js"></script>
+  <script src="../vendor/reveal.js/dist/plugin/notes.js"></script>
+  <script src="js/presentacion.js"></script>
 </body>
 </html>

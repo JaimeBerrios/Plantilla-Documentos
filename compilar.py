@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Genera los dos PDF con Tectonic; solo requiere Python 3.9 o posterior."""
+"""Genera el reporte; añade --con-presentacion para generar también PDF y web de las diapositivas."""
 
 import argparse
+import html
 import os
 from pathlib import Path
 import platform
@@ -13,6 +14,7 @@ import tarfile
 import tempfile
 import urllib.request
 import zipfile
+from contenido import leer_referencias, preparar_referencias, verificar_laminas
 
 
 ROOT = Path(__file__).resolve().parent
@@ -65,11 +67,44 @@ def read_data():
         raise ValueError("Completa estos campos de datos.md: " + ", ".join(missing))
     if not members:
         raise ValueError("Agrega al menos un integrante en datos.md.")
+    return fields, members
+
+
+def render_tex(fields, members):
     lines = ["% Generado por compilar.py desde datos.md. No editar."]
     lines += [rf"\newcommand{{\{macro}}}{{{tex_escape(fields[key])}}}" for key, macro in FIELDS.items()]
     rows = [" & ".join(map(tex_escape, member)) + r" \\" for member in members]
     lines.append("\\newcommand{\\Integrantes}{%\n" + "\n".join(rows) + "\n}")
     return "\n".join(lines) + "\n"
+
+
+def render_web(fields, members):
+    """Actualiza solo marcadores de datos; conserva las diapositivas editables."""
+    source = (ROOT / "reveal.js/index.html").read_text(encoding="utf-8")
+
+    def replace_field(match):
+        key = match.group(2)
+        if key not in FIELDS or key == "Firma":
+            raise ValueError(f"Marcador web no permitido: {key}")
+        return match.group(1) + html.escape(fields[key]) + match.group(3)
+
+    source = re.sub(
+        r'(<span data-campo="([^"]+)">).*?(</span>)',
+        replace_field, source, flags=re.DOTALL,
+    )
+    rows = "\n".join(
+        "<tr>" + "".join(f"<td>{html.escape(cell)}</td>" for cell in row) + "</tr>"
+        for row in members
+    )
+    source, count = re.subn(
+        r'(<tbody id="integrantes">).*?(</tbody>)',
+        lambda match: match.group(1) + "\n" + rows + "\n" + match.group(2),
+        source, flags=re.DOTALL,
+    )
+    if count != 1:
+        raise ValueError('El HTML debe contener un único <tbody id="integrantes">.')
+    source = re.sub(r"<title>.*?</title>", lambda _: "<title>" + html.escape(fields["Título"]) + "</title>", source, count=1, flags=re.DOTALL)
+    return source
 
 
 def compiler_directory():
@@ -132,18 +167,43 @@ def get_compiler(offline=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sin-red", action="store_true", help="Usar solo el motor y los paquetes ya descargados.")
+    parser.add_argument("--con-presentacion", action="store_true", help="Incluir explícitamente la presentación PDF y sincronizar su HTML, además del reporte.")
+    parser.add_argument("--verificar", action="store_true", help="Comprobar coherencia y referencias sin compilar ni modificar entregables.")
     args = parser.parse_args()
-    data = read_data()
-    for resource in ("assets/img/isotipo-azul.png", "assets/img/logo-facultad.png", "assets/fonts/firma.otf"):
+    fields, members = read_data()
+    data = render_tex(fields, members)
+    web = render_web(fields, members) if args.con_presentacion else None
+    reporte = (ROOT / "reporte.tex").read_text(encoding="utf-8")
+    presentacion = (ROOT / "presentacion.tex").read_text(encoding="utf-8") if args.con_presentacion else ""
+    tex_sources = [presentacion, reporte]
+    refs = leer_referencias(ROOT / "referencias.json")
+    web, citas, bibliografia, referencias_slides = preparar_referencias(refs, tex_sources, web, tex_escape)
+    if args.con_presentacion:
+        count = verificar_laminas(presentacion, web, fields)
+        print(f"Coherencia verificada: {count} láminas, títulos y expositores coinciden.", flush=True)
+    else:
+        print("Modo reporte: la presentación PDF y el HTML no se procesan.", flush=True)
+    if any(entry.get("ejemplo") for entry in refs.values()):
+        print("AVISO: la bibliografía conserva referencias de ejemplo; no es un trabajo terminado.", flush=True)
+    if args.verificar:
+        print("Referencias y citas verificadas. No se modificaron los entregables.", flush=True)
+        return
+    for resource in ("assets/img/institucional/isotipo-azul.png", "assets/img/institucional/logo-facultad.png", "assets/img/institucional/acreditacion.png", "assets/fonts/firma.otf"):
         if not (ROOT / resource).is_file():
             raise FileNotFoundError(f"Falta un recurso institucional: {resource}")
     build = ROOT / ".build"
     build.mkdir(exist_ok=True)
     (build / "datos.tex").write_text(data, encoding="utf-8")
+    generated = [("citas.tex", citas), ("referencias-reporte.tex", bibliografia)]
+    if args.con_presentacion:
+        generated.append(("referencias-presentacion.tex", referencias_slides))
+    for filename, content in generated:
+        (build / filename).write_text(content, encoding="utf-8")
     compiler = get_compiler(args.sin_red)
     # Una salida nueva evita confundir archivos de una ejecución anterior con los actuales.
     with tempfile.TemporaryDirectory(prefix="pdf-", dir=build) as staging:
-        for name in ("presentacion", "reporte"):
+        documents = ("presentacion", "reporte") if args.con_presentacion else ("reporte",)
+        for name in documents:
             print(f"\nCompilando {name}.tex…", flush=True)
             command = [str(compiler), "--untrusted", "--keep-logs", "--outdir", staging]
             if args.sin_red:
@@ -160,9 +220,12 @@ def main():
                 raise RuntimeError(f"No se generó un PDF válido para {name}.")
         destination = ROOT / "pdf"
         destination.mkdir(exist_ok=True)
-        for name in ("presentacion", "reporte"):
+        for name in documents:
             shutil.copy2(Path(staging) / f"{name}.pdf", destination / f"{name}.pdf")
             print(f"PDF actualizado: pdf/{name}.pdf", flush=True)
+        if args.con_presentacion:
+            (ROOT / "reveal.js/index.html").write_text(web, encoding="utf-8")
+            print("Datos web actualizados: reveal.js/index.html", flush=True)
 
 
 if __name__ == "__main__":

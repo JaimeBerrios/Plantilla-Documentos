@@ -1,0 +1,36 @@
+:root {
+  --unab-blue: #173864;
+  --r-main-font: "Segoe UI", Arial, sans-serif;
+  --r-heading-font: "Segoe UI", Arial, sans-serif;
+  --r-main-font-size: 30px;
+  --r-heading-color: var(--unab-blue);
+  --r-link-color: var(--unab-blue);
+  --r-heading-text-transform: none;
+}
+.reveal .slides { text-align: left; }
+.reveal .slides section { box-sizing: border-box; padding: 20px 35px 55px; }
+.reveal h1 { font-size: 1.8em; margin: 14px 0 8px; }
+.reveal h2 { font-size: 1.5em; margin-bottom: 32px; }
+.reveal h3 { font-size: 1em; }
+.reveal p { margin: 12px 0; }
+.reveal .portada, .reveal .cierre { text-align: center; }
+.reveal .logos { display: flex; justify-content: space-between; height: 70px; }
+.reveal .logos img { height: 70px; max-width: 200px; object-fit: contain; margin: 0; }
+.reveal .institucion { font-size: 0.65em; color: var(--unab-blue); }
+.reveal .subtitulo { font-size: 0.85em; }
+.reveal .datos-portada { font-size: 0.65em; margin: 18px auto; }
+.reveal .datos-portada p { margin: 5px 0; }
+.reveal .integrantes { width: 75%; font-size: 0.65em; }
+.reveal .integrantes th, .reveal .integrantes td { padding: 5px 12px; }
+.reveal .lugar { display: flex; align-items: center; justify-content: center; gap: 25px; margin-top: 15px; font-size: 0.6em; }
+.reveal .lugar img { height: 75px; margin: 0; }
+.bloque { border-left: 5px solid var(--unab-blue); background: #f2f5f9; padding: 18px 24px; margin: 20px 0; }
+.columnas { display: flex; gap: 30px; }
+.columnas > * { flex: 1; min-width: 0; }
+.reveal li { margin-bottom: 10px; }
+.reveal .clave { color: var(--unab-blue); font-size: 0.8em; margin-top: 25px; }
+.reveal .pie { position: absolute; bottom: 12px; left: 4%; right: 7%; display: flex; justify-content: space-between; gap: 20px; font: 14px "Segoe UI", Arial, sans-serif; color: var(--unab-blue); border-top: 1px solid #d8dee8; padding-top: 8px; z-index: 5; }
+.reveal .pie[hidden] { display: none; }
+.reveal .slide-number { background: transparent; color: var(--unab-blue); }
+.reveal .referencias-apa { list-style: none; margin-left: 0; }
+.reveal .referencias-apa li { padding-left: 1.27cm; text-indent: -1.27cm; }
