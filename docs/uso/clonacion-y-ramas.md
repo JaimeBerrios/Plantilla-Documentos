@@ -184,7 +184,7 @@ Después de editar y revisar el trabajo:
 git diff
 git add .
 git diff --cached
-git commit -m "Actualiza el reporte del proyecto"
+git commit -m "docs(reporte): actualiza el contenido del proyecto"
 git push
 ```
 

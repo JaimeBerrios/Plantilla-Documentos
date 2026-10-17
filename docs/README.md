@@ -18,6 +18,7 @@ El tutorial también se puede consultar dentro del [portal principal](../index.h
 - [Registro de verificación y límites conocidos](mantenimiento/verificacion.md).
 - [Validación automática en GitHub](mantenimiento/validacion-automatica.md).
 - [Licencias y recursos excluidos](mantenimiento/licencias.md).
+- [Norma para los mensajes de commit](mantenimiento/commits.md).
 
 El registro describe comprobaciones de una fecha concreta; no sustituye ejecutar
 las validaciones después de cambiar el proyecto.

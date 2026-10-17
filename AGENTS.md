@@ -1,5 +1,12 @@
 # Instrucciones para Codex
 
+## Mensajes de commit
+
+Cuando el usuario autorice commits, usa Conventional Commits 1.0.0:
+`tipo(alcance opcional): descripción`. Consulta `docs/mantenimiento/commits.md`.
+Usa los tipos en minúsculas y descripciones breves en español. Esta norma aplica
+a commits nuevos; no reescribas el historial publicado para adaptarlo.
+
 ## Propósito y archivos
 
 Este repositorio es una plantilla local para tres entregables académicos UNAB:

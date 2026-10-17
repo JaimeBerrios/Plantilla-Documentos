@@ -178,6 +178,9 @@ Al final del reporte (incluso tras los anexos) se imprime automáticamente la fi
 
 ## 🧪 Pruebas Automatizadas
 
+Los nuevos commits siguen [Conventional Commits 1.0.0](docs/mantenimiento/commits.md),
+por ejemplo: `docs(portal): simplifica el tutorial de Git`.
+
 GitHub Actions ejecuta las pruebas, revisa enlaces locales y verifica coherencia
 en cada push y Pull Request, sin compilar PDF. Consulta la
 [validación automática](docs/mantenimiento/validacion-automatica.md).
