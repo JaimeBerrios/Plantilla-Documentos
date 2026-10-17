@@ -28,6 +28,7 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
           <li class="nav-item"><a class="nav-link" href="#instalacion">Instalación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clonar">Clonar</a></li>
           <li class="nav-item"><a class="nav-link" href="#compilar">Compilar</a></li>
           <li class="nav-item"><a class="nav-link" href="#flujo">Flujo</a></li>
           <li class="nav-item"><a class="nav-link" href="#personalizar">Personalizar</a></li>
@@ -120,6 +121,71 @@
       </div>
     </section>
 
+    <section id="clonar" class="section-block section-alt py-5">
+      <div class="container py-5">
+        <span class="section-kicker">Git y trabajo en equipo</span>
+        <h2 class="display-6 fw-bold mt-2">Clonar y crear la rama del proyecto</h2>
+        <p class="section-copy">Descarga la plantilla por HTTPS o SSH y desarrolla tu trabajo en una rama propia. Sustituye <code>nombra-tu-rama</code> por el nombre que elijas para tu proyecto en todos los comandos.</p>
+        <div class="note-panel my-4"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p>Necesitas Git y acceso al repositorio. HTTPS usa un gestor de credenciales o un token cuando requiere autenticación, no la contraseña de GitHub. SSH requiere una clave configurada y su clave pública registrada en tu cuenta. Para publicar necesitas permiso de escritura.</p></div>
+        <article class="info-card mb-4">
+          <h3>1. Clonar el repositorio completo</h3>
+          <p>Abre una terminal en la carpeta donde guardarás el proyecto. Elige y ejecuta solo una alternativa.</p>
+<div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div>
+          <h3 class="mt-4">2. Entrar al repositorio</h3>
+<div class="code-panel my-3"><code>cd Plantilla-Documentos</code></div>
+          <h3 class="mt-4">3. Verificar la rama actual</h3>
+          <p>Comprueba que estás en <code>main</code> y que no hay cambios pendientes. En un clon nuevo, si estás en otra rama, ejecuta <code>git switch main</code>. Si ya tenías trabajo local, guárdalo antes de cambiar de rama.</p>
+<div class="code-panel my-3"><code>git branch --show-current</code><code>git status</code></div>
+          <h3 class="mt-4">4. Crear y cambiar a la nueva rama</h3>
+          <p>Este paso lo hace quien inicia el proyecto. Si la rama ya está publicada, pasa a las opciones de colaboración.</p>
+<div class="code-panel my-3"><code>git switch -c nombra-tu-rama</code></div>
+          <h3 class="mt-4">5. Confirmar el cambio de rama</h3>
+<div class="code-panel my-3"><code>git branch</code></div>
+          <p>El asterisco debe señalar tu rama activa:</p>
+          <pre class="mb-0">  main
+* nombra-tu-rama</pre>
+          <h3 class="mt-4">6. Publicar la rama en GitHub</h3>
+<div class="code-panel my-3"><code>git push -u origin nombra-tu-rama</code></div>
+          <p><code>-u</code> configura el seguimiento para los siguientes envíos y descargas.</p>
+        </article>
+        <div class="note-panel mb-4"><i class="fa-solid fa-code-branch" aria-hidden="true"></i><p><strong>¿Este push afecta a main?</strong> No. Este comando publica únicamente la rama del proyecto. Para incorporar sus cambios en <code>main</code> hace falta fusionarla o aceptar un Pull Request dirigido a <code>main</code>. Comprueba siempre tu rama activa antes de editar y enviar.</p></div>
+        <h3 class="h4 mt-5">Colaboración en equipo</h3>
+        <p>Cuando la rama ya esté publicada, cada integrante elige una opción. Todos trabajan en la rama del proyecto.</p>
+        <details class="arbol-carpetas mt-3" open>
+          <summary>Opción 1 · Clonar directamente la rama del proyecto (recomendada)</summary>
+          <div class="mt-3"><div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone -b nombra-tu-rama --single-branch https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone -b nombra-tu-rama --single-branch git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div><div class="code-panel my-3"><code>cd Plantilla-Documentos</code></div><p><code>--single-branch</code> limita las ramas descargadas, pero conserva el historial de esa rama, incluidos los commits compartidos con <code>main</code>.</p></div>
+        </details>
+        <details class="arbol-carpetas mt-3">
+          <summary>Opción 2 · Clonar todo y cambiar manualmente</summary>
+          <div class="mt-3"><div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div><div class="code-panel my-3"><code>cd Plantilla-Documentos</code><code>git switch nombra-tu-rama</code></div></div>
+        </details>
+        <details class="arbol-carpetas mt-3">
+          <summary>Opción 3 · Ya tengo el repositorio, pero no veo la rama</summary>
+          <div class="mt-3"><p>Desde la carpeta del repositorio, descarga la información remota y crea la rama local con seguimiento. Sirve con HTTPS y SSH.</p><div class="code-panel my-3"><code>git fetch origin</code><code>git switch -c nombra-tu-rama --track origin/nombra-tu-rama</code></div><p>Si la rama local ya existe, usa <code>git switch nombra-tu-rama</code>. Si clonaste otra rama con <code>--single-branch</code>, amplía primero las ramas seguidas y luego ejecuta los comandos anteriores:</p><div class="code-panel my-3"><code>git remote set-branches --add origin nombra-tu-rama</code></div></div>
+        </details>
+        <h3 class="h4 mt-5">Comandos frecuentes de desarrollo</h3>
+        <div class="table-responsive"><table class="table">
+          <caption>Flujo diario dentro de la rama del proyecto</caption>
+          <thead><tr><th scope="col">Comando</th><th scope="col">Función</th></tr></thead>
+          <tbody>
+            <tr><td><code>git status</code></td><td>Revisa la rama activa y los archivos modificados.</td></tr>
+            <tr><td><code>git diff</code></td><td>Revisa los cambios antes de prepararlos.</td></tr>
+            <tr><td><code>git add .</code></td><td>Desde la raíz, prepara los cambios del proyecto excepto los archivos ignorados.</td></tr>
+            <tr><td><code>git diff --cached</code></td><td>Revisa exactamente lo que incluirá el commit.</td></tr>
+            <tr><td><code>git commit -m "Mensaje"</code></td><td>Guarda los cambios preparados en un commit local.</td></tr>
+            <tr><td><code>git push</code></td><td>Envía los commits a la rama remota de seguimiento.</td></tr>
+            <tr><td><code>git pull --ff-only</code></td><td>Descarga e integra cambios si puede avanzar sin crear una fusión.</td></tr>
+          </tbody>
+        </table></div>
+        <p>Al comenzar, con el árbol de trabajo limpio:</p>
+<div class="code-panel my-3"><code>git status</code><code>git pull --ff-only</code></div>
+        <p>Después de editar y comprobar el proyecto:</p>
+<div class="code-panel my-3"><code>git diff</code><code>git add .</code><code>git diff --cached</code><code>git commit -m &quot;Actualiza el reporte del proyecto&quot;</code><code>git push</code></div>
+        <p>Si el pull se detiene porque las historias han divergido o el push es rechazado por cambios de otro integrante, coordinen la integración antes de continuar. Eviten <code>git push --force</code> en la rama compartida. Quien administre GitHub puede proteger <code>main</code> para exigir revisiones.</p>
+        <a href="docs/uso/clonacion-y-ramas.md">Consultar también el tutorial en Markdown</a>
+      </div>
+    </section>
+
     <section id="compilar" class="section-block section-alt py-5">
       <div class="container py-5">
         <div class="row g-4 align-items-start">
@@ -202,7 +268,7 @@
           <h3 class="mt-2">Amplía tu selección de iconos</h3>
           <p>Descarga SVG oficiales cuando hagan falta. Se guardan con su licencia en <code>assets/iconos/fontawesome/solid/</code> y siguen funcionando sin conexión.</p>
           <div class="code-panel mt-3"><code>python -m herramientas.iconos --descargar microscope shield-halved --sincronizar</code></div>
-          <p class="mt-3">La sincronización incorpora los iconos a la biblioteca de las diapositivas; después puedes colocarlos junto al texto. Consulta la <a href="docs/personalizacion.md">guía de personalización</a>.</p>
+          <p class="mt-3">La sincronización incorpora los iconos a la biblioteca de las diapositivas; después puedes colocarlos junto al texto. Consulta la <a href="docs/uso/personalizacion.md">guía de personalización</a>.</p>
         </article>
         <div class="note-panel mt-4">
           <i class="fa-solid fa-keyboard" aria-hidden="true"></i>
@@ -235,14 +301,20 @@
 ├── herramientas/          Compilación, validación e iconos
 ├── vendor/                Dependencias locales y licencias
 ├── ejemplos/              Demo de referencia
-├── docs/                  Guías de uso y mantenimiento
+├── docs/                  Índice y mapa de estructura
+│   ├── uso/               Clonación, uso y personalización
+│   └── mantenimiento/     Registro de verificación
 ├── pdf/                   Entregables generados
 ├── tests/                 Pruebas automatizadas
 └── .build/                Temporales fuera de Git</pre>
         </details>
         <div class="documentacion-links mt-4" aria-label="Documentación de la plantilla">
-          <a href="docs/guia-de-uso.md">Guía de uso <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-          <a href="docs/personalizacion.md">Personalización</a>
+          <a href="docs/README.md">Índice de documentación</a>
+          <a href="docs/uso/lista-de-entrega.md">Lista de entrega</a>
+          <a href="docs/mantenimiento/validacion-automatica.md">Validación automática</a>
+          <a href="docs/mantenimiento/licencias.md">Licencias y recursos</a>
+          <a href="docs/uso/guia-de-uso.md">Guía de uso <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          <a href="docs/uso/personalizacion.md">Personalización</a>
           <a href="docs/estructura.md">Estructura y mantenimiento</a>
         </div>
       </div>
@@ -337,14 +409,13 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="currentYear"></span> Plantilla UNAB</span>
-        <button type="button" id="themeSystem" class="tema-sistema">Usar tema del sistema</button>
         <span>LaTeX, Python y Reveal.js · recursos locales</span>
       </div>
     </div>
   </footer>
 
   <div id="portalStatus" class="visually-hidden" role="status" aria-live="polite"></div>
-  <noscript><p class="container py-4">Activa JavaScript para copiar comandos y usar las guías interactivas. Puedes abrir el <a href="pdf/reporte.pdf">reporte</a> o consultar la <a href="docs/guia-de-uso.md">guía de uso</a>.</p></noscript>
+  <noscript><p class="container py-4">Activa JavaScript para copiar comandos y usar las guías interactivas. Puedes abrir el <a href="pdf/reporte.pdf">reporte</a> o consultar la <a href="docs/uso/guia-de-uso.md">guía de uso</a>.</p></noscript>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="web/portal/js/app.js"></script>
 </body>

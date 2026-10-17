@@ -106,7 +106,7 @@ para el contenido. Usa fuentes oficiales, conserva versión y licencia, guarda l
 `python3 -m herramientas.iconos --descargar NOMBRE --sincronizar` descarga desde la versión
 fijada y actualiza la biblioteca SVG incorporada al HTML. Respeta las autorizaciones técnicas
 de red del entorno; no uses iconos Pro sin una licencia aportada por el usuario.
-Consulta `docs/personalizacion.md`. No descargues la biblioteca completa si basta una selección.
+Consulta `docs/uso/personalizacion.md`. No descargues la biblioteca completa si basta una selección.
 
 Después de mover recursos ejecuta `python3 -m herramientas.validacion`, las pruebas y la
 compilación de los entregables afectados. Revisa enlaces, consola y documentos renderizados.

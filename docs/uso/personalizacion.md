@@ -58,7 +58,7 @@ conservando sus versiones y licencias. No sustituyas estos enlaces por CDN si
 quieres mantener el funcionamiento sin conexión.
 
 Los comandos se adaptan al selector de sistema y se copian desde su texto visible.
-El tema sigue al sistema hasta que el usuario elige uno; el botón del pie permite
-volver al comportamiento automático. Las transiciones respetan movimiento reducido.
+El tema sigue al sistema hasta que el usuario elige uno con el botón de sol/luna
+de la navegación. Las transiciones respetan movimiento reducido.
 Los datos de las tarjetas están en `app.js`; evita añadir rutas antiguas o una
 instrucción de cambiar de rama automáticamente.

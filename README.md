@@ -44,6 +44,8 @@ flowchart LR
 ```
 
 ### Paso 1: Configurar la rama de trabajo
+Si todavía no tienes el repositorio, consulta el [tutorial de clonación por HTTPS o SSH y colaboración en equipo](docs/uso/clonacion-y-ramas.md). Incluye cómo crear y publicar una rama del proyecto sin modificar `main`, y cómo incorporarse a una rama existente.
+
 Trabaja en la rama actual. Si comienzas otro proyecto y necesitas aislarlo, crea una rama descriptiva:
 ```bash
 # Opcional, únicamente para comenzar un trabajo nuevo:
@@ -163,7 +165,9 @@ Al final del reporte (incluso tras los anexos) se imprime automáticamente la fi
 ├── herramientas/                 # Compilación, contenido, iconos y validación
 ├── vendor/                       # Reveal.js, Bootstrap y Font Awesome locales
 ├── ejemplos/reveal-demo.html     # Demo de referencia, con recursos remotos
-├── docs/                         # Uso, personalización y estructura
+├── docs/                         # Índice y mapa de estructura
+│   ├── uso/                      # Clonación, guía de uso y personalización
+│   └── mantenimiento/            # Registro de verificación
 ├── pdf/                          # reporte.pdf y presentacion.pdf
 ├── tests/                        # Pruebas automatizadas
 ├── .vscode/tasks.json            # Acciones de VS Code
@@ -173,6 +177,10 @@ Al final del reporte (incluso tras los anexos) se imprime automáticamente la fi
 ---
 
 ## 🧪 Pruebas Automatizadas
+
+GitHub Actions ejecuta las pruebas, revisa enlaces locales y verifica coherencia
+en cada push y Pull Request, sin compilar PDF. Consulta la
+[validación automática](docs/mantenimiento/validacion-automatica.md).
 
 Para verificar la integridad del compilador, el parser de citas y la coherencia de datos:
 
@@ -192,6 +200,10 @@ python -m unittest discover tests
 
 ## Iconos y organización
 
+Consulta el [índice de documentación](docs/README.md) para distinguir las guías
+de uso de los documentos de mantenimiento de la plantilla.
+Antes de entregar un trabajo, completa la [lista de revisión](docs/uso/lista-de-entrega.md).
+
 Se pueden descargar iconos adicionales de **Font Awesome Free** cuando el contenido los necesite.
 Guárdalos en `assets/iconos/fontawesome/solid/`, conserva su licencia y usa la herramienta local:
 
@@ -201,8 +213,8 @@ python3 -m herramientas.iconos --descargar microscope shield-halved --sincroniza
 
 La descarga requiere red; las diapositivas resultantes funcionan sin conexión. La herramienta
 actualiza la biblioteca SVG incorporada en el HTML; no añade iconos automáticamente al contenido.
-Consulta [personalización](docs/personalizacion.md), [estructura](docs/estructura.md) y
-[guía de uso](docs/guia-de-uso.md). Para comprobar rutas después de mover recursos:
+Consulta [personalización](docs/uso/personalizacion.md), [estructura](docs/estructura.md) y
+[guía de uso](docs/uso/guia-de-uso.md). Para comprobar rutas después de mover recursos:
 
 ```bash
 python3 -m herramientas.validacion
@@ -217,3 +229,9 @@ El portal principal también funciona sin conexión: Bootstrap 5.3.3 y Font Awes
 Linux/macOS, tema del sistema y navegación móvil. Las vistas previas son capturas reales
 de los PDF de ejemplo; su actualización se explica en
 [assets/contenido/vistas-previas/README.md](assets/contenido/vistas-previas/README.md).
+
+## Licencia
+
+El código y la documentación originales se ofrecen bajo [MIT](LICENSE).
+Los logos institucionales, la fuente personal de firma y los materiales de terceros
+conservan sus propias condiciones: consulta el [alcance y las exclusiones](docs/mantenimiento/licencias.md).

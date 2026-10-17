@@ -40,3 +40,12 @@ desktop.ini
 # Caché de Python
 __pycache__/
 *.pyc
+
+# Configuración local de agentes y servicios; no forma parte de la plantilla
+.agents/
+.codex/
+.aws/
+.venv/
+.env
+.env.*
+!.env.example

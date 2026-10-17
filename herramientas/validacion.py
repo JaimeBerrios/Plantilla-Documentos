@@ -43,8 +43,23 @@ def verificar_html(archivo):
     return errores
 
 
-def verificar_web(root=ROOT):
+def verificar_documentacion(root=ROOT):
+    """Comprueba destinos locales de enlaces Markdown al reorganizar las guías."""
     errores = []
+    archivos = [root / 'README.md', *sorted((root / 'docs').rglob('*.md'))]
+    for archivo in archivos:
+        texto = re.sub(r'```.*?```', '', archivo.read_text(encoding='utf-8'), flags=re.DOTALL)
+        for destino in re.findall(r'\[[^\]]*\]\(([^\s)]+)\)', texto):
+            url = urlsplit(destino)
+            if url.scheme or url.netloc or not url.path:
+                continue
+            if not (archivo.parent / unquote(url.path)).exists():
+                errores.append(f'{archivo}: enlace inexistente {destino}')
+    return errores
+
+
+def verificar_web(root=ROOT):
+    errores = verificar_documentacion(root)
     for relativa in ('index.html', 'web/presentacion/index.html', 'ejemplos/reveal-demo.html'):
         errores.extend(verificar_html(root / relativa))
     carpetas_css = [root / 'web', root / 'vendor/bootstrap/css', root / 'vendor/fontawesome/css']
@@ -59,4 +74,4 @@ def verificar_web(root=ROOT):
 
 if __name__ == '__main__':
     verificar_web()
-    print('Enlaces y recursos locales del portal, presentación y demo verificados.')
+    print('Enlaces de documentación y recursos locales del portal, presentación y demo verificados.')

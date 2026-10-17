@@ -1,5 +1,9 @@
 # Guía de uso
 
+Antes de comenzar, consulta el [tutorial de clonación por HTTPS o SSH y trabajo
+con ramas](clonacion-y-ramas.md) si necesitas descargar la plantilla o incorporarte
+a la rama de tu equipo.
+
 1. Completa `datos/datos.md` y registra fuentes reales en `datos/referencias.json`.
 2. Edita `documentos/reporte.tex`. El contenido de las indicaciones no se redacta automáticamente.
 3. Ejecuta `python3 compilar.py --verificar` y `python3 compilar.py` desde la raíz.
@@ -7,6 +11,8 @@
 5. Solo si necesitas exposición, edita `documentos/presentacion.tex` y
    `web/presentacion/index.html`, y ejecuta `python3 compilar.py --con-presentacion`.
 6. Abre `index.html` para acceder al portal y los entregables.
+
+Antes de enviar el trabajo, completa la [lista de entrega](lista-de-entrega.md).
 
 `--sin-red` usa el motor y los paquetes previamente descargados. `--modo-entrega --verificar`
 rechaza metadatos y referencias de ejemplo; no reemplaza la revisión académica ni visual.

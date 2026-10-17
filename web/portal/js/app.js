@@ -95,12 +95,6 @@ themeToggle.addEventListener('click', () => changeTheme(() => {
   try { localStorage.setItem('theme', savedTheme); } catch { /* El tema sigue funcionando sin persistencia. */ }
   applyTheme(savedTheme);
 }));
-document.querySelector('#themeSystem').addEventListener('click', () => changeTheme(() => {
-  savedTheme = null;
-  try { localStorage.removeItem('theme'); } catch { /* Sin persistencia. */ }
-  applyTheme(systemTheme.matches ? 'dark' : 'light');
-  announce('Se está usando el tema del sistema.');
-}));
 systemTheme.addEventListener('change', event => {
   if (!savedTheme) applyTheme(event.matches ? 'dark' : 'light');
 });

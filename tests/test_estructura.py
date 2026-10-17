@@ -3,7 +3,7 @@ import tempfile
 import unittest
 
 from herramientas.iconos import leer_svg
-from herramientas.validacion import verificar_html, verificar_web
+from herramientas.validacion import verificar_documentacion, verificar_html, verificar_web
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -18,6 +18,19 @@ class EstructuraRepositorio(unittest.TestCase):
             archivo.write_text('<a href="#ausente">Ir</a><img src="falta.png">')
             errores = verificar_html(archivo)
             self.assertEqual(len(errores), 2)
+
+    def test_documentacion_anidada_y_enlaces_rotos(self):
+        with tempfile.TemporaryDirectory() as carpeta:
+            root = Path(carpeta)
+            (root / 'docs/uso').mkdir(parents=True)
+            (root / 'README.md').write_text('[Guía](docs/uso/guia.md)')
+            guia = root / 'docs/uso/guia.md'
+            guia.write_text('[Inicio](../../README.md) [Externo](https://example.com)')
+            self.assertEqual(verificar_documentacion(root), [])
+            guia.write_text('[Ruta anterior](../guia.md)')
+            errores = verificar_documentacion(root)
+            self.assertEqual(len(errores), 1)
+            self.assertIn('../guia.md', errores[0])
 
     def test_iconos_locales_validos_y_licencia(self):
         carpeta = ROOT / 'assets/iconos/fontawesome'
