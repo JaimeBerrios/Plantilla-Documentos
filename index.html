@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Plantilla académica UNAB para preparar reportes y presentaciones PDF y web, con recursos locales y guías de uso.">
   <title>Plantilla académica UNAB</title>
+  <link rel="icon" type="image/png" href="assets/institucional/isotipo-blanco.png">
   <script src="web/portal/js/tema.js"></script>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.min.css">
@@ -124,65 +125,65 @@
     <section id="clonar" class="section-block section-alt py-5">
       <div class="container py-5">
         <span class="section-kicker">Git y trabajo en equipo</span>
-        <h2 class="display-6 fw-bold mt-2">Clonar y crear la rama del proyecto</h2>
-        <p class="section-copy">Descarga la plantilla por HTTPS o SSH y desarrolla tu trabajo en una rama propia. Sustituye <code>nombra-tu-rama</code> por el nombre que elijas para tu proyecto en todos los comandos.</p>
-        <div class="note-panel my-4"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p>Necesitas Git y acceso al repositorio. HTTPS usa un gestor de credenciales o un token cuando requiere autenticación, no la contraseña de GitHub. SSH requiere una clave configurada y su clave pública registrada en tu cuenta. Para publicar necesitas permiso de escritura.</p></div>
+        <h2 class="display-6 fw-bold mt-2">Descargar la plantilla y comenzar tu proyecto</h2>
+        <p class="section-copy">Una rama te permite trabajar en tu proyecto por separado y conservar la versión base de la plantilla. En los comandos, cambia <code>nombra-tu-rama</code> por un nombre corto para tu trabajo, por ejemplo <code>proyecto-redes</code>. Usa el mismo nombre en todos los pasos.</p>
+        <div class="note-panel my-4"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p>Primero instala Git. Si estás comenzando, elige HTTPS para descargar. Usa SSH si ya configuraste una clave de acceso en GitHub. Para subir cambios necesitas una cuenta con permiso para modificar este proyecto. Si GitHub te pide identificarte, sigue el inicio de sesión de tu herramienta; la contraseña de tu cuenta no sirve como contraseña de Git.</p></div>
         <article class="info-card mb-4">
-          <h3>1. Clonar el repositorio completo</h3>
-          <p>Abre una terminal en la carpeta donde guardarás el proyecto. Elige y ejecuta solo una alternativa.</p>
+          <h3>1. Descargar una copia de la plantilla</h3>
+          <p>Abre la terminal, donde escribirás los comandos. En VS Code está en el menú Terminal → Nueva terminal. Ubícate en la carpeta donde quieras guardar el proyecto y ejecuta solo una de estas dos opciones. Git creará una carpeta llamada Plantilla-Documentos.</p>
 <div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div>
-          <h3 class="mt-4">2. Entrar al repositorio</h3>
+          <h3 class="mt-4">2. Entrar a la carpeta descargada</h3>
 <div class="code-panel my-3"><code>cd Plantilla-Documentos</code></div>
-          <h3 class="mt-4">3. Verificar la rama actual</h3>
-          <p>Comprueba que estás en <code>main</code> y que no hay cambios pendientes. En un clon nuevo, si estás en otra rama, ejecuta <code>git switch main</code>. Si ya tenías trabajo local, guárdalo antes de cambiar de rama.</p>
+          <h3 class="mt-4">3. Comprobar dónde vas a trabajar</h3>
+          <p>El primer comando muestra el nombre de la rama donde estás. Para comenzar desde la plantilla base debe decir <code>main</code>. El segundo muestra si cambiaste algún archivo. Si acabas de descargar la plantilla y aparece otra rama, escribe <code>git switch main</code>. Si ya habías editado archivos, guarda esos cambios con un commit antes de cambiar de rama; el ejemplo del final explica cómo hacerlo.</p>
 <div class="code-panel my-3"><code>git branch --show-current</code><code>git status</code></div>
-          <h3 class="mt-4">4. Crear y cambiar a la nueva rama</h3>
-          <p>Este paso lo hace quien inicia el proyecto. Si la rama ya está publicada, pasa a las opciones de colaboración.</p>
+          <h3 class="mt-4">4. Crear la rama para tu trabajo</h3>
+          <p>Este comando crea la rama y te deja trabajando en ella. Solo una persona del equipo debe crearla. Si un compañero ya la subió a GitHub, ve al apartado “Trabajar con tus compañeros”.</p>
 <div class="code-panel my-3"><code>git switch -c nombra-tu-rama</code></div>
-          <h3 class="mt-4">5. Confirmar el cambio de rama</h3>
+          <h3 class="mt-4">5. Confirmar que estás en tu rama</h3>
 <div class="code-panel my-3"><code>git branch</code></div>
-          <p>El asterisco debe señalar tu rama activa:</p>
+          <p>El símbolo <code>*</code> debe aparecer junto al nombre de tu rama:</p>
           <pre class="mb-0">  main
 * nombra-tu-rama</pre>
-          <h3 class="mt-4">6. Publicar la rama en GitHub</h3>
+          <h3 class="mt-4">6. Subir tu rama a GitHub</h3>
 <div class="code-panel my-3"><code>git push -u origin nombra-tu-rama</code></div>
-          <p><code>-u</code> configura el seguimiento para los siguientes envíos y descargas.</p>
+          <p>Esto permite que tus compañeros encuentren la rama en GitHub. La opción <code>-u</code> recuerda dónde subir los próximos cambios; después podrás usar simplemente <code>git push</code>.</p>
         </article>
-        <div class="note-panel mb-4"><i class="fa-solid fa-code-branch" aria-hidden="true"></i><p><strong>¿Este push afecta a main?</strong> No. Este comando publica únicamente la rama del proyecto. Para incorporar sus cambios en <code>main</code> hace falta fusionarla o aceptar un Pull Request dirigido a <code>main</code>. Comprueba siempre tu rama activa antes de editar y enviar.</p></div>
-        <h3 class="h4 mt-5">Colaboración en equipo</h3>
-        <p>Cuando la rama ya esté publicada, cada integrante elige una opción. Todos trabajan en la rama del proyecto.</p>
+        <div class="note-panel mb-4"><i class="fa-solid fa-code-branch" aria-hidden="true"></i><p><strong>La plantilla base se conserva.</strong> Este comando sube tu rama a GitHub. Tus cambios solo llegarán a <code>main</code> si después alguien decide unirlos a esa rama. Antes de editar o subir archivos, comprueba con <code>git status</code> que estás en la rama de tu proyecto.</p></div>
+        <h3 class="h4 mt-5">Trabajar con tus compañeros</h3>
+        <p>Cuando una persona haya subido la rama, los demás pueden descargarla. Elijan una de estas opciones y usen el nombre de rama que acordó el equipo.</p>
         <details class="arbol-carpetas mt-3" open>
-          <summary>Opción 1 · Clonar directamente la rama del proyecto (recomendada)</summary>
-          <div class="mt-3"><div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone -b nombra-tu-rama --single-branch https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone -b nombra-tu-rama --single-branch git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div><div class="code-panel my-3"><code>cd Plantilla-Documentos</code></div><p><code>--single-branch</code> limita las ramas descargadas, pero conserva el historial de esa rama, incluidos los commits compartidos con <code>main</code>.</p></div>
+          <summary>Opción 1 · Descargar la rama del equipo (recomendada)</summary>
+          <div class="mt-3"><div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone -b nombra-tu-rama --single-branch https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone -b nombra-tu-rama --single-branch git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div><div class="code-panel my-3"><code>cd Plantilla-Documentos</code></div><p>Estos comandos te dejan en la rama del equipo, lista para trabajar. La opción <code>--single-branch</code> descarga esa rama con su historial de cambios, sin preparar las demás ramas.</p></div>
         </details>
         <details class="arbol-carpetas mt-3">
-          <summary>Opción 2 · Clonar todo y cambiar manualmente</summary>
+          <summary>Opción 2 · Descargar la plantilla y luego entrar a la rama del equipo</summary>
           <div class="mt-3"><div class="row g-3"><div class="col-lg-6"><h4 class="h6">Con HTTPS</h4><div class="code-panel my-3"><code>git clone https://github.com/JaimeBerrios/Plantilla-Documentos.git</code></div></div><div class="col-lg-6"><h4 class="h6">Con SSH</h4><div class="code-panel my-3"><code>git clone git@github.com:JaimeBerrios/Plantilla-Documentos.git</code></div></div></div><div class="code-panel my-3"><code>cd Plantilla-Documentos</code><code>git switch nombra-tu-rama</code></div></div>
         </details>
         <details class="arbol-carpetas mt-3">
-          <summary>Opción 3 · Ya tengo el repositorio, pero no veo la rama</summary>
-          <div class="mt-3"><p>Desde la carpeta del repositorio, descarga la información remota y crea la rama local con seguimiento. Sirve con HTTPS y SSH.</p><div class="code-panel my-3"><code>git fetch origin</code><code>git switch -c nombra-tu-rama --track origin/nombra-tu-rama</code></div><p>Si la rama local ya existe, usa <code>git switch nombra-tu-rama</code>. Si clonaste otra rama con <code>--single-branch</code>, amplía primero las ramas seguidas y luego ejecuta los comandos anteriores:</p><div class="code-panel my-3"><code>git remote set-branches --add origin nombra-tu-rama</code></div></div>
+          <summary>Opción 3 · Ya tengo la carpeta, pero no encuentro la rama del equipo</summary>
+          <div class="mt-3"><p>Abre la terminal dentro de Plantilla-Documentos. El primer comando consulta las ramas que hay en GitHub. El segundo prepara la rama del equipo en tu computadora y te deja dentro de ella. Sirve tanto con HTTPS como con SSH.</p><div class="code-panel my-3"><code>git fetch origin</code><code>git switch -c nombra-tu-rama --track origin/nombra-tu-rama</code></div><p>Si ya tienes esa rama en tu computadora, basta con <code>git switch nombra-tu-rama</code>. Si descargaste otra rama usando <code>--single-branch</code>, ejecuta primero el siguiente comando y después los dos anteriores:</p><div class="code-panel my-3"><code>git remote set-branches --add origin nombra-tu-rama</code></div></div>
         </details>
-        <h3 class="h4 mt-5">Comandos frecuentes de desarrollo</h3>
+        <h3 class="h4 mt-5">Comandos para el trabajo diario</h3>
         <div class="table-responsive"><table class="table">
-          <caption>Flujo diario dentro de la rama del proyecto</caption>
+          <caption>Qué hace cada comando en la rama de tu proyecto</caption>
           <thead><tr><th scope="col">Comando</th><th scope="col">Función</th></tr></thead>
           <tbody>
-            <tr><td><code>git status</code></td><td>Revisa la rama activa y los archivos modificados.</td></tr>
-            <tr><td><code>git diff</code></td><td>Revisa los cambios antes de prepararlos.</td></tr>
-            <tr><td><code>git add .</code></td><td>Desde la raíz, prepara los cambios del proyecto excepto los archivos ignorados.</td></tr>
-            <tr><td><code>git diff --cached</code></td><td>Revisa exactamente lo que incluirá el commit.</td></tr>
-            <tr><td><code>git commit -m "Mensaje"</code></td><td>Guarda los cambios preparados en un commit local.</td></tr>
-            <tr><td><code>git push</code></td><td>Envía los commits a la rama remota de seguimiento.</td></tr>
-            <tr><td><code>git pull --ff-only</code></td><td>Descarga e integra cambios si puede avanzar sin crear una fusión.</td></tr>
+            <tr><td><code>git status</code></td><td>Muestra en qué rama estás y qué archivos cambiaste.</td></tr>
+            <tr><td><code>git diff</code></td><td>Muestra lo que agregaste o quitaste en los archivos.</td></tr>
+            <tr><td><code>git add .</code></td><td>Selecciona los cambios que vas a guardar. Ejecútalo desde Plantilla-Documentos y revisa antes que no incluyas archivos personales.</td></tr>
+            <tr><td><code>git diff --cached</code></td><td>Muestra los cambios seleccionados para guardar.</td></tr>
+            <tr><td><code>git commit -m "Mensaje"</code></td><td>Guarda en tu computadora un punto del historial, llamado commit. Cambia “Mensaje” por una descripción de lo que hiciste.</td></tr>
+            <tr><td><code>git push</code></td><td>Sube a GitHub los cambios que ya guardaste con commit.</td></tr>
+            <tr><td><code>git pull --ff-only</code></td><td>Trae los cambios de tus compañeros. Se detiene si hay cambios de ambos lados que necesitan revisarse juntos.</td></tr>
           </tbody>
         </table></div>
-        <p>Al comenzar, con el árbol de trabajo limpio:</p>
+        <p>Antes de empezar, comprueba que no tienes cambios sin guardar y trae lo que hayan subido tus compañeros:</p>
 <div class="code-panel my-3"><code>git status</code><code>git pull --ff-only</code></div>
-        <p>Después de editar y comprobar el proyecto:</p>
-<div class="code-panel my-3"><code>git diff</code><code>git add .</code><code>git diff --cached</code><code>git commit -m &quot;Actualiza el reporte del proyecto&quot;</code><code>git push</code></div>
-        <p>Si el pull se detiene porque las historias han divergido o el push es rechazado por cambios de otro integrante, coordinen la integración antes de continuar. Eviten <code>git push --force</code> en la rama compartida. Quien administre GitHub puede proteger <code>main</code> para exigir revisiones.</p>
-        <a href="docs/uso/clonacion-y-ramas.md">Consultar también el tutorial en Markdown</a>
+        <p>Cuando termines de editar, revisa tus cambios, guárdalos con una descripción y súbelos a GitHub. Ejecuta los comandos en este orden:</p>
+<div class="code-panel my-3"><code>git diff</code><code>git add .</code><code>git diff --cached</code><code>git commit -m &quot;docs(reporte): actualiza el contenido del proyecto&quot;</code><code>git push</code></div>
+        <p>Si Git no te deja descargar o subir porque un compañero también hizo cambios, revisen juntos el mensaje y acuerden cómo combinarlos. No uses <code>git push --force</code>: podría reemplazar cambios del equipo.</p>
+        <a href="docs/uso/clonacion-y-ramas.md">Abrir la versión escrita del tutorial</a>
       </div>
     </section>
 
