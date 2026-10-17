@@ -1,206 +1,219 @@
-# Plantilla académica · UNAB
+# 🎓 Plantilla Académica · UNAB
 
-Una base para preparar **presentaciones y reportes con Codex**, conservando los
-logos de la Universidad Dr. Andrés Bello, el azul institucional y la firma
-personal al final del reporte.
+<p align="center">
+  <img src="assets/institucional/isotipo-azul.png" alt="Universidad Dr. Andrés Bello" width="120" style="vertical-align: middle; margin-right: 25px;">
+  <img src="assets/institucional/logo-facultad.png" alt="Facultad de Tecnología e Innovación" width="130" style="vertical-align: middle;">
+</p>
 
-## Tu flujo de trabajo
+<p align="center">
+  <strong>Ecosistema local para preparar reportes académicos y presentaciones sincronizadas con identidad institucional y asistencia de IA (Codex / Antigravity).</strong>
+</p>
 
-1. Clona el repositorio y ábrelo en VS Code.
-2. Crea una rama desde la plantilla base para cada trabajo:
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white" alt="Python 3.9+">
+  <img src="https://img.shields.io/badge/LaTeX-Tectonic%200.15-173864?logo=latex&logoColor=white" alt="Tectonic LaTeX">
+  <img src="https://img.shields.io/badge/Presentaci%C3%B3n-Reveal.js%20%7C%20Beamer-ff5722" alt="Reveal.js y Beamer">
+  <img src="https://img.shields.io/badge/Estilo-APA%207-green" alt="APA 7">
+  <img src="https://img.shields.io/badge/Identidad-UNAB%20%23173864-173864" alt="UNAB Azul Institucional">
+  <img src="https://img.shields.io/badge/Pruebas-unittest-success" alt="Pruebas con unittest">
+</p>
 
-   ```bash
-   git switch main
-   git switch -c materia/nombre-del-proyecto
-   ```
+---
 
-   Si tu rama base tiene otro nombre, úsalo en lugar de `main`. Guarda los cambios
-   del trabajo anterior antes de cambiar de rama.
-3. Completa **[datos.md](datos.md)**: docente, asignatura, integrantes, tema,
-   indicaciones y fuentes.
-4. Pídele a Codex:
+## 📌 Los Tres Entregables
 
-   > Lee AGENTS.md y datos.md. Prepara únicamente el reporte para este trabajo,
-   > conserva la identidad de la universidad y mi firma. Compila y revisa el PDF.
+| Entregable | Formato | Motor / Base | Propósito |
+|---|---|---|---|
+| 📄 **[Reporte académico](pdf/reporte.pdf)** | PDF (Tamaño Carta) | LaTeX + XeTeX / Tectonic | Documento formal, portada completa, tabla de integrantes, citas APA 7 y firma institucional personal al pie. *(Generado por defecto)* |
+| 📊 **[Presentación de diapositivas](pdf/presentacion.pdf)** | PDF (16:9 Panorámico) | LaTeX Beamer (`unab_presentacion`) | Diapositivas para defensa y exposición oral, con pie de expositor por lámina. |
+| 🌐 **[Presentación web](web/presentacion/index.html)** | Web interactiva HTML5 | Reveal.js (100% offline) | Exposición interactiva desde el navegador con notas del orador y sincronización de datos con LaTeX. |
 
-   Pide expresamente la presentación cuando también necesites sus versiones PDF y web.
+> [!NOTE]
+> La guía interactiva para estudiantes y acceso rápido a los entregables se encuentra en **[index.html](index.html)**.
 
-5. Abre **[reporte PDF](pdf/reporte.pdf)**. Si pediste la presentación, abre también
-   **[presentación PDF](pdf/presentacion.pdf)** y **[presentación web](reveal.js/index.html)**.
-   Los archivos iniciales son ejemplos editables, no una investigación terminada.
-6. Guarda las fuentes y los PDF en la misma rama. Sube esa rama a GitHub cuando
-   quieras respaldarla; la compilación funciona localmente.
+---
 
-## Compilación automática
+## 🚀 Flujo de Trabajo en 4 Pasos
 
-Codex debe ejecutar desde la raíz:
-
-```bash
-python3 compilar.py
+```mermaid
+flowchart LR
+    A["1. datos/datos.md<br/>& datos/referencias.json"] --> B["2. Prompt a la IA<br/>(o edición manual)"]
+    B --> C["3. compilar.py<br/>(Tectonic local)"]
+    C --> D["4. Entrega<br/>pdf/reporte.pdf"]
+    C -. "con --con-presentacion" .-> E["pdf/presentacion.pdf<br/>web/presentacion/index.html"]
 ```
 
-En Windows: `python compilar.py`. Requiere **Python 3.9 o posterior**; no necesita
-paquetes de pip. En VS Code también puedes usar **Terminal → Ejecutar tarea de
-compilación** (`Ctrl+Shift+B`), que genera **solo el reporte**.
-
-Para incluir explícitamente la presentación PDF y actualizar el HTML:
-
+### Paso 1: Configurar la rama de trabajo
+Trabaja en la rama actual. Si comienzas otro proyecto y necesitas aislarlo, crea una rama descriptiva:
 ```bash
-python compilar.py --con-presentacion
+# Opcional, únicamente para comenzar un trabajo nuevo:
+git switch -c materia/nombre-del-proyecto
 ```
 
-En VS Code elige la tarea **Generar reporte y presentación (PDF y web)**.
-Sin esta opción, no se leen ni validan las fuentes de las diapositivas y no se
-modifican `pdf/presentacion.pdf` ni `reveal.js/index.html`; sus versiones existentes
-pueden corresponder a un trabajo anterior. `--sin-red` se puede combinar con ambos modos.
+### Paso 2: Completar `datos/datos.md` y `datos/referencias.json`
+- Abre **[datos/datos.md](datos/datos.md)** y rellena los datos de la portada (tema, docente, asignatura, grupo, integrantes y firma).
+- Registra las fuentes confirmadas en **[datos/referencias.json](datos/referencias.json)** con formato APA 7.
 
-La primera ejecución descarga **Tectonic 0.15.0** desde su distribución oficial.
-Se guarda fuera del repositorio, en la carpeta de datos del usuario:
+### Paso 3: Pedir asistencia a la IA (Codex / Antigravity)
+Copia y envía este prompt al agente de IA:
 
-| Sistema | Carpeta del compilador |
-|---|---|
-| Linux | `~/.local/share/plantilla-unab/tectonic-0.15.0/` (respeta `XDG_DATA_HOME`) |
-| macOS | `~/Library/Application Support/plantilla-unab/tectonic-0.15.0/` |
-| Windows | `%LOCALAPPDATA%/plantilla-unab/tectonic-0.15.0/` |
+> *"Lee AGENTS.md y datos/datos.md. Prepara únicamente el reporte para este trabajo, conservando la identidad de la universidad y mi firma. Compila y revisa el PDF."*
 
-El mismo usuario reutiliza esa instalación en todas sus ramas y clones. Tectonic
-conserva además su propia caché de paquetes. Necesitas conexión la primera vez
-y cuando un documento requiera paquetes nuevos. Para usar solo lo descargado:
+*(Si también vas a exponer y necesitas láminas, añade expresamente: "Prepara también la presentación PDF y web").*
 
-```bash
-python3 compilar.py --sin-red
+### Paso 4: Compilar y revisar entregables
+Ejecuta la compilación y abre tus documentos generados en `pdf/`.
+
+---
+
+## ⚙️ Comandos de Compilación
+
+El archivo `compilar.py` es el único punto de entrada para preparar los documentos:
+
+| Comando | Acción | Salidas actualizadas |
+|---|---|---|
+| `python3 compilar.py` | Compila **exclusivamente el reporte** *(Flujo estándar)* | `pdf/reporte.pdf` |
+| `python3 compilar.py --con-presentacion` | Compila reporte **y** presentación (PDF y web) | `pdf/reporte.pdf`, `pdf/presentacion.pdf`, `web/presentacion/index.html` |
+| `python3 compilar.py --solo-presentacion` | Compila **solo las diapositivas** para iteración rápida | `pdf/presentacion.pdf`, `web/presentacion/index.html` |
+| `python3 compilar.py --verificar` | Valida recursos, citas y coherencia sin compilar | Ninguna (solo diagnóstico) |
+| `python3 compilar.py --modo-entrega` | **Modo estricto**: bloquea si quedan textos o fuentes de ejemplo | Según el modo elegido |
+| `python3 compilar.py --sin-red` | Compila usando solo el motor y paquetes locales | Según el modo elegido |
+| `python3 compilar.py --limpiar` | Elimina la carpeta temporal `.build/` | Purgado de temporales |
+| `python3 compilar.py --probar` | Ejecuta la suite de pruebas unitarias (`unittest`) | Diagnóstico de pruebas |
+
+> [!TIP]
+> **En VS Code:** Puedes presionar `Ctrl + Shift + B` para compilar directamente el reporte, o ir a **Terminal → Ejecutar tarea** para seleccionar cualquiera de las acciones anteriores en un solo clic.
+
+---
+
+## 📦 Instalación y Reutilización del Compilador
+
+- Requiere **Python 3.9 o superior** (sin necesidad de paquetes `pip`).
+- El script **reutiliza automáticamente** Tectonic si ya está instalado en tu sistema (`PATH`).
+- Si no está presente, descarga de forma transparente **Tectonic 0.15.0** una sola vez en tu carpeta de usuario local:
+  - **Linux:** `~/.local/share/plantilla-unab/tectonic-0.15.0/`
+  - **macOS:** `~/Library/Application Support/plantilla-unab/tectonic-0.15.0/`
+  - **Windows:** `%LOCALAPPDATA%/plantilla-unab/tectonic-0.15.0/`
+
+Todas tus ramas y clones futuros compartirán el mismo motor sin volver a descargar nada.
+
+---
+
+## 📚 Sistema de Citas y Referencias (APA 7)
+
+Las referencias se centralizan en `datos/referencias.json` y se comparten de manera uniforme entre el reporte y las diapositivas:
+
+### Cómo citar en LaTeX (`documentos/reporte.tex` y `documentos/presentacion.tex`)
+- **Cita parentética simple:** `\cita{fuente}` $\rightarrow$ *(Apellido, 2024)*
+- **Cita narrativa simple:** `\citatexto{fuente}` $\rightarrow$ *Apellido (2024)*
+- **Cita textual con número de página:** `\cita[p. 15]{fuente}` $\rightarrow$ *(Apellido, 2024, p. 15)*
+- **Citas múltiples agrupadas:** `\citas{fuente1, fuente2}` $\rightarrow$ *(Apellido1, 2023; Apellido2, 2024)*
+
+### Cómo citar en la Presentación Web (`web/presentacion/index.html`)
+- Cita simple: `<span data-cita="fuente"></span>`
+- Con localizador: `<span data-cita="fuente" data-localizador="p. 15"></span>`
+- Citas múltiples: `<span data-cita="fuente1, fuente2"></span>`
+
+---
+
+## 💻 Características Especiales de Diseño
+
+### 1. Bloques de código con resaltado sintáctico (`listings`)
+La plantilla incluye el estilo `unabcode` que armoniza con los colores institucionales:
+```latex
+\begin{lstlisting}[language=Python, caption={Algoritmo de cálculo}]
+def calcular_promedio(notas):
+    return sum(notas) / len(notas) if notas else 0
+\end{lstlisting}
+```
+*(En Beamer, recuerda declarar `\begin{frame}[fragile]{Título}`).*
+
+### 2. Cajas de notas destacadas
+Para enfatizar advertencias, recomendaciones o consideraciones metodológicas en el reporte:
+```latex
+\begin{cajanota}[Consideración Metodológica]
+  Los datos analizados fueron recolectados durante el período lectivo 2026.
+\end{cajanota}
 ```
 
-La instalación automática contempla Linux y macOS de 64 bits (Intel/AMD y ARM)
-y Windows x64. Si Codex solicita acceso de red o escritura a la carpeta de
-usuario, es para preparar o reutilizar ese entorno local.
+### 3. Firma personal institucional
+Al final del reporte (incluso tras los anexos) se imprime automáticamente la firma tipográfica con la fuente original de [assets/fuentes/firma.otf](assets/fuentes/firma.otf). El nombre se toma del campo `Firma` en `datos/datos.md`.
 
-Los datos generales y los integrantes de `datos.md` se incorporan automáticamente
-al reporte; con `--con-presentacion`, también a las diapositivas PDF y web.
-La firma solo se usa en el reporte.
-El resto del archivo es una guía para Codex: compilar no
-redacta ni investiga el contenido por sí solo.
+---
 
-Solo cuando todos los documentos seleccionados compilan correctamente se actualizan
-sus PDF en `pdf/`. Si hay un error, el comando termina con error y conserva las versiones
-anteriores; revisa los registros en `.build/` antes de entregar el trabajo.
-El HTML solo se actualiza con `--con-presentacion`, después de que ambos PDF compilan.
-
-## Archivos que se conservan
+## 📂 Estructura del Repositorio
 
 ```text
-datos.md                         Datos y consigna del trabajo
-presentacion.tex                 Contenido de las diapositivas
-reporte.tex                      Contenido del documento
-compilar.py                      Compilación PDF y sincronización de datos web
-AGENTS.md                        Instrucciones para Codex
-README.md                        Esta guía
-plantilla/                       Dos estilos institucionales reutilizables
-assets/img/institucional/        Logos, variantes y acreditación
-assets/img/contenido/            Imágenes y gráficos del trabajo
-assets/fonts/firma.otf           Fuente original de la firma
-pdf/                             Presentación y reporte listos para abrir
-reveal.js/index.html             Contenido editable de las diapositivas web
-reveal.js/css/unab.css           Diseño institucional de las diapositivas web
-reveal.js/js/presentacion.js     Configuración 16:9 y pies de expositores
-vendor/reveal.js/                Biblioteca local, versión y licencia
-index.html                      Guía web y acceso a los tres entregables
-web/                            CSS y JavaScript de la guía web
-.editorconfig                   Codificación UTF-8 y formato de texto
-.vscode/tasks.json               Compilación desde VS Code
+├── README.md / AGENTS.md         # Guía y reglas de trabajo
+├── compilar.py                   # Único punto de entrada de compilación
+├── index.html                    # Portal de acceso y guía interactiva
+├── datos/                        # datos.md y referencias.json
+├── documentos/                   # reporte.tex y presentacion.tex
+│   ├── secciones/                # Fragmentos de reportes extensos
+│   └── anexos/                   # Fuentes de anexos
+├── plantilla/latex/              # Estilos institucionales .sty
+├── web/
+│   ├── portal/{css,js}/          # Recursos del portal principal
+│   └── presentacion/             # index.html, css/ y js/ de las diapositivas
+├── assets/
+│   ├── institucional/            # Logos originales y acreditación
+│   ├── fuentes/                  # Firma tipográfica original
+│   ├── iconos/fontawesome/       # SVG oficiales, versión y licencia
+│   └── contenido/                # imagenes/, graficos/ y evidencias/
+├── herramientas/                 # Compilación, contenido, iconos y validación
+├── vendor/                       # Reveal.js, Bootstrap y Font Awesome locales
+├── ejemplos/reveal-demo.html     # Demo de referencia, con recursos remotos
+├── docs/                         # Uso, personalización y estructura
+├── pdf/                          # reporte.pdf y presentacion.pdf
+├── tests/                        # Pruebas automatizadas
+├── .vscode/tasks.json            # Acciones de VS Code
+└── .build/                       # Temporales generados; ignorados por Git
 ```
 
-Edita normalmente `datos.md` y `reporte.tex`. Prepara las diapositivas solo cuando
-las necesites expresamente. Puedes
-agregar imágenes de apoyo en `assets/img/contenido/`. Los dos logos siempre se conservan.
-La firma toma el texto del campo `Firma` y solo aparece al final del reporte.
+---
 
-`.build/` contiene datos generados y registros; está excluida de Git. Los PDF sí
-se versionan, para que cada rama conserve sus entregables. No se necesita
-GitHub Actions ni una distribución LaTeX completa instalada manualmente.
+## 🧪 Pruebas Automatizadas
 
-## Presentación web y guía
+Para verificar la integridad del compilador, el parser de citas y la coherencia de datos:
 
-Abre `index.html` para consultar la guía, o `reveal.js/index.html` para exponer.
-La presentación usa recursos locales y se puede abrir sin conexión; la guía
-utiliza Bootstrap y Font Awesome desde CDN y necesita conexión para esos estilos.
-Conserva `vendor/`, `assets/` y `reveal.js/` juntos cuando compartas la versión web.
+```bash
+python compilar.py --probar
+```
+O bien:
+```bash
+python -m unittest discover tests
+```
 
-Los elementos `<span data-campo="…">` y `<tbody id="integrantes">` son zonas de
-sincronización de `compilar.py`. Edita sus valores en `datos.md`; los cambios
-manuales dentro de esas zonas se reemplazan al compilar con `--con-presentacion`. El resto del HTML es
-editable y el script lo conserva. La firma no se incorpora al HTML.
+---
 
-El contenido académico de las láminas se mantiene manualmente en
-`presentacion.tex` y `reveal.js/index.html`: la compilación sincroniza datos,
-no convierte LaTeX en HTML. En el HTML, `data-expositor="Nombre"` define el pie
-de cada lámina; `data-expositor="grupo"` usa el grupo de `datos.md`.
-En LaTeX, usa `\expositor{Nombre}`. Si hay muchos integrantes o títulos largos,
-divide o reorganiza las láminas en ambas versiones y revisa su presentación.
+<p align="center">
+  <sub>Desarrollado con identidad institucional para la Universidad Dr. Andrés Bello · 2026</sub>
+</p>
 
-El diseño web propio vive en `reveal.js/css/` y `reveal.js/js/`; no modifiques
-`vendor/` para personalizarlo. La versión de la biblioteca está documentada en
-`vendor/reveal.js/README.md`. Los ejemplos de la biblioteca no son entregables.
+## Iconos y organización
 
-## Verificación del compilador
+Se pueden descargar iconos adicionales de **Font Awesome Free** cuando el contenido los necesite.
+Guárdalos en `assets/iconos/fontawesome/solid/`, conserva su licencia y usa la herramienta local:
 
-`python compilar.py --verificar` valida datos y citas del reporte sin compilar.
-Con `python compilar.py --con-presentacion --verificar` también se comprueban
-cantidad, orden, títulos, expositores y claves de citas de las diapositivas.
-Ninguno de estos comandos modifica entregables. La compilación ejecuta las
-comprobaciones del modo seleccionado y se detiene si encuentra errores.
+```bash
+python3 -m herramientas.iconos --descargar microscope shield-halved --sincronizar
+```
 
-Se admiten las macros institucionales de portada/cierre y láminas
-`\begin{frame}{Título}` con texto simple e iconos `\faNombre`. El HTML usa
-secciones planas con un `h1` o `h2` por lámina. Títulos con macros complejas o
-secciones anidadas producen un error explícito; no se interpretan silenciosamente.
-Esta comprobación compara la estructura de las fuentes, no su significado ni
-el número de páginas adicionales que pudieran producir overlays de Beamer.
+La descarga requiere red; las diapositivas resultantes funcionan sin conexión. La herramienta
+actualiza la biblioteca SVG incorporada en el HTML; no añade iconos automáticamente al contenido.
+Consulta [personalización](docs/personalizacion.md), [estructura](docs/estructura.md) y
+[guía de uso](docs/guia-de-uso.md). Para comprobar rutas después de mover recursos:
 
-## Referencias compartidas: APA 7
+```bash
+python3 -m herramientas.validacion
+```
 
-Edita `referencias.json`. Cada entrada incluye:
+La etiqueta colectiva es **Grupo**, tomada de `datos/datos.md`; para una persona concreta,
+usa su nombre como expositor. No mantengas copias de los mismos datos en otras carpetas.
 
-- `id`: clave estable para citar, por ejemplo `fuente`.
-- `orden`: clave alfabética de autor y, cuando proceda, fecha y título.
-- `autor_parentetico`: autores tal como aparecen dentro de paréntesis.
-- `autor_narrativo`: autores tal como aparecen dentro de la oración.
-- `anio`: año, o `s. f.`; incluye `a`/`b` cuando sea necesario desambiguar.
-- `referencia`: referencia completa redactada en APA 7; delimita cursivas con
-  `*texto*`. Admite texto normal, DOI y URL, sin comandos LaTeX ni HTML.
-- `ejemplo`: `true` para ejemplos didácticos; cámbialo a `false` al aportar una
-  fuente real y comprobar sus datos.
 
-En ambos `.tex`, usa `\cita{fuente}` para `(Apellido, Año)` y
-`\citatexto{fuente}` para `Apellido (Año)`. Para citas textuales, incluye el
-localizador: `\cita[p. 10]{fuente}`. La cita no agrega comillas ni transforma
-el texto citado en una cita en bloque: redacta esos elementos según la consigna.
-En el HTML usa `<span data-cita="fuente"></span>` y, si corresponde,
-`data-tipo="narrativa"` y `data-localizador="p. 10"` en el mismo elemento.
-Los atributos de sincronización usan comillas dobles.
-
-El compilador genera `.build/citas.tex` y la bibliografía del reporte.
-Solo con `--con-presentacion` genera además la bibliografía de las diapositivas
-y actualiza el bloque `referencias:inicio` / `referencias:fin` del HTML.
-No edites esas salidas. Cada documento incluye solo sus fuentes citadas;
-la presentación PDF y web deben citar el mismo conjunto de claves.
-El reporte usa sangría francesa de 1.27 cm y doble espacio en las referencias.
-
-Este mecanismo **centraliza referencias redactadas en APA 7**, no convierte
-metadatos incompletos a APA ni valida automáticamente todas sus reglas.
-Revisa autores, fechas, puntuación, cursivas, DOI y desambiguación según el tipo
-de fuente. En particular, configura correctamente `&`, `y` y `et al.` en los
-dos campos de autor. Usa los [ejemplos oficiales APA](https://apastyle.apa.org/style-grammar-guidelines/references/examples)
-y las [reglas de citas](https://apastyle.apa.org/style-grammar-guidelines/citations).
-El ejemplo inicial es ficticio y está marcado como tal; no es una fuente real.
-Si una bibliografía extensa no cabe en una lámina, reorganiza ambas versiones
-y adapta los bloques de generación antes de entregar; no reduzcas la letra.
-
-## Pruebas
-
-Ejecuta `python -m unittest discover -s tests` para comprobar el escape de datos
-y la conservación del contenido HTML, además de la coherencia y las citas. Después ejecuta `python compilar.py` y
-revisa el reporte. Prueba el modo de presentación explícito cuando corresponda.
-
-Referencias técnicas: [Tectonic](https://tectonic-typesetting.github.io/en-US/install.html)
-y [las instrucciones AGENTS.md de Codex](https://developers.openai.com/codex/guides/agents-md).
+El portal principal también funciona sin conexión: Bootstrap 5.3.3 y Font Awesome Free
+6.7.2 están en `vendor/` con sus licencias. Incluye comandos copiables para Windows y
+Linux/macOS, tema del sistema y navegación móvil. Las vistas previas son capturas reales
+de los PDF de ejemplo; su actualización se explica en
+[assets/contenido/vistas-previas/README.md](assets/contenido/vistas-previas/README.md).

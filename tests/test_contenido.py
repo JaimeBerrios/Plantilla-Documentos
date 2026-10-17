@@ -1,8 +1,8 @@
 import unittest
 from pathlib import Path
 
-from contenido import verificar_laminas, preparar_referencias, leer_referencias, cita
-from compilar import tex_escape
+from herramientas.contenido import verificar_laminas, preparar_referencias, leer_referencias, cita
+from herramientas.compilacion import tex_escape
 
 
 class Coherencia(unittest.TestCase):
@@ -22,10 +22,15 @@ class Coherencia(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'sin título verificable'):
             verificar_laminas(r'\begin{frame}{\textbf{Tema}}', self.web, self.fields)
 
+    def test_admite_laminas_verticales(self):
+        web_vertical = '<section><h1>Proyecto</h1></section><section><section data-expositor="Ana"><h2>Tema</h2></section></section>'
+        self.assertEqual(verificar_laminas(self.tex, web_vertical, self.fields), 2)
+
+
 
 class Referencias(unittest.TestCase):
     def setUp(self):
-        self.refs = leer_referencias(Path(__file__).resolve().parents[1] / 'referencias.json')
+        self.refs = leer_referencias(Path(__file__).resolve().parents[1] / 'datos/referencias.json')
         self.web = '<span data-cita="fuente"></span><!-- referencias:inicio -->viejo<!-- referencias:fin -->'
 
     def test_cita_narrativa_y_localizador(self):
@@ -48,3 +53,9 @@ class Referencias(unittest.TestCase):
         for sources in [[r'\cita{ausente}', ''], ['', '']]:
             with self.assertRaises(ValueError):
                 preparar_referencias(self.refs, sources, self.web, tex_escape)
+
+    def test_citas_multiples(self):
+        web_multiple = '<span data-cita="fuente, fuente"></span><!-- referencias:inicio -->viejo<!-- referencias:fin -->'
+        web, macros, report, slides = preparar_referencias(self.refs, [r'\citas{fuente, fuente}', r'\citas{fuente}'], web_multiple, tex_escape)
+        self.assertIn('(Apellido, Año; Apellido, Año)', web)
+        self.assertIn(r'\newcommand{\citas}', macros)

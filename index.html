@@ -1,20 +1,23 @@
 <!doctype html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Plantilla académica UNAB para presentaciones PDF y web, y reportes.">
+  <meta name="description" content="Plantilla académica UNAB para preparar reportes y presentaciones PDF y web, con recursos locales y guías de uso.">
   <title>Plantilla académica UNAB</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="web/css/styles.css">
+  <script src="web/portal/js/tema.js"></script>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/solid.min.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/brands.min.css">
+  <link rel="stylesheet" href="web/portal/css/styles.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
-        <i class="fa-solid fa-layer-group"></i>
+        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
         <span>Plantilla <strong>UNAB</strong></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -26,12 +29,13 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
           <li class="nav-item"><a class="nav-link" href="#instalacion">Instalación</a></li>
           <li class="nav-item"><a class="nav-link" href="#compilar">Compilar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#flujo">Flujo</a></li>
           <li class="nav-item"><a class="nav-link" href="#personalizar">Personalizar</a></li>
           <li class="nav-item"><a class="nav-link" href="#estructura">Estructura</a></li>
-          <li class="nav-item"><a class="nav-link" href="#flujo">Flujo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#errores">Ayuda</a></li>
           <li class="nav-item">
             <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar a modo claro" title="Cambiar tema">
-              <i class="fa-solid fa-moon"></i>
+              <i class="fa-solid fa-moon" aria-hidden="true"></i>
             </button>
           </li>
         </ul>
@@ -39,47 +43,48 @@
     </div>
   </nav>
 
-  <main>
+  <main id="contenido-principal" tabindex="-1">
     <header id="inicio" class="hero">
       <div class="container">
-        <div class="row align-items-center min-vh-100 py-5">
-          <div class="col-lg-8 py-5">
-            <span class="eyebrow"><i class="fa-solid fa-circle"></i> Repositorio base</span>
-            <h1 class="display-3 fw-bold mt-3">Presentaciones y reportes con identidad UNAB.</h1>
+        <div class="row align-items-center g-5 hero-layout">
+          <div class="col-lg-7">
+            <span class="eyebrow"><i class="fa-solid fa-circle" aria-hidden="true"></i> Plantilla académica UNAB</span>
+            <h1 class="display-3 fw-bold mt-3">Tu reporte, listo para tomar forma.</h1>
             <p class="hero-copy mt-4 mb-4">
-              Completa <code>datos.md</code> y ejecuta <code>python compilar.py</code> para generar únicamente el reporte. Añade <code>--con-presentacion</code> cuando también quieras las diapositivas PDF y web.
+              Completa <code>datos/datos.md</code> y ejecuta <code>python compilar.py</code> para generar únicamente el reporte. Añade <code>--con-presentacion</code> cuando también quieras las diapositivas PDF y web.
             </p>
             <div class="d-flex flex-wrap gap-3">
-              <a class="btn btn-primary btn-lg rounded-pill px-4" href="#instalacion">
-                Guía desde cero <i class="fa-solid fa-arrow-down ms-2"></i>
-              </a>
-              <a class="btn btn-ghost btn-lg rounded-pill px-4" href="pdf/presentacion.pdf" target="_blank">
-                Presentación PDF
-              </a>
-              <a class="btn btn-ghost btn-lg rounded-pill px-4" href="pdf/reporte.pdf" target="_blank" rel="noopener">Reporte PDF</a>
-              <a class="btn btn-ghost btn-lg rounded-pill px-4" href="reveal.js/index.html" target="_blank" rel="noopener">Presentación web</a>
+              <a class="btn btn-primary btn-lg rounded-pill px-4" href="pdf/reporte.pdf" target="_blank" rel="noopener">Abrir reporte <i class="fa-solid fa-arrow-up-right-from-square ms-2" aria-hidden="true"></i></a>
+              <a class="btn btn-ghost btn-lg rounded-pill px-4" href="#instalacion">Comenzar con la guía <i class="fa-solid fa-arrow-down ms-2" aria-hidden="true"></i></a>
+            </div>
+            <div class="entregables-secundarios mt-3" aria-label="Presentaciones opcionales">
+              <span>¿También vas a exponer?</span>
+              <a href="pdf/presentacion.pdf" target="_blank" rel="noopener">Presentación PDF</a>
+              <a href="web/presentacion/index.html" target="_blank" rel="noopener">Presentación web</a>
             </div>
             <div class="hero-stats d-flex flex-wrap gap-4 gap-md-5 mt-5">
               <div><strong>VS Code</strong><span>Flujo guiado</span></div>
-              <div><strong>UNAB</strong><span>Formato 16:9</span></div>
+              <div><strong>Carta + 16:9</strong><span>Reporte y diapositivas</span></div>
               <div><strong>3</strong><span>Entregables</span></div>
             </div>
             <div class="quick-check mt-4">
-              <span><i class="fa-solid fa-check"></i> Logos incluidos</span>
-              <span><i class="fa-solid fa-check"></i> UTF-8 y tildes</span>
-              <span><i class="fa-solid fa-check"></i> PDF en <code>pdf/</code></span>
+              <span><i class="fa-solid fa-check" aria-hidden="true"></i> Logos incluidos</span>
+              <span><i class="fa-solid fa-check" aria-hidden="true"></i> UTF-8 y tildes</span>
+              <span><i class="fa-solid fa-check" aria-hidden="true"></i> PDF en <code>pdf/</code></span>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="hero-panel" aria-hidden="true">
-        <div class="slide-window">
-          <div class="slide-bar"></div>
-          <div class="slide-title"></div>
-          <div class="slide-line w-80"></div>
-          <div class="slide-line w-65"></div>
-          <div class="slide-grid">
-            <span></span><span></span><span></span>
+          <div class="col-lg-5">
+            <div class="vistas-previas" aria-label="Vistas previas reales de la plantilla">
+              <figure class="preview-reporte">
+                <a href="pdf/reporte.pdf" target="_blank" rel="noopener"><img src="assets/contenido/vistas-previas/reporte.png" width="657" height="850" alt="Portada del reporte: logos UNAB, título y tabla de integrantes de ejemplo." fetchpriority="high"></a>
+                <figcaption><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Reporte · tamaño carta</figcaption>
+              </figure>
+              <figure class="preview-presentacion">
+                <a href="pdf/presentacion.pdf" target="_blank" rel="noopener"><img src="assets/contenido/vistas-previas/presentacion.png" width="850" height="479" alt="Portada de la presentación PDF con identidad UNAB y datos de ejemplo."></a>
+                <figcaption><i class="fa-solid fa-display" aria-hidden="true"></i> Presentación · 16:9</figcaption>
+              </figure>
+            </div>
+            <p class="preview-nota">Capturas de los PDF de ejemplo. Sustituye los datos antes de entregar.</p>
           </div>
         </div>
       </div>
@@ -99,12 +104,17 @@
             <div id="installGrid" class="row g-3"></div>
           </div>
         </div>
+        <div class="sistema-selector mb-3">
+          <label for="commandSystem">Comandos para</label>
+          <select id="commandSystem" class="form-select"><option value="unix">Linux / macOS · python3</option><option value="windows">Windows · python</option></select>
+          <span>Ejecuta los comandos desde la raíz del proyecto.</span>
+        </div>
         <div class="code-panel">
           <code>git --version</code>
           <code>python --version</code>
         </div>
         <div class="note-panel mt-4">
-          <i class="fa-solid fa-circle-info"></i>
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
           <p>La primera compilación requiere conexión. Tectonic se guarda en la carpeta de datos del usuario y se reutiliza entre proyectos.</p>
         </div>
       </div>
@@ -122,7 +132,7 @@
           </div>
           <div class="col-lg-7">
             <div class="steps-list">
-              <div><strong>1</strong><span>Completa <code>datos.md</code> y edita los documentos.</span></div>
+              <div><strong>1</strong><span>Completa <code>datos/datos.md</code> y edita los documentos.</span></div>
               <div><strong>2</strong><span>Presiona <code>Ctrl + Shift + B</code> en VS Code.</span></div>
               <div><strong>3</strong><span>Espera la compilación del reporte.</span></div>
               <div><strong>4</strong><span>Revisa los registros en <code>.build/</code> si aparece un error.</span></div>
@@ -164,14 +174,14 @@
             <article class="info-card">
               <span>Español</span>
               <h3>Tildes directas</h3>
-              <p>Usa <code>á</code>, <code>é</code>, <code>í</code>, <code>ó</code>, <code>ú</code>, <code>ñ</code>, <code>¿</code> y <code>¡</code> en <code>presentacion.tex</code>. Guarda los archivos en UTF-8.</p>
+              <p>Usa <code>á</code>, <code>é</code>, <code>í</code>, <code>ó</code>, <code>ú</code>, <code>ñ</code>, <code>¿</code> y <code>¡</code> en <code>documentos/presentacion.tex</code>. Guarda los archivos en UTF-8.</p>
             </article>
           </div>
           <div class="col-lg-4">
             <article class="info-card">
               <span>Logos</span>
               <h3>Portada automática</h3>
-              <p>Conserva los logos de <code>assets/img/institucional/</code>. Agrega gráficos e imágenes del trabajo en <code>assets/img/contenido/</code>.</p>
+              <p>Conserva los logos de <code>assets/institucional/</code>. Agrega gráficos e imágenes del trabajo en <code>assets/contenido/imagenes/</code>.</p>
             </article>
           </div>
           <div class="col-lg-4">
@@ -187,9 +197,16 @@
           <code>\item \textbf{\faCheckCircle \ Punto clave:} descripción breve.</code>
           <code>\renewcommand{\IconosPortada}{\faCloud \hspace{0.5cm} \faServer}</code>
         </div>
+        <article class="iconos-web mt-4 info-card">
+          <span>Font Awesome Free · web</span>
+          <h3 class="mt-2">Amplía tu selección de iconos</h3>
+          <p>Descarga SVG oficiales cuando hagan falta. Se guardan con su licencia en <code>assets/iconos/fontawesome/solid/</code> y siguen funcionando sin conexión.</p>
+          <div class="code-panel mt-3"><code>python -m herramientas.iconos --descargar microscope shield-halved --sincronizar</code></div>
+          <p class="mt-3">La sincronización incorpora los iconos a la biblioteca de las diapositivas; después puedes colocarlos junto al texto. Consulta la <a href="docs/personalizacion.md">guía de personalización</a>.</p>
+        </article>
         <div class="note-panel mt-4">
-          <i class="fa-solid fa-keyboard"></i>
-          <p>Si los acentos se ven mal, guarda <code>presentacion.tex</code> como UTF-8 desde la barra inferior de VS Code.</p>
+          <i class="fa-solid fa-keyboard" aria-hidden="true"></i>
+          <p>Si los acentos se ven mal, guarda <code>documentos/presentacion.tex</code> como UTF-8 desde la barra inferior de VS Code.</p>
         </div>
       </div>
     </section>
@@ -199,6 +216,35 @@
         <span class="section-kicker">Archivos clave</span>
         <h2 class="display-6 fw-bold mt-2 mb-4">Qué debes editar</h2>
         <div id="fileGrid" class="row g-4"></div>
+        <details class="arbol-carpetas mt-4">
+          <summary><i class="fa-solid fa-folder-tree" aria-hidden="true"></i> Explorar la estructura completa</summary>
+          <pre aria-label="Árbol de carpetas">Plantilla-Documentos/
+├── index.html             Portal principal
+├── compilar.py            Entrada única de compilación
+├── datos/                 datos.md y referencias.json
+├── documentos/            Fuentes LaTeX, secciones y anexos
+├── plantilla/latex/       Estilos institucionales
+├── web/
+│   ├── portal/            Estilos y scripts del portal
+│   └── presentacion/      Diapositivas, estilos e interacciones
+├── assets/
+│   ├── institucional/     Logos y acreditación
+│   ├── fuentes/           Firma tipográfica
+│   ├── iconos/            SVG oficiales y licencias
+│   └── contenido/         Imágenes, gráficos, evidencias y vistas previas
+├── herramientas/          Compilación, validación e iconos
+├── vendor/                Dependencias locales y licencias
+├── ejemplos/              Demo de referencia
+├── docs/                  Guías de uso y mantenimiento
+├── pdf/                   Entregables generados
+├── tests/                 Pruebas automatizadas
+└── .build/                Temporales fuera de Git</pre>
+        </details>
+        <div class="documentacion-links mt-4" aria-label="Documentación de la plantilla">
+          <a href="docs/guia-de-uso.md">Guía de uso <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          <a href="docs/personalizacion.md">Personalización</a>
+          <a href="docs/estructura.md">Estructura y mantenimiento</a>
+        </div>
       </div>
     </section>
 
@@ -224,7 +270,7 @@
               </article>
               <article>
                 <h3>Falta un dato obligatorio</h3>
-                <p>Completa el campo indicado en <code>datos.md</code> y conserva sus encabezados y etiquetas.</p>
+                <p>Completa el campo indicado en <code>datos/datos.md</code> y conserva sus encabezados y etiquetas.</p>
               </article>
               <article>
                 <h3>La primera compilación no tiene conexión</h3>
@@ -252,51 +298,54 @@
         <span class="connect-label">Conecta conmigo</span>
         <nav class="social-links" aria-label="Redes sociales de Jaime Berrios">
           <a href="https://www.linkedin.com/in/jaimeberrios08/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             <span>LinkedIn</span>
           </a>
           <a href="https://github.com/JaimeBerrios" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
             <span>GitHub</span>
           </a>
           <a href="https://www.behance.net/jaimeberrios" target="_blank" rel="noopener noreferrer" aria-label="Behance" title="Behance">
-            <i class="fa-brands fa-behance"></i>
+            <i class="fa-brands fa-behance" aria-hidden="true"></i>
             <span>Behance</span>
           </a>
           <a href="https://www.facebook.com/JaimeBerrios08/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
             <span>Facebook</span>
           </a>
           <a href="https://www.instagram.com/jaimeberrios08/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             <span>Instagram</span>
           </a>
           <a href="https://www.youtube.com/@jaimeberrios08/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
-            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
             <span>YouTube</span>
           </a>
           <a href="https://x.com/JaimeBerrios08" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" title="X / Twitter">
-            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
             <span>X</span>
           </a>
           <a href="https://www.pinterest.com/JaimeBerrios08/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" title="Pinterest">
-            <i class="fa-brands fa-pinterest-p"></i>
+            <i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>
             <span>Pinterest</span>
           </a>
           <a href="https://www.twitch.tv/jaimeberrios08" target="_blank" rel="noopener noreferrer" aria-label="Twitch" title="Twitch">
-            <i class="fa-brands fa-twitch"></i>
+            <i class="fa-brands fa-twitch" aria-hidden="true"></i>
             <span>Twitch</span>
           </a>
         </nav>
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="currentYear"></span> Plantilla UNAB</span>
-        <span>LaTeX, Python y Reveal.js</span>
+        <button type="button" id="themeSystem" class="tema-sistema">Usar tema del sistema</button>
+        <span>LaTeX, Python y Reveal.js · recursos locales</span>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="web/js/app.js"></script>
+  <div id="portalStatus" class="visually-hidden" role="status" aria-live="polite"></div>
+  <noscript><p class="container py-4">Activa JavaScript para copiar comandos y usar las guías interactivas. Puedes abrir el <a href="pdf/reporte.pdf">reporte</a> o consultar la <a href="docs/guia-de-uso.md">guía de uso</a>.</p></noscript>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="web/portal/js/app.js"></script>
 </body>
 </html>
